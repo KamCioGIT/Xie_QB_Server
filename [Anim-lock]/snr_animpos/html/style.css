@@ -1,0 +1,28 @@
+body {
+  display: none;
+  overflow: hidden;
+}
+
+.design {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  height: auto;
+  position: left;
+  margin-top: 10px;
+}
+
+.espace {
+  margin-left: 10px;
+}
+  
+.snr {
+  position: left;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

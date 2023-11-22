@@ -1,0 +1,243 @@
+.color-0{color: #ffffff;}
+.color-1{color: #ff4444;}
+.color-2{color: #99cc00;}
+.color-3{color: #ffbb33;}
+.color-4{color: #0099cc;}
+.color-5{color: #33b5e5;}
+.color-6{color: #aa66cc;}
+.color-8{color: #cc0000;}
+.color-9{color: #cc0068;}
+
+.gameColor-w{color: #ffffff;}
+.gameColor-r{color: #ff4444;}
+.gameColor-g{color: #99cc00;}
+.gameColor-y{color: #ffbb33;}
+.gameColor-b{color: #33b5e5;}
+
+/* todo: more game colors */
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.no-grow {
+  flex-grow: 0;
+}
+
+em {
+  font-style: normal;
+}
+
+#app {
+  font-family: 'Barlow Condensed', sans-serif;
+  --webkit-font-smoothing: antialiased;
+  --moz-osx-font-smoothing: grayscale;
+  color: #ecf0ff;
+  background-color: transparent;
+}
+
+.chat-window {
+  position: absolute;
+  top: 6.0%;
+  /* left: 1.0%; */
+  width: 40%;
+  height: 25%;
+  min-height: 25%;
+  max-width: 1000px;
+  background-color: rgba(0,0,0, 0.0);
+  -webkit-animation-duration: 2s;
+}
+
+
+.chat-messages {/*显示文字*/
+  position: relative;
+  height: 72%;
+  font-size: 1.55vh;
+  margin: 1%;
+  background-color: rgba(0,0,0,0.0);
+  font-weight: bold !important;
+  /* font-weight:bolder;
+  text-shadow: 0 0 0.1px rgba(0,0,0,1) ;
+  -webkit-text-stroke: black 0.6px;
+  text-shadow: 0 0 1px #000000, 0 0 1px #000000; */
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-shadow: 1px 0 0 rgb(0, 0, 0), -1px 0 0 rgb(0, 0, 0), 0 0px 0 rgb(0, 0, 0), 0 -1px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0) !important;
+}
+
+
+.chat-input {
+  font-size: 1.65vh;
+  position: absolute;
+
+  top: 28.8%;
+  left: 1.0%;
+  width: 38%;
+  max-width: 1000px;
+  box-sizing: border-box;
+}
+
+.chat-input > div.input {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  background-color: rgba(0,0,0, 0.9);
+  border: 3px solid #b7b7b7;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.chat-hide-state {
+  text-transform: uppercase;
+  margin-left: 0.05vw;
+  font-size: 1.65vh;
+}
+
+.prefix {
+  font-size: 1.8vh;
+  /*position: absolute;
+  top: 0%;*/
+  height: 100%;
+  vertical-align: middle;
+  line-height: calc(1vh + 1vh + 1.85vh);
+  padding-left: 0.5vh;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: inline-block;
+}
+
+textarea {/*输入框*/
+  font-size: 1.65vh;
+  line-height: 1.85vh;
+  display: block;
+  box-sizing: content-box;
+  padding: 1vh;
+  padding-left: 0.5vh;
+  color: white;
+  border-width: 0;
+  height: 3.15%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  background-color: rgba(0,0,0,0.9);
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+.msg {
+  margin-bottom: 0.28%;
+}
+
+.multiline {
+  margin-left: 4%;
+  text-indent: -1.2rem;
+  white-space: pre-line;
+}
+
+.suggestions {
+  list-style-type: none;
+  padding: 1%;
+  padding-left: 3.5%;
+  font-size: 1.65vh;
+  box-sizing: border-box;
+  color: white;
+  background-color: rgba(0,0,0, 0.9);
+  width: 100%;
+  border: 3px solid #b7b7b7;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.help {
+  color: #b0bbbd;
+}
+
+.disabled {
+  color: #b0bbbd;
+}
+
+.suggestion {
+  margin-bottom: 0.5%;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.hidden.animated {
+  transition: opacity 1s;
+}
+
+/*↓↓↓新添加↓↓↓*/
+#notification {
+  display: flex;
+  padding: 6px;
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  color: #FEFEFF;
+  border-radius: 14px;
+  max-width: 98%;
+  margin-bottom: 5px;
+  width: fit-content;
+  min-width: 15%;
+  word-wrap: break-word;
+}
+
+#color-box {
+  width: 10px;
+  float: left;
+  min-height: 100%;
+  border-radius: 8px;
+  flex-shrink:0;
+}
+
+#info {
+  margin-left: 10px;
+  width: auto;
+  max-width: 100%;
+  position: relative;
+  min-width: 85%;
+}
+
+#top-info {
+  padding-bottom: 5px;
+}
+
+#left-info {
+  float:left;
+  width:auto;
+  margin-top: 2px;
+}
+
+#right-info{
+  float:right;
+  width:50%;
+}
+
+#title {
+  float:left;
+  width: auto;
+  padding-right: 10px;
+}
+
+#sub-title {
+  float:right;
+  color: #C6C6C6;
+  padding-right: 10px;
+}
+
+#time {
+  float: right;
+  right: 5px;
+  color: #C6C6C6;
+  margin-top: 2px;
+}
+
+.noisy {
+  background-image: url(data:image/png;base64,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);  
+}
+/*↑↑↑新添加↑↑↑*/
