@@ -1,0 +1,5 @@
+open the resources folder and copy the script to your server.
+after that, open the Config.lua file and configure the script according to your server.
+
+If you use a framework other than ESX, QBCore and VRP, 
+you should open the Standalone.lua file in the Server/Frameworks folder and configure the functions according to your framework.

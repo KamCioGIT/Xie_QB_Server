@@ -1,0 +1,2106 @@
+* {
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: none;
+  /* background-color: red; */
+}
+
+.pet-buymenu{
+  display: none;
+}
+
+.pet-select{
+  display: none;
+}
+
+.pet-operations{
+  display: none;
+}
+
+.all{
+  display: block;
+}
+
+
+.testtt{
+  display: block;
+  position: absolute; 
+}
+
+@font-face {
+  font-family: SF-Pro-Display;
+  src: url("../fonts/bold.OTF") format("truetype");
+}
+
+::-webkit-scrollbar {
+  position: absolute;
+  width: 3px;
+  /* background: rgb(31, 30, 30); */
+  background:none;
+  border-radius: 28px;
+}
+  
+::-webkit-scrollbar-thumb {
+  position: absolute;
+  width: 15px;
+  background-color: none;
+  /* background: linear-gradient(#5f1604,#5a0202); */
+  border-radius: 35px;
+}
+
+.all .bottom{
+  position: absolute;
+  top: 50rem;
+  left: 0rem;
+  z-index: 0;
+}
+
+.all .solalt{
+  position: absolute;
+  top: 19.5rem;
+  left: 0rem;
+  z-index: 2;
+}
+
+.all .tamalt{
+  position: absolute;
+  top: 45rem;
+  left: 0rem;
+  z-index: 1;
+}
+
+.all .tepe{
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  z-index: 1;
+}
+
+.all .tepe2{
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  z-index: 1;
+}
+
+.all .buney{
+  position: absolute;
+  top: 0rem;
+  opacity: 0.5699999928474426;
+  width: 587.975px;
+  height: 508.554px;
+  fill: #000;
+  left: 0rem;
+  z-index: 1;
+}
+
+.all .buney2{
+  background-color: #FDAFFF;
+  width: 220px;
+  height: 163px;
+  flex-shrink: 0;
+  left: 25rem;
+  top: 20rem;
+  filter: blur(111px);
+  z-index: 2;
+  position: absolute;
+}
+
+.all .carpi{
+  background-color: #090909;
+  padding: 0.7rem 1.1rem;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: SF-Pro-Display;
+  flex-shrink: 0;
+  z-index: 5;
+  top: 63rem;
+  left: 3rem;
+  border-radius: 100%;
+  position: absolute;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.all .carpi:hover{
+  transform: scale(1.1);
+  transform: rotate(-30deg);
+}
+
+
+.all .newellipse{
+  width: 388px;
+  height: 287px;
+  transform: rotate(90.585deg);
+  border-radius: 388px;
+  background: #8AFFF8;
+  flex-shrink: 0;
+  filter: blur(111px);
+  position: absolute;
+  z-index: 2;
+  top: 55rem;
+  left: -4rem;
+}
+
+.buy-menu .headerimg{
+  fill: #FFF;
+  flex-shrink: 0;
+  z-index: 2;
+  left: 4rem;
+  top: -12rem;
+  position: absolute;
+}
+.pet-select .headerimg{
+  fill: #FFF;
+  width: 227px;
+  height: 79.841px;
+  flex-shrink: 0;
+  z-index: 2;
+  left: 13rem;
+  top: 3rem;
+  position: absolute;
+}
+
+.all .newellipse2{
+  width: 368px;
+  height: 273px;
+  border-radius: 368px;
+  background: #FFE975;
+  flex-shrink: 0;
+  filter: blur(111px);
+  left: -3rem;
+  top: -5rem;
+  position: absolute;
+  z-index: 2;
+}
+
+/* .all .alt1{
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  z-index: 1;
+}
+
+.all .alt2{
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  z-index: 1;
+} */
+
+.all .linear{
+  position: absolute;
+  background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.93) 34.72%, rgba(0, 0, 0, 0.65) 67.35%, rgba(0, 0, 0, 0.00) 100%);
+  width: 994px;
+  height: 1080px;
+  z-index: 0;
+}
+
+.pet-buymenu .ellipse1{
+  position: absolute;
+  top: 30rem;
+  left: 0rem;
+}
+
+.all .blueellipse{
+  width: 1249px;
+  height: 1189px;
+  position: absolute;
+  top: 60rem;
+  left: 0rem;
+  flex-shrink: 0;
+  border-radius: 1249px;
+  background: #7EDEFC;
+  filter: blur(222px);
+}
+
+.all .pinkellipse{
+  width: 1249px;
+  height: 1189px;
+  position: absolute;
+  top: 49rem;
+  left: 79rem;
+  flex-shrink: 0;
+  border-radius: 1249px;
+  background: #FC7EC9;
+  filter: blur(222px);
+}
+
+.all .yellowellipse{
+  width: 1249px;
+  height: 1189px;
+  position: absolute;
+  top: -17rem;
+  left: 106rem;
+  flex-shrink: 0;
+  border-radius: 1249px;
+  background: #D4FC7E;
+  filter: blur(206px);
+}
+
+.buy-menu{
+  width: 521px;
+  height: 714px;
+  z-index: 2;
+  overflow: initial;
+  border-radius: 27px;
+  background: linear-gradient(45deg, #040404 0%, #121212 100%);
+  flex-shrink: 0;
+  position: absolute;
+  left: 3rem;
+  top: 15rem;
+  border: 4px solid #1E1E1E;
+}
+
+
+.buy-menu .head-img{
+  width: 105.196px;
+  height: 37px;
+  position: absolute;
+  left: 28rem;
+  top: 1rem;
+}
+
+.buy-menu .cat-img{
+  width: 42px;
+  height: 42px;
+  border:2px solid #373737;
+  flex-shrink: 0;
+  transition-duration: 0.5s;
+  border-radius: 5px;
+  position: absolute;
+  left: 6rem;
+  top:-1rem;
+  padding: 0.1rem;
+  cursor: pointer;
+}
+
+
+
+.buy-menu .cat-img:hover{
+  background-color: white;
+}
+.buy-menu .dog-img:hover{
+  background-color: white;
+  opacity: 1;
+}
+
+.iconbg{
+  background-color: white;
+}
+
+
+.buy-menu .dog-img{
+  width: 42px;
+  height: 42px;
+  border:2px solid #373737;
+  flex-shrink: 0;
+  transition-duration: 0.5s;
+  border-radius: 5px;
+  position: absolute;
+  left: 2rem;
+  top:-1rem;
+  padding: 0.1rem;
+  cursor: pointer;
+}
+
+
+
+.buy-menu .item-box{
+  width: 33rem;
+  height: 37.5rem;
+  overflow: hidden  scroll;
+  position: absolute;
+  left:0rem;
+  margin-top:0rem;
+  top: 1rem;
+  z-index: 5;
+}
+
+.buy-menu .dalga1{
+  position: absolute;
+  top: 0rem;
+  left: 20rem;
+  border-radius: 15px;
+}
+
+.buy-menu .item{
+  cursor: pointer;
+  position: relative;
+  width: 501px;
+  height: 135px;
+  top: 1.5rem;
+  left: 0.5rem;
+  margin-top: 0.5rem;
+  transition-duration: 0.5s;
+}
+
+.buy-menu .headertext{
+  color: #2B2B2B;
+  font-family: SF-Pro-Display;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  left: 15rem;
+  position: absolute;
+  top: 1rem;
+}
+
+.buy-menu .newicon{
+  position: absolute;
+  left: 29rem;
+  top: -1rem;
+}
+.buy-menu .newicon2{
+  position: absolute;
+  left: -0.5rem;
+  top: 38.5rem;
+}
+
+.buy-menu .item:hover{
+  transform: scale(1.01);
+}
+
+.buy-menu .item .itembg{
+  position: absolute;
+  width: 501px;
+  height: 135px;
+}
+.buy-menu .item .itemborder{
+  z-index: 0;
+  position: absolute;
+  left: 0.5rem;
+  top: 0.1rem;
+}
+
+.buy-menu .item .dogimgbg{
+  background:  #1B1B1B;
+  width: 281px;
+  opacity: 0.8;
+  height: 135px;
+  border-radius: 4px;
+  position: absolute;
+  filter: blur(40px);
+  left: 0.4em;
+  z-index: 1;
+  top: 0.2rem;
+}
+
+.buy-menu .item .selectbg{
+  z-index: 4;
+  position: absolute;
+  width: 501px;
+  height: 135px;
+  display: none;
+}
+
+.relativebox{
+  position: absolute;
+  top: -0.7rem;
+  left: 0.5rem;
+}
+
+.buy-menu .relative{
+  width: 7px;
+  height: 7px;
+  position: relative;
+  margin-left: 1.2rem;
+}
+
+.buy-menu .item .dogimg{
+  position: absolute;
+  z-index: 2;
+  /* background: linear-gradient(360deg, #4e2879 0%, rgba(0, 0, 0, 0.00) 100%); */
+  border-radius: 9px;
+  left: 1rem;
+  top: -0.7rem;
+  width: 113px;
+  height: 135px;
+}
+
+.buy-menu .item .dogicon{
+  position: absolute;
+  left: 9rem;
+  top: 0.6rem;
+  z-index: 5;
+  width: 18px;
+  height: 17px;
+}
+
+.buy-menu .item .dogname{
+  color: #FFF;
+  font-size: 20px;
+  font-family: SF-Pro-Display;
+  font-style: normal;
+  font-weight: 900;
+  position: absolute;
+  left: 10.6rem;
+  top: 0.5rem;
+  line-height: normal;
+}
+
+.buy-menu .item .desc{
+  color: #606060;
+  font-size: 10px;
+  font-family: SF-Pro-Display;
+  font-style: normal;
+  font-weight: 900;
+  position: absolute;
+  left: 9rem;
+  width: 20rem;
+  height: 5.7rem;
+  z-index: 1;
+  overflow: hidden scroll;
+  top: 2.5rem;
+  line-height: normal;  
+}
+
+.buy-menu .item .price{
+  color: #9F61ED;
+  font-size: 27px;
+  font-family: SF-Pro-Display;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  position: absolute;
+  left: 9rem;
+  z-index: 2;
+  top: 5.8rem;
+}
+
+.buy-menu .item .soru{
+  position: absolute;
+  left: 28.5rem;
+  top: 6rem;
+  width: 27px;
+  z-index: 15;
+  height: 27px;
+  transition-duration: 0.5s;
+}
+
+.buy-menu .item .soru:hover{
+  transform: scale(1.2);
+  transform: rotate(360deg);
+}
+
+.buy-menu .item .item-sus{
+  position: absolute;
+  display: none;
+}
+
+.buy-menu .item .item-sus2{
+  position: absolute;
+  left: 33rem;
+  top: 10rem;
+  display: none;
+}
+
+.buy-menu .buy-bg{
+  width: 439px;
+  height: 56px;
+  border-radius: 9px;
+  background: linear-gradient(43deg, #D9D9D9 0%, #9DFF70 0.01%, #70EEFF 100%);
+  flex-shrink: 0;
+  position: absolute;
+  top: 40.5rem;
+  text-align: center;
+  transition-duration: 0.5s;
+  left: 4.5rem;
+}
+
+.buy-menu .buy-bg:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.buy-menu .buy-bg .text{
+  color: #FFF;
+  font-size: 32px;
+  position: absolute;
+  left: 12rem;
+  top: 0.8rem;
+  font-family: SF-Pro-Display;
+  font-style: normal;
+  font-weight: 900;
+  z-index: 15;
+  text-transform: uppercase;
+  line-height: normal;
+  text-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.25);
+}
+
+.buy-menu .pet-test-drive{
+  background-color: white;
+  position: absolute;
+  border-radius: 14px;
+  width: 56px;
+  height: 56px;
+  top: 40.5rem;
+  left: 0.5rem;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.buy-menu .buyhr{
+  width: 500px;
+  left: 0.5rem;
+  position: absolute;
+  top: 39rem;
+}
+.buy-menu .pet-test-drive:hover{
+  transform: scale(1.1);
+}
+
+.bottom-icon{
+  top: 58rem;
+  left: 4rem;
+  z-index: 2;
+  position: absolute;
+}
+
+.buy-menu .home{
+  position: absolute;
+  width: 1246px;
+  height: 953px;
+  z-index: 2;
+  border-radius: 27px;
+  border: 3px solid gray;
+  background: #262626;
+  flex-shrink: 0;
+  left:37.5rem;
+}
+
+.buy-menu .home .headimg{
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+}
+.buy-menu .home .altimg{
+  position: absolute;
+  top: 17.5rem;
+  left: 1rem;
+  background: #FFF;
+  border-radius: 14px;
+}
+.buy-menu .home .leftaltimg{
+  position: absolute;
+  top: 17.5rem;
+  left: 48rem;
+  background: #FFF;
+  border-radius: 14px;
+}
+
+.buy-menu .home .paw{
+  position: absolute;
+  left: 64rem;
+  top: 39.5rem;
+}
+
+.buy-menu .home .headhello{
+  font-size: 72px;
+  /* background: -webkit-linear-gradient(#FBDD71, #FF7A7A); */
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  top: 22.6rem;
+  left: 20rem;
+  text-align: center;
+  font-size: 53px;
+  font-family: SF-Pro-Display;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.buy-menu .home .headtext{
+  position: absolute;
+  left: 19.2rem;
+  top: 22.7rem;
+}
+
+.buy-menu .home .textone{
+  color: #454545;
+  text-align: center;
+  font-size: 15px;
+  left: 4rem;
+  width: 40rem;
+  top: 28rem;
+  position: absolute;
+  font-family: SF-Pro-Display;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.buy-menu .home .texttwo{
+  color: #454545;
+  text-align: center;
+  font-size: 15px;
+  left: 4rem;
+  width: 40rem;
+  top: 35rem;
+  position: absolute;
+  font-family: SF-Pro-Display;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.buy-menu .home .ellipse{
+  position: absolute;
+  top: 20rem;
+  left: 50rem;
+}
+
+.buy-menu .home .shop{
+  padding: 0.8rem 3rem;
+  border-radius: 9px;
+  background: #71C1FB;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  position: absolute;
+  top: 53rem;
+  left: 64rem;
+  color: #FFF;
+  font-size: 31px;
+  font-family: SF-Pro-Display;
+  font-style: normal;
+  font-weight: 900;
+  z-index: 2;
+  line-height: normal;
+}
+
+.buy-menu .home .shop1{
+  background: #35AAFF;
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  top: 52.6rem;
+  z-index: 1;
+  left: 63.6rem;
+  position: absolute;
+}
+.buy-menu .home .shop2{
+  background: #35AAFF;
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  top: 54rem;
+  z-index: 1;
+  left: 73.8rem;
+  position: absolute;
+}
+
+.pet-select .pet-box{
+  width: 521px;
+  height: 829px;
+  border-radius: 27px;
+  overflow: initial;
+  z-index: 2;
+  border: 4px solid #1E1E1E;
+  background: linear-gradient(45deg, #040404 0%, #121212 100%);
+  flex-shrink: 0;
+  position: absolute;
+  top: 10rem;
+  left: 3rem;
+}
+
+.pet-select .pet-box .pett-bg{
+  position: absolute;
+  left: 1.2rem;
+  width: 485px;
+  height: 236px;
+  background-color: #3d3d3d;
+  border-radius: 14px;
+  top: 1rem;
+}
+
+.pet-select .pet-box .sol-ust{
+  position: absolute;
+  left: 1rem;
+  top: 0.9rem;
+}
+
+.pet-select .pet-box .sag-orta{
+  position: absolute;
+  left: 30rem;
+  width: 24.583px;
+  height: 28.175px;
+  top: -0.8rem;
+}
+
+.pet-select .pet-box .pet-face{
+  position: absolute;
+  left: 7rem;
+  /* opacity: 0; */
+  top: 0rem;
+  flex-shrink: 0;
+  width: 260px;
+  height: 231px;
+}
+
+.pet-select .pet-box .pet-border{
+  width: 485px;
+  height: 236px;
+  border-radius: 14px;
+}
+.pet-select .pet-box .ell{
+  width: 356.247px;
+  height: 273px;
+  position: absolute;
+  left: 4rem;
+  top: 10rem;
+  border-radius: 356.247px;
+  background: #9F61ED;
+  filter: blur(111px);
+}
+
+.pet-select .pet-box .solsiyah{
+  width: 303.972px;
+  height: 403px;
+  position: absolute;
+  left: -2rem;
+  top: -40rem;
+  background:  #0A0909;
+  filter: blur(111px);
+}
+.pet-select .pet-box .sagsiyah{
+  width: 303.972px;
+  height: 403px;
+  position: absolute;
+  left: 10rem;
+  top: -40rem;
+  background: #0A0909;
+  filter: blur(111px);
+}
+
+.pet-select .pet-box .ov{
+  overflow: hidden;
+  width: 485px;
+  height: 236px;  
+  left: 1.2rem;
+  border-radius: 15px;
+  top: 1.3rem;
+  position: absolute;
+}
+.pet-select .pet-box .petleft{
+  position: absolute;
+  left: 2rem;
+  z-index: 1;
+  top:6.5rem;
+  flex-shrink: 0;
+}
+.pet-select .pet-box .petright{
+  position: absolute;
+  left: 27rem;
+  transform: rotate(180deg);
+  z-index: 1;
+  top:6.5rem;
+  flex-shrink: 0;
+}
+
+.pet-select .pet-box .pet-ayak{
+  position: absolute;
+  top: 16.5rem;
+  width: 32px;
+  height: 30px;
+  left: 1.2rem;
+}
+
+.pet-select .pet-box .pet-name{
+  color: #616161;
+  font-size: 42px;
+  font-family: SF-Pro-Display;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  position: absolute;
+  top: 16rem;
+  left: 3.4rem;
+}
+
+.pet-select .pet-box .pet-info{
+  color: #303030;
+  font-size: 15px;
+  font-family: SF-Pro-Display;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  overflow: hidden scroll;
+  height: 5rem;
+  position: absolute;
+  width: 30rem;
+  top: 19rem;
+  left: 1rem;
+}
+
+.pet-select .pet-box .hr{
+  border: 1.5px solid #D9D9D9;
+  opacity: 0.05999999865889549;
+  width: 542px;
+  left: 1rem;
+  position: absolute;
+  top: 28.5rem;
+}
+
+.pet-select .pet-box .agebg{
+  width: 42px;
+  height: 42px;
+  border-radius: 8px 0px 0px 8px;
+  background: #70A0FF;
+  flex-shrink: 0;
+  position: absolute;
+  top: 25.5rem;
+  left: 1rem;
+}
+
+.pet-select .pet-box .pasta{
+  position: absolute;
+  top: 25.9rem;
+  width: 26.494px;
+  height: 28.252px;
+  left: 1.5rem;
+}
+
+.pet-select .pet-box .agebox{
+  width: 107px;
+  height: 42px;
+  border-radius: 0px 8px 8px 0px;
+  background: linear-gradient(90deg, #6A9CFF 0%, #AF70FF 100%);
+  flex-shrink: 0;
+  position: absolute;
+  top: 25.5rem;
+  left: 4rem;
+}
+
+.pet-select .pet-box .agetext{
+  color: #2B2B2B;
+  font-size: 23px;
+  font-family: SF-Pro-Display;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+  position: absolute;
+  top: 25.9rem;
+  left: 5rem;
+}
+
+.pet-select .pet-box .levelbox{
+  width: 107px;
+  height: 42px;
+  border-radius: 8px 0px 0px 8px;
+  background: linear-gradient(90deg, #FFBD70 0%, #E270FF 100%);
+  flex-shrink: 0;
+  position: absolute;
+  top: 25.5rem;
+  left: 13rem;
+}
+.pet-select .pet-box .levelstar{
+  border-radius: 8px;
+  flex-shrink: 0;
+  position: absolute;
+  top: 26rem;
+  z-index: 2;
+  left: 20.3rem;
+}
+
+.pet-select .pet-box .leveltext{
+  color: #2B2B2B;
+  font-size: 23px;
+  font-family: SF-Pro-Display;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  position: absolute;
+  top: 26rem;
+  left: 14.6rem;
+}
+
+.pet-select .pet-box .lvlbox{
+  width: 42px;
+  height: 42px;
+  border-radius: 0px 8px 8px 0px;
+  background: #E270FF;
+  flex-shrink: 0;
+  position: absolute;
+  top: 25.5rem;
+  left: 20rem;
+}
+
+.pet-select .pet-box .mutlu{
+  position: absolute;
+  top: 26rem;
+  left: 24rem;
+}
+
+.pet-select .pet-box .colorbox{
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: #FFF;
+  flex-shrink: 0;
+  position: absolute;
+  top: 29.5rem;
+  border-radius: 8px 0px 0px 8px;
+  left: 1rem;
+}
+
+.pet-select .pet-box .colorgradient{
+  width: 107px;
+  height: 42px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6F3800 0%, #291500 31.77%, #180C00 58.33%, #000 100%);
+  flex-shrink: 0;
+  border-radius: 0px 8px 8px 0px;
+  position: absolute;
+  top: 29.5rem;
+  left: 4rem;
+}
+
+.pet-select .pet-box .newcizgi{
+  width: 160px;
+  height: 4px;
+  position: absolute;
+  top: 28.7rem;
+  left: 1rem;
+  background: linear-gradient(90deg, #3D3D3D 0%, rgba(61, 61, 61, 0.00) 100%);
+  flex-shrink: 0;
+}
+.pet-select .pet-box .newcizgi2{
+  width: 38px;
+  height: 5px;
+  transform: rotate(90deg);
+  position: absolute;
+  top: 26.8rem;
+  left: 10.6rem;
+  background: linear-gradient(90deg, #282828 0%, rgba(61, 61, 61, 0.00) 100%);
+  flex-shrink: 0;
+}
+.pet-select .pet-box .newcizgi3{
+  width: 160px;
+  height: 4px;
+  position: absolute;
+  transform: rotate(180deg);
+  top: 28.7rem;
+  left: 13.1rem;
+  background: linear-gradient(90deg, #3D3D3D 0%, rgba(61, 61, 61, 0.00) 100%);
+  flex-shrink: 0;
+}
+
+.pet-select .pet-box .cizgialt{
+  position: absolute;
+  top: 29.9rem;
+  left: 1.4rem;
+}
+
+.pet-select .pet-box .cizgialt2{
+  position: absolute;
+  top: 30.3rem;
+  left: 1.9rem;
+}
+
+.pet-select .pet-box .colorbg{
+  position: absolute;
+  top: 35rem;
+  left: 5rem;
+}
+
+.pet-select .pet-box .sexbox{
+  width: 107px;
+  height: 42px;
+  border-radius: 8px 0px 0px 8px;
+  background: #FFF;
+  flex-shrink: 0;
+  position: absolute;
+  top: 29.5rem;
+  left: 13rem;
+}
+
+.pet-select .pet-box .sextext{
+  border-radius: 8px;
+  font-family: SF-Pro-Display;
+  flex-shrink: 0;
+  font-size: 26px;
+  position: absolute;
+  top: 29.8rem;
+  color: black;
+  left: 14.1rem;
+}
+
+.pet-select .pet-box .sexicon{
+  position: absolute;
+  top: 30rem;
+  left: 20.6rem;
+  width: 24.536px;
+  height: 24.407px;
+}
+
+.pet-select .pet-box .sexiconbox{
+  width: 42px;
+  height: 42px;
+  border-radius: 0px 8px 8px 0px;
+  background: #000000;
+  flex-shrink: 0;
+  position: absolute;
+  top: 29.5rem;
+  left: 20.1rem;
+}
+
+.pet-select .pet-box .colors{
+  position: absolute;
+  top: 36rem;
+  left: 1rem;
+}
+
+.pet-select .pet-box .healthbg{
+  width: 450px;
+  height: 30px;
+  left: 4rem;
+  background: #111;
+  position: absolute;
+  top: 1.2rem;
+  border-radius: 14.5px;
+}
+
+
+ /* 1 , 2 , 3 , 4 , 5 degerli olacak +16 eklenip css yazdılaracak */
+.pet-select .pet-box .healthdata{
+  width: 50px;
+  height: 30px;
+  left: 4rem;
+  background: #FC7EC9;
+  position: absolute;
+  top: 1.2rem;
+  border-radius: 14.5px;
+}
+
+.pet-select .pet-box .healthicon{
+  position: absolute;
+  top: 0.8rem;
+  z-index: 2;
+  width: 2.5rem;
+  left: 1.2rem;
+}
+
+.pet-select .pet-box .enerjibg{
+  width: 450px;
+  height: 30px;
+  left: 4rem;
+  background: #111;
+  position: absolute;
+  top: 4.3rem;
+  border-radius: 14.5px;
+}
+
+.pet-select .pet-box .enerjidata{
+  width: 90px;
+  height: 30px;
+  left: 4rem;
+  top: 4.3rem;
+  background: #9DFF70;
+  position: absolute;
+  border-radius: 14.5px;
+}
+
+.pet-select .pet-box .enerjiiconbg{
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: #9DFF70;
+  flex-shrink: 0;
+  position: absolute;
+  top: 4rem;
+  left: 1.2rem;
+}
+
+.pet-select .pet-box .enerjiimg{
+  position: absolute;
+  top: 4.5rem;
+  z-index: 2;
+  width: 1.5rem;
+  left: 1.7rem;
+}
+
+
+.pet-select .pet-box .kemikbg{
+  width: 450px;
+  height: 30px;
+  left: 4rem;
+  background: #111;
+  position: absolute;
+  top: 7.5rem;
+  border-radius: 14.5px;
+}
+
+.pet-select .pet-box .kemikdata{
+  width: 90px;
+  height: 30px;
+  left: 4rem;
+  background: #FF922E;
+  position: absolute;
+  top: 7.5rem;
+  border-radius: 14.5px;
+}
+
+.pet-select .pet-box .kemikiconbg{
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: #FF922E;
+  flex-shrink: 0;
+  position: absolute;
+  top: 7.4rem;
+  left: 1.2rem;
+}
+
+.pet-select .pet-box .kemikimg{
+  position: absolute;
+  top: 7.85rem;
+  left: 1.8rem;
+}
+
+
+.pet-select .pet-box .damlabg{
+  width: 450px;
+  height: 30px;
+  left: 4rem;
+  background: #111;
+  position: absolute;
+  top: 10.8rem;
+  border-radius: 14.5px;
+}
+
+.pet-select .pet-box .damladata{
+  width: 120px;
+  height: 30px;
+  left: 4rem;
+  background: #00DECA;
+  position: absolute;
+  top: 10.8rem;
+  border-radius: 14.5px;
+}
+
+.pet-select .pet-box .damlaiconbg{
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: #00DECA;
+  flex-shrink: 0;
+  position: absolute;
+  top: 10.5rem;
+  left: 1.2rem;
+}
+
+.pet-select .pet-box .damlaimg{
+  position: absolute;
+  top: 11.2rem;
+  width: 1rem;
+  left: 2rem;
+}
+
+.pet-select .pet-box .lock{
+  position: absolute;
+  width: 510px;
+  height: 87px;
+  top: 46.5rem;
+  left: 0rem;
+}
+
+.pet-select .pet-box .lockbg{
+  position: absolute;
+  width: 503px;
+  height: 80px;
+  border-radius: 12px;
+  background: #353535;
+  flex-shrink: 0;
+  left: 0.5rem;
+  top: 46.5rem;
+}
+
+.pet-select .pet-box .lockicon{
+  position: absolute;
+  border-radius: 12px;
+  background: #353535;
+  flex-shrink: 0;
+  left: 15rem;
+  width: 35px;
+  height: 41px;
+  top: 47.6rem;
+}
+
+.pet-select .back{
+  position: absolute;
+  top: 2rem;
+  left: 40rem;
+}
+
+.pet-select .mamatext{
+  color: #FFF;
+  font-size: 18px;
+  font-family: SF-Pro-Display;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+  position: absolute;
+  top: 0.5rem;
+  left:8rem;
+}
+.pet-select .taketext{
+  color: #FFF;
+  font-size: 18px;
+  font-family: SF-Pro-Display;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+  position: absolute;
+  top: 0.5rem;
+  left:22.5rem;
+}
+
+.pet-select .takeawaytext{
+  display: none;
+  color: #FFF;
+  font-size: 18px;
+  font-family: SF-Pro-Display;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+  position: absolute;
+  top: 0.5rem;
+  left:22rem;
+}
+
+.pet-select .mamainfo{
+  color: #6D6D6D;
+  width: 9rem;
+  height: 4rem;
+  font-size: 12px;
+  font-family: SF-Pro-Display;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  position: absolute;
+  top: 2rem;
+  left:8rem;
+}
+.pet-select .takeinfo{
+  color: #6D6D6D;
+  width: 9rem;
+  height: 4rem;
+  font-size: 12px;
+  font-family: SF-Pro-Display;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  position: absolute;
+  top: 2rem;
+  text-align: right;
+  left:18.5rem;
+}
+
+.pet-select .mamahr{
+  position: absolute;
+  left: 16rem;
+  top: 2.4rem;
+  width: 3.5rem;
+  transform: rotate(90deg);
+  border-radius: 19px;
+  border: 4px solid #404040;
+}
+
+.pet-select .takebg{
+  width: 71px;
+  height: 71px;
+  border-radius: 8px;
+  position: absolute;
+  top: 0.3rem;
+  background:white;
+  left:28.5rem;
+}
+
+.buy{
+  top: 46.5rem;
+  left: -1.4rem;
+  z-index: 15;
+  width: 35rem;
+  height: 5rem;
+  position: absolute;
+  display: block;
+}
+
+.pet-select .mamabg{
+  width: 71px;
+  height: 71px;
+  border-radius: 8px;
+  position: absolute;
+  top: 0.3rem;
+  background:white;
+  left:2.5rem;
+}
+
+.pet-select  .mama{
+  position: absolute;
+  top: 0.8rem;
+  width: 4rem;
+  left: 2.7rem;
+}
+
+.pet-select  .take{
+  position: absolute;
+  top: 1.2rem;
+  transition-duration: 0.5s;
+  left: 28.8rem;
+}
+.pet-select  .takeaway{
+  position: absolute;
+  top: 1.4rem;
+  display: none;
+  transition-duration: 0.5s;
+  left: 28.7rem;
+}
+
+.pet-select  .take:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.pet-select  .takeaway:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.pet-select .pet-left .dogdev{
+  position: absolute;
+  left: 50rem;
+  top: 2rem;
+}
+
+
+.pet-select .pet-left .dogellipse{
+  position: absolute;
+  top: 40rem;
+  left: 75rem;
+}
+
+.pet-select .pet-left .dogellipse2{
+  position: absolute;
+  top: 40rem;
+  left: 51rem;
+}
+
+.pet-select .pet-left .leftrightbg{
+  position: absolute;
+  top: 53rem;
+  left: 76rem;
+  background: #FFF;
+  border-radius: 8px;
+  flex-shrink: 0;
+  width: 136px;
+  height: 36px;
+}
+
+.pet-select .pet-left .peticon{
+  position: absolute;
+  top: 46.5rem;
+  left: 72.5rem;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.pet-select .pet-left .anim{
+  position: absolute;
+  top: 10rem;
+  left: 93rem;
+}
+.pet-select .pet-left .animtext{
+  position: absolute;
+  top: 10.7rem;
+  left: 94.3rem;
+  font-family: SF-Pro-Display;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.pet-select .pet-left .leftrightbg .hr1{
+  border: 1.5px solid #DADADA;
+  width: 18px;
+  position: absolute;
+  left: 2rem;
+  top: 1rem;
+  transform: rotate(90deg);
+}
+
+.pet-select .pet-left .leftrightbg .circle{
+  width: 18px;
+  height: 18px;
+  border-radius: 18px;
+  background: #7EC1FF;
+  flex-shrink: 0;
+  position: absolute;
+  left: 3.5rem;
+  top: 0.5rem;
+}
+
+.pet-select .pet-left .leftrightbg .pol{
+  position: absolute;
+  top: 0.5rem;
+  left: 0.6rem;
+  transition-duration: 0.5s;
+}
+
+.pet-select .clothPage{
+  width: 521px;
+  height: 429px;
+  border-radius: 27px;
+  overflow: initial;
+  z-index: 2;
+  /* border: 4px solid #1E1E1E; */
+  /* background: linear-gradient(45deg, #040404 0%, #121212 100%); */
+  flex-shrink: 0;
+  position: absolute;
+  top: 10rem;
+  left: 94rem;
+}
+
+.pet-select .clothbox{
+  width: 521px;
+  height: 509px;
+  position: absolute;
+}
+
+.pet-select .clothelement{
+  width: 370px;
+  margin-top: 0.5rem;
+  top: 1rem;
+  position: relative;
+  height: 100px;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.pet-select .clotheader{
+  color: white;
+  font-family: SF-Pro-Display;
+  position: absolute;
+  left: 0.5rem;
+  top: 0.3rem;
+  font-weight: lighter;
+}
+
+.pet-select .clotdraw{
+  color: #cac9c9;
+  font-family: SF-Pro-Display;
+  position: absolute;
+  left: 0.5rem;
+  top: 2.2rem;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+
+.pet-select .firstleft{
+  background-color: rgb(43, 42, 42,0.8);
+  padding: 0.4rem 0.7rem;
+  color: #cac9c9;
+  top: 3.6rem;
+  left: 0.5rem;
+  border-radius: 0.2rem;
+  font-family: SF-Pro-Display;
+  position: absolute;
+  font-weight: bold;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.pet-select .firstleft:hover{
+  transform: scale(1.1);
+}
+
+.pet-select .firstmain{
+  background-color: rgb(43, 42, 42);
+  width: 6rem;
+  height: 1.96rem;
+  border: none;
+  top: 3.6rem;
+  border-radius: 0.2rem;
+  left: 2.7rem;
+  outline: none;
+  color: #cac9c9;
+  text-transform: uppercase;
+  text-align: center;
+  position: absolute;
+}
+
+
+.pet-select .firstright{
+  background-color: rgb(43, 42, 42,0.8);
+  padding: 0.4rem 0.7rem;
+  color: #cac9c9;
+  top: 3.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0.2rem;
+  font-family: SF-Pro-Display;
+  transition-duration: 0.5s;
+  left: 8.9rem;
+  position: absolute;
+}
+
+.pet-select .firstright:hover{
+  transform: scale(1.1);
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.pet-bg {
+  display: block;
+  position: absolute;
+  opacity: 0%;
+  left: 50%;
+  top: 50%;
+  width: 14%;
+  height: 9%;
+  background-image: url(../images/interaction1.png );
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* border: 1px solid white; */
+  transform: skewY(356deg);
+  /* box-shadow: #99fb22 8px -2px 14px; */
+  filter: drop-shadow(0 0 1.75rem #37074e96);
+}
+
+.pet-img {
+  /* background: darkgray; */
+  height: 45%;
+  width: 12%;
+  border-radius: 50%;
+  float: left;
+  margin-top: 2.2vh;
+  margin-left: 10%;
+  margin-right: 3%;
+  background-image: url(./unkownpet.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.prog{
+  position: absolute;
+  z-index: 5;
+  left: 0rem;
+  width: 34.5rem;
+  border-radius: 1rem;
+  height: 14rem;
+  top: 33rem;
+}
+
+
+.pett-name {
+  width: 50%;
+  display: flex;
+  left: 5%;
+  overflow: hidden;
+  font-weight: 500;
+  margin-top: 6%;
+  text-align: left;
+}
+
+.pet-gender{
+  font-size: .9vh;
+  float: left;
+  height: 21%;
+  text-align: justify;
+  width: 3%;
+}
+
+.pet-genus {
+  font-size: .9vh;
+  float: left;
+  height: 21%;
+  text-align: justify;
+  width: 40%;
+}
+
+.pet-level {
+  width: 12%;
+  height: 29%;
+  display: flex;
+  top: -28%;
+  position: relative;
+  left: 20%;
+  opacity: 0.5;
+  font-size: 1vh;
+}
+
+.pet-interacttext {
+  width: 100%;
+  height: 31%;
+  opacity: 0.8;
+  font-size: 1vh;
+  margin-top: -0.5rem;
+  /* font-size: 29px; */
+  font-family: SF-Pro-Display;
+  margin-left: 15%;
+  position: absolute;
+  color: gray;
+  text-align: center;
+}
+
+.dogsvg{
+  position: absolute;
+  left: 1rem;
+  top: -1.2rem;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.catsvg{
+  position: absolute;
+  left: 4.5rem;
+  top: -1.2rem;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.basketsvg{
+  position: absolute;
+  left: 8rem;
+  top: -1.2rem;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.dogsvg:hover{
+  transform: scale(1.05);
+}
+
+.catsvg:hover{
+  transform: scale(1.05);
+}
+
+.pet-operations .box{
+  width: 386px;
+  height: 604px;
+  border-radius: 27px;
+  background: #353535;
+  border: 3px solid white;
+  position: absolute;
+  top: 15rem;
+  left: 5rem;
+  overflow: initial;
+}
+
+.pet-operations .box .ust{
+  position: absolute;
+  left: 6.9rem;
+  top: -0.6rem;
+}
+
+.pet-operations .box .ustsus{
+  position: absolute;
+  left: 5.4rem;
+  top: -1rem;
+}
+
+.pet-operations .box .solust{
+  position: absolute;
+  left: -0.7rem;
+  top: -0.6rem;
+}
+
+.pet-operations .box .solsus{
+  position: absolute;
+  left: -1rem;
+  top: 26rem;
+}
+
+.pet-operations .box .greensus{
+  position: absolute;
+  left: 23.2rem;
+  top: 33rem;
+}
+
+.pet-operations .box .pinksus{
+  position: absolute;
+  left: 24.2rem;
+  top: 33rem;
+}
+
+.pet-operations .box .solalt{
+  position: absolute;
+  left: -0.7rem;
+  top: 28rem;
+}
+
+.pet-operations .dogimg{
+  width: 360px;
+  height: 179px;
+  border-radius: 11px;
+  position: absolute;
+  left: 0.8rem;
+  top:1rem;
+  background: linear-gradient(180deg, rgba(13, 13, 13, 0.00) 0%, #C28F5D 100%);
+}
+
+.pet-operations .dogimg .dogface{
+  position: absolute;
+  z-index: 2;
+  left: 1rem; 
+  width: 20rem;
+}
+
+.pet-operations .bgg{
+  position: absolute;
+  top: 1rem;
+}
+
+.pet-operations .ayaks{
+  position: absolute;
+  z-index: 1;
+  top: 1rem;
+  width: 360px;
+  height: 179px;
+  left: 0.8rem;
+}
+
+.pet-operations .data-box{
+  position: absolute;
+  width: 360px;
+  height: 70px;
+  border-radius: 11px;
+  border: 2px solid #525252;
+  background: #1D1D1D;
+  z-index:2;
+  top: 12.5rem;
+  left: 0.8rem;
+}
+
+
+@keyframes growProgressBar1 {
+
+  0%,
+  33% {
+    --pgPercentage: 0;
+  }
+
+  100% {
+    --pgPercentage: var(--value1);
+  }
+}
+@keyframes growProgressBar2 {
+
+  0%,
+  33% {
+    --pgPercentage: 0;
+  }
+
+  100% {
+    --pgPercentage: var(--value2);
+  }
+}
+@keyframes growProgressBar3 {
+
+  0%,
+  33% {
+    --pgPercentage: 0;
+  }
+
+  100% {
+    --pgPercentage: var(--value3);
+  }
+}
+@keyframes growProgressBar4 {
+
+  0%,
+  33% {
+    --pgPercentage: 0;
+  }
+
+  100% {
+    --pgPercentage: var(--value4);
+  }
+}
+
+@property --pgPercentage {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+:root {
+  --value1: 10;
+  --value2: 20;
+  --value3: 30;
+  --value4: 40;
+}
+
+.pet-operations .prog1 .prog[role="progressbar"] {
+  --size: 3rem;
+  --fg: #FF922E;
+  --bg: #3E3E3E;
+  --ag: white;
+  --pgPercentage: var(--value1);
+  animation: 3s ease 0s 1 normal forwards running growProgressBar1;
+  width: var(--size);
+  left: 1rem;
+  top: 0.6rem;
+  position: absolute;
+  height: var(--size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(closest-side, #1D1D1D 70%, transparent 0 99.9%, transparent 0), conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: var(--ag);
+}
+
+.pet-operations .prog1{
+  position: absolute;
+  left: 0rem;
+  width: 5rem;
+  height: 10rem;
+}
+.pet-operations .prog2{
+  position: absolute;
+  left: 5.5rem;
+  width: 5rem;
+  height: 10rem;
+}
+
+
+.pet-operations .prog2 .prog[role="progressbar"] {
+  --size: 3rem;
+  --fg: #9DFF70;
+  --bg: #3E3E3E;
+  --ag: white;
+  --pgPercentage: var(--value2);
+  animation: 3s ease 0s 1 normal forwards running growProgressBar2;
+  width: var(--size);
+  left: 1rem;
+  top: 0.6rem;
+  position: absolute;
+  height: var(--size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(closest-side, #1D1D1D 70%, transparent 0 99.9%, transparent 0), conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: var(--ag);
+}
+
+
+.pet-operations .prog3{
+  position: absolute;
+  left: 11.5rem;
+  width: 5rem;
+  height: 10rem;
+}
+
+
+.pet-operations .prog3 .prog[role="progressbar"] {
+  --size: 3rem;
+  --fg: #FF3559;
+  --bg: #3E3E3E;
+  --ag: white;
+  --pgPercentage: var(--value3);
+  animation: 3s ease 0s 1 normal forwards running growProgressBar3;
+  width: var(--size);
+  left: 1rem;
+  top: 0.6rem;
+  position: absolute;
+  height: var(--size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(closest-side, #1D1D1D 70%, transparent 0 99.9%, transparent 0), conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: var(--ag);
+}
+
+
+.pet-operations .prog4{
+  position: absolute;
+  left: 17rem;
+  width: 5rem;
+  height: 10rem;
+}
+
+
+.pet-operations .prog4 .prog[role="progressbar"] {
+  --size: 3rem;
+  --fg: #00C2FF;
+  --bg: #3E3E3E;
+  --ag: white;
+  --pgPercentage: var(--value4);
+  animation: 3s ease 0s 1 normal forwards running growProgressBar4;
+  width: var(--size);
+  left: 1rem;
+  top: 0.6rem;
+  position: absolute;
+  height: var(--size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(closest-side, #1D1D1D 70%, transparent 0 99.9%, transparent 0), conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: var(--ag);
+}
+
+.pet-operations .datakemik{
+  position: absolute;
+  top: 1.5rem;
+  width: 1.1rem;
+  left: 2rem;
+  z-index: 6;
+}
+
+.pet-operations .dot{
+   width: 6px;
+   border-radius: 50rem;
+   left: 5rem;
+   top: 2rem;
+   height: 6px;
+   position: absolute;
+   z-index: 15;
+   background-color:#3E3E3E;
+}
+
+.pet-operations .doghr{
+  border-radius: 18px;
+  position: absolute;
+  top: 17.5rem;
+  width: 360px;
+  left: 0.75rem;
+  border: 2px solid  #494949;
+}
+
+.pet-operations .opList{
+  overflow: hidden scroll;
+  position: absolute;
+  width: 23rem;
+  height: 19rem;
+  top: 18rem;
+  left: 1rem;
+}
+
+.pet-operations .opitem{
+  position: relative;
+  width: 459px;
+  height: 45px;
+  margin-top: 0.3rem;
+  cursor: pointer;
+  z-index: 4;
+  transition-duration: 0.5s;
+  
+}
+
+.pet-operations .opitem:hover{
+  transform: scale(1.01);
+}
+
+.pet-operations .opitem .lockkknk{
+  height: 45px;
+  position: absolute;
+  left: 2rem;
+}
+
+.nonselectbg{
+  position: absolute;
+  top: -0.03rem;
+  left: 2rem;
+}
+
+.pet-operations .opitem .opitembg{
+  background-color: #262525;
+  width: 17rem;
+  z-index: -1;
+  position: absolute;
+  border-radius: 1rem;
+  left: 5.1rem;
+  height: 2.8rem;
+}
+
+.pet-operations .opitem .test{
+  background-color: rgba(0, 0, 0, 0.35);
+  width: 22.2rem;
+  z-index: 55555555;
+  position: absolute;
+  border-radius: 1rem;
+  left: 0rem;
+  height: 2.8rem;
+}
+
+.pet-operations .opitem .level img{
+  position: absolute;
+  left: 8rem;
+  z-index: 5;
+  width: 1.5rem;
+  height: 1.8rem;
+  top: 0.4rem;
+}
+
+.pet-operations .opitem .level .levelnumber{
+  position: absolute;
+  left: 10.5rem;
+  font-family: SF-Pro-Display;
+  z-index: 5; 
+  top: 0.4rem;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  color:white;
+}
+
+.pet-operations .opitem .opdot{
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  z-index:14;
+  top: 1.2rem;
+  border-radius: 50%;
+  background-color: #333;
+  left: 10rem;
+}
+
+.pet-operations .opitem .optext{
+  color: #333;
+  font-family: SF-Pro-Display;
+  font-size: 23px;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  position: absolute;
+  left: 17rem;
+  top: 0.7rem;
+}
+
+.pet-operations .opitem .knks{
+  position: absolute;
+  left:0rem;
+  top: 0rem;
+}
+

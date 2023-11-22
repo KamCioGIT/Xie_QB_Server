@@ -1,0 +1,1 @@
+ALTER TABLE `player_vehicles` ADD COLUMN `position` LONGTEXT NULL DEFAULT NULL;

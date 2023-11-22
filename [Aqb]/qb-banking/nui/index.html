@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="scripting/jquery-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>QBCore Banking</title>
+</head>
+
+<body>
+
+    <div class="container" id="bankingContainer">
+        <div class="row">
+            <div class="col-3">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <img src="images/logo.png" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="nav flex-column nav-pills p-2 shadow-lg" id="v-pills-tab" role="tablist" aria-orientation="vertical" style="background:rgba(51, 51, 51, 0.8); border-radius: 5px;">
+                                <a class="nav-link active m-1" id="bankingHome-tab" data-toggle="pill" href="#bankingHome" role="tab" aria-controls="bankingHome" aria-selected="true" style="color: white">主页</a>
+                                <a class="nav-link m-1" id="bankingWithdraw-tab" data-toggle="pill" href="#bankingWithdraw" role="tab" aria-controls="bankingWithdraw" aria-selected="false" style="color: white">取款</a>
+                                <a class="nav-link m-1" id="bankingDeposit-tab" data-toggle="pill" href="#bankingDeposit" role="tab" aria-controls="bankingDeposit" aria-selected="false" style="color: white">存款</a>
+                                <a class="nav-link m-1" id="bankingTransfer-tab" data-toggle="pill" href="#bankingTransfer" role="tab" aria-controls="bankingTransfer" aria-selected="false" style="color: white">转账</a>
+                                <a class="nav-link m-1" id="bankingStatement-tab" data-toggle="pill" href="#bankingStatement" role="tab" aria-controls="bankingStatement" aria-selected="false" style= "color: white">账单</a>
+                                <a class="nav-link m-1" id="bankingSavings-tab" style="display:none; color: white;" data-toggle="pill" href="#bankingSavings" role="tab" aria-controls="bankingSavings" aria-selected="false">储蓄账户</a>
+                                <a class="nav-link m-1" id="bankingActions-tab" data-toggle="pill" href="#bankingActions" role="tab" aria-controls="bankingActions" aria-selected="false" style="color: white">账户选项</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: white;">
+                                <div class="card-header">账户信息</div>
+                                <div class="card-body">
+                                    <p class="card-text" style="color: white;"><small>
+                                        账户名称: <span id="accountName"></span><br>
+                                        账号: <span id="accountNumber"></span><br>
+                                        <!--Account Sort Code: <span id="accountSortCode">-->
+
+                                        </span></small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button class="btn btn-block" id="logoffbutton" style="background-color: #DC143C; color: white">关闭</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-9">
+                <!-- Content Area -->
+                <div class="tab-content p-2 shadow-lg" id="v-pills-tabContent" style="max-height:780px; min-height:780px;">
+                    <div class="tab-pane fade show active" id="bankingHome" role="tabpanel" aria-labelledby="bankingHome-tab" style="position: relative; top: 54px;">
+                        <div class="container-fluid p-2">
+                            <div class="row">
+                                <div class="col-12 title">
+                                    <h3 style="font-size: 35px;">欢迎, <span id="customerName"></span></h3>
+                                </div>
+                            </div>
+                            <div class="row" id="successRow" style="display:none;">
+                                <div class="col-12">
+                                    <div class="alert alert-success" role="alert" id="successMessage"></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: white;">
+                                        <div class="card-header"><i class="fa-solid fa-fw fa-vault"></i> 银行余额:</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title" style="font-weight: bolder; color: #28a745;" id="currentBalance"></h5>
+                                            <p class="card-text" style="color: white;">可提取/转账的总金额</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: white;">
+                                        <div class="card-header"><i class="fa-solid fa-fw fa-wallet"></i> 现金:</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title" style="font-weight: bolder; color: #28a745;" id="currentCashBalance"></h5>
+                                            <p class="card-text" style="color: white;">可存入总额</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8);">
+                                        <div class="card-header" style="color: white"><i class="fa-solid fa-fw fa-pencil"></i> 快速操作:</div>
+                                        <div class="card-body">
+                                            <div class="container-fluid">
+                                                <div class="row m-1">
+                                                    <div class="col-4"><button class="btn btn-primary btn-block" data-action="deposit" data-amount="100">存入 $100</button></div>
+                                                    <div class="col-4"><button class="btn btn-primary btn-block" data-action="deposit" data-amount="1000">存入 $1,000</button></div>
+                                                    <div class="col-4"><button class="btn btn-primary btn-block" data-action="deposit" data-amount="10000">存入 $10,000</button></div>
+                                                </div>
+                                                <div class="row m-1">
+                                                    <div class="col-4"><button class="btn btn-secondary btn-block" data-action="withdraw" data-amount="100">取款 $100</button></div>
+                                                    <div class="col-4"><button class="btn btn-secondary btn-block" data-action="withdraw" data-amount="1000">取款 $1,000</button></div>
+                                                    <div class="col-4"><button class="btn btn-secondary btn-block" data-action="withdraw" data-amount="10000">取款 $10,000</button></div>
+                                                </div>
+                                                <div class="row m-1">
+                                                    <div class="col-6">
+                                                        <button class="btn btn-info btn-block" id="savingsQuicky1" style="display:none;" data-action="savingsdeposit" data-amount="10000">从银行转账 10,000 美元到储蓄</button>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <button class="btn btn-info btn-block" id="savingsQuicky2" style="display:none;" data-action="savingswithdraw" data-amount="10000">从储蓄转账 10,000 美元到银行</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="bankingWithdraw" role="tabpanel" aria-labelledby="bankingWithdraw-tab">
+                        <div class="container-fluid p-2" style="position: relative; top: 54px;">
+                            <div class="row">
+                                <div class="col-12 title">
+                                    <h3 style="font-size: 35px;">取款</h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12" style="font-size: 12px; color: white;">
+                                    从您的银行帐户中提取资金。 要从您的储蓄账户提取资金，首先您必须进行转账。
+                                </div>
+                            </div>
+                            <div class="row" style="position: relative; top: 20px;">
+                                <div class="col-6">
+                                    <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: white;">
+                                        <div class="card-header"><i class="fa-solid fa-fw fa-vault"></i> 当前余额:</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title" style="font-weight: bolder; color: #28a745;" id="currentBalance1"></h5>
+                                            <p class="card-text" style="color: white;">可提取/转账的总金额</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: white;">
+                                        <div class="card-header"><i class="fa-solid fa-fw fa-wallet"></i> 现金:</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title" style="font-weight: bolder; color: #28a745;" id="currentCashBalance1"></h5>
+                                            <p class="card-text" style="color: white;">可存入总额</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="position: relative; top: 20px;">
+                                <div class="col-12">
+                                    <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: white;">
+                                        <div class="card-body">
+                                            <div class="container-fluid">
+                                                <div class="row" id="withdrawError" style="display:none;">
+                                                    <div class="col-12">
+                                                        <div class="alert alert-danger" role="alert" id="withdrawErrorMsg">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-2">
+                                                    <div class="col-3 my-auto" style="font-size: 19px; color: white;"><label for="withdrawAmount"><small>提款金额:</small></label></div>
+                                                    <div class="col-9"><input type="number" placeholder="$" class="form-control" id="withdrawAmount" name="withdrawAmount"></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="position: relative; top: 20px;">
+                                <div class="col-12 text-center"><button class="btn" style="background-color: #28a745; color: white" id="initiateWithdraw">完成</button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="bankingDeposit" role="tabpanel" aria-labelledby="bankingDeposit-tab">
+                        <div class="container-fluid p-2" style="position: relative; top: 54px;">
+                            <div class="row">
+                                <div class="col-12 title">
+                                    <h3 style="font-size: 35px;">存款</h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12" style="font-size: 12px; color: white;">
+                                    将钱存入您的银行帐户。 要将钱存入您的储蓄账户，只需在首次存款后从您的银行转帐即可。
+                                </div>
+                            </div>
+                            <div class="row" style="position: relative; top: 20px;">
+                                <div class="col-6">
+                                    <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: white;">
+                                        <div class="card-header"><i class="fa-solid fa-fw fa-vault"></i> 当前余额:</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title" style="font-weight: bolder; color: #28a745;" id="currentBalance2"></h5>
+                                            <p class="card-text" style="color: white;">可提取/转账的总金额</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: white;">
+                                        <div class="card-header"><i class="fa-solid fa-fw fa-wallet"></i> 现金:</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title" style="font-weight: bolder; color: #28a745;" id="currentCashBalance2"></h5>
+                                            <p class="card-text" style="color: white;">可存入总额</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="position: relative; top: 20px;">
+                                <div class="col-12">
+                                    <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: white;">
+                                        <div class="card-body">
+                                            <div class="container-fluid">
+                                                <div class="row" id="depositError" style="display:none;">
+                                                    <div class="col-12">
+                                                        <div class="alert alert-danger" role="alert" id="depositErrorMsg">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-2">
+                                                    <div class="col-3 my-auto" style="font-size: 19px; color: white;"><label for="depositAmount"><small>存款金额:</small></label></div>
+                                                    <div class="col-9"><input type="number" placeholder="$" class="form-control" id="depositAmount" name="depositAmount"></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="position: relative; top: 20px;">
+                                <div class="col-12 text-center"><button class="btn" style="background-color: #28a745; color: white" id="initiateDeposit">完成</button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="bankingTransfer" role="tabpanel" aria-labelledby="bankingTransfer-tab">
+
+                        <div class="container-fluid p-2" style="position: relative; top: 54px;">
+                            <div class="row">
+                                <div class="col-12 title">
+                                    <h3 style="font-size: 35px;">转账</h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12" style="font-size: 12px; color:white">只需输入该账户的专用号码和转账金额即可将资金转移到另一个账户。
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12" style="position: relative; top: 20px;">
+                                    <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: white;">
+                                        <div class="card-body">
+                                            <div class="container-fluid">
+                                                <div class="row" id="transferError" style="display:none;">
+                                                    <div class="col-12">
+                                                        <div class="alert alert-danger" role="alert" id="transferErrorMsg">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <!-- form -->
+                                                        <div class="container-fluid">
+                                                            <div class="row m-1">
+                                                                <div class="col-3 my-auto" style="font-size: 19px; color: white;"><label for="transferAcctNo"><small>账号:</small></label></div>
+                                                                <div class="col-9"><input type="text" id="transferAcctNo" name="transferAcctNo" class="form-control"></div>
+                                                            </div>
+                                                            <div class="row m-1">
+                                                                <div class="col-3 my-auto" style="font-size: 19px; color: white;"><label for="transferAmount"><small>转账金额:</small></label></div>
+                                                                <div class="col-9"><input type="number" id="transferAmount" name="transferAmount" class="form-control" placeholder="$"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-center" style="position: relative; top: 20px;">
+                                    <button class="btn" id="initiateTransfer" style="background-color: #28a745; color: white">完成</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="bankingStatement" role="tabpanel" aria-labelledby="bankingStatement-tab">
+                        <div class="container-fluid p-2">
+                            <div class="row">
+                                <div class="col-12 title">
+                                    <h3>往来账户结单</h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card bg-light mb-3">
+                                        <div class="card-body">
+                                            <table id="currentStatement" class="display" style="width:100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th>日期</th>
+                                                        <th>详情</th>
+                                                        <th class="text-center">取款</th>
+                                                        <th class="text-center">存款</th>
+                                                        <th class="text-center">新余额</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="currentStatementContents">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="bankingSavings" role="tabpanel" aria-labelledby="bankingSavings-tab">
+                        <div class="container-fluid p-2" style="position: relative; top: 54px;">
+                            <div class="row">
+                                <div class="col-12 title">
+                                    <h4 style="font-size: 35px;">储蓄账户</h4>
+                                </div>
+                            </div>
+                            <div class="row" style="position: relative; top: 20px;">
+                                <div class="col-4" style="color: #00af17">
+                                    <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: white; min-height:150px;">
+                                        <div class="card-header"><i class="fa-solid fa-fw fa-piggy-bank"></i> 储蓄账户余额:</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">&#36;&nbsp;<span id="savingsBalance"></span></h5>
+                                            <p class="card-text" style="font-size: 10px; color: white;">这是您目前在储蓄账户中存入的金额</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-8">
+                                    <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: white;">
+                                        <div class="card-header">储蓄取款和存款</div>
+                                        <div class="card-body">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-4"><label for="savingsAction"><small>操作</small></label>
+                                                        <select name="savingsAction" id="savingsAction" class="form-control" style="font-size: 13px;">
+                                                        <option selected disabled value="def">请选择</option>
+                                                        <option value="deposit">存款</option>
+                                                        <option value="withdraw">取款</option>
+                                                    </select>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <label for="savingsTAmount"><small>数额</small></label>
+                                                        <input type="number" id="savingsTAmount" name="savingsTAmount" class="form-control" placeholder="$" style="font-size: 13px;">
+                                                    </div>
+                                                    <div class="col-4 my-auto">
+                                                        <button class="btn btn-block" id="makeSavingsTransfer" style="background-color: #28a745; font-size: 12px; color: white">完成</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="position: relative; top: 60px">
+                            <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: white;">
+                                <div class="card-header">储蓄账户结单</div>
+                                <div class="card-body">
+                                    <table id="savingsStatement" class="display" style="width:100%">
+                                        <thead>
+                                            <tr style="font-size: 14px; color: white;">
+                                                <th>日期</th>
+                                                <th>详情</th>
+                                                <th class="text-center">取款</th>
+                                                <th class="text-center">存款</th>
+                                                <th class="text-center">新余额</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="savingsStatementContents" style="font-size: 14px;">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="bankingActions" role="tabpanel" aria-labelledby="bankingActions-tab" style="position: relative; top: 54px;">
+                        <div class="container-fluid p-2">
+                            <div class="row">
+                                <div class="col-12 title">
+                                    <h3 style="font-size: 35px;">账户选项</h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 content" style="font-size: 12px;">
+                                    <p>在“账户选项”部分中，您可以管理银行业务体验的各个方面，从订购新借记卡、更改密码，甚至创建储蓄账户。</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: white;">
+                                        <div class="card-header" style="color: white">借记卡管理</div>
+                                        <div class="card-body">
+                                            <!-- Card In-Active Container -->
+                                            <div class="container-fluid" id="cardInactive" style="display:none;">
+                                                <div class="row">
+                                                    <div class="col-12 content" style="font-size: 16px;">
+                                                        <p>您可以为自己订购一张借记卡，以便使用免费提供的 ATM 和卡支付功能.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <button class="btn btn-block" id="orderCardBtn" style="background:#28a745; color: white;">订购借记卡</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Order Card Screen -->
+                                            <div class="container-fluid" id="cardOrdering" style="display:none;">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <p>要订购新的借记卡，您首先需要设置个人识别码 (PIN)，这样您就可以在 ATM 机上使用您的卡</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row" id="pinCreatorError" style="display:none;">
+                                                    <div class="col-12">
+                                                        <div class="alert alert-warning" role="alert" id="pinCreatorErrorMsg">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-3 my-auto">
+                                                        <label for="cardPinNumber"><small>个人密码</small></label>
+                                                    </div>
+                                                    <div class="col-9">
+                                                        <input type="password" maxlength="4" id="cardPinNumber" name="cardPinNumber" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-2">
+                                                    <div class="col-12 text-center "><button class="btn btn-info" id="processCard">确定</button></div>
+                                                </div>
+                                            </div>
+                                            <!-- Card Active Container -->
+                                            <div class="container-fluid" id="cardDetails" style="display:none;">
+                                                <div class="row">
+
+                                                    <div class="col-4">
+                                                        <div class="card text-white bg-info mb-3" id="debitCardPin" style="min-height:230px">
+                                                            <div class="card-header">修改密码</div>
+                                                            <div class="card-body">您的 PIN 码当前已设置.</div>
+                                                            <div class="card-footer">
+                                                                <button class="btn btn-primary btn-block" id="changePin">修改</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-4">
+                                                        <div class="card text-white bg-dark mb-3" id="requestNewCard1" style="min-height:230px; display:block;">
+                                                            <div class="card-header">请求新卡</div>
+                                                            <div class="card-body">当前有效卡<br>
+                                                                <small><span id="cardType">Visa</span><br>
+                                                                        <span id="cardNumberShow">************3455</span></small>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <button class="btn btn-primary btn-block" id="makeNewCardRequestBtn1">提出请求</button>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="card text-white bg-dark mb-3" id="requestNewCard2" style="min-height:230px; display:none;">
+                                                            <div class="card-header">确认</div>
+                                                            <div class="card-body"><small>提出此请求后，您的旧卡将被冻结.</small>
+
+                                                            </div>
+                                                            <div class="card-footer text-center">
+                                                                <button class="btn btn-success btn-sm" id="confirmCardRequest">确认</button> <button class="btn btn-danger btn-sm" id="cancelNewCardReq">取消</button>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="card text-white bg-success mb-3" id="requestNewCard3" style="min-height:230px; display:none;">
+                                                            <div class="card-header">请求已确认</div>
+                                                            <div class="card-body"><small>您收到了一张新卡，而您之前的卡已被屏蔽.</small>
+
+                                                            </div>
+                                                            <div class="card-footer text-center">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-4">
+                                                        <div class="card text-white bg-success mb-3" id="debitCardStatus" style="min-height:230px">
+                                                            <div class="card-header">卡已解锁</div>
+                                                            <div class="card-body">您的卡当前处于活动状态.</div>
+                                                            <div class="card-footer">
+                                                                <button class="btn btn-primary btn-block" id="lockCard">锁定/封锁卡</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" id="createNewPin" style="display:none;">
+                                                    <div class="col-12">
+                                                        <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: white;">
+                                                            <div class="card-header">创建一个新 Pin</div>
+                                                            <div class="card-body">
+                                                                <div class="container-fluid">
+                                                                    <div class="row" id="newPinReqMsgDiv" style="display:none;">
+                                                                        <div class="col-12">
+                                                                            <div class="alert alert-danger" role="alert" id="newPinReqMsg">
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-3 my-aut"><label for="newPinNumber"><small>新密码</small></label></div>
+                                                                        <div class="col-9"><input type="password" class="form-control" id="newPinNumber" name="newPinNumber"></div>
+                                                                    </div>
+                                                                    <div class="row mt-2">
+                                                                        <div class="col-12 text-center"><button class="btn btn-success" id="updateNewPin">更新密码</button></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" id="savingAccountCreator" style="display:none;">
+                                <div class="col-12">
+                                    <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: white;">
+                                        <div class="card-header">储蓄账户管理</div>
+                                        <div class="card-body">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-12 content" style="font-size: 16px;">
+                                                        <p>您尚未在银行开设储蓄账户，请点击下面的按钮开设个人储蓄账户，并有单独的账号和排序代码.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <button class="btn btn-block mt-2" style="background:#28a745; color: white;" id="openSavings">开设储蓄账户</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <p class="card-text"><small>此部分可让您轻松管理您的储蓄账户.</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="scripting/external/jquery/jquery.js"></script>
+    <script src="scripting/jquery-ui.js"></script>
+    <script src="scripting/popper.min.js"></script>
+    <script src="scripting/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripting/datatables.min.js"></script>
+    <script src="qb-banking.js"></script>
+</body>
+
+</html>

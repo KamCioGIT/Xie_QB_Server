@@ -1,0 +1,28 @@
+Inventory.Open({
+  "maxammo": {
+    "shotgun": 200,
+    "smg": 250,
+    "pistol": 250,
+    "rifle": 250
+  },
+  "Ammo": [],
+  "slots": 41,
+  "inventory": [
+    {
+      "type": "item",
+      "slot": 1,
+      "description": "你有一个漂亮的手机",
+      "shouldClose": false,
+      "amount": 1,
+      "label": "手机",
+      "info": [],
+      "image": "phone.png",
+      "useable": false,
+      "unique": true,
+      "weight": 700,
+      "name": "phone"
+    }
+  ],
+  "action": "open",
+  "maxweight": 120000
+})
