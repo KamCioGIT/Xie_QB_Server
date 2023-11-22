@@ -1,0 +1,4 @@
+motel interior -226.2884, -839.8974, 105.3926
+corridor  -238.2847, -832.6072, 95.2551
+
+If you would like to use the color changing feature of corridors and motel rooms, there is a sample usage code in qua_loft.lua. We have provided information on how this works. We do not provide support for adapting this
