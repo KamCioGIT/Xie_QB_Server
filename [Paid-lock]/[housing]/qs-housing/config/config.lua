@@ -273,8 +273,6 @@ Config.KeyHouseMenuRealEstate = 'F6'
 Config.HousingTypes = { mlo = true, shell = true, ipl = true }
 Config.Realestatejob = {
     ['realestate'] = true,
-    ['realestatejob'] = true,
-    ['police'] = true,
 }
 
 --[[
