@@ -793,7 +793,7 @@ const playerHud = {
             dev: 0,
             show: false,
             talking: false,
-            showVoice: true,
+            showVoice: false,
             showHealth: false,
             showArmor: true,
             showHunger: true,

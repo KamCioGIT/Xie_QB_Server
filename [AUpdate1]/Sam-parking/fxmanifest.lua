@@ -13,7 +13,7 @@ server_scripts {
 }
 
 shared_scripts {
-	'locales/en.lua',
+	'locales/cn.lua',
 	'config.lua',
     '@ox_lib/init.lua'
 }
