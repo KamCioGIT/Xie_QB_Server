@@ -1,0 +1,19 @@
+HANE STUDIOS - SHELBY'S OFFICE & GOLDEN PUB
+
+- This is not a resource to be start on your server. 
+
+- These are the files that solve the conflict problem of the Shelby's Office and Golden Pub project with the most used maps on fivem servers.
+
+
+
+----------------------------
+INSTALLATION
+
+- Search for all files with their name in the gpubconf_files folder in the resource folder of your server
+- Replace all the files in the results with the files in the shelbys_files folder.
+----------------------------
+
+
+These are the maps where the conflict problem is solved:
+- Mirror Park houses
+- Horny's Burgers
