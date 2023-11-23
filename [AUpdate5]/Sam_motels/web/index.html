@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ec73b5a333.js" crossorigin="anonymous"></script>
     <link href="https://res-fa-server.github.io/css/all.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
@@ -13,450 +14,38 @@
     <title>0resmon-motels</title>
 </head> 
 <body>
-    <div id="ElevatorMenu"></div>
-    <div class="NewEditMenu">
-        <h1><span id="degisken"></span></h1>
-        <p><span id="enterinfo"></span></p>
-        <div class="onuratmaca"></div>
-        <div id="CreateBabalarSozunuTutar">
-            <div class="BoxUnpat">
-                <h3><span id="Adezorospusu"></h3>
-                <input id="moxelname" class="ahput" placeholder="输入汽车旅馆名称">
-            </div>
-            <div class="BoxUnpat">
-                <h3><span id="motelpricetext">/</span></h3>
-                <input id="moxelprice" type="number" class="ahput" placeholder="输入销售价格">
-            </div>
-
-            <div class="BoxUnpat">
-                <h3><span id="discountext"></span></h3>
-                <input id="discountvaluxe" type="number" class="ahput" placeholder="折扣价值">
-            </div>
-
-            <div class="BoxUnpat">
-                <h3><span id="receptioncoords"></span></h3>
-                <input id="recepivediksiyon" class="ahput short" placeholder="vector3(111,111,111)">
-                <button id="HotelReceptionCopy" class="RecepFazilYarakKurek"><i class="fa-solid fa-copy"></i></button>
-            </div>
-
-            <div class="BoxUnpat">
-                <h3><span id="GarageString"></span></h3>
-                <div class="ayarSwitch">
-                    <label id="thisGarage" class="switch">
-                        <input data-id="${element.RoomId}" type="checkbox" ${autoPayChecked}>
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="BoxUnpat">
-                <h3><span id="ApartmentString"></span></h3>
-                <div class="ayarSwitch">
-                    <label id="thisApartment" class="switch">
-                        <input data-id="${element.RoomId}" type="checkbox" ${autoPayChecked}>
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-            </div>
-
-            <div id="GarageCoordK" class="BoxUnpat fullV">
-                <h3><span id="GarageCoordsString"></span></h3>
-                <input id="HotelGarage" class="ahput shortfull" placeholder="vector3(111,111,111)">
-                <button id="HotelGarageCopy" class="RecepFazilYarakKurek"><i class="fa-solid fa-copy"></i></button>
-            </div>
-
-            <div id="GarageTheme" class="BoxUnpat BigBoy">
-                <div class="BigBoy-Part BigSe">
-                    <img src="rooms/blue_corridor.png">
-                </div>
-                <div class="BigBoy-Part">
-                    <img src="rooms/blue_corridor.png">
-                </div>
-            </div>
-
-            <div id="CorridorTheme" class="BoxUnpat BigBoy">
-                <div class="BigBoy-Part BigSe">
-                    <img src="rooms/red_corridor.png">
-                </div>
-                <div class="BigBoy-Part">
-                    <img src="rooms/blue_corridor.png">
-                </div>
-            </div>
-
-            <button id="CrexMotel" class="BabalaTv"><span id="yudum"></span></button>
-        </div>
-        <div id="CreateRoomCC">
-            <div class="SelectBox">
-                <div id="mlo"class="Rektor">
-                    <h3><span id="MloString"></span></h3>
-                </div>
-                <div id="ipl" class="Rektor">
-                    <h3><span id="TeleportString"></span></h3>
-                </div>
-            </div>
-            <div id="entelMaganda">
-                <div class="BoxUnpat">
-                    <h3><span id="DoorHash"></span></h3>
-                    <input id="doorHashBaba" class="ahput short" placeholder="-16575494">
-                    <button id="roomDoorHash" class="RecepFazilYarakKurek"><i class="fa-solid fa-copy"></i></button>
-                </div>
-                <div class="BoxUnpat">
-                    <h3><span id="EnterCoordString"></span></h3>
-                    <input id="roomGirisCoord" class="ahput short" placeholder="vector3(111,111,111)">
-                    <button id="EditorRoomEnter" class="RecepFazilYarakKurek"><i class="fa-solid fa-copy"></i></button>
-                </div>
-                <div class="BoxUnpat">
-                    <h3><span id="StashCoordText"></span></h3>
-                    <input id="StashCoord" class="ahput short" placeholder="vector3(111,111,111)">
-                    <button id="EnterStashCoord" class="RecepFazilYarakKurek"><i class="fa-solid fa-copy"></i></button>
-                </div>
-                <div class="BoxUnpat">
-                    <h3><span id="WardrobeCoordString"></span></h3>
-                    <input id="WardrobeCoord" class="ahput short" placeholder="vector3(111,111,111)">
-                    <button id="WardrobeCoordEnter" class="RecepFazilYarakKurek"><i class="fa-solid fa-copy"></i></button>
-                </div>
-                <div class="BoxUnpat">
-                    <h3><span id="TypeText"></span></h3>
-                    <input id="RoomType" type="text" class="ahput" placeholder="房型">
-                </div>
-                <div class="BoxUnpat">
-                    <h3><span id="StashWeightString"></span></h3>
-                    <input id="RoomStashWeight" type="number" class="ahput" placeholder="藏匿重量">
-                </div>
-                <div class="BoxUnpat">
-                    <h3><span id="RoomPriceString"></span></h3>
-                    <input type="number" id="odaFiat" class="ahput" placeholder="房间价格">
-                </div>
-                <button id="CreateRoomPart" class="BabalaTv"><span id="CreateMotelRoomV"></span></button>
-            </div>
-            <div id="Mematiler">
-                <div id="TeleportMlos" class="BoxUnpat BigBoy">
-                </div>
-                <div class="BoxUnpat">
-                    <h3><span id="EnterRoomCoord2"></span></h3>
-                    <input id="roomEnterCoord" class="ahput short" placeholder="vector3(111,111,111)">
-                    <button id="enterRoomCoord" class="RecepFazilYarakKurek"><i class="fa-solid fa-copy"></i></button>
-                </div>
-                <div class="BoxUnpat">
-                    <h3><span id="Price2"></span></h3>
-                    <input id="roomFiyat" type="number" class="ahput" placeholder="房间价格">
-                </div>
-                <div class="BoxUnpat">
-                    <h3><span id="StashWeight2"></span></h3>
-                    <input type="number" id="roomWeight" class="ahput" placeholder="藏匿重量">
-                </div>
-                <div class="BoxUnpat">
-                    <h3><span id="TypeTextString"></h3>
-                    <input id="egerIstersen" type="text" class="ahput" placeholder="标准" disabled>
-                </div>
-                <button id="createRoom" class="BabalaTv"><span id="CreateMotelRoom"></span></button>
-            </div>
-        </div>
-    </div>
-
-    <div class="GarageContainer">
-        <h1><span id="notelname">0RESMON MOTEL</span> <font style="color: #D9D9D9;">车库</font></h1>
-        <div class="Uwu"></div>
-        <div class="GarageList">
-            <div class="GarageList-Item">
-                <h3><i class="fa-duotone fa-empty-set"></i></h3>
-                <div class="ayirbu"></div>
-                <h5>ROOM 1</h5>
-            </div>
-
-            <div class="GarageList-Item">
-                <center>
-                    <img src="https://docs.fivem.net/vehicles/champion.webp">
-                </center>
-                <div style="top: 1.3vh;" class="ayirbu"></div>
-                <h5 style="margin-top: 1.9vh;">ROOM 1</h5>
-            </div>
-
-            <div class="GarageList-Item">
-                <center>
-                    <img src="https://docs.fivem.net/vehicles/champion.webp">
-                </center>                
-                <div style="top: 1.3vh;" class="ayirbu"></div>
-                <h5 style="margin-top: 1.9vh;">ROOM 1</h5>
-            </div>
-            
-        </div>
-    </div>
-
-    <div class="ChooseColorRoom">
-        <h1><span id="EditRoomThemeString"></span></h1>
-        <p><span id="ChooseColor"></span></p>
-        <div class="Rog">
-            <!-- <div class="Rog-Item">
-                <img src="rooms/bej_double.png">
-                <div class="hover-text">Yazı Çıkacak</div>
-            </div>
-            <div class="Rog-Item">
-                <img src="rooms/marble_double.png">
-                <div class="hover-text">Yazı Çıkacak</div>
-            </div>
-            <div class="Rog-Item">
-                <img src="rooms/orange_double.png">
-                <div class="hover-text">Yazı Çıkacak</div>
-            </div>
-            <div class="Rog-Item">
-                <img src="rooms/red_double.png">
-                <div class="hover-text">Yazı Çıkacak</div>
-            </div>
-            <div class="Rog-Item">
-                <img src="rooms/blue_double.png">
-                <div class="hover-text">Yazı Çıkacak</div>
-            </div> -->
-        </div>
-    </div>
-    <div class="AreYouRead">
-        <div class="Damla">
-            <img src="pimg/char1_80877aca6164d3df0a469fe3c96f2524127ab052.png">
-        </div>
-       <h3><span id="TextFormat"></span></h3>
-       <h4><span id="LangAccept"></span> <font color="#1ec273"><b>[K]</b></font></h4>
-       <h4><span id="LangReject"></span> <font color="#ff4b4b"><b>[G]</b></font></h4>
-    </div>
-
+    
     <div class="NotifyPart"></div>
 
-    <div id="ReceptionContainer">
-        <h1><span id="MotelNameMain"></span></h1>
-        <div class="Yildizlar"></div>
-        <h3><span id="ReceptionText"></h3>
-
-        <div id="menurece" class="center">
-            <div class="ReceptionMenuContainer">
-                <div id="MenuBut" data-id="recepbuton" class="ReceptionMenuContainer-item recepbuton">
-                    <p><span id="ReceptionMenuString"></span></p>
-                </div>
-                <div id="MenuBut" data-id="myRooms5" class="ReceptionMenuContainer-item myRooms5">
-                    <p><span id="MyRoomString"></span></p>
-                </div>
-                <div class="ReceptionMenuContainer-item motelAdmin">
-                    <p><span id="MotelManagement"></span></p>
-                </div>
-                <div id="MenuBut" data-id="feedBackV" class="ReceptionMenuContainer-item feedbackV">
-                    <p><span id="FeedbackString"></span></p>
-                </div>
-            </div>
-
-            <div style="left: 41%;" class="ReceptionMenuContainer">
-                <div id="mot" class="ReceptionMenuContainer-item">
-                    <p><i class="fa-solid fa-bell"></i></p>
-                </div>
+    <div class="PlayerMotelRoomList">
+        <h1>钥匙列表</h1>
+        <p>您拥有的钥匙列表</p>
+        <div class="belirlen"></div>
+        <div id="playeranahtarlar" class="myodalar">
+            <div class="roomb">
+                <h3>旅馆</h3>
+                <h5>房间 1 <i class="fa-solid fa-crown"></i></h5>
             </div>
         </div>
-        
-        <div class="Coupon">
-            <h5><span id="DiscountText"></span><font color="#0ad953"> %<span id="DiscountValue"></span></font></h5>
-        </div>
-
-        <div id="roomb"></div>
-
-        <div id="myrooms">
-            <h1><span id="mymotelroomsstring"></span></h1>
-            <div class="BoxOrder">
-                <div class="roomlistbox">
-                    <!-- <div class="newRoomBox">
-                        <h4>ROOM 1</h4>
-                        <h5>AMOUNT BE PAID <font color="#ebebeb">$750</font></h5>
-                        <h5>RENT PRICE <font color="#ebebeb">$500</font></h5>
-                        <h5>DUE DATE <font color="#ebebeb">2023--09-07</font></h5>
-                        <div class="DoNotOcluk">
-                            <h6>AUTO PAY</h6>
-                            <label class="switch">
-                                <input data-id="${element.RoomId}" type="checkbox" ${autoPayChecked}>
-                                <span class="slider round"></span>
-                            </label>
-                        </div>
-                        <div class="ButonlarV">
-                            <button class="Anax"><i class="fa-light fa-key"></i></button>
-                            <button class="Anax"><i class="fa-regular fa-timer"></i></button>
-                            <button class="Anax"><i class="fa-solid fa-right-from-bracket"></i></button>
-                        </div>
-                        <img src="bayresim" class="bayresim">
-                    </div> -->
+        <div id="player-secili-anahtar" class="myodalar">
+            <div style='background: transparent;' class="roomb">
+                <div style="width: 34%; background: #993434;" class="roombv2">
+                    <h3 style="padding-top: 2vh;"><i class="fa-regular fa-xmark"></i></h3>
+                </div>
+                <div style="left: -1vh;" class="roombv2">
+                    <h3 style="padding-top: 2vh;">JOHNNY LESH</h3>
                 </div>
             </div>
-                
-            <h1 style="text-align: left;position: relative; left: 11vh; top: 11.3vh;">我的账单</h1>
-            <div style="top: 12.2vh;" class="BoxOrder">
-                <div class="roomlistbox2">
-                    <div class="listeleFaturalar"></div>
+            <div style='background: transparent;' class="roomb">
+                <div style="width: 34%; background: #993434;" class="roombv2">
+                    <h3 style="padding-top: 2vh;"><i class="fa-regular fa-xmark"></i></h3>
                 </div>
-            </div>
-        </div>
-
-        <div id="feedbacks">
-            <div class="FeedBackOlustur">
-                <p><i class="fa-solid fa-pen-to-square"></i> <span id="createfeedbackstring"></span></p>
-            </div>
-            <div class="feedBackList">
-                <div class="OlusturmaKisim">
-                    <div id="feedbacklisx">
-
-                    </div>
+                <div style="left: -1vh;" class="roombv2">
+                    <h3 style="padding-top: 2vh;">Buck Berry</h3>
                 </div>
-                <div class="CreateFeedBackContainer">
-                    <h4><span id="selectroomstring"></span></h4>
-                    <div class="CreateFeedBackRoomList">
-                        <!-- <div class="CreateFeedBackRoomList-Item">
-                            <h5>ROOM 6</h5>
-                            <h6>DOUBLE ROOM</h6>
-                        </div>
-                        <div class="CreateFeedBackRoomList-Item SelectRoom">
-                            <h5>ROOM 6</h5>
-                            <h6>DOUBLE ROOM</h6>
-                        </div> -->
-                    </div> 
-                    <h4 style="margin-top: 2vh;"><span id="ratestring"></span></h4>
-                    <div class="YildizlarClub">
-                        <!-- <h5><i class="fa-solid fa-star"></i></h5>
-                        <h5><i class="fa-solid fa-star"></i></h5>
-                        <h5><i class="fa-solid fa-star"></i></h5>
-                        <h5><i class="fa-solid fa-star"></i></h5>
-                        <h5><i class="fa-solid fa-star"></i></h5> -->
-                    </div><br>
-                    <h4 style="margin-top: 4vh;"><span id="youropinion"></span> <font color="gray"><span id="limitedstring"></span></font></h4>
-                    <input id="feedbek" class="feedback-text" placeholder="写你的评论">
-                    <button id="faadback" class="CreateFaadback"><span id="createfeedbackstring2"></span></button>
-                </div>
-            </div>
-        </div>
-
-        <div id="recepsiyonmain">
-            <div id="recepsiyon">
-                <div id="KaydirSol" class="solOk">
-                    <p><svg xmlns="http://www.w3.org/2000/svg" width="25" height="29" viewBox="0 0 25 29" fill="none">
-                        <path d="M1.70329 17.595C-0.567761 16.2838 -0.567763 13.0058 1.70328 11.6946L19.5878 1.36902C21.8588 0.0578299 24.6976 1.69681 24.6976 4.31919L24.6976 24.9704C24.6976 27.5928 21.8588 29.2318 19.5878 27.9206L1.70329 17.595Z" fill="#727272"/>
-                    </svg></p>
-                </div>
-                <div id="KaydirSag" class="sagOk">
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" viewBox="0 0 25 28" fill="none">
-                            <path d="M23.2968 10.9504C25.5678 12.2616 25.5678 15.5396 23.2968 16.8508L5.41229 27.1764C3.14124 28.4876 0.30243 26.8486 0.30243 24.2262L0.302431 3.57498C0.302431 0.952604 3.14124 -0.686385 5.41228 0.624805L23.2968 10.9504Z" fill="#727272"/>
-                        </svg>
-                    </p>
-                </div>
-                <div class="MotelReceptionSlider">
-                    <center>
-                        <img id="RoomSliderImage" class="MotelReceptionImage">
-                    </center>
-                    <h2 class="RoomTypeHeader"><span id="RoomTitle">双人</span> 房</h2>
-                    <p class="tanitimText"><span id="tanitimText"></span></p>
-                    <div id="ButonKisim"></div>
-                </div>
-
-                <div class="resimSlaytCizgileri">
-                    <!-- <div class="sliderx selectedcizgi"></div>
-                    <div class="sliderx"></div>
-                    <div class="sliderx"></div>
-                    <div class="sliderx"></div>
-                    <div class="sliderx"></div> -->
-                </div>
-
-                <div class="buyMotelContainer">
-                    <h4><span id="doyouwant"></span></h4>
-                    <div id="BuyMotel" class="buyMotelButton"><p><span id="buybusiness"></span> ($<span id="MotelFiyat"></span>)</p></div>
-                </div>
-            </div>
-
-            <div class="buyMotelModal">
-                <h6>购买产业</h6>
-                <div class="cizgiM"></div>
-                <p class="textduy">
-                    您是否批准购买此汽车旅馆物业 ?
-                </p>
-                <div class="butx cancel">
-                    <p>取消</p>
-                </div>
-                <div class="butx buy">
-                    <p>购买</p>
-                </div>
-            </div>
-        </div>
-
-        <div id="BuyRoomScreen">
-            <div class="BuyEnterScreen">
-                <span class="odaTypeString">
-                    双人间
-                </span>
-                <span class="minikstring">
-                    这个房间是单人的，只有一个人可以留下
-                </span>
-                <div class="odabox1">
-                    <div class="odabox2"></div>
-                    <span class="filledroomstext">
-                        <span id="filledroomsstring"></span>
-                    </span><br>
-                    <span class="filledroomsmiktar">
-                        12
-                    </span>
-
-                    <div class="odabox3"></div>
-                    <span class="filledroomstext2">
-                        <span id="emptyroomsstring"></span>
-                    </span><br>
-                    <span class="filledroomsmiktar2">
-                        12
-                    </span>
-                </div>
-
-                <div class="odalistx"></div>
-
-                <div class="paymentPart">
-                    <span class="paymentPartText">
-                        PAYMENT
-                    </span>
-                    <span class="inx">
-                        <span id="ThePriceString"></span>
-                    </span>
-
-                    <div class="boxapp">
-                        <div class="rombox">
-                            <h5 class="romboxtext"><span id="seciliOdaNo"></span></h5>
-                        </div>
-
-                        <h4 class="amounttext">
-                            <span id="AmountPayBla"></span>
-                        </h4>
-
-                        <h4 class="amountmiktar"><font style="color: #5C5C5C;">$</font> <span id="MotelOdaPrice">0</span></h4>
-
-                        <h4 class="dexcription">
-                            <span id="seks"></span>
-                        </h4>
-                        <p><span id="RoomDescriptionV2"></span></p>
-
-                        <div class="GunDay">
-                            <h4><span id="daystring"></span></h4>
-                            <button id="GunAzalt" class="Arttir">-</button>
-                            <input id="gunDeger" class="degerValue" value="1" disabled>
-                            <button id="GunArttir" class="Arttir">+</button>
-                            <button id="1Month" class="LifeTime">1 <span id="month1"></span></button>
-                            <button id="3Month" class="LifeTime">3 <span id="month2"></span></button>
-                            <button id="6Month" class="LifeTime">6<span id="month1"></span></button>
-                            <button id="LifeTime" class="LifeTime"><span id="lifetime"></span></button>
-                        </div>
-
-                        <div class="indirimliOda">
-                            <h6><span id="discountlu"></span> <br><font class="BayFont">$ <font color="gray"><span id="indirimlipara"></span></font></font></h6>
-                        </div>
-
-                        <button id="BuyMotelRoom" class="ayarlanhadi"><span id="BuyMotelRoomString"></span></button>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-
-        <div id="MematiT" class="NotificationBox">
-            <div class="NotificationBox-List">
             </div>
         </div>
     </div>
-
     <div id="BossMenuContainer">
         <h1><span id="LoadMotelName"></h1>
         <h3><span id="managementpanel"></span></h3>
@@ -547,60 +136,58 @@
             <h5><span id="staticsstring"></span></h5>
             <div class="DashboardAssets">
                 <div class="circlebox">
-                    <svg class="svgx" width="200" height="180" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" style="transform:rotate(-90deg)">
-                        <circle id="ortax" r="90" cx="100" cy="100"></circle>
-                        <circle cx="99.8892" cy="99.8892" r="77.0529" fill="#D9D9D9" fill-opacity="0.03" stroke="#2B2B2B" stroke-width="0.957179"/>
-
-                        <circle id="vgelir" stroke="url(#paint0_linear_4_282)" class="dis" r="90" cx="100" cy="100"></circle>
-                        <defs>
-                          <linearGradient id="paint0_linear_4_282" x1="3" y1="30" x2="149" y2="75" gradientUnits="userSpaceOnUse">
+                    <div class="mematinam">
+                        <h5><span id="gelirb"></span></h5>
+                    </div>
+                    <svg style="position: absolute;left: 0;right: 0;top: 4rem; margin: auto;" xmlns="http://www.w3.org/2000/svg" width="184" height="186" viewBox="0 0 184 186" fill="none">
+                        <circle cx="91.8892" cy="93.8892" r="77.0529" fill="#D9D9D9" fill-opacity="0.03" stroke="#2B2B2B" stroke-width="0.957179"/>
+                        <path d="M183.778 93.8892C183.778 144.638 142.638 185.778 91.8892 185.778C41.1402 185.778 0 144.638 0 93.8892C0 43.1402 41.1402 2 91.8892 2C142.638 2 183.778 43.1402 183.778 93.8892ZM8.22826 93.8892C8.22826 140.094 45.6845 177.55 91.8892 177.55C138.094 177.55 175.55 140.094 175.55 93.8892C175.55 47.6845 138.094 10.2283 91.8892 10.2283C45.6845 10.2283 8.22826 47.6845 8.22826 93.8892Z" fill="#999999" fill-opacity="0.27"/>
+                        <circle id="vgelir" stroke="url(#paint0_linear_4_282)" class="dis" r="87" cx="92" cy="93" style="stroke-dashoffset: 596.573px;"></circle>                        <defs>
+                          <linearGradient id="paint0_linear_4_282" x1="31" y1="30" x2="177" y2="75" gradientUnits="userSpaceOnUse">
                             <stop stop-color="#9AFFDB"/>
                             <stop offset="1" stop-color="#21DB98"/>
                           </linearGradient>
                         </defs>
-                        <text id="gelirb" class="text"></text>
-                      </svg>
-                      <h4 class="gelirtext"><span id="revenuestring"></span></h4>
+                    </svg>
+                    <h4 class="gelirtext"><span id="revenuestring"></span></h4>
                 </div>
                 <div class="circlebox">
-                    <svg class="svgx" width="200" height="180" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(-90deg)">
-                        <circle id="ortax" r="90" cx="100" cy="100"></circle>
-                        <circle cx="99.8892" cy="99.8892" r="77.0529" fill="#D9D9D9" fill-opacity="0.03" stroke="#2B2B2B" stroke-width="0.957179"/>
-                      
-                        <circle id="rentedCount" stroke="url(#paint0_linear_4_302)" class="dis" r="90" cx="100" cy="100"></circle>
-                        <defs>
-                          <linearGradient id="paint0_linear_4_302" x1="2.77832" y1="30" x2="148.778" y2="75" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#9AC8FF"/>
-                            <stop offset="1" stop-color="#218DDB"/>
+                    <div class="mematinam">
+                        <h5><span id="gelirbv"></span></h5>
+                    </div>
+                    <svg style="position: absolute;left: 0;right: 0;top: 4rem; margin: auto;" xmlns="http://www.w3.org/2000/svg" width="184" height="186" viewBox="0 0 184 186" fill="none">
+                        <circle cx="91.8892" cy="93.8892" r="77.0529" fill="#D9D9D9" fill-opacity="0.03" stroke="#2B2B2B" stroke-width="0.957179"/>
+                        <path d="M183.778 93.8892C183.778 144.638 142.638 185.778 91.8892 185.778C41.1402 185.778 0 144.638 0 93.8892C0 43.1402 41.1402 2 91.8892 2C142.638 2 183.778 43.1402 183.778 93.8892ZM8.22826 93.8892C8.22826 140.094 45.6845 177.55 91.8892 177.55C138.094 177.55 175.55 140.094 175.55 93.8892C175.55 47.6845 138.094 10.2283 91.8892 10.2283C45.6845 10.2283 8.22826 47.6845 8.22826 93.8892Z" fill="#999999" fill-opacity="0.27"/>
+                        <circle id="keperpekmez" stroke="url(#paint0_linear_4_308)" class="dis" r="87" cx="92" cy="93" style="stroke-dashoffset: 596.573px;"></circle>                        <defs>
+                            <defs>
+                          <linearGradient id="paint0_linear_4_308" x1="2.77832" y1="30" x2="148.778" y2="75" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#9AFFDB"/>
+                            <stop offset="1" stop-color="#21DB98"/>
                           </linearGradient>
                         </defs>
-                      </svg>
-                      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                        <span id="gelirbv" class="text2">Ortalanmış Metin</span>
-                      </div>
-                      <h4 class="gelirtext"><span id="rentedroomstring"></span></h4>
+                    </svg>
+                    <h4 class="gelirtext"><span id="rentedroomstring"></span></h4>
                 </div>
                 <div class="circlebox">
-                    <svg class="svgx" width="200" height="180" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" style="transform:rotate(-90deg)">
-                        <circle id="ortax" r="90" cx="100" cy="100"></circle>
-                        <circle cx="99.8892" cy="99.8892" r="77.0529" fill="#D9D9D9" fill-opacity="0.03" stroke="#2B2B2B" stroke-width="0.957179"/>
-
-                        <circle id="keperpekmez" stroke="url(#paint0_linear_4_308)" class="dis" r="90" cx="100" cy="100"></circle>
+                    <div class="mematinam">
+                        <h5><span id="invoicesCount"></span></h5>
+                    </div>
+                    <svg style="position: absolute;left: 0;right: 0;top: 4rem; margin: auto;" xmlns="http://www.w3.org/2000/svg" width="184" height="186" viewBox="0 0 184 186" fill="none">
+                        <circle cx="91.8892" cy="93.8892" r="77.0529" fill="#D9D9D9" fill-opacity="0.03" stroke="#2B2B2B" stroke-width="0.957179"/>
+                        <path d="M183.778 93.8892C183.778 144.638 142.638 185.778 91.8892 185.778C41.1402 185.778 0 144.638 0 93.8892C0 43.1402 41.1402 2 91.8892 2C142.638 2 183.778 43.1402 183.778 93.8892ZM8.22826 93.8892C8.22826 140.094 45.6845 177.55 91.8892 177.55C138.094 177.55 175.55 140.094 175.55 93.8892C175.55 47.6845 138.094 10.2283 91.8892 10.2283C45.6845 10.2283 8.22826 47.6845 8.22826 93.8892Z" fill="#999999" fill-opacity="0.27"/>
+                        <circle id="rentedCount" stroke="url(#paint0_linear_4_302)" class="dis" r="87" cx="92" cy="93" style="stroke-dashoffset: 596.573px;"></circle>                        <defs>
                         <defs>
-                            <linearGradient id="paint0_linear_4_308" x1="2.55664" y1="30" x2="148.557" y2="75" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#FFA2B8"/>
-                                <stop offset="1" stop-color="#DB214E"/>
-                            </linearGradient>
+                          <linearGradient id="paint0_linear_4_302" x1="2.77832" y1="30" x2="148.778" y2="75" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#9AFFDB"/>
+                            <stop offset="1" stop-color="#21DB98"/>
+                          </linearGradient>
                         </defs>
-                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                            <span id="invoicesCount" class="text2">Ortalanmış Metin</span>
-                        </div>                     
                     </svg>
-                      <h4 class="gelirtext"><span id="invoicestext"></span></h4>
+                    <h4 class="gelirtext"><span id="invoicestext"></span></h4>
                 </div>
             </div>
 
-            <div class="tablelist">
+            <!-- <div class="tablelist">
                 <span class="mem"><span id="LastRoomRenters"></span></span>
                 <div id="renteler" class="listv">
                     <div class="listv-item">
@@ -667,18 +254,66 @@
                 </div>
 
                 <span class="mem" id="feeedbacksx"></span>
-                <div id="faadbacks" class="listv">
+                <div id="faadbackss" class="listv">
                     
+                </div>
+            </div>-->
+            <div class="koygitsin">
+                <div id="damlaC" class="atgitsin">
+                    <div class="cambaz">
+                        <div class="leftbar-1">
+                            <img src="pimg/char1_80877aca6164d3df0a469fe3c96f2524127ab052.png">
+                            <h6>Resources</h6><br>
+                            <h4>双人房</h4>
+                        </div>
+                        <div class="leftbar-2">
+                            <div class="button-click">
+                                <p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
+                                        <path d="M11.8405 3.97773L8.02227 0.159546C7.97158 0.108909 7.91141 0.0687556 7.84519 0.0413803C7.77898 0.014005 7.70801 -5.61741e-05 7.63636 1.68654e-07H1.09091C0.801582 1.68654e-07 0.524105 0.114935 0.31952 0.31952C0.114935 0.524105 0 0.801582 0 1.09091V13.0909C0 13.3802 0.114935 13.6577 0.31952 13.8623C0.524105 14.0669 0.801582 14.1818 1.09091 14.1818H10.9091C11.1984 14.1818 11.4759 14.0669 11.6805 13.8623C11.8851 13.6577 12 13.3802 12 13.0909V4.36364C12.0001 4.29199 11.986 4.22102 11.9586 4.15481C11.9312 4.08859 11.8911 4.02842 11.8405 3.97773ZM7.63636 4.36364V1.36364L10.6364 4.36364H7.63636Z" fill="#676767"/>
+                                    </svg>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="faadbacks" class="atgitsin">
+                    <div class="cambaz">
+
+                    </div>
                 </div>
             </div>
         </div>
 
         <div id="rooms" class="RoomsPage">
-            <h5 style="position:relative; top: -3vh;"><span id="AllRoomsString"></span></h5>
-            <div style="float: right;">
+            <span id="AllRoomsString"></span>
+            <!-- <div style="float: right;">
                 <button class="resetOwnerButton"><i class="fa-solid fa-rotate"></i> <span id="VacateAllRooms"></span></button>
-            </div>
+            </div> -->
             <div class="allroomstab">
+                <div class="Avengers">
+                    <div class="AvengersItem AvengersBlack">
+                        <p>房间 1</p>
+                    </div>
+                    <div class="AvengersItem AvengersGreen">
+                        <p>空的</p>
+                    </div>
+                    <div class="AvengersItem AvengersSimple">
+                        <p>编辑房间</p>
+                    </div>
+                </div>
+                <div class="Avengers">
+                    <div class="AvengersItem AvengersBlack">
+                        <p>房间 1</p>
+                    </div>
+                    <div class="AvengersItem AvengersRed">
+                        <p>已满</p>
+                    </div>
+                    <div class="AvengersItem AvengersSimple">
+                        <p>编辑房间</p>
+                    </div>
+                </div>
                 <!-- <div class="rooms-item">
                     <svg class="roomparx" xmlns="http://www.w3.org/2000/svg" width="236" height="178" viewBox="0 0 236 178" fill="none">
                         <rect x="1.82737" y="1.82737" width="232.185" height="174.489" rx="8.20844" fill="#D9D9D9" fill-opacity="0.04" stroke="#434343" stroke-width="2.34527"/>
@@ -725,7 +360,7 @@
                 </div>
                 <!-- <span class="FinancePageh6">Money Transactions</span> -->
                 <div class="FinanceBox">
-                    <input id="yatirV" class="girMiktar" placeholder="输入数额">
+                    <input id="yatirV" class="girMiktar" placeholder="Enter a amount">
                     <div id="depomiyav" class="typeScript typenonselected">
                         <p><span id="depositstring"></span></p>
                     </div>
@@ -787,45 +422,45 @@
     </div>
 
         <div id="settings" class="SettingPage">
-            <h5 style="position:relative; top: -2vh;"><span id="settingsstring2"></span></h5>
-            <div class="ayarlarkutu">
+            <!-- <h5 style="top: 0rem;"><span id="settingsstring2"></span></h5> -->
+            <div style="top: 1.1rem;" class="ayarlarkutu">
                 <div class="ayarvar">
                     <p><span id="motelnamestring"></span></p>
-                    <input id="hahname" style="top: 0vh; left: -1.8vh;" class="admotelinput" placeholder="旅馆名称" value="旅馆产业">
+                    <input id="hahname" style="top: .9rem; left: -1.5rem;" class="admotelinput" placeholder="Motel Name" value="0RESMON MOTELS">
                 </div>
                 <div class="ayarvar">
                     <p><span id="allroompricestring"></span></p>
-                    <h6>$</h6><input id="odaprice" class="admotelinputt" placeholder="所有房间价格" value="">
+                    <h6>$</h6><input id="odaprice" type="number" class="admotelinputt" placeholder="All Room Price" value="">
                 </div>
                 <div class="ayarvar">
                     <p><span id="discorcvalue"></span></p>
-                    <h6>%</h6><input id="indiri" style="margin-left: 1vh;" class="admotelinputt" placeholder="折扣" value="67">
+                    <h6>%</h6><input id="indiri" style="margin-left: 1vh;" class="admotelinputt" placeholder="Discount Value" value="67">
                 </div>
                 <button id="jemati" class="SaveChanges"><span id="savestring"></span></button>
                 <h4><span id="bilgilen"></span></h4>
                 <button id="transferownership" class="satMoteli"><span id="TransferMotel"></span></button>
             </div>
-            <h5 style="position: relative;top: -5.5vh;left: -8.2vh;">其他</h5>
-            <button id="garageayar" class="BazIsıkYili2"><i class="fa-duotone fa-brush"></i> <span id="GarageThemeString"></span></button>
-            <button id="coridorayar" class="BazIsıkYili"><i class="fa-duotone fa-brush"></i><span id="corridorstring"></span></button>
-            <div id="cin" style="display: none; float: right; bottom: 63.4vh;" class="ayarlarkutu">
+            <!-- <h5 style="position: relative;top: -4.5rem; left: 0rem;">OTHER</h5> -->
+            <button id="garageayar" style="left: 15rem;top: -3rem; width: 13rem;" class="BazIsıkYili2"><i class="fa-duotone fa-brush"></i> <span id="GarageThemeString"></span></button>
+            <button style="left: 15.5rem;top: -3.1rem; width: 12.3rem;" id="coridorayar" class="BazIsıkYili"><i class="fa-duotone fa-brush"></i><span id="corridorstring"></span></button>
+            <div id="cin" style="display: none;" class="ayarlarkutu">
                 <div id="corridorColors"></div>
-                <h4 style="top: 2vh;">此处上传的图像将出现在汽车旅馆的接待菜单和Boss菜单中.确保将照片的链接完全正确地放置.</h4>
-                <button style="top: -1.5vh;" class="satMoteli">重置背景</button>
+                <h4 style="top: 2vh;">此处上传的图像将出现在汽车旅馆的接待菜单和Boss菜单中。 确保将照片的链接完全正确地放置.</h4>
+                <button style="top: 1.5rem;" class="satMoteli">重置背景</button>
             </div>
-            <div id="cin5" style="display: none; float: right; bottom: 63.4vh;" class="ayarlarkutu">
+            <div id="cin5" style="display: none;" class="ayarlarkutu">
                 <div id="garageThemes"></div>
-                <h4 style="top: 2vh;">此处上传的图像将出现在汽车旅馆的接待菜单和Boss菜单中.确保将照片的链接完全正确地放置.</h4>
-                <button style="top: -1.5vh;" class="satMoteli">重置背景</button>
+                <h4 style="top: 2vh;">此处上传的图像将出现在汽车旅馆的接待菜单和Boss菜单中。 确保将照片的链接完全正确地放置.</h4>
+                <button style="top: 1.5rem;" class="satMoteli">重置背景</button>
             </div>
 
-            <div id="makbus" style="float: right; bottom: 63.4vh;" class="ayarlarkutu">
+            <div id="makbus" class="ayarlarkutu">
                 <div id="moheller" class="AllMotelList">
                     <div class="ListOfV">
-                        <h2>0RESMON APARTMENTS - <i class="fa-solid fa-trophy-star"></i></h2>
+                        <h2>旅馆 - <i class="fa-solid fa-trophy-star"></i></h2>
                     </div>
                     <div class="ListOfV">
-                        <h2>ADEZTR APARTMANI</h2>
+                        <h2>旅馆</h2>
                     </div>
                 </div>
                 <div id="abluka" class="AllMotelList"></div>
@@ -842,26 +477,32 @@
                 <span class="imgsrspan"><span id="haski"></span></span>
                 <span class="imgsrh4"><span id="haski7"></span> <button class="copyPhoneNo"><i class="fa-solid fa-copy"></i></button></span>
             </div>
-            <div class="Addon">
-                <h6 class="fakeAdaptor">租金付款日期</h6>
-                <h4 class="aglicam"><span id="haski2"></span></h4>
+            <div id="sevmek">
+                <div class="Addon">
+                    <h6 class="fakeAdaptor">租金付款日期</h6>
+                    <h4 class="aglicam"><span id="haski2"></span></h4>
+                </div>
+                <div class="Addon">
+                    <h6 class="fakeAdaptor">支付的金额</h6>
+                    <h4 class="aglicam">$ <span id="haski3"></span></h4>
+                </div>
+                <div class="Addon">
+                    <h6 class="fakeAdaptor">房型</h6>
+                    <h4 style="color: #2CC560;" class="aglicam"><span id="haski4"></span></h4>
+                </div>
+                <div class="Addon">
+                    <h6 class="fakeAdaptor">房间号</h6>
+                    <h4 class="aglicam"><span id="haski5"></span></h4>
+                </div>
             </div>
-            <div class="Addon">
-                <h6 class="fakeAdaptor">支付的金额</h6>
-                <h4 class="aglicam">$ <span id="haski3"></span></h4>
-            </div>
-            <div class="Addon">
-                <h6 class="fakeAdaptor">房型</h6>
-                <h4 style="color: #2CC560;" class="aglicam"><span id="haski4"></span></h4>
-            </div>
-            <div class="Addon">
-                <h6 class="fakeAdaptor">房间号</h6>
-                <h4 class="aglicam"><span id="haski5"></span></h4>
+            <div id="sevmekmek">
+                <div style="width: 34rem; height: fit-content; padding-bottom: 11rem;" class="Addon">
+                    <h6 class="fakeAdaptor">反馈文本</h6>
+                    <h4 class="aglicam"><span id="haski44"></h4>
+                </div>
             </div>
         </div>
     </div>    
-
-    
 
     <div class="roomeditpage">
         <div class="ownerBox">
@@ -874,11 +515,11 @@
         </div>
         <div class="ownerBox">
             <span class="infoowner">房间价格</span><br>
-            <span class="dolar">$</span><input id="odafo" type="number" class="kalas" placeholder="输入房价费" value="1000">
+            <span class="dolar">$</span><input id="odafo" type="number" class="kalas" placeholder="Enter the room rate fee" value="1000">
         </div>
         <div id="UpdateRoomPrice" class="UpdatePriceButton"><p>更新价格</p></div>
-        <div id="backroomlist" style="top: 1.5vh;" class="UpdatePriceButton backx"><p>关闭</p></div>
-        <div id="kickMotelRoom" class="tyu kick">
+        <div id="backroomlist" style="top: 1.5vh;" class="UpdatePriceButton backx"><p>后室清单</p></div>
+        <div id="kickMotelRoom" class="tyu kick" style="width: 94%;">
             <p>踢出</p>
         </div>
         <div id="DeleteRoom" class="tyu deleteroom">
@@ -886,63 +527,21 @@
         </div>
         <h6 id="textBaba">房型</h6>
         <div class="odaListesi"></div>
-        <!-- <div class="billlist">
-            <div class="fatura-item">
-                <div class="orxa">
-                    <h5><svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
-                        <path d="M16.0683 10.8127V14.6796C16.0684 14.8072 16.0307 14.9319 15.9599 15.0379C15.889 15.144 15.7884 15.2267 15.6705 15.2755C15.5527 15.3243 15.423 15.3371 15.298 15.3122C15.1729 15.2873 15.058 15.2258 14.9679 15.1356L13.6741 13.841C12.0508 15.2355 10.2164 15.9686 8.33451 15.9686C4.88491 15.9686 2.80967 13.9328 2.72267 13.8466C2.60163 13.7259 2.53351 13.562 2.53328 13.3911C2.53305 13.2201 2.60074 13.0561 2.72146 12.9351C2.84218 12.814 3.00603 12.7459 3.17698 12.7457C3.34793 12.7455 3.51196 12.8131 3.633 12.9339C3.662 12.9621 5.44722 14.6796 8.33451 14.6796C10.2011 14.6796 11.7116 13.8055 12.7589 12.9266L11.101 11.2687C11.0107 11.1785 10.9493 11.0637 10.9243 10.9386C10.8994 10.8135 10.9122 10.6838 10.961 10.566C11.0098 10.4482 11.0925 10.3475 11.1986 10.2767C11.3047 10.2059 11.4294 10.1681 11.5569 10.1682H15.4238C15.5948 10.1682 15.7587 10.2361 15.8795 10.357C16.0004 10.4779 16.0683 10.6418 16.0683 10.8127ZM5.70743 5.90336C5.75628 5.78561 5.76912 5.65602 5.74431 5.53097C5.7195 5.40593 5.65817 5.29105 5.56806 5.20087L3.91013 3.54294C4.95742 2.66402 6.46792 1.78994 8.33451 1.78994C11.2307 1.78994 13.0175 3.51716 13.036 3.53649C13.1572 3.65721 13.3213 3.72486 13.4923 3.72456C13.6633 3.72426 13.8272 3.65603 13.948 3.53488C14.0687 3.41374 14.1363 3.2496 14.136 3.07858C14.1357 2.90755 14.0675 2.74366 13.9463 2.62294C13.8593 2.53674 11.7841 0.500977 8.33451 0.500977C6.45262 0.500977 4.61826 1.23408 2.99496 2.62858L1.70116 1.33397C1.61103 1.24374 1.49615 1.18227 1.37106 1.15736C1.24598 1.13245 1.11632 1.14522 0.99849 1.19404C0.880663 1.24286 0.779972 1.32554 0.709162 1.43162C0.638352 1.5377 0.600608 1.6624 0.600708 1.78994V5.65684C0.600708 5.82777 0.668609 5.9917 0.789473 6.11256C0.910337 6.23343 1.07426 6.30133 1.24519 6.30133H5.11209C5.23956 6.3013 5.36415 6.26348 5.47012 6.19264C5.57609 6.1218 5.65868 6.02113 5.70743 5.90336Z" fill="#A7A7A7"/>
-                      </svg> Pay Bill</h5>
-                </div>
+    </div>
 
-                <div class="orxa">
-                   <h5>Koni Macaroni</h5>
-                </div>
-        
-                <div style="float: right;" class="orxa">
-                    <div class="odenx error">
-                        <p>-$500</p>
-                    </div>
-                </div>
-            </div>
-            <div class="fatura-item">
-                <div class="orxa">
-                    <h5><svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
-                        <path d="M16.0683 10.8127V14.6796C16.0684 14.8072 16.0307 14.9319 15.9599 15.0379C15.889 15.144 15.7884 15.2267 15.6705 15.2755C15.5527 15.3243 15.423 15.3371 15.298 15.3122C15.1729 15.2873 15.058 15.2258 14.9679 15.1356L13.6741 13.841C12.0508 15.2355 10.2164 15.9686 8.33451 15.9686C4.88491 15.9686 2.80967 13.9328 2.72267 13.8466C2.60163 13.7259 2.53351 13.562 2.53328 13.3911C2.53305 13.2201 2.60074 13.0561 2.72146 12.9351C2.84218 12.814 3.00603 12.7459 3.17698 12.7457C3.34793 12.7455 3.51196 12.8131 3.633 12.9339C3.662 12.9621 5.44722 14.6796 8.33451 14.6796C10.2011 14.6796 11.7116 13.8055 12.7589 12.9266L11.101 11.2687C11.0107 11.1785 10.9493 11.0637 10.9243 10.9386C10.8994 10.8135 10.9122 10.6838 10.961 10.566C11.0098 10.4482 11.0925 10.3475 11.1986 10.2767C11.3047 10.2059 11.4294 10.1681 11.5569 10.1682H15.4238C15.5948 10.1682 15.7587 10.2361 15.8795 10.357C16.0004 10.4779 16.0683 10.6418 16.0683 10.8127ZM5.70743 5.90336C5.75628 5.78561 5.76912 5.65602 5.74431 5.53097C5.7195 5.40593 5.65817 5.29105 5.56806 5.20087L3.91013 3.54294C4.95742 2.66402 6.46792 1.78994 8.33451 1.78994C11.2307 1.78994 13.0175 3.51716 13.036 3.53649C13.1572 3.65721 13.3213 3.72486 13.4923 3.72456C13.6633 3.72426 13.8272 3.65603 13.948 3.53488C14.0687 3.41374 14.1363 3.2496 14.136 3.07858C14.1357 2.90755 14.0675 2.74366 13.9463 2.62294C13.8593 2.53674 11.7841 0.500977 8.33451 0.500977C6.45262 0.500977 4.61826 1.23408 2.99496 2.62858L1.70116 1.33397C1.61103 1.24374 1.49615 1.18227 1.37106 1.15736C1.24598 1.13245 1.11632 1.14522 0.99849 1.19404C0.880663 1.24286 0.779972 1.32554 0.709162 1.43162C0.638352 1.5377 0.600608 1.6624 0.600708 1.78994V5.65684C0.600708 5.82777 0.668609 5.9917 0.789473 6.11256C0.910337 6.23343 1.07426 6.30133 1.24519 6.30133H5.11209C5.23956 6.3013 5.36415 6.26348 5.47012 6.19264C5.57609 6.1218 5.65868 6.02113 5.70743 5.90336Z" fill="#A7A7A7"/>
-                      </svg> Pay Bill</h5>
-                </div>
-                
-                <div class="orxa">
-                   <h5>Koni Macaroni</h5>
-                </div>
-        
-                <div style="float: right;" class="orxa">
-                    <div class="odenx error">
-                        <p>-$500</p>
-                    </div>
-                </div>
-            </div>
-            <div class="fatura-item">
-                <div class="orxa">
-                    <h5><svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
-                        <path d="M16.0683 10.8127V14.6796C16.0684 14.8072 16.0307 14.9319 15.9599 15.0379C15.889 15.144 15.7884 15.2267 15.6705 15.2755C15.5527 15.3243 15.423 15.3371 15.298 15.3122C15.1729 15.2873 15.058 15.2258 14.9679 15.1356L13.6741 13.841C12.0508 15.2355 10.2164 15.9686 8.33451 15.9686C4.88491 15.9686 2.80967 13.9328 2.72267 13.8466C2.60163 13.7259 2.53351 13.562 2.53328 13.3911C2.53305 13.2201 2.60074 13.0561 2.72146 12.9351C2.84218 12.814 3.00603 12.7459 3.17698 12.7457C3.34793 12.7455 3.51196 12.8131 3.633 12.9339C3.662 12.9621 5.44722 14.6796 8.33451 14.6796C10.2011 14.6796 11.7116 13.8055 12.7589 12.9266L11.101 11.2687C11.0107 11.1785 10.9493 11.0637 10.9243 10.9386C10.8994 10.8135 10.9122 10.6838 10.961 10.566C11.0098 10.4482 11.0925 10.3475 11.1986 10.2767C11.3047 10.2059 11.4294 10.1681 11.5569 10.1682H15.4238C15.5948 10.1682 15.7587 10.2361 15.8795 10.357C16.0004 10.4779 16.0683 10.6418 16.0683 10.8127ZM5.70743 5.90336C5.75628 5.78561 5.76912 5.65602 5.74431 5.53097C5.7195 5.40593 5.65817 5.29105 5.56806 5.20087L3.91013 3.54294C4.95742 2.66402 6.46792 1.78994 8.33451 1.78994C11.2307 1.78994 13.0175 3.51716 13.036 3.53649C13.1572 3.65721 13.3213 3.72486 13.4923 3.72456C13.6633 3.72426 13.8272 3.65603 13.948 3.53488C14.0687 3.41374 14.1363 3.2496 14.136 3.07858C14.1357 2.90755 14.0675 2.74366 13.9463 2.62294C13.8593 2.53674 11.7841 0.500977 8.33451 0.500977C6.45262 0.500977 4.61826 1.23408 2.99496 2.62858L1.70116 1.33397C1.61103 1.24374 1.49615 1.18227 1.37106 1.15736C1.24598 1.13245 1.11632 1.14522 0.99849 1.19404C0.880663 1.24286 0.779972 1.32554 0.709162 1.43162C0.638352 1.5377 0.600608 1.6624 0.600708 1.78994V5.65684C0.600708 5.82777 0.668609 5.9917 0.789473 6.11256C0.910337 6.23343 1.07426 6.30133 1.24519 6.30133H5.11209C5.23956 6.3013 5.36415 6.26348 5.47012 6.19264C5.57609 6.1218 5.65868 6.02113 5.70743 5.90336Z" fill="#A7A7A7"/>
-                      </svg> Pay Bill</h5>
-                </div>
-                
-                <div class="orxa">
-                   <h5>Koni Macaroni</h5>
-                </div>
-        
-                <div style="float: right;" class="orxa">
-                    <div class="odenx basar">
-                        <p>PAID</p>
-                    </div>
-                </div>
-            </div>
-        </div> -->
+    <div id="overlayBey"></div>
+
+    <div class="ChoseOwnerScreen">
+        <h1>旅馆</h1>
+        <h2>选择所有者</h2>
+        <div class="ayx"></div>
+        <center><input id="oyuncuad" class="searchPlayer" type="text" placeholder="Player Name"></center>
+        <div class="Oyuncular">
+        </div>
     </div>
 
     <div id="MotelAdminMenu">
-        <h1>旅馆产业</h1>
+        <h1>旅馆</h1>
         <p>管理菜单</p>
         <div id="Left1" class="LeftX">
             <div id="addMotelButton" class="buto">
@@ -971,19 +570,444 @@
         <div class="MotelTabloListe2"></div>
     </div>
 
-    <div id="overlayBey"></div>
+    <div id="ElevatorMenu"></div>
+    
+    <div class="NewEditMenu">
+        <h1><span id="degisken"></span></h1>
+        <p><span id="enterinfo"></span></p>
+        <div class="onuratmaca"></div>
+        <div id="CreateBabalarSozunuTutar">
+            <div class="BoxUnpat">
+                <h3><span id="Adezorospusu"></h3>
+                <input id="moxelname" class="ahput" placeholder="输入汽车旅馆名称">
+            </div>
+            <div class="BoxUnpat">
+                <h3><span id="motelpricetext">/</span></h3>
+                <input id="moxelprice" type="number" class="ahput" placeholder="输入销售价格">
+            </div>
 
-    <div class="ChoseOwnerScreen">
-        <h1>旅馆产业</h1>
-        <h2>选择所有者</h2>
-        <div class="ayx"></div>
-        <center><input id="oyuncuad" class="searchPlayer" type="text" placeholder="玩家名称"></center>
-        <div class="Oyuncular">
+            <div class="BoxUnpat">
+                <h3><span id="discountext"></span></h3>
+                <input id="discountvaluxe" type="number" class="ahput" placeholder="折扣价值">
+            </div>
+
+            <div class="BoxUnpat">
+                <h3><span id="receptioncoords"></span></h3>
+                <input id="recepivediksiyon" class="ahput short" placeholder="vector3(111,111,111)">
+                <div id="HotelReceptionCopy" class="RecepFazilYarakKurek"><h3><i class="fa-solid fa-copy"></i></h3></div>
+            </div>
+
+            <div style="width: 97%;" class="BoxUnpat">
+                <h3><span id="blipnames"></span></h3>
+                <input id="blipid" type="number" style="width: 36rem;" value="3" class="ahput" placeholder="https://docs.fivem.net/docs/game-references/blips/#blip-colors">
+            </div>
+
+            <div class="BoxUnpat">
+                <h3><span id="GarageString"></span></h3>
+                <div class="ayarSwitch">
+                    <label id="thisGarage" class="switch">
+                        <input data-id="${element.RoomId}" type="checkbox" ${autoPayChecked}>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="BoxUnpat">
+                <h3><span id="ApartmentString"></span></h3>
+                <div class="ayarSwitch">
+                    <label id="thisApartment" class="switch">
+                        <input data-id="${element.RoomId}" type="checkbox" ${autoPayChecked}>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div id="GarageCoordK" class="BoxUnpat fullV">
+                <h3><span id="GarageCoordsString"></span></h3>
+                <input id="HotelGarage" class="ahput shortfull" placeholder="vector3(111,111,111)">
+                <div id="HotelGarageCopy" style="top: 0.8rem; left: -2.8rem;" class="RecepFazilYarakKurek"><h3><i class="fa-solid fa-copy"></i></h3></div>
+            </div>
+
+            <div id="GarageTheme" class="BoxUnpat BigBoy">
+                <div class="BigBoy-Part BigSe">
+                    <img src="rooms/blue_corridor.png">
+                </div>
+                <div class="BigBoy-Part">
+                    <img src="rooms/blue_corridor.png">
+                </div>
+            </div>
+
+            <div id="CorridorTheme" class="BoxUnpat BigBoy">
+                <div class="BigBoy-Part BigSe">
+                    <img src="rooms/red_corridor.png">
+                </div>
+                <div class="BigBoy-Part">
+                    <img src="rooms/blue_corridor.png">
+                </div>
+            </div>
+
+            <button id="CrexMotel" class="BabalaTv"><span id="yudum"></span></button>
+        </div>
+        <div id="CreateRoomCC">
+            <div class="SelectBox">
+                <div id="mlo"class="Rektor">
+                    <h3><span id="MloString"></span></h3>
+                </div>
+                <div id="ipl" class="Rektor">
+                    <h3><span id="TeleportString"></span></h3>
+                </div>
+            </div>
+            <div id="entelMaganda">
+                <div class="BoxUnpat">
+                    <h3><span id="DoorHash"></span></h3>
+                    <input id="doorHashBaba" class="ahput short" placeholder="-16575494">
+                    <div id="roomDoorHash" class="RecepFazilYarakKurek"><h3><i class="fa-solid fa-copy"></i></h3></div>
+                </div>
+                <div class="BoxUnpat">
+                    <h3><span id="EnterCoordString"></span></h3>
+                    <input id="roomGirisCoord" class="ahput short" placeholder="vector3(111,111,111)">
+                    <div id="EditorRoomEnter" class="RecepFazilYarakKurek"><h3><i class="fa-solid fa-copy"></i></h3></div>
+                </div>
+                <div class="BoxUnpat">
+                    <h3><span id="StashCoordText"></span></h3>
+                    <input id="StashCoord" class="ahput short" placeholder="vector3(111,111,111)">
+                    <div id="EnterStashCoord" class="RecepFazilYarakKurek"><h3><i class="fa-solid fa-copy"></i></h3></div>
+                </div>
+                <div class="BoxUnpat">
+                    <h3><span id="WardrobeCoordString"></span></h3>
+                    <input id="WardrobeCoord" class="ahput short" placeholder="vector3(111,111,111)">
+                    <div id="WardrobeCoordEnter" class="RecepFazilYarakKurek"><h3><i class="fa-solid fa-copy"></i></h3></div>
+                </div>
+                <div class="BoxUnpat">
+                    <h3><span id="TypeText"></span></h3>
+                    <input id="RoomType" type="text" class="ahput" placeholder="Room Type">
+                </div>
+                <div class="BoxUnpat">
+                    <h3><span id="StashWeightString"></span></h3>
+                    <input id="RoomStashWeight" type="number" class="ahput" placeholder="Stash Weight">
+                </div>
+                <div class="BoxUnpat">
+                    <h3><span id="RoomPriceString"></span></h3>
+                    <input type="number" id="odaFiat" class="ahput" placeholder="Room Price">
+                </div>
+                <button id="CreateRoomPart" class="BabalaTv"><span id="CreateMotelRoomV"></span></button>
+            </div>
+            <div id="Mematiler">
+                <div id="TeleportMlos" class="BoxUnpat BigBoy">
+                </div>
+                <div class="BoxUnpat">
+                    <h3><span id="EnterRoomCoord2"></span></h3>
+                    <input id="roomEnterCoord" class="ahput short" placeholder="vector3(111,111,111)">
+                    <div id="enterRoomCoord" class="RecepFazilYarakKurek"><h3><i class="fa-solid fa-copy"></i></h3></div>
+                </div>
+                <div class="BoxUnpat">
+                    <h3><span id="Price2"></span></h3>
+                    <input id="roomFiyat" type="number" class="ahput" placeholder="Room Price">
+                </div>
+                <div class="BoxUnpat">
+                    <h3><span id="StashWeight2"></span></h3>
+                    <input type="number" id="roomWeight" class="ahput" placeholder="Stash Weight">
+                </div>
+                <div class="BoxUnpat">
+                    <h3><span id="TypeTextString"></h3>
+                    <input id="egerIstersen" type="text" class="ahput" placeholder="STANDARD" disabled>
+                </div>
+                <button id="createRoom" style="width: 38.2rem;" class="BabalaTv"><span id="CreateMotelRoom"></span></button>
+            </div>
         </div>
     </div>
 
+    <div class="GarageContainer">
+        <h1><span id="notelname">旅馆</span> <font style="color: #D9D9D9;">车库</font></h1>
+        <div class="Uwu"></div>
+        <div class="GarageList">
+            <div class="GarageList-Item">
+                <h3><i class="fa-duotone fa-empty-set"></i></h3>
+                <div class="ayirbu"></div>
+                <h5>房间 1</h5>
+            </div>
+
+            <div class="GarageList-Item">
+                <center>
+                    <img src="https://docs.fivem.net/vehicles/champion.webp">
+                </center>                
+                <div style="top: 1.3vh;" class="ayirbu"></div>
+                <h5 style="margin-top: 1.9vh;">房间 1</h5>
+            </div>
+
+            <div class="GarageList-Item">
+                <center>
+                    <img src="https://docs.fivem.net/vehicles/champion.webp">
+                </center>                
+                <div style="top: 1.3vh;" class="ayirbu"></div>
+                <h5 style="margin-top: 1.9vh;">房间 1</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="ChooseColorRoom">
+        <h1><span id="EditRoomThemeString"></span></h1>
+        <p><span id="ChooseColor"></span></p>
+        <div class="Rog"></div>
+    </div>
+    <div class="AreYouRead">
+        <div class="Damla">
+            <img src="pimg/char1_80877aca6164d3df0a469fe3c96f2524127ab052.png">
+        </div>
+       <h3><span id="TextFormat"></span></h3>
+       <h4><span id="LangAccept"></span> <font color="#1ec273"><b>[K]</b></font></h4>
+       <h4><span id="LangReject"></span> <font color="#ff4b4b"><b>[G]</b></font></h4>
+    </div>
+
+    <div id="ReceptionContainer">
+        <h1><span id="MotelNameMain"></span></h1>
+        <div class="Yildizlar"></div>
+        <h3><span id="ReceptionText"></h3>
+
+        <div id="menurece" style="height: 4em;">
+            <div class="ReceptionMenuContainer">
+                <div id="MenuBut" data-id="recepbuton" class="ReceptionMenuContainer-item recepbuton">
+                    <p><span id="ReceptionMenuString"></span></p>
+                </div>
+                <div id="MenuBut" data-id="myRooms5" class="ReceptionMenuContainer-item myRooms5">
+                    <p><span id="MyRoomString"></span></p>
+                </div>
+                <div class="ReceptionMenuContainer-item motelAdmin">
+                    <p><span id="MotelManagement"></span></p>
+                </div>
+                <div id="MenuBut" data-id="feedBackV" class="ReceptionMenuContainer-item feedbackV">
+                    <p><span id="FeedbackString"></span></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="Coupon">
+            <h5><span id="DiscountText"></span><font color="#0ad953"> %<span id="DiscountValue"></span></font></h5>
+        </div>
+
+        <div id="roomb"></div>
+
+        <div class="kotuoyna" id="myrooms">
+            <h1><span id="mymotelroomsstring"></span></h1>
+            <div class="BoxOrder">
+                <div class="roomlistbox">
+                    <!-- <div class="newRoomBox">
+                        <h4>ROOM 1</h4>
+                        <h5>AMOUNT BE PAID <font color="#ebebeb">$750</font></h5>
+                        <h5>RENT PRICE <font color="#ebebeb">$500</font></h5>
+                        <h5>DUE DATE <font color="#ebebeb">2023--09-07</font></h5>
+                        <div class="DoNotOcluk">
+                            <h6>AUTO PAY</h6>
+                            <label class="switch">
+                                <input data-id="${element.RoomId}" type="checkbox" ${autoPayChecked}>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="ButonlarV">
+                            <button class="Anax"><i class="fa-light fa-key"></i></button>
+                            <button class="Anax"><i class="fa-regular fa-timer"></i></button>
+                            <button class="Anax"><i class="fa-solid fa-right-from-bracket"></i></button>
+                        </div>
+                        <img src="bayresim" class="bayresim">
+                    </div> -->
+                </div>
+            </div>
+            
+            <!-- <h1 style="text-align: left;position: relative; left: 11vh; top: 11.3vh;">MY BILLS</h1> -->
+            <div class="BoxOrder">
+                <div class="roomlistbox2">
+                    <div class="listeleFaturalar"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="feedbacks">
+            <div class="FeedBackOlustur">
+                <p><i class="fa-solid fa-pen-to-square"></i> <span id="createfeedbackstring"></span></p>
+            </div>
+            <div class="feedBackList">
+                <div class="OlusturmaKisim">
+                    <div id="feedbacklisx">
+
+                    </div>
+                </div>
+                <div class="CreateFeedBackContainer">
+                    <h4><span id="selectroomstring"></span></h4>
+                    <div class="CreateFeedBackRoomList">
+                        <!-- <div class="CreateFeedBackRoomList-Item">
+                            <h5>ROOM 6</h5>
+                            <h6>DOUBLE ROOM</h6>
+                        </div>
+                        <div class="CreateFeedBackRoomList-Item SelectRoom">
+                            <h5>ROOM 6</h5>
+                            <h6>DOUBLE ROOM</h6>
+                        </div> -->
+                    </div> 
+                    <h4 style="margin-top: 3rem;"><span id="ratestring"></span></h4>
+                    <div class="YildizlarClub">
+                        <!-- <h5><i class="fa-solid fa-star"></i></h5>
+                        <h5><i class="fa-solid fa-star"></i></h5>
+                        <h5><i class="fa-solid fa-star"></i></h5>
+                        <h5><i class="fa-solid fa-star"></i></h5>
+                        <h5><i class="fa-solid fa-star"></i></h5> -->
+                    </div><br>
+                    <h4 style="margin-top: 4vh;"><span id="youropinion"></span> <font color="gray"><span id="limitedstring"></span></font></h4>
+                    <input id="feedbek" class="feedback-text" placeholder="写你的评论">
+                    <button id="faadback" class="CreateFaadback"><span id="createfeedbackstring2"></span></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="recepsiyonmain">
+            <div id="recepsiyon">
+                <div class="damlaevlen">
+                    <div id="KaydirSol" class="solOk">
+                        <p><svg xmlns="http://www.w3.org/2000/svg" width="25" height="29" viewBox="0 0 25 29" fill="none">
+                            <path d="M1.70329 17.595C-0.567761 16.2838 -0.567763 13.0058 1.70328 11.6946L19.5878 1.36902C21.8588 0.0578299 24.6976 1.69681 24.6976 4.31919L24.6976 24.9704C24.6976 27.5928 21.8588 29.2318 19.5878 27.9206L1.70329 17.595Z" fill="#727272"/>
+                        </svg></p>
+                    </div>
+                    <div id="KaydirSag" class="sagOk">
+                        <p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" viewBox="0 0 25 28" fill="none">
+                                <path d="M23.2968 10.9504C25.5678 12.2616 25.5678 15.5396 23.2968 16.8508L5.41229 27.1764C3.14124 28.4876 0.30243 26.8486 0.30243 24.2262L0.302431 3.57498C0.302431 0.952604 3.14124 -0.686385 5.41228 0.624805L23.2968 10.9504Z" fill="#727272"/>
+                            </svg>
+                        </p>
+                    </div>
+                    <div class="MotelReceptionSlider">
+                        <center>
+                            <img id="RoomSliderImage" class="MotelReceptionImage">
+                        </center>
+                        <h2 class="RoomTypeHeader"><span id="RoomTitle">双人</span> 房间</h2>
+                        <p class="tanitimText"><span id="tanitimText"></span></p>
+                        <div id="ButonKisim"></div>
+                    </div>
+                    <div class="resimSlaytCizgileri"></div>
+                </div>
+
+                <div class="buyMotelContainer">
+                    <h4><span id="doyouwant"></span></h4>
+                    <div id="BuyMotel" class="buyMotelButton"><p><span id="buybusiness"></span> ($<span id="MotelFiyat"></span>)</p></div>
+                </div>
+            </div>
+
+            <div class="buyMotelModal">
+                <h6>购买产业</h6>
+                <div class="cizgiM"></div>
+                <p class="textduy">
+                    您是否批准购买此汽车旅馆物业 ?
+                </p>
+                <div class="butx cancel">
+                    <p>取消</p>
+                </div>
+                <div class="butx buy">
+                    <p>购买</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="BuyRoomScreen">
+            <div class="BuyEnterScreen">
+                <span class="odaTypeString">
+                    双人间
+                </span>
+                <span class="minikstring">
+                    这个房间是单人的，只有一个人可以留下
+                </span>
+                <div class="odabox1">
+                    <div class="odabox2"></div>
+                    <span class="filledroomstext">
+                        <span id="filledroomsstring"></span>
+                    </span><br>
+                    <span class="filledroomsmiktar">
+                        12
+                    </span>
+
+                    <div class="odabox3"></div>
+                    <span class="filledroomstext2">
+                        <span id="emptyroomsstring"></span>
+                    </span><br>
+                    <span class="filledroomsmiktar2">
+                        12
+                    </span>
+                </div>
+
+                <div class="odalistx"></div>
+
+                <div class="paymentPart">
+                    <span class="paymentPartText">
+                        支付
+                    </span>
+                    <span class="inx">
+                        <span id="ThePriceString"></span>
+                    </span>
+
+                    <div class="boxapp">
+                        <div class="rombox">
+                            <h5 class="romboxtext"><span id="seciliOdaNo"></span></h5>
+                        </div>
+
+                        <h4 class="amounttext">
+                            <span id="AmountPayBla"></span>
+                        </h4>
+
+                        <h4 class="amountmiktar"><font style="color: #5C5C5C;">$</font> <span id="MotelOdaPrice">0</span></h4>
+
+                        <h4 class="dexcription">
+                            <span id="seks"></span>
+                        </h4>
+                        <p><span id="RoomDescriptionV2"></span></p>
+
+                        <div class="GunDay">
+                            <h4><span id="daystring"></span></h4>
+                            <div class="kuzu">
+                                <div id="GunAzalt" class="sapik">
+                                    <h5>-</h5>
+                                </div>
+                                <div class="sapik">
+                                    <input id="gunDeger" class="superbaba" value="1" disabled>
+                                </div>
+                                <div id="GunArttir" class="sapik">
+                                    <h5>+</h5>
+                                </div>
+                                <!-- <button id="GunAzalt" class="Arttir">-</button>
+                                <input id="gunDeger" class="degerValue" value="1" disabled>
+                                <button id="GunArttir" class="Arttir">+</button> -->
+                            </div>
+                            <div class="havada">
+                                <div id="1Month" class="sapikk">
+                                    <h5>1 <span id="month1"></h5>
+                                </div>
+                                <div id="3Month" class="sapikk">
+                                    <h5>3 <span id="month2"></h5>
+                                </div>
+                                <div id="6Month" class="sapikk">
+                                    <h5>6 <span id="month3"></h5>
+                                </div>
+                                <div id="LifeTime" class="sapikk">
+                                    <h5>永久</h5>
+                                </div>
+                            </div>
+                        <div class="indirimliOda">
+                            <h6><span id="discountlu"></span> <br><font class="BayFont">$ <font color="gray"><span id="indirimlipara"></span></font></font></h6>
+                        </div>
+
+                        <button id="BuyMotelRoom" class="ayarlanhadi"><span id="BuyMotelRoomString"></span></button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div id="MematiT" class="NotificationBox">
+            <div class="NotificationBox-List">
+            </div>
+        </div>
+    </div>
+
+
+
+
     <!-- <div class="CreateRoomScreen">
-        <h1>旅馆产业</h1>
+        <h1>0RESMON MOTELS</h1>
         <h3>ADD ROOM</h3>
         <div class="gaga"></div>
         <h4>ROOM TYPE</h4>
@@ -1063,10 +1087,10 @@
             <button id="Xapa" class="closemark"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <div class="parx">
-            <h4>剩下一天</h4>
-            <h2 style="left: -8.7vh; top: 4vh;"><span id="kalanGun"></span> 天</h2>
-            <button style="left: 20.3vh;position: absolute;" id="TamGaz" class="ArtBax"><i class="fa-solid fa-plus"></i></button>
-            <button style="position: absolute;left: 17vh;" id="EksiGaz" style="top: 1.8vh; left: -2.7vh;" class="ArtBax">-</button>
+            <h4>剩下天数</h4>
+            <h2 style="left: -6rem; top: 2.6rem;"><span id="kalanGun"></span> 天</h2>
+            <button style="left: 14.5rem; position: absolute;" id="TamGaz" class="ArtBax"><i class="fa-solid fa-plus"></i></button>
+            <button style="position: absolute;left: 12rem;" id="EksiGaz" style="top: 1.8vh; left: -2.7vh;" class="ArtBax">-</button>
             <h5><span id="EklenenGunV"></span></h5>
         </div>
         <div class="parx">
@@ -1074,12 +1098,9 @@
             <h2><span id="faturaDa"></span></h2>
         </div>
         <div class="leftOdeme">
-            <h3>支付</h3>
             <h6><font color="#8D8585">$</font> <span id="odeyecek"></span></h6>
         </div>
-        <div style="float: right;">
-            <button id="PayUzat" class="OdeV">支付</button>
-        </div>
+        <button id="PayUzat" class="OdeV">支付</button>
     </div>
 
     <div class="RoomUzatPage2">
@@ -1088,7 +1109,7 @@
         </div>
         <div class="parx">
             <h4><span id="dayremaining"></span></h4>
-            <h2 style="left: -8.7vh; top: 4vh;"><span id="kalanGunV"></span> 天</h2>
+            <h2 style="left: -8.7vh; top: 4vh;"><span id="kalanGunV"></span> DAY</h2>
             <button style="left: 20.3vh;position: absolute;" id="ArttirOdaV" class="ArtBax"><i class="fa-solid fa-plus"></i></button>
             <button style="position: absolute;left: 17vh;" id="EksiltOda" style="top: 1.8vh; left: -2.7vh;" class="ArtBax">-</button>
             <h5><span id="EklenenGunVV"></span></h5>
@@ -1110,44 +1131,14 @@
         <h1><span id="tex"></span></h1>
     </div>
 
-    <div class="PlayerMotelRoomList">
-        <h1>钥匙列表</h1>
-        <p>您拥有的钥匙列表</p>
-        <div class="belirlen"></div>
-        <div id="playeranahtarlar" class="myodalar">
-            <div class="roomb">
-                <h3>旅馆产业</h3>
-                <h5>房屋 1 <i class="fa-solid fa-crown"></i></h5>
-            </div>
-        </div>
-        <div id="player-secili-anahtar" class="myodalar">
-            <div style='background: transparent;' class="roomb">
-                <div style="width: 34%; background: #993434;" class="roombv2">
-                    <h3 style="padding-top: 2vh;"><i class="fa-regular fa-xmark"></i></h3>
-                </div>
-                <div style="left: -1vh;" class="roombv2">
-                    <h3 style="padding-top: 2vh;">JOHNNY LESH</h3>
-                </div>
-            </div>
-            <div style='background: transparent;' class="roomb">
-                <div style="width: 34%; background: #993434;" class="roombv2">
-                    <h3 style="padding-top: 2vh;"><i class="fa-regular fa-xmark"></i></h3>
-                </div>
-                <div style="left: -1vh;" class="roombv2">
-                    <h3 style="padding-top: 2vh;">Buck Berry</h3>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div id="RoomStashWeightBox">
         <h1><span id="RoomStashWeightString"></span></h1>
-        <p>增加酒店仓库的重量.</p>
-        <h3 id="CloseWeight"><i class="fa-solid fa-xmark"></i></h3>
+        <p>自定义房间藏匿重量</p>
         <div class="UfakCizgi"></div>
-        <h2><span id="roomstashvalue"></span></h2>
-        <input type="number" id="Annen" placeholder="重量值" value="50">
-        <button id="Yukselt">支付 $<span id="Odeyecek">50</span></button>
+        <!-- <h2><span id="roomstashvalue"></span></h2> -->
+        <input type="number" id="Annen" placeholder="Weight Value" value="50">
+        <div class="buttona5" id="Yukselt"><h6>支付 $<span id="Odeyecek">50</span></h6></div>
+        <div id="CloseWeight" class="uzunlar"><h6>取消</h6></div>
     </div>
 
     <!-- <div id="NewMotelScreen">

@@ -1,6 +1,8 @@
 body {
     margin: 0;
-    overflow:hidden;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 #recepsiyon { display: block; }
@@ -17,8 +19,8 @@ body {
     -o-background-size: cover;
     background-size: cover;
     display: none;
-    width: 123.5rem;
-    height: 68.22163rem;
+    width: 100%;
+    height: 105vh;
     flex-shrink: 0;
     
     /* opacity: 0.03999999910593033; */
@@ -30,8 +32,8 @@ body {
 }
 
 #MotelAdminMenu {
-    width: 767px;
-    height: 860px;
+    width: 48rem;
+    height: 54.5rem;
     flex-shrink: 0;
     margin: auto;
     display: none;
@@ -46,14 +48,14 @@ body {
 
 
 #BossMenuContainer {
-    background: url(back.png) no-repeat center center fixed; 
+    background: url(back.png) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     display: none;
-    width: 123.5rem;
-    height: 68.22163rem;
+    width: 100%;
+    height: 91rem;
     flex-shrink: 0;
 }
 
@@ -90,54 +92,68 @@ body {
 }
 
 .ReceptionMenuContainer {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    position: absolute;
-    left: 4vh;
-    right: 0vh;
-    width: fit-content;
-    bottom: 64vh;
-    padding-right: 0.4vh;
-    top: 6vh;
-    margin: auto;
-    gap: 1.06313rem;
-    float: left;
-    height: 5vh;
+    padding: 0.4vh 0; /* Sağ ve sol kenar boşluğu sıfır */
     border-radius: 2.53925rem;
     border: 1.27px solid rgba(255, 255, 255, 0.08);
     background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(8.059002876281738px);
+    padding-right: 0.7vh;
+    padding-left: 0.2vh;
+    width: fit-content;
+    margin: auto;
+    margin-top: 5vh;
+    height: 3.8em;
+
+    /* Media sorgularını kullanarak responsive davranış ekleyin */
+    @media screen and (max-width: 768px) {
+        top: 5%; /* Küçük ekranlarda menüyü yukarı taşıyabilirsiniz */
+        gap: 0.5rem; /* Daha küçük bir boşluk ekleyebilirsiniz */
+    }
 }
+
 
 .ReceptionMenuContainer-item {
     display: flex;
-    padding: 0.55544rem 1.468rem 0.55544rem 1.349rem;
+    padding: .8rem 2rem 0.8544rem 1.8rem;
     align-items: flex-start;
     border-radius: 2.53925rem;
     background: transparent;
-    margin-left: 0.4vh;
+    margin-left: .3rem;
+    text-transform: uppercase;
+    margin-right: vh;
+    margin-top: 0;
     color: #7D7D7E;
     align-items: center;
     cursor: pointer;
     font-family: Satoshi;
     font-size: 1.11094rem;
-    height: 49%;
+    height: 50%;
     width: fit-content;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.11094rem;
     letter-spacing: 0.01588rem;
+}
+
+.damlaevlen {
+    margin: auto;
+    position:relative;
+    background: transparent;
+    top: 2em;
+    height: 46vh;
 }
 
 .selected {
     background: #383839;
     color: #EDEDED;
     font-family: Satoshi;
-    font-size: 1.03156rem;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.90444rem;
-    letter-spacing: 0.01588rem;
+    letter-spacing: .3rem;
+    line-height: 2rem;
+    font-size: .9rem;
+    position: relative;
 }
 
 @font-face { 
@@ -151,12 +167,12 @@ body {
 }
 
 .MotelReceptionSlider {
+    top: 1.5em;
     width: 47.1875rem;
     height: 32.20925rem;
     flex-shrink: 0;
     margin: auto;
     position: relative;
-    top: 18vh;
     border-radius: 0.53519rem;
     border: 0.869px solid #414141;
     background: rgba(62, 62, 62, 0.01);
@@ -191,7 +207,7 @@ body {
     color: #787878;
     margin: auto;
     position: relative;
-    top: -3.5vh;
+    top: -2.5em;
     font-family: Satoshi;
     font-size: 0.89231rem;
     font-style: normal;
@@ -225,12 +241,12 @@ body {
     background: transparent;
     max-width: 52vh;
     width: fit-content;
-    height: 2vh;
+    height: 2rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(78px, 1fr));
     margin: auto;
     position: relative;
-    top: 21vh;
+    top: 3em;
 }
 
 .sliderx {
@@ -257,10 +273,10 @@ body {
 
 .solOk {
     position: absolute;
-    left: 52vh;
+    left: 27%;
     transition: .4s;
     cursor: pointer;
-    top: 51vh;
+    top: 16rem;
 }
 
 .solOk p:hover, .sagOk p:hover {
@@ -270,8 +286,8 @@ body {
 
 .sagOk {
     position: absolute;
-    left: 129vh;
-    top: 51vh;
+    right: 27%;
+    top: 15.8rem;
     transition: .4s;
     cursor: pointer;
 }
@@ -282,8 +298,17 @@ body {
     margin: auto;
     max-width: 64vh;
     position: relative;
-    top: 21vh;
-    height: 10vh;
+    top: 7em;
+    height: 6em;
+}
+
+.kotuoyna {
+    display: block;
+    width: 120em;
+    height: 59em;
+    margin: auto;
+    margin-top: 3em;
+    background-color: transparent;
 }
 
 .buyMotelContainer h4 {
@@ -478,6 +503,8 @@ body {
     height: 3.13938rem;
     flex-shrink: 0;
     float: left;
+    position: relative;
+    top: -0.5em;
     border-radius: 0.1365rem;
     background: #EB2834;
 }
@@ -488,6 +515,9 @@ body {
     font-size: 1.11069rem;
     font-style: normal;
     margin-left: 1vh;
+    position: relative;
+    top: -0.5em;
+    text-transform: uppercase;
     float: left;
     font-weight: 500;
     line-height: normal;
@@ -501,8 +531,8 @@ body {
     font-weight: 700;
     margin: auto;
     position: absolute;
-    left: 5.7vh;
-    top: 2vh;
+    left: 3.7em;
+    top: 1em;
     line-height: normal;
 }
 
@@ -512,9 +542,9 @@ body {
     font-size: 1.11069rem;
     font-style: normal;
     position: relative;
-    top: -2vh;
+    top: -1.8rem;
     text-transform: uppercase;
-    left: 6vh;
+    left: 3.6rem;
     float: left;
     font-weight: 500;
     line-height: normal;
@@ -527,17 +557,30 @@ body {
     font-style: normal;
     font-weight: 700;
     position: absolute;
-    left: 26vh;
-    top: 2vh;
+    left: 18.7rem;
+    top: 1rem;
     line-height: normal;
+}
+
+.kuumar {
+    font-size: 1rem;
+    width: fit-content;
+    color: #ddd;
+    padding-left: .7rem;
+    padding-bottom: .7rem;
+    padding-right: .7rem;
+    padding-top: 1.1rem;
+    background: #232323;
+    text-transform: uppercase;
+    height: 3.2em;
 }
 
 .odabox3 {
     width: 3.13938rem;
     height: 3.13938rem;
     position: relative;
-    top: -2vh;
-    left: 5vh;
+    top: -1.8rem;
+    left: 3rem;
     border-radius: 0.1365rem;
     border: 2.184px solid #565656;
     background: rgba(86, 86, 86, 0.00);
@@ -548,7 +591,7 @@ body {
 .odalistx {
     background: transparent;
     width: 98vh;
-    height: 41vh;
+    height: 43vh;
     overflow-x: hidden;
     overflow-y: auto;
     position: relative;
@@ -635,7 +678,7 @@ body {
     float: right;
     left: 4vh;
     height: 69vh;
-    bottom: 53vh;
+    bottom: 57vh;
     position: relative;
 }
 
@@ -645,8 +688,8 @@ body {
     font-size: 2.22963rem;
     font-style: normal;
     position: absolute;
-    left: .5vh;
-    top: -6vh;
+    left: .3em;
+    top: -4vh;
     font-weight: 900;
     line-height: normal;
 }
@@ -654,20 +697,19 @@ body {
 .inx {
     color: #6B6B6B;
     font-family: Satoshi;
+    position: relative;
+    top: .2em;
+    margin-left: .6em;
     font-size: 1.12856rem;
     font-style: normal;
-    float: left;
-    position: relative;
-    left: 1vh;
     font-weight: 500;
-    line-height: normal;
 }
 
 .boxapp {
     width: 33rem;
     height: 33.625rem;
     position: relative;
-    top: 4vh;
+    top: 2rem;
     flex-shrink: 0;
     border-radius: 0.375rem;
     background: linear-gradient(113deg, rgba(11, 11, 12, 0.40) 0%, rgba(11, 11, 12, 0.40) 100%);
@@ -679,8 +721,8 @@ body {
     height: 6.4375rem;
     flex-shrink: 0;
     margin: auto;
+    top: 0em;
     position: relative;
-    top: 1.5vh;
     border-radius: 0.41563rem;
     border: 4px solid #565656;
     background: rgba(86, 86, 86, 0.00);
@@ -694,8 +736,8 @@ body {
     font-style: normal;
     text-transform: uppercase;
     position: relative;
-    top: -4.5vh;
-    font-weight: 700;
+    top: -1.2em;
+    font-weight: 900;
     line-height: normal;
 }
 
@@ -722,7 +764,7 @@ body {
     float: right;
     position: relative;
     right: 1vh;
-    top: -2.7vh;
+    top: -2.5vh;
     font-weight: 700;
     line-height: normal;
 }
@@ -734,9 +776,9 @@ body {
     font-size: 1.25056rem;
     font-style: normal;
     position: relative;
-    width: 22vh;
-    top: 2vh;
-    left: 0.2vh;
+    width: fit-content;
+    left: 1.2rem;
+    top: 1rem;
     font-weight: 700;
     line-height: normal;
 }
@@ -749,14 +791,15 @@ body {
     font-family: Satoshi;
     font-size: 1.0625rem;
     position: relative;
-    left: 2vh;
+    left: 1.3rem;
+    top: 0em;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
 
 .ayarlanhadi {
-    width: 95%;
+    width: 100%;
     height: 4.0625rem;
     flex-shrink: 0;
     border-radius: 0rem 0rem 0.375rem 0.4375rem;
@@ -765,16 +808,17 @@ body {
     font-family: Satoshi;
     font-size: 1.36269rem;
     border: 1px;
+    top: 0em;
     position: relative;
     font-style: normal;
     font-weight: 900;
     transition: .4s;
     line-height: normal;
-    left: 2vh;
+    left: 0vh;
     cursor: pointer;
 }
 
-.ayarlanhadi:hover, .BabalaTv:hover, .RecepFazilYarakKurek:hover, .CreatHotel:hover, .EnCokBeniSev:hover, .successOnayla:hover, .SaveChanges:hover, .SaveHersey:hover, .CreateFaadback:hover {
+.ayarlanhadi:hover, .buttona5:hover, .BabalaTv:hover, .OdeV:hover, .paym:hover, .RecepFazilYarakKurek:hover, .CreatHotel:hover, .EnCokBeniSev:hover, .successOnayla:hover, .SaveChanges:hover, .SaveHersey:hover, .CreateFaadback:hover {
     transition: .4s;
     box-shadow: 0px 0px 24px 0px #17986A;
 }
@@ -786,8 +830,8 @@ body {
     font-style: normal;
     font-weight: 800;
     position: relative;
-    left: 11vh;
-    top: 14vh;
+    left: 9.8rem;
+    top: 0;
     text-align: left;
     line-height: normal;
 }
@@ -1001,14 +1045,14 @@ body {
 }
 
 .fatura {
-    width: 98.3%;
+    width: 97.3%;
     height: 3.0625rem;
     flex-shrink: 0;
     border-radius: 0.18363rem;
     position: relative;
     top: -1vh;
     left: 1vh;
-    margin-top: 1vh;
+    margin-top: 1rem;
     border: 0.735px solid #616161;
     background: rgba(97, 97, 97, 0.11);
 }
@@ -1057,13 +1101,13 @@ body {
 .odeme {
     width: 5.19256rem;
     border: 1px;
-    height: 1.548rem;
+    height: 1.848rem;
     flex-shrink: 0;
-    margin-left: 3vh;
+    margin-left: 3.9rem;
     text-align: center;
-    margin-top: 1.2vh;
+    margin-top: .61rem;
     font-family: Satoshi;
-    font-size: 1.3vh;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 500;
     transition: .4s;
@@ -1185,8 +1229,8 @@ body {
     height: 3.08488rem;
     position: relative;
     float: left;
-    left: 1vh;
-    top: 1vh;
+    left: .8rem;
+    top: .6rem;
     flex-shrink: 0;
     border-radius: 0.20119rem;
 }
@@ -1197,9 +1241,9 @@ body {
     text-transform: uppercase;
     margin: auto;
     position: relative;
-    left: 2vh;
+    left: 1.9rem;
     text-transform: uppercase;
-    top: 1.5vh;
+    top: 1rem;
     float: left;
     font-size: 1.22794rem;
     font-style: normal;
@@ -1215,18 +1259,44 @@ body {
     margin: auto;
     text-transform: uppercase;
     position: absolute;
-    left: 6.5vh;
-    top: 2.8vh;
+    left: 5rem;
+    margin-top: 2.8rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
 
+.leftbar-1 h6 {
+    margin: auto;
+    color: #9d9d9d;
+    font-size: 1rem;
+    font-weight: 600;
+    left: .9rem;
+    top: .9rem;
+    position: relative;
+    text-transform: uppercase;
+    float: left;
+    font-family: 'Inter';
+}
+
+.leftbar-1 h4 {
+    margin: auto;
+    color: #4e4e4e;
+    font-family: 'Inter';
+    position: relative;
+    float: left;
+    text-align: right;
+    font-size: .8rem;
+    right: 4.75rem;
+    top: 1.2rem;
+    text-transform: uppercase;
+}
+
 .ikonc {
     float: right;
     position: relative;
-    right: 1vh;
-    top: 2vh;
+    right: 1rem;
+    top: 1.5rem;
 }
 
 .startbaba {
@@ -1234,8 +1304,8 @@ body {
     width: 1.99463rem;
     height: 1.99444rem;
     position: relative;
-    left: 1.5vh;
-    top: 1.7vh;
+    left: 1.4rem;
+    top: 1.2rem;
     margin: auto;
     fill: #4B4B4B;
     flex-shrink: 0;
@@ -1246,8 +1316,8 @@ body {
     width: 1.99463rem;
     height: 1.99444rem;
     position: relative;
-    left: 1.5vh;
-    top: 2.3vh;
+    left: 1.5rem;
+    top: 1.5rem;
     margin: auto;
     fill: #4B4B4B;
     flex-shrink: 0;
@@ -1268,7 +1338,7 @@ body {
     position: relative;
     left: 4vh;
     text-transform: uppercase;
-    top: 2vh;
+    top: 1.3rem;
     font-weight: 700;
     line-height: normal;
 }
@@ -1292,7 +1362,7 @@ body {
     height: 73vh;
     display: none;
     position: relative;
-    left: 9vh;
+    left: 4vh;
     top: 4vh;
     float: left;
 }
@@ -1321,12 +1391,12 @@ body {
 
 .SettingPage {
     background: transparent;
-    width: 139vh;
-    height: 73vh;
+    width: 94rem;
+    height: 44rem;
     display: none;
     position: relative;
-    left: 9vh;
-    top: 3vh;
+    left: 4rem;
+    top: 3rem;
     float: left;
 }
 
@@ -1340,31 +1410,31 @@ body {
     margin: auto;
     text-transform: uppercase;
     position: relative;
-    top: -4.4vh;
-    margin-top: 1vh;
+    top: -3rem;
+    margin-top: 1rem;
     font-weight: 700;
     line-height: normal;
 }
 
 .DashboardAssets {
-    width: 59.6875rem;
-    height: 301px;
+    width: 60rem;
+    height: 20.2em;
     flex-shrink: 0;
     position: relative;
-    top: -9.5vh;
-    margin-top: 6vh;
+    top: -7.4rem;
+    margin-top: 5rem;
     border-radius: 0.375rem;
     box-shadow: 0px 0px 3px 0px rgb(255 255 255 / 47%);
 }
 
 .assetsbox {
-    width: 56.5rem;
-    height: 7.2rem;
+    width: 58rem;
+    height: 7.8rem;
     flex-shrink: 0;
-    margin-top: 2.5vh;
+    margin-top: 2.2rem;
     position: relative;
-    top: 1.8vh;
-    left: 2vh;
+    top: 1rem;
+    left: 1rem;
     border-radius: 0.19594rem;
     border: 1.045px solid #434343;
     background: rgba(217, 217, 217, 0.04);
@@ -1399,13 +1469,14 @@ body {
 }
 
 .circlebox {
-    width: 19vh;
+    width: 33%;
     height: 100%;
     position: relative;
+    text-transform: uppercase;
     float: left;
-    left: -4vh;
-    margin-left: 9vh;
-    top: 0vh;
+    left: 0rem;
+    margin-left: 0vh;
+    top: 0rem;
     background-color: transparent;
 }
 
@@ -1436,11 +1507,11 @@ body {
 }
 
 .dis {
-    stroke-width: 10px;
+    stroke-width: 8px;
     stroke-linecap: round;
     stroke-dashoffset: 350px;
     fill: transparent;
-    stroke-dasharray: 55vh;
+    stroke-dasharray: 38rem;
 }
 
 .text {
@@ -1452,14 +1523,13 @@ body {
     transform: rotate(90deg) translate(34px, -90px);
 }
 
-.text2 {
+.mematinam h5 {
     color: #999;
-    font-size: 28.761px;
+    font-size: x-large;
     font-style: normal;
-    margin-left: 2vh;
     position: relative;
+    top: 0;
     text-align: center;
-    top: -.5vh;
     font-family: SatoshiBold;
     font-weight: bold;
 }
@@ -1469,10 +1539,11 @@ body {
     color: #8C8C8C;
     text-align: center;
     font-family: Satoshi;
-    font-size: 21.214px;
+    position: relative;
+    left: 0rem;
+    top: 15.5rem;
+    font-size: 1.2rem;
     font-style: normal;
-    margin-left: 2.5vh;
-    margin-top: 6vh;
     font-weight: 700;
     line-height: normal;
 }
@@ -1487,14 +1558,23 @@ body {
 
 .tablelist {
     background: transparent;
-    width: 46vh;
-    height: 75vh;
+    width: 29rem;
+    height: 63rem;
     margin: auto;
     position: relative;
-    left: 92vh;
-    bottom: 82.5vh;
+    left: 75rem;
+    bottom: 63rem;
     border-radius: .4vh;
     float: left;
+}
+
+.mematinam {
+    background-color: transparent;
+    width: 5rem;
+    height: 5rem;
+    left: 7rem;
+    top: 8rem;
+    position: absolute;
 }
 
 .mem {
@@ -1503,9 +1583,80 @@ body {
     font-size: 20.926px;
     font-style: normal;
     position: relative;
-    top: 4vh;
+    top: 3.8rem;
     font-weight: 700;
+    text-transform: uppercase;
     line-height: normal;
+}
+
+.koygitsin {
+    float: right;
+    position: absolute;
+    right: 0;
+    top: -1rem;
+    margin: auto;
+    background: transparent;
+    height: 48rem;
+    left: 59rem;
+    width: 32rem;
+}
+
+.atgitsin {
+    top: -6.9rem;
+    height: 20.2rem;
+    margin-top: 7.9rem;
+    position: relative;
+    left: 1rem;
+    overflow: auto;
+    float: revert;
+    width: 28.5rem;
+    flex-shrink: 0;
+    border-radius: 0.375rem;
+    border: 1px solid #525252;
+    background: linear-gradient(91deg, rgba(11, 11, 12, 0.40) 7.12%, rgba(11, 11, 12, 0.40) 93.17%);
+}
+
+.cambaz {
+    margin: auto;
+    width: 93%;
+    height: 4rem;
+    background: #171616c2;
+    border: 1.045px solid #383838;
+    border-radius: .2rem;
+    margin-top: 1rem;
+}
+
+.leftbar-1 {
+    width: 90%;
+    height: 100%;
+    float: left;
+    background: transparent;
+}
+
+.leftbar-1 img {
+    width: 3.2rem;
+    margin-left: .5rem;
+    float: left;
+    margin-top: .4rem;
+}
+
+.leftbar-2 {
+    width: 10%;
+    height: 100%;
+    float: left;
+    background: transparent;
+}
+
+.button-click {
+    color: #8f8f8f;
+    width: 2rem;
+    cursor: pointer;
+    float: right;
+    position: relative;
+    transition: .4s;
+    left: 0rem;
+    top: .3rem;
+    height: 1rem;
 }
 
 .listv {
@@ -1522,15 +1673,16 @@ body {
 }
 
 .listv-item {
-    width: 93%;
-    height: 16%;
-    margin: auto;
+    width: 31rem;
+    height: 20.5rem;
     flex-shrink: 0;
     position: relative;
-    top: 0.5vh;
-    margin-top: 1vh;
-    box-shadow: 0px 0px 0px 0.1px rgb(255 255 255 / 47%);
-    background: rgba(217, 217, 217, 0.03);
+    overflow: auto;
+    margin-top: 6.9vh;
+    top: -2vh;
+    border-radius: 6px;
+    box-shadow: 0px 0px 3px 0px rgb(255 255 255 / 47%);
+    background: linear-gradient(113deg, rgba(11, 11, 12, 0.40) 0%, rgba(11, 11, 12, 0.40) 100%);
 }
 
 .mulkiyet {
@@ -1643,15 +1795,13 @@ body {
 }
 
 .allroomstab {
-    width: 1249px;
-    height: 694px;
+    width: 82.125rem;
+    height: 42rem;
     flex-shrink: 0;
-    position: relative;
-    top: -2.5vh;
     overflow: auto;
-    border-radius: 6px;
-    box-shadow: 0px 0px 0px 1px rgb(64 64 64 / 47%);
-    background: linear-gradient(113deg, rgba(11, 11, 12, 0.40) 0%, rgba(11, 11, 12, 0.40) 100%);
+    border-radius: 0.375rem;
+    border: 1px solid #636363;
+    background: linear-gradient(91deg, rgba(11, 11, 12, 0.40) 7.12%, rgba(11, 11, 12, 0.40) 93.17%);
 }
 
 .roomimg {
@@ -1678,8 +1828,8 @@ body {
     flex-shrink: 0;
     position: relative;
     margin: auto;
-    margin-left: 2.3vh;
-    top: 2.3vh;
+    margin-left: 1.8rem;
+    top: 1.8rem;
     border-radius: 3.783px;
     background: rgba(217, 217, 217, 0.08);
 }
@@ -1699,17 +1849,18 @@ body {
     margin: auto;
     text-transform: uppercase;
     position: relative;
-    top: -16.5vh;
+    top: 1rem;
     text-align: center;
     line-height: normal;
 }
 
 .icerika {
     background: transparent;
-    width: 22vh;
-    height: 11vh;
-    left: 2.5vh;
-    top: 2.5vh;
+    width: 13rem;
+    height: 9rem;
+    margin: auto;
+    margin-left: 1.9rem;
+    top: 2rem;
     position: relative;
 }
 
@@ -1727,11 +1878,12 @@ body {
     font-size: 15.379px;
     font-style: normal;
     font-weight: 700;
+    z-index: 999;
     margin: auto;
     text-align: center;
     position: relative;
     text-transform: uppercase;
-    top: -11.8vh;
+    top: 4.2rem;
     line-height: normal;
 }
 
@@ -1749,7 +1901,8 @@ body {
     text-transform: uppercase;
     transition: .4s;
     position: relative;
-    top: -8vh;
+    top: 6.7rem;
+    left: 0;
     font-weight: 700;
     line-height: normal;
     border-radius: 3.783px;
@@ -1777,8 +1930,8 @@ body {
     background: #000000de;
     position: absolute;
     z-index: 99999;
-    width: 568px;
-    padding-bottom: 4vh;
+    width: 570px;
+    padding-bottom: 2.2rem;
     height: fit-content;
     display: none;
     flex-shrink: 0;
@@ -1807,7 +1960,7 @@ body {
     font-size: 0.9rem;
     font-style: normal;
     position: relative;
-    top: 1.2vh;
+    top: .7rem;
     left: 1.5vh;
     font-weight: 700;
     line-height: normal;
@@ -1820,8 +1973,8 @@ body {
     font-style: normal;
     position: relative;
     text-transform: uppercase;
-    top: 1vh;
-    left: 1.4vh;
+    top: .7rem;
+    left: 1.3rem;
     font-weight: 500;
     line-height: normal;
 }
@@ -1834,7 +1987,7 @@ body {
     position: relative;
     float: left;
     left: 2vh;
-    top: 1.1vh;
+    top: .7rem;
     font-weight: 500;
     background: transparent;
     border: 1px;
@@ -1861,9 +2014,9 @@ input:focus {
     font-family: SatoshiBold;
     font-size: 25.154px;
     position: relative;
-    top: 1.2vh;
+    top: .8rem;
     font-style: normal;
-    left: 1.4vh;
+    left: 1.3rem;
     font-weight: 500;
     float: left;
     line-height: normal;
@@ -1871,29 +2024,28 @@ input:focus {
 
 .UpdatePriceButton {
     background: #00b764;
-    width: 32.4rem;
-    padding-left: 1vh;
+    width: 92%;
     position: relative;
-    left: 1.5vh;
+    left: 1rem;
     float: left;
     right: 0.5vh;
-    border-radius: .4vh;
+    border-radius: .2rem;
     transition: .4s;
     top: 1vh;
     color: #000000;
     cursor: pointer;
-    height: 3vh;
+    height: 3.5rem;
     padding-right: 1vh;
 }
 
 .UpdatePriceButton p {
     text-align: center;
     font-family: 'SatoshiBold';
-    font-size: 12.546px;
+    font-size: 1rem;
     text-transform: uppercase;
     font-style: normal;
     position: relative;
-    top: -0.4vh;
+    top: 0;
     font-weight: 900;
     line-height: normal;
 }
@@ -1904,16 +2056,16 @@ input:focus {
 }
 
 .tyu {
-    width: 265px;
-    height: 29px;
+    width: 16.5rem;
+    height: 3rem;
     margin-top: 1.9vh;
     z-index: 9999;
-    top: 0.2vh;
+    top: .1rem;
     cursor: pointer;
     float: left;
     position: relative;
     transition: .4s;
-    left: 1vh;
+    left: .6rem;
     margin-left: 0.5vh;
     flex-shrink: 0;
 }
@@ -1932,10 +2084,12 @@ input:focus {
     color: #FFF;
     text-align: center;
     font-family: Satoshi;
-    font-size: 11.546px;
+    font-size: 1rem;
     position: relative;
-    top: -0.5vh;
+    top: 0;
+    padding: .7rem;
     font-style: normal;
+    margin: auto;
     font-weight: 900;
     line-height: normal;
 }
@@ -1969,11 +2123,11 @@ input:focus {
     background: transparent;
     width: 96%;
     position: relative;
-    top: 2.5vh;
-    left: 1.2vh;
+    top: 2rem;
+    left: 1rem;
     overflow-x: hidden;
     overflow-y: auto;
-    height: 30vh;
+    height: 29rem;
 }
 
 .odalarCaylaar {
@@ -2084,7 +2238,7 @@ input:focus {
     flex-shrink: 0;
     border-radius: 3.867px;
     position: relative;
-    top: 1vh;
+    top: .6rem;
     float: right;
     font-family: Satoshi;
     font-size: 12.259px;
@@ -2113,8 +2267,9 @@ input:focus {
 
 .odenx p {
     text-align: center;
+    margin: auto;
+    padding: .25rem;
     position: relative;
-    top: -0.8vh;
 }
 
 .resetOwnerButton {
@@ -2140,7 +2295,7 @@ input:focus {
     height: 694px;
     flex-shrink: 0;
     position: relative;
-    top: -1vh;
+    top: -1rem;
     border-radius: 6px;
     box-shadow: 0px 0px 0px 1px rgb(64 64 64 / 47%);
     background: linear-gradient(113deg, rgba(11, 11, 12, 0.40) 0%, rgba(11, 11, 12, 0.40) 100%);
@@ -2168,8 +2323,9 @@ input:focus {
     font-size: 12.687px;
     font-style: normal;
     position: relative;
-    top: 2vh;
-    left: 2vh;
+    text-transform: uppercase;
+    top: 1rem;
+    left: 2rem;
     font-weight: 700;
     line-height: normal;
 }
@@ -2181,8 +2337,8 @@ input:focus {
     font-style: normal;
     margin: auto;
     position: relative;
-    top: 1.7vh;
-    left: 2vh;
+    top: 1rem;
+    left: 1.9rem;
     font-weight: 500;
     line-height: normal;
 }
@@ -2205,8 +2361,8 @@ input:focus {
     height: 33rem;
     flex-shrink: 0;
     position: relative;
-    top: 4vh;
-    left: 1.8vh;
+    top: 2.8rem;
+    left: 1.2rem;
     border-radius: 2.996px;
     border: 0.999px solid #434343;
     background: rgba(217, 217, 217, 0.04);
@@ -2216,12 +2372,12 @@ input:focus {
     border-radius: 5px;
     border: 1px solid #717171;
     background: rgba(217, 217, 217, 0.02);
-    width: 90%;
+    width: 88%;
     height: 72px;
     flex-shrink: 0;
     padding-left: 3vh;
-    margin-left: 1.4vh;
-    margin-top: 1.4vh;
+    margin-left: 1rem;
+    margin-top: 1rem;
     color: #636363;
     font-family: 'SatoshiBold';
     font-size: 21.186px;
@@ -2231,13 +2387,13 @@ input:focus {
 }
 
 .typeScript {
-    width: 302px;
+    width: 300px;
     height: 65px;
     margin-left: 0.8vh;
-    margin-top: 1vh;
+    margin-top: 1rem;
     z-index: 2;
     position: relative;
-    left: 0.6vh;
+    left: .3rem;
     cursor: pointer;
     flex-shrink: 0;
     float: left;
@@ -2259,6 +2415,7 @@ input:focus {
     text-align: center;
     font-family: Satoshi;
     font-size: 17.803px;
+    text-transform: uppercase;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -2286,7 +2443,7 @@ input:focus {
 }
 
 .successOnayla {
-    width: 96.6%;
+    width: 39.1rem;
     height: 65px;
     flex-shrink: 0;
     border-radius: .4vh;
@@ -2294,9 +2451,9 @@ input:focus {
     color: #FFF;
     text-align: center;
     position: relative;
-    top: 23.6vh;
+    top: 16rem;
     cursor: pointer;
-    left: 1vh;
+    left: .5rem;
     border: 1px;
     transition: .4s;
     font-family: Satoshi;
@@ -2308,11 +2465,11 @@ input:focus {
 
 .FinanceHistory {
     width: 600.078px;
-    height: 523.733px;
+    height: 527.733px;
     float: right;
     position: relative;
-    right: 2vh;
-    bottom: 45vh;
+    right: 1.2rem;
+    bottom: 30.3rem;
     flex-shrink: 0;
     overflow: auto;
     border-radius: 2.996px;
@@ -2364,9 +2521,9 @@ input:focus {
 }
 
 .BillingX {
-    width: 19%;
+    width: 14.1rem;
     height: 100%;
-    margin-left: 1vh;
+    margin-left: 1vw;
     background: transparent;
     float: left;
 }
@@ -2402,29 +2559,38 @@ input:focus {
 #Fatura-Tablo {
     background: transparent;
     width: 100%;
-    height: 67vh;
+    height: 37rem;
     position: relative;
-    top: 6vh;
+    top: 5.6rem;
 }
 
 .FaturaID {
     display: flex;
-    width: 118.4vh;
+    width: 79.8rem;
     height: 2.7rem;
     position: relative;
-    top: -5vh;
-    margin-top: 1vh;
+    top: -6rem;
+    margin-top: 4rem;
     border-radius: .3vh;
     border: 0.946px solid #616161;
     background: rgba(97, 97, 97, 0.11);
 }
 
+#AllRoomsString {
+    color: #b5b5b5;
+    font-family: 'Inter';
+    font-weight: 500;
+    position: absolute;
+    font-size: 1.2rem;
+    top: -2rem;
+}
+
 .BillingXX {
-    flex: 1; /* İç öğelerin eşit genişlikte olmasını sağlar */
+    flex: 1;
     background: transparent;
     text-align: center;
-    padding: 11px;
-    box-sizing: border-box; /* Kenar boşlukları içeriğe dahil eder */
+    padding: .6rem;
+    box-sizing: border-box;
 }
 
 .BillingXX h6 {
@@ -2483,24 +2649,29 @@ input:focus {
 }
 
 .ayarlarkutu {
-    width: 686px;
-    height: 694px;
+    width: 41rem;
+    height: 50rem;
+    padding-bottom: 5rem;
     float: left;
     position: relative;
-    margin-right: 10vh;
+    left: -2rem;
+    margin-left: 2rem;
     flex-shrink: 0;
-    margin-top: -1vh;
     border-radius: 6px;
     box-shadow: 0px 0px 0px 1px rgb(64 64 64 / 47%);
-    background: linear-gradient(113deg, rgba(11, 11, 12, 0.40) 0%, rgba(11, 11, 12, 0.40) 100%);
+    background: radial-gradient(black, transparent);
+}
+
+#cin, #makbus, #cin5 {
+    bottom: 2.2rem;
 }
 
 .ayarvar {
-    width: 92%;
+    width: 95%;
     height: 71.829px;
     margin: auto;
     flex-shrink: 0;
-    margin-top: 3vh;
+    margin-top: 1rem;
     position: relative;
     top: 0vh;
     border-radius: 2.199px;
@@ -2511,11 +2682,13 @@ input:focus {
 .ayarvar p {
     color: #676767;
     font-family: Satoshi;
-    font-size: 9.5px;
+    font-size: .8rem;
     font-style: normal;
     font-weight: 700;
+    margin: auto;
     position: relative;
-    left: 1.3vh;
+    left: 1.3rem;
+    top: .8rem;
     line-height: normal;
 }
 
@@ -2526,20 +2699,21 @@ input:focus {
     font-style: normal;
     margin: auto;
     position: relative;
-    left: 1.2vh;
-    top: -0.6vh;
+    left: 1.2rem;
+    top: 1rem;
     font-weight: 500;
     line-height: normal;
 }
 
 .admotelinput {
-    width: 38vh;
+    width: 21rem;
     height: 2vh;
     border: 1px;
     background-color: transparent;
     color: #ACACAC;
     font-family: Satoshi;
     font-size: 23.348px;
+    text-transform: uppercase;
     position: relative;
     left: 0.2vh;
     top: -3.1vh;
@@ -2551,34 +2725,35 @@ input:focus {
 
 
 .admotelinputt {
-    width: 38vh;
+    width: 18rem;
     height: 2vh;
     border: 1px;
     background-color: transparent;
     color: #ACACAC;
     font-family: Satoshi;
-    font-size: 23.348px;
+    font-size: 1.4rem;
     position: relative;
-    left: 0.2vh;
-    top: -3.2vh;
-    padding-left: 3vh;
+    left: 1.8rem;
+    top: -1rem;
+    text-transform: uppercase;
+    padding-left: 1rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
 
 .SaveChanges {
-    width: 634px;
-    height: 65px;
+    width: 95.5%;
+    height: 66px;
     flex-shrink: 0;
-    border-radius: .4vh;
+    border-radius: .1rem;
     color: #FFF;
     text-align: center;
     font-family: SatoshiBold;
     transition: .4s;
     position: relative;
-    left: 2.5vh;
-    top: 3vh;
+    left: 1rem;
+    top: 1rem;
     text-transform: uppercase;
     border: 1px;
     cursor: pointer;
@@ -2599,14 +2774,14 @@ input:focus {
     text-align: center;
     margin: auto;
     position: relative;
-    top: 5vh;
+    top: 3rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
 
 .satMoteli {
-    width: 633px;
+    width: 95.5%;
     color: #B7B7B7;
     text-align: center;
     font-family: SatoshiBold;
@@ -2615,12 +2790,12 @@ input:focus {
     font-weight: 900;
     line-height: normal;
     border: 1px;
-    top: 8vh;
+    top: 21rem;
     height: 65px;
     position: relative;
     flex-shrink: 0;
-    left: 3vh;
-    border-radius: .4vh;
+    left: 1rem;
+    border-radius: .1rem;
     text-transform: uppercase;
     cursor: pointer;
     background: #4A4A4A;
@@ -2682,8 +2857,8 @@ input:focus {
 
 
 .bilkibox {
-    width: 35rem;
-    height: 410px;
+    width: 36.4rem;
+    height: 27.5rem;
     flex-shrink: 0;
     display: none;
     border-radius: 12px;
@@ -2695,6 +2870,77 @@ input:focus {
     margin: auto;
     bottom: 0;
     top: 0;
+}
+
+.Avengers {
+    border-radius: 0.375rem;
+    border: 1px solid #414141;
+    background: #1A1A1A;
+    width: 12.4375rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    float: left;
+    height: 10.4rem;
+    flex-shrink: 0;
+}
+
+.AvengersItem {
+    width: 11.5rem;
+    height: 2.66881rem;
+    margin: auto;
+    cursor: pointer;
+    position: relative;
+    margin-top: .5rem;
+    flex-shrink: 0;
+    transition: .4s;
+    border-radius: 0.3125rem;
+    border: 1px solid transparent;
+}
+
+.AvengersSimple:hover,
+.AvengersSimple:focus {
+  box-shadow: inset 11.5rem 0 0 0 #b4b4b4;
+}
+
+.AvengersItem p {
+    font-family: 'Josefin Sans', sans-serif;
+    padding: .9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    text-align: center;
+    margin: auto;
+    font-style: normal;
+    line-height: normal;
+}
+
+.AvengersGreen:hover {
+    transition: .4s;
+    box-shadow: 0px 0px 24px 0px #1DD794;
+}
+
+.AvengersBlack {
+    border: 1px solid #4A4A4A;
+    color: #C0C0C0;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.AvengersRed {
+    border: 1px solid #d14141;
+    color: #e24949;
+    background: #371313;
+}
+
+.AvengersGreen {
+    border: 1px solid #4BC89B;
+    color: #4BC89B;
+    background: #0E422F;
+}
+
+.AvengersSimple {
+    border: 1px solid #3C3C3C;
+    color: #3C3C3C;
+    background: rgba(0, 0, 0, 0.00);
 }
 
 .uzunbox {
@@ -2709,12 +2955,12 @@ input:focus {
 }
 
 .imgsr {
-    width: 103px;
-    height: 99px;
+    width: 6.5rem;
+    height: 6.3rem;
     flex-shrink: 0;
     position: relative;
     left: 0vh;
-    top: 2vh;
+    top: 1rem;
     border-radius: 16px;
 }
 
@@ -2733,13 +2979,14 @@ input:focus {
 .imgsrspan {
     color: #FFF;
     font-family: Inter;
-    font-size: 32px;
+    font-size: 2rem;
     font-style: normal;
     font-weight: 600;
     position: relative;
     margin: auto;
-    left: 3vh;
-    top: -2.5vh;
+    text-transform: uppercase;
+    left: 2.7rem;
+    top: -1.5rem;
     line-height: normal;
 }
 
@@ -2749,29 +2996,29 @@ input:focus {
     font-size: 17px;
     font-style: normal;
     position: absolute;
-    left: 15vh;
-    top: 7.8vh;
+    left: 11rem;
+    top: 5.5rem;
     font-weight: 600;
     line-height: normal;
 }
 
 .Addon {
-    width: 258px;
-    height: 107px;
+    width: 16.4rem;
+    height: 7rem;
     flex-shrink: 0;
     float: left;
     position: relative;
     margin-left: 1vh;
     margin-top: 1vh;
-    left: 1vh;
-    top: 1.5vh;
+    left: .3rem;
+    top: 1.4rem;
     border-radius: 12px;
     background: #0c0c0c;
 }
 
 .Addon h6 {
-    left: 2vh;
-    top: 1.7vh;
+    left: 1.5rem;
+    top: 1rem;
     color: #848383;
     font-family: Inter;
     position: relative;
@@ -2800,10 +3047,11 @@ input:focus {
 .Addon h4 {
     color: #FFF;
     font-family: Inter;
-    font-size: 3.5vh;
+    font-size: 2.3rem;
     position: relative;
-    top: 2vh;
-    left: 2vh;
+    top: 1.5rem;
+    text-transform: uppercase;
+    left: 1.5rem;
     margin: auto;
     font-style: normal;
     font-weight: 600;
@@ -2829,9 +3077,9 @@ input:focus {
     color: #ada2a2;
     border: 1px;
     position: relative;
-    top: -7vh;
+    top: -4rem;
     cursor: pointer;
-    left: 45.5vh;
+    left: 31.5rem;
     background-color: transparent;
     transition: .4s;
 }
@@ -2860,28 +3108,27 @@ input:focus {
     color: #555353;
     text-align: left;
     font-family: Inter;
-    font-size: 16px;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 600;
     position: relative;
-    left: 3.3%;
-    top: -0.1%;
+    left: 1.5rem;
+    top: .3rem;
     line-height: normal;
 }
 
 .MotelCizgi {
-    width: 718px;
+    width: 94%;
     height: 2px;
     flex-shrink: 0;
     position: relative;
-    top: -1.3%;
     margin: auto;
     background: #242222;
 }
 
 .MotelTabloListe {
     width: 100%;
-    height: 69vh;
+    height: 47rem;
     display: block;
     overflow: auto;
     background: transparent;
@@ -2896,16 +3143,16 @@ input:focus {
 }
 
 .Motel-Item {
-    width: 720px;
-    height: 165px;
+    width: 45rem;
+    height: 10rem;
     flex-shrink: 0;
     transition: .4s;
     cursor: pointer;
     margin: auto;
     position: relative;
-    top: -1vh;
-    margin-top: 1vh;
-    border-radius: 12px;
+    top: .1rem;
+    margin-top: 1rem;
+    border-radius: .3rem;
     background: #0c0c0c;
 }
 
@@ -2935,11 +3182,11 @@ input:focus {
 }
 
 .Motel-Item-Box {
-    width: 44vh;
-    height: 3vh;
+    width: 42rem;
+    height: 1.7rem;
     position: relative;
-    left: 3%;
-    top: 13%;
+    left: 1.5rem;
+    top: 1.2rem;
     margin-top: 0vh;
     background-color: transparent;
 }
@@ -3006,15 +3253,15 @@ input:focus {
 }
 
 .angut {
-    width: 720px;
-    height: 112px;
+    width: 45rem;
+    height: 8rem;
     position: relative;
     flex-shrink: 0;
     margin-top: 1vh;
-    left: 2%;
-    top: -1%;
-    margin-left: 1vh;
-    border-radius: 12px;
+    left: .6rem;
+    top: 0rem;
+    margin-left: 0.9rem;
+    border-radius: .4rem;
     float: left;
     background: #0B0B0B;
 }
@@ -3025,9 +3272,9 @@ input:focus {
     margin: auto;
     font-family: Inter;
     position: relative;
-    top: 2vh;
-    left: 3vh;
-    font-size: 15px;
+    top: 1.5rem;
+    left: 2.4rem;
+    font-size: 1.1rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -3037,12 +3284,12 @@ input:focus {
     color: #FFF;
     text-align: center;
     font-family: Inter;
-    font-size: 36px;
+    font-size: 2.4rem;
     float: left;
     margin: auto;
     position: relative;
-    left: 2.7vh;
-    top: 2.2vh;
+    left: 2.3rem;
+    top: 2rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -3055,8 +3302,8 @@ input:focus {
     color: #FFF;
     text-align: left;
     position: relative;
-    left: 2.5vh;
-    top: 2.5vh;
+    left: 2.2rem;
+    top: 2rem;
     font-family: Inter;
     font-size: 36px;
     font-style: normal;
@@ -3067,7 +3314,7 @@ input:focus {
 .SaveHersey {
     background-color: #119b80c9;
     width: 94%;
-    height: 6vh;
+    height: 4rem;
     border: 1px;
     position: relative;
     border-radius: .4vh;
@@ -3077,23 +3324,23 @@ input:focus {
     cursor: pointer;
     top: 0.5%;
     font-family: Inter;
-    margin-top: 1vh;
-    font-size: 24px;
+    margin-top: 1rem;
+    font-size: 1.5rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    left: 2.5vh;
+    left: 1.7rem;
 }
 
 .Cennet {
-    width: 46.5%;
-    height: 112px;
+    width: 22rem;
+    height: 8rem;
     flex-shrink: 0;
     float: left;
     position: relative;
-    left: 2.5vh;
-    margin-top: 0.5vh;
-    border-radius: 12px;
+    left: 1.6rem;
+    margin-top: 1rem;
+    border-radius: .3rem;
     background: #0B0B0B;
 }
 
@@ -3112,11 +3359,11 @@ input:focus {
     text-align: left;
     font-family: Inter;
     margin: auto;
-    font-size: 26px;
+    font-size: 1.6rem;
     position: relative;
     text-transform: uppercase;
-    left: 12vh;
-    top: -5vh;
+    left: 8rem;
+    top: -3.3rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -3130,8 +3377,8 @@ input:focus {
     font-style: normal;
     position: relative;
     margin: auto;
-    top: -4.8vh;
-    left: 12vh;
+    top: -3rem;
+    left: 8rem;
     font-weight: 600;
     line-height: normal;
 }
@@ -3140,13 +3387,13 @@ input:focus {
     color: #21cdabc9;
     text-align: center;
     font-family: Inter;
-    width: 39px;
-    height: 24px;
+    width: 1rem;
+    height: 1rem;
     flex-shrink: 0;
     border-radius: 5px;
     position: relative;
-    left: 29.3vh;
-    top: -12vh;
+    left: 19.5rem;
+    top: -3rem;
     transition: .4s;
     border: 1px;
     background: transparent;
@@ -3175,15 +3422,15 @@ input:focus {
 
 .buto {
     float: right;
-    width: 6vh;
+    width: 4rem;
     position: relative;
-    top: 1vh;
     cursor: pointer;
-    margin-right: 1vh;
+    margin-right: .7rem;
+    top: 1rem;
     color: #e5dfdf;
     transition: .4s;
-    height: 72%;
-    border-radius: 1vh;
+    height: 4rem;
+    border-radius: .4rem;
     background: #1d1d22;
     justify-content: center;
     align-items: center;
@@ -3196,8 +3443,8 @@ input:focus {
 .buto h6 {
     margin: auto;
     text-align: center;
-    font-size: 2vh;
-    padding-top: 2vh;
+    font-size: 1.5rem;
+    padding-top: 1.2rem;
 }
 
 .buto:hover {
@@ -3212,26 +3459,26 @@ input:focus {
 
 .roomuuur {
     background: transparent;
-    width: 69vh;
-    height: 23vh;
+    width: 49rem;
+    height: 14rem;
     position: relative;
-    top: 2%;
-    left: 0.5%;
+    top: 1.5rem;
+    left: -0.1rem;
     margin: auto;
     overflow-x: hidden;
     overflow-y: auto;
 }
 
 .room-item {
-    width: 131px;
-    height: 113px;
+    width: 14.1rem;
+    height: 9rem;
     flex-shrink: 0;
     cursor: pointer;
     float: left;
-    margin-top: 1vh;
-    margin-left: 1.3vh;
-    top: -1vh;
-    left: 0vh;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    top: -1rem;
+    left: 1rem;
     position: relative;
     border-radius: 12px;
     transition: .4s;
@@ -3902,20 +4149,21 @@ input:focus {
 
 .Coupon {
     height: 4.5vh;
-    margin: auto;
-    left: 4vh;
-    width: 33vh;
-    background: #1a1a1a;
-    border: 0.5px solid #3c3c3c;
-    border-radius: 2.53925rem;
+    left: 0px;
     display: none;
+    position: relative;
+    margin: auto;
+    top: 2em;
+    width: fit-content;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    right: 0px;
+    background: rgb(26, 26, 26);
+    border-radius: 2.53925rem;
     border-width: 1.27px;
     border-style: solid;
     border-color: rgba(255, 255, 255, 0.08);
     border-image: initial;
-    top: 24.8vh;
-    position: absolute;
-    right: 0;
 }
 
 .Coupon h5 {
@@ -3933,15 +4181,15 @@ input:focus {
 .indirimliOda {
     display: none;
     position: relative;
-    bottom: 3vh;
-    left: 2vh;
+    bottom: 6em;
+    left: 0vh;
     background: transparent;
 }
 
 .indirimliOda h6 {
     text-transform: uppercase;
     margin: auto;
-    margin-top: 3vh;
+    margin-top: 5rem;
     font-size: 2vh;
     color: #5C5C5C;
     font-size: 1.5vh;
@@ -3950,18 +4198,18 @@ input:focus {
 
 .feedBackList {
     position: relative;
-    top: 16vh;
-    width: 57%;
+    top: 5rem;
+    width: 84rem;
     overflow-x: hidden;
     overflow-y: auto;
-    height: 64vh;
+    height: 46rem;
     background: transparent;
     margin: auto;
 }
 
 .feedback-item {
-    width: 270px;
-    height: 270px;
+    width: 20rem;
+    height: 18rem;
     flex-shrink: 0;
     float: left;
     margin-left: 1vh;
@@ -3978,33 +4226,34 @@ input:focus {
 }
 
 .Haxorimg {
-    width: 68px;
-    height: 68px;
+    width: 6rem;
+    height: 5.8rem;
     border-radius: 100%;
     border: 2px;
     position: relative;
-    top: 2vh;
-    left: 1.7vh;
+    top: 1rem;
+    left: 1.3rem;
 }
 
 .Haxor h4 {
     color: #fff;
     font-family: 'Inter';
     font-weight: 600;
+    left: 8.5rem;
     margin: auto;
-    left: 9.5vh;
-    bottom: 3.7vh;
+    top: -4rem;
     position: relative;
     text-transform: uppercase;
     text-align: left;
-    font-size: 1.7vh;
+    font-size: 1.7rem;
 }
 
 .Haxor h5 {
-    color: #979797;
+    color: #646464;
     position: relative;
-    left: 9.5vh;
-    bottom: 3.5vh;
+    left: 8.5rem;
+    font-size: 1.1rem;
+    bottom: 4rem;
     text-transform: uppercase;
     font-family: 'Inter';
     margin: auto;
@@ -4020,10 +4269,10 @@ input:focus {
 .starTv {
     margin: auto;
     text-align: center;
-    height: 2vh;
+    height: 4rem;
     align-items: center;
     position: relative;
-    left: -0.5vh;
+    left: 0rem;
     justify-content: center;
     width: fit-content;
     background-color: transparent;
@@ -4032,25 +4281,24 @@ input:focus {
 .starTv h5 {
     text-align: center;
     color: #adadad;
-    font-size: 2vh;
-    width: 18px;
-    display: flex;
+    font-size: 1.7rem;
+    width: 2rem;
     position: relative;
-    float: left;
-    top: 1vh;
+    top: 1rem;
+    display: inline;
     margin: auto;
-    margin-left: 1vh;
+    margin-left: .7rem;
 }
 
 .feedback-item p {
     font-family: 'Satoshi';
     width: fit-content;
-    height: 8vh;
-    padding: 1vh;
+    height: 3rem;
+    padding: 1rem;
     text-align: center;
     margin: auto;
     position: relative;
-    top: 2vh;
+    top: 0rem;
     color: #a3a2a2;
 }
 
@@ -4058,27 +4306,27 @@ input:focus {
     font-family: Satoshi;
     position: relative;
     color: #646464;
-    left: 18.5vh;
-    top: 0.5vh;
-    margin: auto;
-    font-size: 1vh;
+    left: 14rem;
+    bottom: 2rem;
+    text-align: right;
+    font-size: 1rem;
 }
 
 .FeedBackOlustur {
     position: relative;
-    left: 40.5vh;
-    top: 15vh;
+    top: 2rem;
     border-radius: .7vh;
-    width: 19vh;
+    width: 23rem;
     cursor: pointer;
     text-align: center;
     transition: .4s;
     color: #afafaf;
+    margin: auto;
     align-items: center;
     display: block;
     justify-content: center;
     background: #0d0d0e;
-    height: 4vh;
+    height: 3.2rem;
 }
 
 .FeedBackOlustur p {
@@ -4095,9 +4343,11 @@ input:focus {
 
 .CreateFeedBackContainer {
     width: 51%;
-    height: 35vh;
+    height: 33rem;
     background: transparent;
     display: none;
+    position: relative;
+    bottom: 2rem;
     margin: auto;
 }
 
@@ -4112,23 +4362,23 @@ input:focus {
 
 .CreateFeedBackRoomList {
     position: relative;
-    top: 0.5vh;
+    top: 1rem;
     width: 100%;
-    height: 10vh;
+    height: 6rem;
     overflow-x: auto;
     overflow-y: hidden;
 }
 
 .CreateFeedBackRoomList-Item {
     background-color: #181818;
-    width: 12vh;
-    position:relative;
-    left: -1vh;
+    width: 7rem;
+    position: relative;
+    left: -1rem;
     float: left;
     transition: .4s;
     border-radius: .8vh;
     color: #fff;
-    margin-left: 1vh;
+    margin-left: 1rem;
     cursor: pointer;
     height: 100%;
 }
@@ -4249,48 +4499,96 @@ input:focus {
 }
 
 .GunDay {
-    width: 100%;
-    top: -4vh;
+    width: fit-content;
+    top: -5rem;
     left: 2vh;
     display: none;
     background-color: transparent;
-    height: 5.5vh;
-    position:relative;
+    height: 5.5rem;
+    position: relative;
 }
 
 .GunDay h4 {
     font-family: 'SatoshiBold';
     color: #8b8080;
-    margin-top: 5vh;
+    margin-top: 3rem;
     text-transform: uppercase;
+}
+
+.merzuka {
+    height: 9vh;
+    position: relative;
+    left: 1.55em;
+    width: 42vh;
+    overflow: auto;
+    bottom: 3.5em;
+    background: transparent;
+}
+
+.merzuka-item:hover {
+    transition: .4s;
+    color: black;
+    background-color: #bababa;
 }
 
 .degerValue {
     background: #2e2e2e;
-    width: 5vh;
-    height: 3.3vh;
+    width: 3.5em;
+    max-width: 200px;
+    height: 3.1em;
     border: 1px;
     position: relative;
+    left: .2em;
     font-family: 'Satoshi';
     color: #fff;
-    top: -0.2vh;
+    top: -0.2em;
     text-align: center;
     border-radius: .2vh;
+}
+
+.kuzu {
+    background-color: transparent;
+    height: 4.3em;
+    width: fit-content;
 }
 
 .Arttir {
     background: #585555;
     border: 1px;
-    width: 3.5vh;
+    left: .13em;
+    width: 2.5vw;
+    max-width: 100px;
     font-size: 2vh;
+    position: relative;
+    top: 0;
     color: #fff;
     border-radius: .2vh;
     cursor: pointer;
-    height: 3.5vh;
+    height: 4vh;
+}
+
+.merzuka-item {
+    float: left;
+    margin-left: 1%;
+    position: relative;
+    left: -1vh;
+    font-size: .8rem;
+    width: 6rem;
+    max-width: 250px;
+    cursor: pointer;
+    border-radius: .2vh;
+    margin-top: 3vh;
+    font-family: 'SatoshiBold';
+    text-transform: uppercase;
+    color: #bababa;
+    font-weight: 600;
+    text-align: center;
+    height: 4.3vh;
+    background: #131313;
 }
 
 .LifeTime {
-    height: 3.5vh;
+    height: 3.7em;
     position: relative;
     border-radius: .2vh;
     width: fit-content;
@@ -4303,9 +4601,10 @@ input:focus {
     padding-right: 1vh;
     transition: .4s;
     border: 1px solid #a7a5a5;
-    top: -0.2vh;
+    top: -0.4em;
     font-family: SatoshiBold;
 }
+
 
 .LifeTime:hover {
     transition: .4s;
@@ -4324,8 +4623,8 @@ input:focus {
 
 .parx {
     background-color: transparent;
-    width: 27vh;
-    height: 10vh;
+    width: 18rem;
+    height: 7rem;
 }
 
 .RoomUzatPage2 {
@@ -4363,9 +4662,8 @@ input:focus {
     font-size: 35px;
     font-style: normal;
     position: relative;
-    top: 4.5vh;
-    text-transform: uppercase;
-    left: -5.5vh;
+    top: -0.5em;
+    left: 2.7rem;
     margin: auto;
     float: left;
     font-weight: 600;
@@ -4394,7 +4692,7 @@ input:focus {
     font-size: 1rem;
     font-style: normal;
     position: relative;
-    left: 3vh;
+    left: 2rem;
     font-weight: 600;
     line-height: normal;
     float: left;
@@ -4403,11 +4701,11 @@ input:focus {
 .RoomUzatPage h2 {
     color: #C7C3C3;
     font-family: SatoshiBold;
-    font-size: 35px;
+    font-size: 2.5rem;
     font-style: normal;
     position: relative;
-    top: -2.5vh;
-    left: 3vh;
+    top: -1.3rem;
+    left: 2.1rem;
     margin: auto;
     float: left;
     font-weight: 600;
@@ -4415,14 +4713,14 @@ input:focus {
 }
 
 .ArtBax {
-    width: 2rem;
+       width: 2rem;
     height: 2rem;
     flex-shrink: 0;
     border-radius: 5px;
     background: #525252;
     color: #A6A6A6;
     position: relative;
-    top: 4.7vh;
+    top: 3.2rem;
     font-family: SatoshiBold;
     left: -6vh;
     cursor: pointer;
@@ -4442,16 +4740,16 @@ input:focus {
     cursor: pointer;
     height: 3vh;
     border-radius: 5px;
-    right: 2vh;
-    top: 2vh;
+    right: 1rem;
+    top: 1rem;
 }
 
 .leftOdeme {
     background-color: transparent;
-    width: 23vh;
-    height: 9vh;
+    width: 14rem;
+    height: 4rem;
     position: relative;
-    bottom: 12vh;
+    top: -9rem;
     float: right;
 }
 
@@ -4466,27 +4764,30 @@ input:focus {
 .leftOdeme h6 {
     color: #c3c2c2;
     font-family: SatoshiBold;
-    font-size: 35px;
+    font-size: 3rem;
     font-style: normal;
     font-weight: 600;
     text-align: right;
     margin: auto;
-    margin-right: 2vh;
+    margin-right: 1.3rem;
+    top: 0.1em;
+    position: relative;
     line-height: normal;
 }
 
 .OdeV {
-    background-color: #26c192;
+    background-color: #24b675;
     width: 13.4vh;
     color: #000;
     height: 3.7vh;
     font-family: SatoshiBold;
     border: 1px;
     text-transform: uppercase;
+    float: right;
     position: relative;
-    left: 21vh;
-    bottom: 4.5vh;
-    border-radius: .5vh;
+    right: -13rem;
+    top: -4.5rem;
+    border-radius: 8vh;
 }
 
 .karat {
@@ -4497,13 +4798,12 @@ input:focus {
     font-family: 'Satoshi';
     text-align: left;
     margin: auto;
-    padding: 11px;
     text-transform: uppercase;
     color: #8b8b8b;
     width: 10vh;
     position: absolute;
-    left: 24vh;
-    top: 4.3vh;
+    left: 18rem;
+    top: 3.7rem;
 }
 
 .switch {
@@ -4708,17 +5008,17 @@ input:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 26vh;
-    max-width: 100vh;
-    margin-top: 1vh;
+    width: 21rem;
+    max-width: 100rem;
+    margin-top: 1rem;
     height: fit-content;
-    padding-right: 2.5vh;
+    padding-right: 3.5rem;
     position: relative;
-    padding-bottom: 0.7vh;
-    background: #17181a;
+    padding-bottom: 1.1rem;
+    background: #131415;
     z-index: 8000;
-    border-radius: 16px;
-    top: 2vh;
+    border-radius: .5rem;
+    top: 1rem;
   }
   
   .NotifyContent {
@@ -4728,8 +5028,10 @@ input:focus {
   .NotifyContainer h3 {
     margin: auto;
     font-size: 4.2vh;
-    margin-left: 2vh;
-    font-size: 3.4vh;
+    font-family: 'Inter';
+    margin-left: 1.8rem;
+    margin-top: .5rem;
+    font-size: 3.7rem;
     padding-top: 6%;
     float: left;
     color: #0dd571;
@@ -4738,28 +5040,29 @@ input:focus {
   
   .NotifyContainer h4 {
     color: #C6C6C6;
-    font-family: Roboto;
-    font-size: 18px;
+    font-family: 'Inter';
+    font-size: 1.3rem;
     font-style: normal;
     margin: auto;
-    font-weight: 500;
+    font-weight: 600;
+    text-transform: uppercase;
     line-height: normal;
     position: relative;
-    left: 2vh;
-    top: 1.5vh;
+    left: 1.2rem;
+    top: 1.5rem;
   }
   
   .NotifyContainer p {
     color: #949494;
-    font-family: Roboto;
-    font-size: 14px;
+    font-family: 'Inter';
+    font-size: .95rem;
     font-style: normal;
-    padding-left: 6vh;
-    top: 0.5vh;
-    padding-right: 1vh;
+    padding-left: 5.4rem;
+    top: .8rem;
+    padding-right: 3rem;
     position: relative;
     font-weight: 500;
-    left: 1.4vh;
+    left: 1.3em;
     line-height: normal;
   }
   
@@ -4965,11 +5268,11 @@ select option {
 #player-secili-anahtar {display: none;}
 
 .BoxOrder {
-    width: 809px;
+    width: 813px;
     height: 670px;
     position: relative;
     float: left;
-    top: 15vh;
+    top: 1em;
     margin: auto;
     margin-left: 6vh;
     left: 5vh;
@@ -4981,10 +5284,10 @@ select option {
 
 .newRoomBox {
     width: 785px;
-    height: 10.5rem;
+    height: 11rem;
     flex-shrink: 0;
     border-radius: 6.252px;
-    border: 1px solid #717171;
+    border: 1px solid black;
     position: relative;
     top: -1vh;
     margin-top: 1vh;
@@ -4992,7 +5295,7 @@ select option {
 
 .bayresim {
     width: 785px;
-    height: 10.5rem;
+    height: 11rem;
     flex-shrink: 0;
     position: absolute;
     filter: blur(4px);
@@ -5128,9 +5431,9 @@ select option {
 }
 
 #RoomStashWeightBox {
-    background-color: #101010;
-    width: 47vh;
-    height: 15vh;
+    background-color: transparent;
+    width: 35rem;
+    height: 16rem;
     position: absolute;
     border-radius: 1vh;
     z-index: 9995;
@@ -5156,24 +5459,25 @@ select option {
 }
 
 #RoomStashWeightBox p {
-    color: gray;
     font-family: Inter;
     font-weight: 600;
     position: relative;
-    top: 1.5vh;
-    left: 2vh;
+    top: 0.7rem;
+    font-size: 1.6rem;
+    left: 2rem;
     text-align: left;
-    font-size: 1vh;
+    color: #c9c9c9;
     text-transform: uppercase;
     margin: auto;
 }
 
 .UfakCizgi {
-    background-color: #454545;
-    width: 91.3%;
+    background-color: #3bb553;
+    width: 89%;
     height: 1.5px;
     position: relative;
     top: 2vh;
+    left: 0rem;
     border-radius: 1vh;
     margin: auto;
 }
@@ -5192,34 +5496,72 @@ select option {
 }
 
 #RoomStashWeightBox input {
-    background-color: #333333;
+    background-color: #03030361;
     font-family: Inter;
     color: #b9b9b9;
     border: 1px;
     border-radius: .4vh;
-    width: 25vh;
-    height: 4vh;
+    width: 14rem;
+    height: 4.6rem;
     position: relative;
-    top: 3.7vh;
-    left: 2vh;
+    border: 1px solid #2d2d2d;
+    top: 3.3rem;
+    left: 1.9rem;
     font-size: 1.5vh;
     padding-left: 2vh;
 }
 
-#RoomStashWeightBox button {
-    background-color: #39a563;
-    width: 15vh;
-    height: 4vh;
-    left: 2.5vh;
-    font-family: 'Inter';
+#RoomStashWeightBox input:hover {
+    transition: .4s;
+    border-color: #267836;
+}
+
+
+.buttona5 {
+    float: right;
+    width: 15rem;
+    left: -1.5rem;
+    height: 4.75rem;
+    top: 3.3rem;
+    background: #1c8949;
+    transition: .4s;
     color: #fff;
-    top: 3.5vh;
+    font-family: 'Inter';
     text-transform: uppercase;
     cursor: pointer;
     font-weight: 400;
     position: relative;
     border-radius: .4vh;
     border: 1px;
+}
+
+.buttona5 h6 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: auto;
+    font-weight: 500;
+    padding: 26px;
+    font-family: Inter;
+}
+
+.uzunlar {
+    width: 91%;
+    position: relative;
+    top: 5rem;
+    left: 1.9rem;
+    cursor: pointer;
+    border-radius: .5rem;
+    background: #585858;
+    height: 3rem;
+}
+
+.uzunlar h6 {
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    color: white;
+    font-size: 1.3rem;
+    font-family: Inter;
 }
 
 #RoomStashWeightBox h3 {
@@ -5359,46 +5701,46 @@ select option {
 }
 
 .AreYouRead {
-    width: 23rem;
-    height: 8rem;
+    width: 27rem;
+    height: 10rem;
     flex-shrink: 0;
     position: absolute;
-    top: 1vh;
+    top: 1rem;
     right: -500px;
     border-radius: 1.5rem;
     background: #0C0D0E;
 }
 
 .Damla {
-    width: 83px;
-    height: 83px;
+    width: 6rem;
+    height: 6rem;
     flex-shrink: 0;
-    border-radius: 44.5px;
+    border-radius: 56.5px;
     position: relative;
-    left: 3vh;
-    top: 2vh;
+    left: 2rem;
+    top: 2rem;
     border: 2px solid #2F2F2F;
     background: #0C0D0E;
 }
 
 .Damla img {
-    width: 7vh;
-    height: 7vh;
+    width: 5.6rem;
+    height: 5rem;
     position: relative;
-    left: 4px;
-    top: 4px;
+    left: .3rem;
+    top: .2rem;
     border-radius: 100%;
 }
 
 .AreYouRead h3 {
     color: #A0A0A0;
     font-family: Inter;
-    font-size: 1.5vh;
-    width: 20vh;
+    font-size: 1.2rem;
+    width: 18vh;
     position: relative;
     text-align: left;
-    left: 6vh;
-    bottom: 5.1vh;
+    left: 5rem;
+    bottom: 4.1rem;
     margin: auto;
     font-style: normal;
     font-weight: 500;
@@ -5409,24 +5751,28 @@ select option {
     color: #d6d6d6;
     float: left;
     margin: auto;
-    font-size: 1.3vh;
+    font-size: 1.1rem;
     position: relative;
     margin-left: 1vh;
-    bottom: 4vh;
+    bottom: 2.5rem;
     text-transform: uppercase;
-    left: 12.2vh;
+    left: 9.5rem;
     font-weight: 400;
     font-family: 'Inter';
 }
 
 .ChooseColorRoom {
     background-color: #1c1c1cd9;
-    width: 114.7rem;
-    height: 27vh;
+    width: 60.8rem;
+    height: 42rem;
     position: absolute;
     display: none;
     left: 0;
-    padding: 20px;
+    padding-left: 2rem;
+    padding-right: 1rem;
+    padding-top: 1.2rem;
+    padding-bottom: 2rem;
+    overflow: auto;
     margin: auto;
     border-radius: 1vh;
     right: 0;
@@ -5515,29 +5861,40 @@ select option {
     top: 0;
     width: 95%;
     position: relative;
-    height: 29.5vh;
-    border-radius: .5vh;
+    height: 25.7rem;
+    border-radius: .1rem;
     margin: auto;
-    margin-top: 1.5vh;
+    margin-top: 1.2rem;
     overflow: auto;
 }
 
 .ListOfV {
     border: 0.733px solid #434343;
-    background: rgb(0 0 0 / 32%);
+    background: rgb(48 48 48 / 32%);
     width: 94%;
     position: relative;
-    height: 6vh;
+    height: 5rem;
     transition: .4s;
     color: #9f9f9f;
     margin: auto;
-    margin-top: 1.5vh;
-    border-radius: .5vh;
+    margin-top: 1rem;
+    border-radius: .1rem;
+}
+
+.ListOfV h6 {
+    margin: auto;
+    position: relative;
+    top: -0.9rem;
+    color: #505050;
+    font-size: .9rem;
+    left: 1rem;
+    font-family: 'Inter';
+    text-transform: uppercase;
 }
 
 .ListOfV h2 {
     margin: auto;
-    padding: 17px;
+    padding: 18px;
     text-transform: uppercase;
     font-family: 'Inter';
 }
@@ -5550,16 +5907,16 @@ select option {
 
 .ListOfVV {
     border: 0.733px solid #434343;
-    background: rgb(0 0 0 / 32%);
-    width: 29.5%;
+    background: rgb(42 42 42 / 34%);
+    width: 31.5%;
     float: left;
     position: relative;
-    height: 14vh;
+    height: 12rem;
     transition: .4s;
     color: #9f9f9f;
     margin-left: 1.5vh;
     margin-top: 1.5vh;
-    border-radius: .5vh;
+    border-radius: .2rem;
 }
 
 .ListOfVV img {
@@ -5605,35 +5962,35 @@ select option {
 }
 
 .BazIsıkYili {
+    left: -11.5rem;
+    width: 13.5rem;
+    background: #17836e;
+    border: 1px;
+    font-size: 1.1rem;
+    top: -8rem;
     position: relative;
-    left: 19vh;
-    top: -9.5vh;
+    font-weight: 600;
     color: #fff;
     border-radius: .2vh;
-    background: rgb(21 54 39);
-    border: 1px solid;
-    border-color: rgb(48, 141, 98);
     cursor: pointer;
-    font-size: 1.4vh;
     height: 3.5vh;
     font-family: 'Inter';
-    width: 18vh;
 }
 
 .BazIsıkYili2 {
+    left: -12rem;
+    width: 13rem;
+    top: -7.9rem;
+    font-weight: 600;
+    border: 1px;
+    font-family: 'Inter';
+    color: #cdcdcd;
     position: relative;
-    left: 18.5vh;
     background: #383838;
-    border-color: #878787;
-    top: -9.5vh;
-    color: #fff;
     border-radius: .2vh;
-    border: 1px solid;
     cursor: pointer;
     font-size: 1.4vh;
     height: 3.5vh;
-    font-family: 'Inter';
-    width: 18vh;
 }
 
 #corridorColors, #garageThemes {
@@ -5679,8 +6036,8 @@ select option {
 }
 
 .GarageList {
-    width: 72.5rem;
-    height: 419px;
+    width: 97.5%;
+    height: 87%;
     overflow-x: hidden;
     overflow-y: auto;
     margin: auto;
@@ -5767,7 +6124,7 @@ select option {
 .NewEditMenu {
     width: 45rem;
     height: fit-content;
-    padding-bottom: 2.3vh;
+    padding-bottom: 6rem;
     display: none;
     flex-shrink: 0;
     border-radius: 19px;
@@ -5783,10 +6140,10 @@ select option {
 .NewEditMenu h1 {
     color: #B7B7B7;
     font-family: Inter;
-    font-size: 36px;
+    font-size: 2rem;
     font-style: normal;
     position: relative;
-    left: 3.5vh;
+    left: 3.1rem;
     top: 2vh;
     font-weight: 700;
     text-transform: uppercase;
@@ -5797,40 +6154,42 @@ select option {
 .NewEditMenu p {
     color: #595959;
     font-family: Inter;
-    font-size: 16px;
+    font-size: 1.3rem;
     font-style: normal;
     position: relative;
-    left: 3.8vh;
-    margin-top: 1.5vh;
+    left: 3.3rem;
+    top: 0.5rem;
     font-weight: 600;
     line-height: normal;
 }
 
 .onuratmaca {
-    width: 90%;
+    width: 85%;
     height: 3px;
     margin: auto;
-    margin-top: -1vh;
+    position: relative;
+    top: 0rem;
     flex-shrink: 0;
     background: #222;
 }
 
 .BoxUnpat {
     background-color: transparent;
-    width: 43%;
+    width: 38%;
     position: relative;
     float: left;
-    margin-left: 3.7vh;
-    top: 1vh;
-    height: 10vh;
+    margin-left: 3.5rem;
+    top: 1rem;
+    height: 7rem;
 }
 
 .BoxUnpat h3 {
     color: #454545;
     font-family: Inter;
     margin: auto;
-    font-size: 16px;
+    font-size: 1rem;
     transition: .4s;
+    text-transform: uppercase;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -5838,15 +6197,15 @@ select option {
 
 .ahput {
     width: 91%;
-    height: 42px;
+    height: 3rem;
     border-radius: 2px;
     border: 1px solid;
     padding-left: 2vh;
     transition: .4s;
     position: relative;
-    font-size: 1.5vh;
+    font-size: 1rem;
     text-transform: uppercase;
-    top: .5vh;
+    top: .8rem;
     font-weight: 600;
     color: #c1c1c1;
     border-color: #3b3b3b;
@@ -5866,28 +6225,46 @@ select option {
 }
 
 .short {
-    width: 74%;
+    width: 11.4rem;
 }
 
 .RecepFazilYarakKurek {
     background: #43c182;
-    width: 4.5vh;
-    height: 4.5vh;
+    width: 3.5rem;
+    height: 3.2rem;
+    text-align: center;
     cursor: pointer;
-    border-radius: .4vh;
+    border-radius: .2rem;
     position: relative;
-    top: .3vh;
-    left: 0vh;
+    top: .7rem;
+    left: .5rem;
     float: right;
     border: 1px solid;
     border-color: #000000;
 }
 
+.RecepFazilYarakKurek h3 {
+    color: black;
+    padding: 1rem; 
+}
+
 .ayarSwitch {
     background: transparent;
     width: 9vh;
-    margin-top: -1.7vh;
-    margin-left: -1.7vh;
+    position: relative;
+    left: -1.7rem;
+    top: -1rem;
+}
+
+.ayarSwitch2 {
+    background: transparent;
+    width: 8rem;
+    float: right;
+    z-index: 9999;
+    position: absolute;
+    margin: auto;
+    left: 35.5rem;
+    top: 1rem;
 }
 
 .fullV {
@@ -5895,30 +6272,31 @@ select option {
 }
 
 .shortfull {
-    width: 87.7%;
+    width: 32rem;
 }
 
 .BigBoy {
     width: 91%;
     height: 20vh;
     display: flex;
-    flex-direction: row; /* Varsayılan olarak zaten yatay olarak sıralanır, bu satırı eklemeniz gerekli değil */
+    flex-direction: row;
     float: left;
+    left: -0.7rem;
     position: relative;
-    top: 1vh;
+    top: 1rem;
     background: transparent;
     overflow-x: auto;
 }
 
 .BigBoy-Part {
-    width: 18vh;
+    width: 16rem;
     height: 15vh;
     border-radius: 1.4vh;
     border: 2px solid;
     border-color: transparent;
     margin-left: 1vh;
     position: relative;
-    left: -1vh;
+    left: -0.5rem;
     background: transparent;
 }
 
@@ -5968,13 +6346,14 @@ select option {
 
 .BabalaTv {
     background: #43c182;
-    width: 16vh;
-    height: 5vh;
+    width: 17.6rem;
+    height: 3.3rem;
     font-weight: 600;
     border: 1px;
     float: right;
     position: relative;
-    right: 2vh;
+    top: 2.9rem;
+    right: 3.2rem;
     text-transform: uppercase;
     font-family: Inter;
     cursor: pointer;
@@ -5985,20 +6364,20 @@ select option {
     background: transparent;
     width: 91%;
     margin: auto;
-    margin-top: 1vh;
-    height: 10vh;
+    margin-top: 1rem;
+    height: 7rem;
 }
 
 .Rektor {
     background: #1e1e1e;
-    width: 49%;
-    height: 10vh;
+    width: 46%;
+    height: 7rem;
     COLOR: #cdcdcd;
     cursor: pointer;
     border-radius: .4vh;
     transition: .4s;
     float: left;
-    margin-left: .5vh;
+    margin-left: 1.2rem;
 }
 
 .Rektor h3 {
@@ -6039,8 +6418,8 @@ select option {
 }
 
 .ElevatorHaxball {
-    width: 262px;
-    height: 60px;
+    width: 16rem;
+    height: 4rem;
     margin-top: .5vh;
     transition: .4s;
     flex-shrink: 0;
@@ -6056,9 +6435,9 @@ select option {
     font-style: normal;
     position: relative;
     text-transform: uppercase;
-    left: 2vh;
+    left: 1.7rem;
     font-weight: 700;
-    top: 1vh;
+    top: .7rem;
     line-height: normal;
     margin: auto;
 }
@@ -6070,8 +6449,8 @@ select option {
     font-style: normal;
     position: relative;
     margin: auto;
-    left: 2vh;
-    top: .9vh;
+    left: 1.8rem;
+    top: .8rem;
     text-transform: uppercase;
     font-weight: 700;
     line-height: normal;
@@ -6085,4 +6464,253 @@ select option {
 .ElevatorHaxball:hover {
     background: #cdcdcd;
     transition: .4s;
+}
+
+.RoomVX {
+    width: 42.75rem;
+    height: 19.5rem;
+    flex-shrink: 0;
+    border-radius: 0.8125rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 26rem;
+    border: 1px solid #2F2F2F;
+    background: #0E0E0E;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    margin: auto;
+    z-index: 9999;
+}
+
+.DayBox {
+    width: 19rem;
+    height: 7rem;
+    position: relative;
+    margin: auto;
+    margin-left: 2rem;
+    float: left;
+    margin-top: 2rem;
+    background: transparent;
+}
+
+.DayBox h1 {
+    font-size: 1.50rem;
+    width: fit-content;
+    height: 1.1875rem;
+    margin: auto;
+    text-align: left;
+    margin-left: 0;
+    flex-shrink: 0;
+    margin-top: 0;
+    color: #464646;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.DayBox h4 {
+    margin: auto;
+    margin-left: 0;
+    font-size: 2.7rem;
+    width: fit-content;
+    margin-top: 1rem;
+    height: 2.4375rem;
+    flex-shrink: 0;
+    color: #CDCDCD;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.Skips {
+    width: 0.0625rem;
+    height: 13.4375rem;
+    flex-shrink: 0;
+    margin: auto;
+    background: #181818;
+}
+
+.DayBoxRight {
+    background: red;
+    width: 10rem;
+    height: 5rem;
+    float: right;
+}
+
+.DayBox h3 {
+    color: #464646;
+    font-family: Inter;
+    font-size: 1.70rem;
+    font-style: normal;
+    margin: auto;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.Uzax {
+    border-radius: 0.125rem;
+
+    width: 3rem;
+    height: 2.5rem;
+    margin: auto;
+    top: 2rem;
+    margin-left: 1rem;
+    margin-top: -1rem;
+
+    background: #1F1F1F;
+    float: left;
+    position:relative;
+    cursor: pointer;
+    left: -1rem;
+    flex-shrink: 0;
+}
+
+.Uzax p {
+
+    text-align: center;
+    font-size: 2.5rem;
+    margin: auto;
+    margin-top: -0.5rem;
+
+    color: #5E5E5E;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.DayBox h5 {
+    color: #2E2E2E;
+
+    font-size: 1.3rem;
+    width: 23vh;
+    position: relative;
+    left: 8rem;
+    top: .1rem;
+    margin: auto;
+
+    font-family: Inter;
+    font-style: normal;
+    float: left;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.Yuxar h4 {
+    cursor: pointer;
+    color: #414141;
+    float: right;
+    margin: auto;
+    font-size: 14px;
+    right: 1rem;
+    top: 1rem;
+    position: relative;
+}
+
+.paym {
+    border-radius: 0.78125rem;
+    background: #32B46E;
+    box-shadow: 0px 0px 10px 3px rgba(22, 206, 96, 0.34);
+    flex-shrink: 0;
+    float: right;
+    width: 6rem;
+    height: 3rem;
+    cursor: pointer;
+    position: relative;
+    top: -3.5rem;
+    right: .7rem;
+}
+
+.paym p {
+    color: #000;
+    font-family: Inter;
+    font-size: 0.9375rem;
+    font-style: normal;
+    text-align: center;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.havada {
+    background-color: transparent;
+    width: fit-content;
+    height: 5rem;
+}
+
+.kuc {
+    width: fit-content;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: .5rem;
+}
+
+.sapik {
+    background-color: #1a1a1a;
+    float: left;
+    width: 5rem;
+    height: 3rem;
+    cursor: pointer;
+    transition: .4s;
+    color: #dadada;
+    position: relative;
+    left: -.5rem;
+    font-size: 2rem;
+    margin-left: .5rem;
+    border-radius: .2rem;
+}
+
+.superbaba {
+    width: 100%;
+    padding: 1px;
+    margin-top: 0.9rem;
+    font-size: 1.2rem;
+    padding: 0px;
+    padding-top: 12px;
+    margin: auto;
+    text-align: center;
+    background: transparent;
+    font-family: 'Inter';
+    font-weight: 600;
+    border: 1px;
+    color: #cecece;
+}
+
+.sapikk {
+    float: left;
+    width: fit-content;
+    padding-left: .2rem;
+    padding-right: .2rem;
+    height: 3rem;
+    cursor: pointer;
+    transition: .4s;
+    color: #adadad;
+    position: relative;
+    left: -.5rem;
+    margin-left: .5rem;
+    border-radius: .2rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    background: #3a3a3a;
+}
+
+.sapikk h5 {
+    margin: auto;
+    text-align: center;
+    padding: 1rem;
+    font-family: Inter;
+}
+
+.sapik h5 {
+    margin: auto;
+    text-align: center;
+    padding: 0.4rem;
+    font-family: Inter;
+}
+
+.sapik:hover {
+    transition: .4s;
+    background-color: #dadada;
+    color: black;
 }

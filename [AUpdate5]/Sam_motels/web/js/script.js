@@ -164,7 +164,8 @@ window.addEventListener('message', function (event) {
             $('#BuyMotelRoomString').html(Lang["BuyMotelRoomString"])
             $('#filledroomsstring').html(Lang["filledroomsstring"]);
             $('#emptyroomsstring').html(Lang["emptyroomsstring"])
-            $('#ThePriceString').html(Lang["ThePriceString"])
+            $('#ThePriceString').html(Lang["ThePriceString"]);
+            $('#AmountPayBla').html(Lang["AmountPayBla"])
             $('#mymotelroomsstring').html(Lang["mymotelroomsstring"]);
             $('#daystring').html(Lang["daystring"])
             $('#createfeedbackstring').html(Lang["createfeedbackstring"]);
@@ -297,6 +298,7 @@ window.addEventListener('message', function (event) {
             Lang = event.data.lang
             $('#playeranahtarlar').hide();
             $('#player-secili-anahtar').fadeIn(250);
+            
             let Start = `
             <div id="BackKeyList" class="roomb">
                 <h3>${Lang["BACKKEYSLIST"]}</h3>
@@ -700,40 +702,31 @@ LoadMotelOdalar = function(array){
     for (let index = 0; index < array.length; index++) {
         const element = array[index];
         if (element.Owner !== Lang["NoOwner"]){
-            axx = `<div class="rooms-item">
-            <svg class="roomparx" xmlns="http://www.w3.org/2000/svg" width="236" height="178" viewBox="0 0 236 178" fill="none">
-                <rect x="1.82737" y="1.82737" width="232.185" height="174.489" rx="8.20844" fill="#D9D9D9" fill-opacity="0.04" stroke="#434343" stroke-width="2.34527"/>
-            </svg>
-            <div class="had">
-                <h6 class="hadh1">${Lang["Room"]} ${index+1}</h6>
-            </div>
-            <div class="icerika">
-                <div class="stateroom fulx">
-                    <h6 class="state-text">${Lang["Full"]}</h6>
-                </div>
-                <button id="editRoom" data="${index+1}"  dogrumu="dogru" class="editRoom"><svg class="savg" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-                    <path d="M14.4965 3.81132L11.3265 0.642126C11.2212 0.536714 11.096 0.453095 10.9583 0.396045C10.8206 0.338995 10.673 0.309631 10.524 0.309631C10.3749 0.309631 10.2273 0.338995 10.0896 0.396045C9.95189 0.453095 9.82677 0.536714 9.72138 0.642126L0.974884 9.38862C0.86904 9.49363 0.785125 9.61862 0.728015 9.75634C0.670906 9.89406 0.641741 10.0418 0.642218 10.1909V13.3608C0.642218 13.6618 0.761787 13.9504 0.974621 14.1632C1.18745 14.3761 1.47612 14.4957 1.77711 14.4957H13.6935C13.844 14.4957 13.9883 14.4359 14.0948 14.3295C14.2012 14.223 14.261 14.0787 14.261 13.9282C14.261 13.7777 14.2012 13.6334 14.0948 13.527C13.9883 13.4205 13.844 13.3608 13.6935 13.3608H6.55219L14.4965 5.41649C14.6019 5.3111 14.6855 5.18598 14.7425 5.04827C14.7996 4.91056 14.8289 4.76296 14.8289 4.61391C14.8289 4.46485 14.7996 4.31725 14.7425 4.17954C14.6855 4.04183 14.6019 3.91671 14.4965 3.81132ZM11.9912 6.3166L8.82198 3.1467L10.5243 1.44436L13.6935 4.61426L11.9912 6.3166Z" fill="#A0A0A0"/>
-                  </svg> ${Lang["EditRoomString"]}</button>
-            </div>
-        </div>`
-        } else {
             axx = `
-            <div class="rooms-item">
-                <svg class="roomparx" xmlns="http://www.w3.org/2000/svg" width="236" height="178" viewBox="0 0 236 178" fill="none">
-                    <rect x="1.82737" y="1.82737" width="232.185" height="174.489" rx="8.20844" fill="#D9D9D9" fill-opacity="0.04" stroke="#434343" stroke-width="2.34527"/>
-                </svg>
-                <div class="had">
-                    <h6 class="hadh1">${Lang["Room"]} ${index+1}</h6>
-                </div>
-                <div class="icerika">
-                    <div class="stateroom emptyy">
-                        <h6 class="state-text">${Lang["Empty"]}</h6>
+                <div class="Avengers">
+                    <div class="AvengersItem AvengersBlack">
+                        <p>${Lang["Room"]} ${index+1}</p>
                     </div>
-                    <button id="editRoom" data="${index+1}" dogrumu="dogru" class="editRoom"><svg class="savg" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-                        <path d="M14.4965 3.81132L11.3265 0.642126C11.2212 0.536714 11.096 0.453095 10.9583 0.396045C10.8206 0.338995 10.673 0.309631 10.524 0.309631C10.3749 0.309631 10.2273 0.338995 10.0896 0.396045C9.95189 0.453095 9.82677 0.536714 9.72138 0.642126L0.974884 9.38862C0.86904 9.49363 0.785125 9.61862 0.728015 9.75634C0.670906 9.89406 0.641741 10.0418 0.642218 10.1909V13.3608C0.642218 13.6618 0.761787 13.9504 0.974621 14.1632C1.18745 14.3761 1.47612 14.4957 1.77711 14.4957H13.6935C13.844 14.4957 13.9883 14.4359 14.0948 14.3295C14.2012 14.223 14.261 14.0787 14.261 13.9282C14.261 13.7777 14.2012 13.6334 14.0948 13.527C13.9883 13.4205 13.844 13.3608 13.6935 13.3608H6.55219L14.4965 5.41649C14.6019 5.3111 14.6855 5.18598 14.7425 5.04827C14.7996 4.91056 14.8289 4.76296 14.8289 4.61391C14.8289 4.46485 14.7996 4.31725 14.7425 4.17954C14.6855 4.04183 14.6019 3.91671 14.4965 3.81132ZM11.9912 6.3166L8.82198 3.1467L10.5243 1.44436L13.6935 4.61426L11.9912 6.3166Z" fill="#A0A0A0"/>
-                        </svg> ${Lang["EditRoomString"]}</button>
-                </div>
-            </div>`
+                    <div class="AvengersItem AvengersRed">
+                        <p>${Lang["Full"]}</p>
+                    </div>
+                    <div id="editRoom" data="${index+1}" dogrumu="dogru"  class="AvengersItem AvengersSimple">
+                        <p>${Lang["EditRoomString"]}</p>
+                    </div>
+                </div>`
+        } else {
+            axx = ` 
+            <div class="Avengers">
+                    <div class="AvengersItem AvengersBlack">
+                        <p>${Lang["Room"]} ${index+1}</p>
+                    </div>
+                    <div class="AvengersItem AvengersGreen">
+                        <p>${Lang["Empty"]}</p>
+                    </div>
+                    <div id="editRoom" data="${index+1}" dogrumu="dogru"  class="AvengersItem AvengersSimple">
+                        <p>${Lang["EditRoomString"]}</p>
+                    </div>
+                </div>`
         }
         $('.allroomstab').append(axx)
     }
@@ -742,41 +735,55 @@ LoadMotelOdalar = function(array){
 LoadRentedList = function(array){
     let htam = '';
     array.reverse()
-    $('#renteler').html("");
+    $('#damlaC').html("");
     for (let index = 0; index < array.length; index++) {
         const element = array[index];
         var photoOwner = './pimg/' + IdentifierConverter(element.Cid)
         htam = `
-        <div id="OpenDetailedRentBill" room="${element.Room}" phone="${element.Phone}" name="${element.PlayerName}" photo="${photoOwner}" typ="${element.RoomTyp}" date="${element.Date}" para="${element.Price}" class="listv-item">
-            <img src="${photoOwner}" class="mulkiyet">
-            <h5>${element.PlayerName}</h5>
-            <p>${element.RoomTyp}</p>
-            <div class="cenan">
-                <span class="iconx"><svg class="mem1" xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
-                    <path d="M11.8405 3.97773L8.02227 0.159546C7.97158 0.108909 7.91141 0.0687556 7.84519 0.0413803C7.77898 0.014005 7.70801 -5.61741e-05 7.63636 1.68654e-07H1.09091C0.801582 1.68654e-07 0.524105 0.114935 0.31952 0.31952C0.114935 0.524105 0 0.801582 0 1.09091V13.0909C0 13.3802 0.114935 13.6577 0.31952 13.8623C0.524105 14.0669 0.801582 14.1818 1.09091 14.1818H10.9091C11.1984 14.1818 11.4759 14.0669 11.6805 13.8623C11.8851 13.6577 12 13.3802 12 13.0909V4.36364C12.0001 4.29199 11.986 4.22102 11.9586 4.15481C11.9312 4.08859 11.8911 4.02842 11.8405 3.97773ZM7.63636 4.36364V1.36364L10.6364 4.36364H7.63636Z" fill="#676767"/>
-                </svg></span>
+        <div id="OpenDetailedRentBill" class="cambaz" room="${element.Room}" phone="${element.Phone}" name="${element.PlayerName}" photo="${photoOwner}" typ="${element.RoomTyp}" date="${element.Date}" para="${element.Price}">
+            <div class="leftbar-1">
+                <img src="${photoOwner}">
+                <h6>${element.PlayerName}</h6><br>
+                <h4>${element.RoomTyp}</h4>
+            </div>
+            <div class="leftbar-2">
+                <div class="button-click">
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
+                            <path d="M11.8405 3.97773L8.02227 0.159546C7.97158 0.108909 7.91141 0.0687556 7.84519 0.0413803C7.77898 0.014005 7.70801 -5.61741e-05 7.63636 1.68654e-07H1.09091C0.801582 1.68654e-07 0.524105 0.114935 0.31952 0.31952C0.114935 0.524105 0 0.801582 0 1.09091V13.0909C0 13.3802 0.114935 13.6577 0.31952 13.8623C0.524105 14.0669 0.801582 14.1818 1.09091 14.1818H10.9091C11.1984 14.1818 11.4759 14.0669 11.6805 13.8623C11.8851 13.6577 12 13.3802 12 13.0909V4.36364C12.0001 4.29199 11.986 4.22102 11.9586 4.15481C11.9312 4.08859 11.8911 4.02842 11.8405 3.97773ZM7.63636 4.36364V1.36364L10.6364 4.36364H7.63636Z" fill="#676767"/>
+                        </svg>
+                    </p>
+                </div>
             </div>
         </div>`
-        $('#renteler').append(htam);
+        $('#damlaC').append(htam);
     }
 };
+
 
 LoadFaadbacks = function(array){
     let ceam = '';
     $('#faadbacks').html("");
+    $('#sevmemek').hide();
     for (let index = 0; index < array.length; index++) {
         const element = array[index];
         var photoOwner = './pimg/' + IdentifierConverter(element.Writer)
         ceam = `
-        <div class="listv-itemm">
-            <img src="${photoOwner}" class="mulkiyet">
-            <h5>${element.WriterName}</h5>
-            <p>${element.Type}</p>
-            <div id="feedbackDelete" xaas="${index+1}" style="top: 1.4vh; color: #fff;" class="cenan">
-                <i class="fa-duotone fa-trash"></i>
+        <div id="OpenDetailedFeedback" class="cambaz" writer="${element.WriterName}" date="${element.Date}"  photo="${photoOwner}" text="${element.Text}" para="${element.Price}">
+            <div class="leftbar-1">
+                <img src="${photoOwner}">
+                <h6>${element.WriterName}</h6><br>
+                <h4>${element.Date}</h4>
             </div>
-            <div class="belmaIncke"></div>
-            <h6>${element.Text}</h6>
+            <div class="leftbar-2">
+                <div class="button-click">
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
+                            <path d="M11.8405 3.97773L8.02227 0.159546C7.97158 0.108909 7.91141 0.0687556 7.84519 0.0413803C7.77898 0.014005 7.70801 -5.61741e-05 7.63636 1.68654e-07H1.09091C0.801582 1.68654e-07 0.524105 0.114935 0.31952 0.31952C0.114935 0.524105 0 0.801582 0 1.09091V13.0909C0 13.3802 0.114935 13.6577 0.31952 13.8623C0.524105 14.0669 0.801582 14.1818 1.09091 14.1818H10.9091C11.1984 14.1818 11.4759 14.0669 11.6805 13.8623C11.8851 13.6577 12 13.3802 12 13.0909V4.36364C12.0001 4.29199 11.986 4.22102 11.9586 4.15481C11.9312 4.08859 11.8911 4.02842 11.8405 3.97773ZM7.63636 4.36364V1.36364L10.6364 4.36364H7.63636Z" fill="#676767"/>
+                        </svg>
+                    </p>
+                </div>
+            </div>
         </div>`
         $('#faadbacks').append(ceam);
     }
@@ -790,6 +797,8 @@ $(document).on('click', '#feedbackDelete', function(){
 });
 
 $(document).on('click', '#OpenDetailedRentBill', function(){
+    $('#sevmek').show();
+    $('#sevmekmek').hide();
     $('#overlayBey').fadeIn(350);
     $('.bilkibox').fadeIn(350);
     $('#haski').html($(this).attr("name"));
@@ -798,6 +807,20 @@ $(document).on('click', '#OpenDetailedRentBill', function(){
     $('#haski2').html($(this).attr("date"));
     $('#haski3').html($(this).attr("para"));
     $('#haski4').html($(this).attr("typ"));
+    $('#haski5').html($(this).attr("room"));
+});
+
+$(document).on('click', '#OpenDetailedFeedback', function(){
+    $('#sevmek').hide();
+    $('#sevmekmek').show();
+    $('#overlayBey').fadeIn(350);
+    $('.bilkibox').fadeIn(350);
+    $('#haski').html($(this).attr("writer"));
+    // $('#haski7').html($(this).attr("phone"));
+    $('#haski6').attr("src", $(this).attr("photo"));
+    $('#haski2').html($(this).attr("date"));
+    $('#haski3').html($(this).attr("para"));
+    $('#haski44').html($(this).attr("text"));
     $('#haski5').html($(this).attr("room"));
 });
 
@@ -1386,12 +1409,13 @@ LoadLeaderBord = function(){
     allmotal.sort((a, b) => b.Cukur - a.Cukur);
     for (let index = 0; index < allmotal.length; index++) {
         const element = allmotal[index];        
-        // En yüksek puanlı oteli kırmızı renkte göster
         const otelAdi = (index === 0) ? `${element.name} <i class="fa-sharp fa-regular fa-trophy-star"></i>` : element.name;
-        
+        const otelOda2 = (index === 0) ? `${element.rooms.length} <i class="fa-sharp fa-regular fa-trophy-star"></i>` : element.rooms.length;
+
         ceam = `
         <div class="ListOfV">
             <h2>${otelAdi}</h2>
+            <h6>TOTAL ROOMS: ${otelOda2}</h6>
         </div>`
         $('#moheller').append(ceam);
     }
@@ -1571,6 +1595,7 @@ document.onkeyup = function(data){
             $('#BuyRoomScreen').hide();
             $('#menurece').show();
             $('.GunDay').hide();
+            $('.merzuka').hide();
             $('.indirimliOda').hide();
             $('.odalist').html("");
             if(Discount){
@@ -1609,6 +1634,7 @@ CloseAll = function(){
         $('#BuyRoomScreen').hide();
         $('#menurece').show();
         $('.GunDay').hide();
+        $('.merzuka').hide()
         $('.indirimliOda').hide();
         $('.odalist').html("");
         if(Discount){
@@ -1802,11 +1828,13 @@ $(document).on('click', '#SecOda', function(){
         Indirimli = Math.round(calculateDiscountedPrice(Math.round(clickedKutu.attr("price")), DiscountValue))
         $('#MotelOdaPrice').html(`<del>${Math.round(clickedKutu.attr("price"))}</del>`);
         $('.GunDay').fadeIn(350);
+        $('.merzuka').fadeIn(350);
         $('#indirimlipara').html(Math.round(calculateDiscountedPrice(Math.round(clickedKutu.attr("price")), DiscountValue)))
         KiralanacakFiyat = Math.round(calculateDiscountedPrice(Math.round(clickedKutu.attr("price")), DiscountValue))
     } else {
         $('.indirimliOda').hide();
         $('.GunDay').fadeIn(350);
+        $('.merzuka').fadeIn(350);
         OdaOrjinalFiyat = Math.round(clickedKutu.attr("price"))
         KiralanacakFiyat = Math.round(clickedKutu.attr("price"))
         $('#MotelOdaPrice').html(Math.round(clickedKutu.attr("price")))
@@ -2227,11 +2255,11 @@ LoadSelectedMotel = function(data){
     </div>
     <div style="width: 46.5%;" class="angut">
         <h5>${Lang["MONEY"]}</h5>
-        <h6>$</h6><input id="MoneyMotel" style="top: 2.2vh; padding-left: 1vh;" type="number" class="anpute" value="${data.money}" placeholder="${Lang["Enteramoney"]}">
+        <h6>$</h6><input id="MoneyMotel" style="top: 2rem; padding-left: 1vh;" type="number" class="anpute" value="${data.money}" placeholder="${Lang["Enteramoney"]}">
     </div>
-    <div style="width: 46.5%;" class="angut">
+    <div style="width: 22rem;" class="angut">
         <h5>${Lang["DISCOUNTVALUE"]}</h5>
-        <h6>%</h6><input id="DiscountMotel" style="top: 2.2vh; padding-left: 1vh;" type="number" class="anpute" value="${data.discount}" placeholder="${Lang["Enteravalue"]}">
+        <h6>%</h6><input id="DiscountMotel" style="top: 2rem; padding-left: 1vh;" type="number" class="anpute" value="${data.discount}" placeholder="${Lang["Enteravalue"]}">
     </div>
     <div class="Cennet">
         <img src="${photoOwner}" class="orospununfoto">
@@ -2239,7 +2267,7 @@ LoadSelectedMotel = function(data){
         <h6>${Lang["MOTELOWNER"]}</h6>
         <button id="MotelOwnerChange" mcode="${data.mcode}" class="haksizlikButonChange"><i class="fa-solid fa-user-pen"></i></button>
     </div>
-    <div style="width: 46.5%; margin-left: 2.1vh;top: -0.7%;" class="angut">
+    <div style="width: 22rem; margin-left: 2.2rem; top: 0.1rem;" class="angut">
         <h5>${Lang["SalePrice"]}</h5>
         <h6>$</h6><input id="SaleMotel" style="top: 2.2vh; padding-left: 1vh;" type="number" class="anpute" value="${data.saleprice}" placeholder="${Lang["Enteramoney"]}">
     </div>
@@ -2436,7 +2464,7 @@ $(document).on('click', '#editRoom', function(){
     if($(this).attr("dogrumu") == 'dogru'){
         YumurcakData = true
         $('#DeleteRoom').hide();
-        $('.tyu').css("width", "96%");
+        $('.tyu').css("width", "94%");
     } else {
         $('#DeleteRoom').show();
         $('.tyu').css("width", "265px");
@@ -2459,6 +2487,7 @@ LoadAdminMotels = function(data){
         if(element.ownerName !== undefined){
             name = element.ownerName
         }
+        let autoPayChecked = element.disabled === 1 ? "checked" : "";
         htmll = `
         <div id="EditMotel" mcode="${element.mcode}" class="Motel-Item">
             <h3>${element.name}</h3>
@@ -2468,6 +2497,12 @@ LoadAdminMotels = function(data){
                 </div>
                 <div style="width: 70%;" class="Motel-Item-BoxPart">
                     <h6>${name}</6>
+                </div>
+                <div class="ayarSwitch2">
+                    <label id="thisDisabled" class="switch">
+                        <input data-id="${index+1}" type="checkbox" ${autoPayChecked}>
+                        <span class="slider round"></span>
+                    </label>
                 </div>
             </div>
             <div class="Motel-Item-Box">
@@ -2497,14 +2532,17 @@ LoadTeleportRooms = function(){
     $('#TeleportMlos').html("");
     for (let index = 0; index < Mlos.length; index++) {
         const element = Mlos[index];
-        emir =
-        `<div id="yumgoz5" data-id="${element.RoomLabel}" class="BigBoy-Part">
-            <img src="rooms/${element.Image}">
-            <div class="overlay22">
-                <p>${element.RoomLabel}</p>
-            </div>
-        </div>`
-        $('#TeleportMlos').append(emir);
+        var text = element.RoomLabel
+        if(element.Teleport){
+            emir =
+            `<div id="yumgoz5" data-id="${element.RoomLabel}" class="BigBoy-Part">
+                <img src="rooms/${element.Image}">
+                <div class="overlay22">
+                    <p>${text}</p>
+                </div>
+            </div>`
+            $('#TeleportMlos').append(emir);
+        }
     }
 };
 
@@ -2537,6 +2575,7 @@ AddMotelButton = function(){
     $('#motelpricetext').html(Lang["motelpricetext"]);
     $('#TypeText').html(Lang["TypeText"])
     $('#receptioncoords').html(Lang["receptioncoords"]);
+    $('#blipnames').html(Lang["blipnames"]);
     $('#GarageString').html(Lang["GarageString"]);
     $('#RoomPriceString').html(Lang["RoomPriceString"]);
     $('#DoorHash').html(Lang["DoorHash"]);
@@ -2802,7 +2841,8 @@ $(document).on('click', '#CrexMotel', function(){
     var inputText2 = $("#moxelprice").val();
     var inputText3 = $("#discountvaluxe").val();
     var inputText5 = $("#recepivediksiyon").val();
-    if (inputText5.startsWith("vector3") && inputText2 !== "" && inputText3 !== "" && inputText1 !== "") {
+    var inputText6 = $("#blipid").val();
+    if (inputText5.startsWith("vector3") && inputText2 !== "" && inputText6 !== "" && inputText3 !== "" && inputText1 !== "") {
         $('.NewEditMenu').fadeOut(350);
         $.post('http://Sam_motels/CreateMotelNew', JSON.stringify({
             motelname: inputText1,
@@ -2811,7 +2851,8 @@ $(document).on('click', '#CrexMotel', function(){
             garage: garageSelected,
             apartment: apartmentSelected,
             apartmentTheme: corridorCurrent,
-            garageTheme: garageCurrent
+            garageTheme: garageCurrent,
+            blipid: inputText6
         }));
         OpenRoomCreateScreen = false
     } else {
@@ -2875,6 +2916,14 @@ $(document).on('change', '#thisGarage input[type="checkbox"]', function() {
         $('#GarageCoordK').fadeOut(250);
         $('#GarageTheme').fadeOut(350);
     }
+});
+
+$(document).on('change', '#thisDisabled input[type="checkbox"]', function() {
+    disabledMotel = $(this).prop('checked');
+    $.post('http://Sam_motels/DisabledMotel', JSON.stringify({
+        disabled: disabledMotel,
+        id: $(this).attr("data-id")
+    }))   
 });
 
 $(document).on('click', '#CreateRoomPart', function(){

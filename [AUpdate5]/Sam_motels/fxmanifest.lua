@@ -6,7 +6,7 @@ script "0r_motels"
 
 writer "Kibra"
 
-version "1.0.1"
+version "1.0.2"
 
 lua54 "yes"
 
@@ -32,7 +32,7 @@ shared_scripts {
     "config/config_functions.lua"
 }
 
---[[ escrow_ignore {
+escrow_ignore {
     "config/config_main.lua",
     "config/config_lang.lua",
     "config/config_functions.lua",
@@ -41,7 +41,7 @@ shared_scripts {
     "modules/client/entity.lua",
     "modules/client/adminMenu.lua",
     "modules/server/main.lua",
-} ]]
+}
 
 ui_page 'web/index.html'
 
@@ -58,5 +58,4 @@ files {
 }
 
 depencedy '0r_lib'
-dependency '/assetpacks'
 dependency '/assetpacks'
