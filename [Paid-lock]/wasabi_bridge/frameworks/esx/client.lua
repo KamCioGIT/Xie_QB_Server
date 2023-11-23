@@ -18,8 +18,9 @@ RegisterNetEvent('esx:playerLoaded', function(xPlayer)
     TriggerEvent('wasabi_bridge:playerLoaded', xPlayer)
 end)
 
-AddEventHandler('esx:onPlayerSpawn', function()
-    TriggerEvent('wasabi_bridge:onPlayerSpawn')
+AddEventHandler('esx:onPlayerSpawn', function(noAnim)
+    if type(noAnim) ~= 'boolean' then noAnim = false end
+    TriggerEvent('wasabi_bridge:onPlayerSpawn', noAnim)
     isDead = nil
 end)
 

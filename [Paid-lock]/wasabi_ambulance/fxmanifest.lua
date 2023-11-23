@@ -9,7 +9,7 @@ lua54 'yes'
 
 description 'Wasabi ESX/QBCore Advanced Ambulance Job'
 author 'wasabirobby'
-version '1.9.4'
+version '1.9.5'
 
 
 shared_scripts { '@ox_lib/init.lua', 'configuration/strings.lua', 'data.lua', '@wasabi_bridge/import.lua', 'configuration/config.lua' }

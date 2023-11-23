@@ -58,7 +58,7 @@ end
 exports('isPlayerDead', isPlayerDead)
 
 DrawGenericTextThisFrame = function()
-	SetTextFont(0)
+	SetTextFont(4)
 	SetTextScale(0.0, 0.5)
 	SetTextColour(255, 255, 255, 255)
 	SetTextDropshadow(0, 0, 0, 0, 255)
@@ -101,7 +101,6 @@ end
 
 StartRPDeath = function()
 	TriggerServerEvent('wasabi_ambulance:setDeathStatus', false, true)
-    TriggerServerEvent('consumables:server:LostHealth', 10)
 	DrugIntake = {}
 	if wsb.framework == 'esx' then
 		TriggerEvent('esx:onPlayerSpawn')
@@ -2028,6 +2027,10 @@ function AttemptCheckIn(hospital, standaloneID)
 			IsCheckedIn = false
 			ClearPedTasks(cache.ped)
 			DoScreenFadeIn(1200)
+			if Config?.wasabi_crutch?.crutchOnCheckIn?.enabled then
+				Wait(3000)
+				TriggerServerEvent('wasabi_crutch:giveCrutch', cache.serverId, Config.wasabi_crutch.crutchOnCheckIn.duration)
+			end
 		end
 	end
 end

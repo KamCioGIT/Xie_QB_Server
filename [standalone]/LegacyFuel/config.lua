@@ -19,18 +19,18 @@ Config.CostMultiplier = 1.0
 
 -- Configure the strings as you wish here.
 Config.Strings = {
-	ExitVehicle = "Exit the vehicle to refuel",
-	EToRefuel = "Press ~g~E ~w~to refuel vehicle",
-	JerryCanEmpty = "Jerry can is empty",
-	FullTank = "Tank is full",
-	PurchaseJerryCan = "Press ~g~E ~w~to purchase a jerry can for ~g~$" .. Config.JerryCanCost,
-	CancelFuelingPump = "Press ~g~E ~w~to cancel the fueling",
-	CancelFuelingJerryCan = "Press ~g~E ~w~to cancel the fueling",
-	NotEnoughCash = "Not enough cash",
-	RefillJerryCan = "Press ~g~E ~w~ to refill the jerry can for ",
-	NotEnoughCashJerryCan = "Not enough cash to refill jerry can",
-	JerryCanFull = "Jerry can is full",
-	TotalCost = "Cost",
+	ExitVehicle = "下车加油",
+	EToRefuel = "按下 ~g~E ~w~加油",
+	JerryCanEmpty = "油罐空了",
+	FullTank = "油箱已满",
+	PurchaseJerryCan = "按下 ~g~E ~w~购买油罐 ~g~$" .. Config.JerryCanCost,
+	CancelFuelingPump = "按下 ~g~E ~w~取消加油",
+	CancelFuelingJerryCan = "按下 ~g~E ~w~取消加油",
+	NotEnoughCash = "你没有足够的现金",
+	RefillJerryCan = "按下 ~g~E ~w~ 给油罐加油 ",
+	NotEnoughCashJerryCan = "你没有足够的现金来购买油罐",
+	JerryCanFull = "油罐已满",
+	TotalCost = "价格",
 }
 
 Config.PumpModels = {
@@ -52,33 +52,33 @@ Config.Blacklist = {
 -- Do you want the HUD removed from showing in blacklisted vehicles?
 Config.RemoveHUDForBlacklistedVehicle = true
 
--- Class multipliers. If you want SUVs to use less fuel, you can change it to anything under 1.0, and vise versa.
+-- 班级乘数。 如果您希望SUV使用较少的燃料，则可以将其更改为1.0以下的任何燃料，反之亦然。
 Config.Classes = {
-	[0] = 1.0, -- Compacts
-	[1] = 1.0, -- Sedans
-	[2] = 1.0, -- SUVs
-	[3] = 1.0, -- Coupes
-	[4] = 1.0, -- Muscle
-	[5] = 1.0, -- Sports Classics
-	[6] = 1.0, -- Sports
-	[7] = 1.0, -- Super
-	[8] = 1.0, -- Motorcycles
-	[9] = 1.0, -- Off-road
-	[10] = 1.0, -- Industrial
-	[11] = 1.0, -- Utility
-	[12] = 1.0, -- Vans
+	[0] = 0.5, -- Compacts
+	[1] = 0.5, -- Sedans
+	[2] = 0.5, -- SUVs
+	[3] = 0.5, -- Coupes
+	[4] = 0.5, -- Muscle
+	[5] = 0.5, -- Sports Classics
+	[6] = 0.5, -- Sports
+	[7] = 0.5, -- Super
+	[8] = 0.5, -- Motorcycles
+	[9] = 0.5, -- Off-road
+	[10] = 0.5, -- Industrial
+	[11] = 0.5, -- Utility
+	[12] = 0.5, -- Vans
 	[13] = 0.0, -- Cycles
-	[14] = 1.0, -- Boats
-	[15] = 1.0, -- Helicopters
-	[16] = 1.0, -- Planes
-	[17] = 1.0, -- Service
-	[18] = 1.0, -- Emergency
-	[19] = 1.0, -- Military
-	[20] = 1.0, -- Commercial
-	[21] = 1.0, -- Trains
+	[14] = 0.5, -- Boats
+	[15] = 0.5, -- Helicopters
+	[16] = 0.5, -- Planes
+	[17] = 0.5, -- Service
+	[18] = 0.5, -- Emergency
+	[19] = 0.5, -- Military
+	[20] = 0.5, -- Commercial
+	[21] = 0.5, -- Trains
 }
 
--- The left part is at percentage RPM, and the right is how much fuel (divided by 10) you want to remove from the tank every second
+-- 左侧部分为rpm百分比，右侧是您要每秒从油箱中卸下的燃料（除以10）
 Config.FuelUsage = {
 	[1.0] = 1.4,
 	[0.9] = 1.2,

@@ -6,10 +6,8 @@ Strings = {
 
     checkin_cooldown = '签到冷却',
     checkin_cooldown_desc = '您尝试签到得太快了，请稍等片刻。',
-
     checkingin_progress = '正在签到中...',
     remove_dead_target = '移除无意识的人',
-
     ply_injury_head = '头部',
     ply_injury_neck = '颈部',
     ply_injury_spine = '脊柱',
@@ -29,8 +27,8 @@ Strings = {
     severe = '严重',
     deadly = '致命',
     injury_report_locations = '位置',
-    injury_report_type = '伤害类型：%s',
-    injury_report_severity = '严重程度：%s',
+    injury_report_type = '伤害类型:%s',
+    injury_report_severity = '严重程度:%s',
     injury_report_bleed = '失血量',
     light_injury_title = '轻伤',
     moderate_injury_title = '中度伤',
@@ -70,13 +68,11 @@ Strings = {
     bleedout = '失血',
     player_injury_critical_desc = '由于%s伤口，玩家状况危急！',
 
-
-
     gps_active = 'GPS已激活',
     gps_active_desc = '玩家 %s 激活了他们的GPS',
     gps_deactive = 'GPS已停用',
     gps_deactive_desc = '玩家 %s 停用了他们的GPS',
-    no_wsb = '^0[^3警告^0] wasabi_bridge 在框架之后和/或资源之前未启动：%s',
+    no_wsb = '^0[^3警告^0] wasabi_bridge 在框架之后和/或资源之前未启动:%s',
     spawn_blocked = '车库被阻挡',
     spawn_blocked_desc = '您无法拉出您的车辆，因为它被阻挡了！',
     menu_remove_crutch = '移除拐杖',
@@ -104,17 +100,17 @@ Strings = {
     fine_received_desc = '您收到了$%s的罚款',
     log_killed_title = '玩家被杀',
     log_killed_desc =
-    '> *%s [%s] 杀死了 %s [%s]\n\n**凶手信息：**\n名称：`%s`\n玩家ID：`%s`\n标识符：`%s`\nSteam：`%s`\nDiscord：`%s`\n许可证：`%s`\n许可证2：`%s`\nXBL：`%s`\nFiveM：`%s`\nIP：||%s||\n\n**受害者信息：**\n角色名称：`%s`\n玩家ID：`%s`\n标识符：`%s`\nSteam：`%s`\nDiscord：`%s`\n许可证：`%s`\n许可证2：`%s`\nXBL：`%s`\nFiveM：`%s`\nIP：||%s||\n\n> **死亡原因：** `%s`',
+    '> *%s [%s] 杀死了 %s [%s]\n\n**凶手信息:**\n名称:`%s`\n玩家ID:`%s`\n标识符:`%s`\nSteam:`%s`\nDiscord:`%s`\n许可证:`%s`\n许可证2:`%s`\nXBL:`%s`\nFiveM:`%s`\nIP:||%s||\n\n**受害者信息:**\n角色名称:`%s`\n玩家ID:`%s`\n标识符:`%s`\nSteam:`%s`\nDiscord:`%s`\n许可证:`%s`\n许可证2:`%s`\nXBL:`%s`\nFiveM:`%s`\nIP:||%s||\n\n> **死亡原因:** `%s`',
     log_suicide_title = '玩家自杀',
     log_suicide_desc =
-    '> %s [%s] 自杀了\n\n**玩家信息：**\n名称：`%s`\n玩家ID：`%s`\n标识符：`%s`\nSteam：`%s`\nDiscord：`%s`\n许可证：`%s`\n许可证2：`%s`\nXBL：`%s`\nFiveM：`%s`\nIP：||%s||\n\n> **死亡原因：** `%s`',
+    '> %s [%s] 自杀了\n\n**玩家信息:**\n名称:`%s`\n玩家ID:`%s`\n标识符:`%s`\nSteam:`%s`\nDiscord:`%s`\n许可证:`%s`\n许可证2:`%s`\nXBL:`%s`\nFiveM:`%s`\nIP:||%s||\n\n> **死亡原因:** `%s`',
     unknown = '未知',
     log_admin_revive_title = '管理员复活玩家',
     log_admin_revive_desc =
-    '> *%s [%s] 管理员复活了 %s [%s]\n\n**目标信息：**\n名称：`%s`\n玩家ID：`%s`\n标识符：`%s`\nSteam：`%s`\nDiscord：`%s`\n许可证：`%s`\n许可证2：`%s`\nXBL：`%s`\nFiveM：`%s`\nIP：||%s||\n\n**管理员信息：**\n角色名称：`%s`\n玩家ID：`%s`\n标识符：`%s`\nSteam：`%s`\nDiscord：`%s`\n许可证：`%s`\n许可证2：`%s`\nXBL：`%s`\nFiveM：`%s`\nIP：||%s||',
+    '> *%s [%s] 管理员复活了 %s [%s]\n\n**目标信息:**\n名称:`%s`\n玩家ID:`%s`\n标识符:`%s`\nSteam:`%s`\nDiscord:`%s`\n许可证:`%s`\n许可证2:`%s`\nXBL:`%s`\nFiveM:`%s`\nIP:||%s||\n\n**管理员信息:**\n角色名称:`%s`\n玩家ID:`%s`\n标识符:`%s`\nSteam:`%s`\nDiscord:`%s`\n许可证:`%s`\n许可证2:`%s`\nXBL:`%s`\nFiveM:`%s`\nIP:||%s||',
     log_self_revive_title = '管理员自我复活',
     log_self_revive_desc =
-    '> %s [%s] 自我复活\n\n**玩家信息：**\n名称：`%s`\n玩家ID：`%s`\n标识符：`%s`\nSteam：`%s`\nDiscord：`%s`\n许可证：`%s`\n许可证2：`%s`\nXBL：`%s`\nFiveM：`%s`\nIP：||%s||',
+    '> %s [%s] 自我复活\n\n**玩家信息:**\n名称:`%s`\n玩家ID:`%s`\n标识符:`%s`\nSteam:`%s`\nDiscord:`%s`\n许可证:`%s`\n许可证2:`%s`\nXBL:`%s`\nFiveM:`%s`\nIP:||%s||',
     log_death_logs = '死亡日志',
     log_revive_logs = '复活日志',
     medbag_crutch = '拐杖',

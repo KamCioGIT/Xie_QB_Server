@@ -1364,9 +1364,7 @@ RegisterNetEvent('wasabi_ambulance:revivePlayer', function(serverdata)
 end)
 
 
-RegisterNetEvent('wasabi_ambulance:revive',function()
-    local coords = GetEntityCoords(cache.ped)
-    local heading = GetEntityHeading(cache.ped)
+RegisterNetEvent('wasabi_ambulance:revive',function(noAnim)
     TriggerServerEvent('wasabi_ambulance:injurySync', false)
     TriggerServerEvent('wasabi_ambulance:setDeathStatus', false, true)
     DrugIntake = {}
@@ -1376,6 +1374,8 @@ RegisterNetEvent('wasabi_ambulance:revive',function()
     while not IsScreenFadedOut() do
         Wait(50)
     end
+    local coords = GetEntityCoords(cache.ped)
+    local heading = GetEntityHeading(cache.ped)
     NetworkResurrectLocalPlayer(coords.x, coords.y, coords.z, heading, true, false)
     ClearPedBloodDamage(cache.ped)
     isDead = false
@@ -1388,11 +1388,11 @@ RegisterNetEvent('wasabi_ambulance:revive',function()
     if Config.DeathScreenEffects then AnimpostfxStopAll() end
     if wsb.framework == 'esx' then
         TriggerServerEvent('esx:onPlayerSpawn')
-        TriggerEvent('esx:onPlayerSpawn')
+        TriggerEvent('esx:onPlayerSpawn', (noAnim or false))
     elseif wsb.framework == 'qb' then
         TriggerServerEvent('hospital:server:resetHungerThirst') -- qb-ambulancejob compatibility
         TriggerServerEvent('hud:server:RelieveStress', 100)
-        TriggerEvent('wasabi_bridge:onPlayerSpawn')
+        TriggerEvent('wasabi_bridge:onPlayerSpawn', (noAnim or false))
     end
 end)
 

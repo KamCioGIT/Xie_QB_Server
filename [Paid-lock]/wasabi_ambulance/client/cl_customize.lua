@@ -184,7 +184,7 @@ function StartDistressSignal()
 			Wait(0)
 			if not IsCheckedIn then
 				timer = timer - 30
-				SetTextFont(0)
+				SetTextFont(4)
 				SetTextScale(0.5, 0.5)
 				SetTextColour(255, 255, 255, 255)
 				SetTextDropshadow(0, 0, 0, 0, 255)
@@ -210,7 +210,7 @@ function OnPlayerDeath(stagetwo)
 		DrugIntake = {}
 		if not stagetwo then
 			StartDeathTimer()
-			--StartDistressSignal()
+			StartDistressSignal()
 		end
 		startDeathAnimation(false)
 	else

@@ -135,5 +135,5 @@ end
 function WSB.isPlayerDead()
     if not WSB.playerLoaded then return end
     WSB.playerData = QBCore.Functions.GetPlayerData()
-    return WSB.playerData.metadata.isdead
+    return (WSB.playerData.metadata.isdead or WSB.playerData.metadata.inlaststand)
 end

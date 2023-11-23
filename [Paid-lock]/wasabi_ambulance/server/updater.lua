@@ -8,7 +8,7 @@ local resource = 'wasabi_ambulance'
 local resourceName = 'wasabi_ambulance'
 local version = GetResourceMetadata(GetCurrentResourceName(), 'version')
 local repoLink = 'https://api.github.com/repos/wasabi-versions/'..resource..'/releases/latest'
-local reqBridge = '1.1.0'
+local reqBridge = '1.1.1'
 
 local function getRepoVersion()
     local repoVersion = false
