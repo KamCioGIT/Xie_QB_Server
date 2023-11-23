@@ -210,7 +210,7 @@ function OnPlayerDeath(stagetwo)
 		DrugIntake = {}
 		if not stagetwo then
 			StartDeathTimer()
-			StartDistressSignal()
+			--StartDistressSignal()
 		end
 		startDeathAnimation(false)
 	else

@@ -118,7 +118,7 @@ local function CheckStatusThread(dict, anim)
 end
 
 if Config.EnableXtoCancel then
-    RegisterKeyMapping("emotecancel", "Cancel current emote", "keyboard", Config.CancelEmoteKey)
+    RegisterKeyMapping("sa", "Cancel current emote", "keyboard", Config.CancelEmoteKey)
 end
 
 -----------------------------------------------------------------------------------------------------
@@ -156,7 +156,7 @@ else
     RegisterCommand('emotemenu', function() OpenEmoteMenu() end, false)
 end
 RegisterCommand('emotes', function() EmotesOnCommand() end, false)
-RegisterCommand('emotecancel', function() EmoteCancel() end, false)
+RegisterCommand('sa', function() EmoteCancel() end, false)
 
 local disableHandsupControls = {
 

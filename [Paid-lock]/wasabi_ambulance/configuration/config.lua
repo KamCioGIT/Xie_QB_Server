@@ -201,8 +201,8 @@ Config.jobMenu = 'F6' -- Default job menu key
 Config.billingSystem = 'qb' -- Current options: 'esx' (For esx_billing) / 'qb' (For qbcore users) 'okok' (For okokBilling) / 'pefcl' (For NPWD billing system) (Easy to add more in editable client - SET TO false IF UNDESIRED) or of course false to disable
 Config.targetSystem = true -- Target system for targetting players, medbags, and stretcher(If disabled with replace with menus/3D text) (Compatible out of the box with qTarget, qb-target, and ox_target)
 
-Config.RespawnTimer = 1--5 * minutes -- Time before optional respawn
-Config.BleedoutTimer = 20 * minutes -- Time before it forces respawn
+Config.RespawnTimer = 5 * minutes -- Time before optional respawn
+Config.BleedoutTimer = 10 * minutes -- Time before it forces respawn
 
 Config.removeItemsOnDeath = false -- Must have Config.Inventory set properly
 Config.Inventory = 'qb' --Options include: 'ox' - (ox_inventory) / 'qb' - (QBCore qb-inventory) 'mf' - (mf-inventory) / 'qs' (qs-inventory) / 'esx' (default esx) / 'other' (whatever else can customize in client/cl_customize.lua)

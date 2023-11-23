@@ -799,7 +799,7 @@ const playerHud = {
             showHunger: true,
             showThirst: true,
             showNos: true,
-            showStress: true,
+            showStress: false,
             showOxygen: false,
             showArmed: true,
             showEngine: false,
