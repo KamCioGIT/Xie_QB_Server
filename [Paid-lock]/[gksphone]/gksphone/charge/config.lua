@@ -1,6 +1,6 @@
-ChargeOn = true
+ChargeOn = false
 ChargeEndCommand = "endcharge"  ---command used to finish charging
-ChargeBlipOn = true  --- To see the blips of the charging stations
+ChargeBlipOn = false  --- To see the blips of the charging stations
 PowerBankFillingTime = 10 -- seconds
 PowerBank = 1  -- Adjust this part how much you want to fill in how many seconds
 

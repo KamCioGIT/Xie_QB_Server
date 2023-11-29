@@ -144,7 +144,7 @@ Lib = {
 	-- Draw 3D Text
 	Draw3DText = function(x, y, z, text)
 		local boolean, _x, _y = GetScreenCoordFromWorldCoord(x, y, z)
-		SetTextScale(0.32, 0.32); SetTextFont(4); SetTextProportional(1)
+		SetTextScale(0.32, 0.32); SetTextFont(0); SetTextProportional(1)
 		SetTextColour(255, 255, 255, 255)
 		SetTextEntry("STRING"); SetTextCentre(1); AddTextComponentString(text)
 		DrawText(_x, _y)

@@ -13,7 +13,7 @@ RegisterNetEvent('wasabi_bridge:notify', function(title, desc, style, icon, id)
         title = title,
         description = desc or false,
         id = id or false,
-        position = Config.NotificationLocation or 'top-right',
+        position = Config.NotificationLocation or 'top',
         icon = icon or false,
         duration = 3500,
         type = style or 'inform'

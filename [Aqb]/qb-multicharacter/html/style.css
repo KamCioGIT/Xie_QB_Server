@@ -72,7 +72,7 @@
     width: 98%;
     height: 5vh;
     margin-top: 1.25vh;
-    background-color: rgb(0, 0, 0, 0.2);
+    background-color: rgb(0, 0, 0, 0.7);
     font-family: 'Poppins', sans-serif;
     border-bottom: 4px solid #74aa3200;
     transition: .1s linear;
@@ -138,11 +138,24 @@
 }
 
 #play {
-    background-color: rgb(53 53 52);
+    /*background-color: rgb(53 53 52);
     border-radius: 50px;
     transition: all 0.2s ease;
     max-width: 100%;
-    border-style: outset;
+    border-style: outset;*/
+
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    background-color: #007bff; /* Blue color, you can change this to your desired color */
+    color: #fff; /* Text color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; /* Space between icon and text */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 100%;
 }
 
 #delete {
@@ -158,36 +171,6 @@
     box-shadow: rgb(117 188 108 / 50%) 0px 30px 60px -12px inset, rgb(97 158 90 / 50%) 0px 18px 36px -18px;
 }
 
-.toplist-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    min-width: 40.5%;
-    width: fit-content;
-    min-height: 1%;
-    height: fit-content;
-
-    position: absolute;
-    right: 30%;
-    top: 80%;
-    padding: 30px;
-    background-color: #161923f2;
-    border-radius: 25px;
-    box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
-    overflow: visible !important;
-    transition: 400ms;
-
-}
-
-.toplist-text {
-    margin: 0;
-    color: #DC143C;
-    font-size: 2vh;
-    font-weight: 900;
-    text-align: center;
-}
 
 th {
     padding-left: 80px;
@@ -218,12 +201,13 @@ th {
     right: 14%;
     top: 20%;
     padding: 30px;
-    background-color: #161923f2;
+    background-color: rgb(0, 0, 0, 0.7);
     border-radius: 5px;
     box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
     overflow: visible !important;
     transition: 400ms;
     user-select: none;
+    font-family: 'STZhongsong', 'Poppins', sans-serif;
 }
 
 .char-info-header {

@@ -184,7 +184,7 @@ function StartDistressSignal()
 			Wait(0)
 			if not IsCheckedIn then
 				timer = timer - 30
-				SetTextFont(4)
+				SetTextFont(0)
 				SetTextScale(0.5, 0.5)
 				SetTextColour(255, 255, 255, 255)
 				SetTextDropshadow(0, 0, 0, 0, 255)

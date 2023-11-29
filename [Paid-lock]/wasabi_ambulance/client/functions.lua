@@ -58,7 +58,7 @@ end
 exports('isPlayerDead', isPlayerDead)
 
 DrawGenericTextThisFrame = function()
-	SetTextFont(4)
+	SetTextFont(0)
 	SetTextScale(0.0, 0.5)
 	SetTextColour(255, 255, 255, 255)
 	SetTextDropshadow(0, 0, 0, 0, 255)

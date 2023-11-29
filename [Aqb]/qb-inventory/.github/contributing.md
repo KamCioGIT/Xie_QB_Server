@@ -180,7 +180,7 @@ All lua code should be done using all the best practices of proper lua using the
 
 - Use 4 Space indentation
 - Aim for lua 5.4 (include `lua54 'yes'` in the fxmanifest.lua)
-- Use `PlayerPedId()` instead of `GetPlayerPed(-1)`
+- Use `PlayerPedId()` instead of `PlayerPedId()`
 - Use `#(vector3 - vector3)` instead of `GetDistanceBetweenCoords()`
 - Don't create unnecessary threads. always try to find a better method of triggering events
 - Don't repeat yourself.. if you're using the same operations in many different places convert them into a function with flexible variables

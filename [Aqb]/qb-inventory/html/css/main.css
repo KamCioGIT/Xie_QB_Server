@@ -15,12 +15,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 ::-webkit-scrollbar {
-	width: 3px;
+	width: 2px;
 }
 
 ::-webkit-scrollbar-thumb {
 	border-radius: 50px;
-	background: #000000;
+	background: #CB9999;
 }
 
 body {
@@ -53,29 +53,29 @@ body {
 .player-inventory {
 	position: absolute;
 	top: 26%;
-	left: 14.8%;
+	left: 14.2%;
 	width: 28%;
-	height: 47.56%;
+	height: 47.16%;
 	float: left;
 	overflow-x: hidden;
 	overflow-y: scroll;
 	z-index: 100;
-	background-color: #a9a8a8c3;
-	border-radius: 0 0 8px 8px;
+	background-color:rgba(50,50,50,0.7);
+	border-radius:20px;
 }
 
 .other-inventory {
 	position: absolute;
 	top: 26%;
-	right: 15.5%;
+	right: 16%;
 	width: 28%;
-	height: 47.56%;
+	height: 47.16%;
 	float: left;
 	overflow-x: hidden;
 	overflow-y: scroll;
-	background-color: #a9a8a8c3;
-	border-radius: 0 0 8px 8px;
 	z-index: 100;
+	background-color:rgba(50,50,50,0.7);
+	border-radius:20px;
 }
 
 .ply-hotbar-inventory {
@@ -89,10 +89,10 @@ body {
 	position: absolute;
 	font-weight: bolder;
 	color: white;
-	padding: 1vh;
-	padding-left: 1vh;
+	padding: .3vh;
+	padding-left: .5vh;
 	text-align: left;
-	font-size: 1.1vh;
+	font-size: 1.3vh;
 	line-height: 1.8vh;
 	font-family: 'Poppins', sans-serif;
 }
@@ -102,7 +102,7 @@ body {
 	margin: 0 auto;
 	right: 0;
 	width: 9%;
-	top: 28%;
+	top: 35%;
 	left: 1vh;
 }
 
@@ -126,8 +126,8 @@ body {
 	margin: 2px;
 	transition: opacity 0.2s;
 	opacity: 1.0;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
 }
 
 .item-slot-hoverClass {
@@ -150,16 +150,13 @@ body {
 }
 
 #item-amount {
-	color: white;
+	color: rgba(235, 235, 235, 0.08);
 	text-align: center;
-	font-size: 1.55vh;
+	font-size: 1.45vh;
 	font-family: 'Poppins', sans-serif;
 	outline: none;
+	font-weight: bolder;
 }
-
-#item-amount::placeholder {
-    color: rgb(0, 0, 0); /* Set your desired color here */
-  }
 
 .ammo-info-block {
 	position: absolute;
@@ -207,24 +204,106 @@ body {
 	text-transform: uppercase;
 	font-size: 1.2vh;
 	font-weight: 900;
-	background-color: rgba(220, 20, 60, 0);
+	border-radius:25px;
+	background-color: rgba(50,50,50, 0.6);
 	font-family: 'Poppins', sans-serif;
 }
 
 .inv-option-item {
-    width: 90%;
-    height: 50px;
-    background-color: rgba(255, 255, 255, 0.3); /* Transparent white background */
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    color: white;
-    transition: background-color 0.1s linear;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-	border-radius: 15px; /* Rounded corners */
+	width: 75%;
+	height: 55px;
+	background-color: rgb(0 0 0 / 30%);
+	border: 1px solid rgba(255, 255, 255, .01);
+	color: white;
+	border-radius:25px;
+	transition: background-color .1s linear;
+	user-select: none;
 }
 
-
 .inv-option-item:hover {
-	background-color: rgb(0 0 0 / 20%);
+	background-color: rgb(0 0 0 / 50%);
+	transform: scale(1.1);
+}
+
+.inv-options2 {
+	position: absolute;
+	margin: 0 auto;
+	right: 0;
+	width: 9%;
+	top: 35%;
+	left: -80%;
+}
+
+.inv-options3 {
+	position: absolute;
+	margin: 0 auto;
+	right: 0;
+	width: 9%;
+	top: 35%;
+	left: 80%;
+}
+
+.nav-counter {
+	position: static;
+	top: 1px;
+	right: 8px;
+	min-width: 8px;
+	height: 20px;
+	width: 20px;
+	line-height: 19px;
+	margin-top: -51px;
+	font-weight: normal;
+	color: white;
+	text-align: center;
+	text-shadow: 0 1px rgb(0 0 0 / 20%);
+	background: #e23442;
+	border: 1px solid #911f28;
+	border-radius: 10px;
+	background-image: -moz-linear-gradient(top, #e8616c, #dd202f);
+	background-image: -o-linear-gradient(top, #e8616c, #dd202f);
+	background-image: linear-gradient(to bottom, #e8616c, #dd202f);
+	-webkit-box-shadow: inset 0 0 1px 1px rgb(255 255 255 / 10%), 0 1px rgb(0 0 0 / 12%);
+	box-shadow: inset 0 0 1px 1px rgb(255 255 255 / 10%), 0 1px rgb(0 0 0 / 12%);
+}
+.nav-counter-blue {
+	background: #e8616c;
+	border: 1px solid #dd202f;
+	background-image: -webkit-linear-gradient(top, #e8616c, #dd202f);
+	background-image: -moz-linear-gradient(top, #e8616c, #dd202f);
+	background-image: -o-linear-gradient(top, #e8616c, #dd202f);
+	background-image: linear-gradient(to bottom, #e8616c, #dd202f);
+}
+
+.inv-option-menu {
+	margin-top: 10%;
+}
+
+.inv-option-menu {
+	width: 75%;
+	height: 55px;
+	background-color: rgb(0 0 0 / 30%);
+	border: 1px solid rgba(255, 255, 255, .01);
+	color: white;
+	border-radius:25px;
+	transition: background-color .1s linear;
+	user-select: none;
+}
+
+.inv-option-menu:hover {
+	background-color: rgb(0 0 0 / 50%);
+	transform: scale(1.1);
+}
+
+.inv-option-menu>p {
+	color: white;
+	text-align: center;
+	line-height: 48px;
+	text-transform: uppercase;
+	font-size: 1.2vh;
+	font-weight: 900;
+	border-radius:25px;
+	background-color: rgba(55,55,55, 0.6);
+	font-family: 'Poppins', sans-serif;
 }
 
 .btn-combine {
@@ -263,15 +342,15 @@ body {
 .item-slot-amount>p {
 	color: #ffffff;
 	text-align: right;
-	font-size: 0.8vh;
+	font-size: 0.9vh;
 }
 
 .item-slot-label {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
 	background-color: rgba(var(--main-label-color), 0.7);
 }
 
@@ -329,11 +408,10 @@ body {
 
 .player-inv-info {
 	position: absolute;
-	left: 14.9%;
+	left: 14.5%;
 	top: 22.2%;
-	width: 27.9%;
-	border-radius: 20px 20px 0 0;
-	/* background-color: #dbdbdbb0; */
+	background: rgba(0, 0, 0, 0.7);
+	border-radius:10px;
 }
 
 #player-inv-label {
@@ -351,13 +429,11 @@ body {
 
 #player-inv-weight {
 	color: white;
-	font-size: 5px;
+	font-size: 12px;
 	font-weight: 900;
 	font-family: 'Poppins', sans-serif;
 	letter-spacing: 0.2vh;
 	float: left;
-	width: 100%;
-	border-radius: 20px;
 }
 
 #other-inv-label {
@@ -375,13 +451,11 @@ body {
 
 #other-inv-weight {
 	color: white;
-	font-size: 5px;
+	font-size: 12px;
 	font-weight: 900;
 	font-family: 'Poppins', sans-serif;
 	letter-spacing: 0.2vh;
 	float: left;
-	width: 100%;
-	border-radius: 20px;
 }
 
 .player-inv-weight {
@@ -396,31 +470,12 @@ body {
 	font-family: 'Poppins', sans-serif;
 }
 
-.ui-progressbar.ui-widget.ui-widget-content {
-    border: none;
-}
-
-.ui-progressbar.ui-widget-content {
-	border: none;
-	background-color: rgba(var(--main-label-color), 0.4);
-}
-
-.ui-progressbar .ui-widget-header {
-	border: none;
-	background: linear-gradient(90deg, #0f0, #0ff)
-}
-
-.ui-progressbar-value {
-	transition: width 0.5s;
-	-webkit-transition: width 0.5s;
-}
-
 .other-inv-info {
 	position: absolute;
-	left: 56.5%;
+	left: 56%;
 	top: 22.2%;
-	width: 27.9%;
-	border-radius: 20px 20px 0 0;
+	background: rgba(0, 0, 0, 0.7);
+	border-radius:10px;
 }
 
 .ply-iteminfo-container {
@@ -429,18 +484,21 @@ body {
 	position: absolute;
 	bottom: 3%;
 	margin: 0 auto;
-	left: 100px;
+	left: -5%;
 	right: 0;
-	text-align: right;
+	text-align: center;
 	width: 103.4vh;
 	height: 23vh;
+	min-width:auto;
+	background: rgba(0, 0, 0, 0.7);
+	border-radius:35px;
 }
 
 .item-info-title {
 	text-transform: uppercase;
 	font-weight: 900;
 	font-family: 'Poppins', sans-serif;
-	font-size: 1.3vh;
+	font-size: 2.1vh;
 	color: white;
 	padding-top: 1px;
 }
@@ -455,7 +513,7 @@ body {
 
 .item-info-description {
 	text-transform: uppercase;
-	font-size: 1vh;
+	font-size: 1.5vh;
 	font-family: 'Poppins', sans-serif;
 	color: white;
 	padding-top: .5vh;
@@ -768,15 +826,14 @@ body {
 .weapon-attachments-container-detail-durability {
 	height: 1.5vh;
 	width: 10vh;
-	background-color: rgba(32, 32, 32, 0.434);
-	border-radius: 15px;
+	background-color: rgba(0, 0, 0, 0.3);
+	border-radius: 1px;
 }
 
 .weapon-attachments-container-detail-durability-total {
 	height: 100%;
 	width: 50%;
 	background-color: rgb(39, 174, 96);
-	border-radius: 15px;
 }
 
 .weapon-attachments-container-image {
@@ -861,10 +918,10 @@ body {
 
 .weapon-attachments-remove {
 	position: absolute;
-	width: 6.5vh;
+	width: 20.5vh;
 	height: 6.5vh;
 	background-color: rgb(15, 15, 15);
-	border-radius: 1px;
+	border-radius: 100px;
 	margin: 0 auto;
 	left: 0;
 	right: 0;
@@ -936,12 +993,14 @@ body {
 	height: 6vh;
 	margin: 5vh;
 	background-color: rgb(15, 15, 15);
-	border-radius: 1px;
+	border-radius: 35px;
 	text-align: center;
 	line-height: 6vh;
 	color: white;
 	font-family: 'Poppins', sans-serif;
 	transition: .05s linear;
+	font-size:35px;
+	cursor: pointer; 
 }
 
 .weapon-attachments-back:hover {
