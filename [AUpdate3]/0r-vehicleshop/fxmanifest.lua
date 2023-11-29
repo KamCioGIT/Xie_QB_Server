@@ -44,5 +44,10 @@ files {
     "ui/build/**/*"
 }
 
-dependency '/assetpacks'
+escrow_ignore {
+    "locales/**/*",
+    "shared/**/*",
+    "ui/**/*",
+}
+
 dependency '/assetpacks'
