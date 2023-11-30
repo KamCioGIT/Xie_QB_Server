@@ -20,8 +20,6 @@ shared_scripts {
 	"config.lua",
 	"locales/locale.lua",
     "locales/translations/*.lua",
-	"bridge/**/shared.lua",
-	"modules/**/shared.lua",
 }
 
 client_scripts {

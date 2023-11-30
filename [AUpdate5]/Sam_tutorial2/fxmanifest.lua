@@ -2,13 +2,9 @@ fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
 
-author 'vames™️'
-description 'vms_driveschoolv2'
+author 'SupremeSam'
+description '123'
 version '1.0.8'
-
-shared_scripts {
-	'config/config.lua',
-}
 
 client_scripts {
 	'client/*.lua',
@@ -23,7 +19,6 @@ ui_page 'html/index.html'
 files {
 	'html/*.*',
 	'html/**/*.*',
-	'config/*.js',
 }
 
 

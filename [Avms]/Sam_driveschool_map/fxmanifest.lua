@@ -12,7 +12,7 @@ this_is_a_map 'yes'
 } ]]
 
 dependencies {
-    'vms_driveschoolv2',
+    'Sam_driveschool',
 }
 dependency '/assetpacks'
 dependency '/assetpacks'

@@ -20,7 +20,7 @@ files {
     'css/colors/yellow-2.css',
     'css/style-dark.css',
     'img/film-grain.png',
-    'img/logo-light.png',
+    --'img/logo-light.png',
     'LoadingScreen.mp4',
     'js/*.js',
     'webfonts/fa-brands-400.eot',

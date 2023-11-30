@@ -13,7 +13,7 @@ client_scripts {
 	'language.lua',
 	'config.lua',
 	'client/main.lua',
-	'escrow/client.lua'
+	--'escrow/client.lua'
 }
 
 server_scripts {
@@ -21,7 +21,7 @@ server_scripts {
 	'language.lua',
 	'config.lua',
 	'server/main.lua',
-	'escrow/server.lua'
+	--'escrow/server.lua'
 }
 
 shared_scripts {
