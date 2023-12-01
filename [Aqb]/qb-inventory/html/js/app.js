@@ -2619,7 +2619,7 @@ var requiredItemOpen = false;
 
         $("#player-inv-label").html(
             "背包&nbsp&nbsp&nbsp&nbsp&nbsp现金$:" +
-            data.cash + "&nbsp&nbsp&nbsp加密货币:" + data.crypto
+            data.cash// + "&nbsp&nbsp&nbsp加密货币:" + data.crypto
         );
 
         $("#player-inv-weight").html(

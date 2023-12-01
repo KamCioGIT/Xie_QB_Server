@@ -179,28 +179,28 @@ Config.MiningLocation = {
 
 Config.Sell = {
     ["mining_washedstone"] = {
-        ["price"] = 1--(30, 60)                             -- Seller Price
+        ["price"] = math.random(30, 60)                             -- Seller Price
     },
     ["mining_stone"] = {
         ["price"] = 1
     },
     ["mining_ironfragment"] = {
-        ["price"] = 1--(170, 190)
+        ["price"] = math.random(170, 190)
     },
     ["mining_ironbar"] = {
-        ["price"] = 1--(250, 280)
+        ["price"] = math.random(250, 280)
     },
     ["mining_goldnugget"] = {
-        ["price"] = 1--(250, 260)
+        ["price"] = math.random(250, 260)
     },
     ["mining_goldbar"] = {
-        ["price"] = 1--(320, 350)
+        ["price"] = math.random(320, 350)
     },
     ["mining_copperfragment"] = {
-        ["price"] = 1--(150, 170)
+        ["price"] = math.random(150, 170)
     },
     ["mining_copperbar"] = {
-        ["price"] = 1--(200, 230)
+        ["price"] = math.random(200, 230)
     },
 }
 

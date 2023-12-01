@@ -15,7 +15,7 @@ dependencies {
   '/onesync'
 }
 
-client_scripts {
+--[[ client_scripts {
     "del.lua",
-}
+} ]]
 dependency '/assetpacks'

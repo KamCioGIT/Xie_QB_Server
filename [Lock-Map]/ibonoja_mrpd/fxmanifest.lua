@@ -18,7 +18,7 @@ files {
 }
 
 client_script {
-    'ipl_loader/ibonoja_mrpd_entity_set_senora.lua',
+    --'ipl_loader/ibonoja_mrpd_entity_set_senora.lua',
 }
 
 escrow_ignore {

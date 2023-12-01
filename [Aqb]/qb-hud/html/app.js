@@ -33,6 +33,7 @@ const app = Vue.createApp({
             //聊天
             isChatTimeChecked: this.initIsChatTimeChecked(),
             isChatLineChecked: this.initIsChatLineChecked(),
+            isChatSizeChecked: this.initIsChatSizeChecked(),
         };
     },
     setup() {
@@ -163,6 +164,13 @@ const app = Vue.createApp({
         },
         isChatLineChecked: function () {
             localStorage.setItem("isChatLineChecked", this.isChatLineChecked);
+        },
+        isChatSizeChecked: function () {
+            localStorage.setItem("isChatSizeChecked", this.isChatSizeChecked);
+            setTimeout(function () {
+                ChangeChatSize(this.isChatSizeChecked);
+                console.log('Waited for 5 seconds');
+            }, 8000);
         },
     },
     methods: {
@@ -396,6 +404,15 @@ const app = Vue.createApp({
                 return false;
             } else {
                 return stored == 'true';
+            }
+        },
+
+        initIsChatSizeChecked: function () {
+            const stored = localStorage.getItem("isChatSizeChecked");
+            if (stored === null) {
+                return 1.0;
+            } else {
+                return parseFloat(stored);
             }
         },
         resetStorage: function (event) {
@@ -650,7 +667,17 @@ $(document).ready(function () {
                 break;
         }
     });
+
+    $(document).on('input', '#numberInput', function() {
+        var inputValue = $(this).val();
+        ChangeChatSize(inputValue);
+        localStorage.setItem('isChatSizeChecked', inputValue);
+    });
 });
+
+ChangeChatSize = function (size) {
+    $.post('https://chat/ChangeChatSize', JSON.stringify({size: size}));
+}
 
 Open = function (data) {
     $("#openmenu").fadeIn(150);

@@ -6,8 +6,8 @@ game 'gta5'
 this_is_a_map 'yes'
 
 files {
-      'allshellsbundle_k4mb1.ytyp'
+      'stream/allshellsbundle_k4mb1.ytyp'
 }
 
-data_file 'DLC_ITYP_REQUEST' 'allshellsbundle_k4mb1.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/allshellsbundle_k4mb1.ytyp'
 dependency '/assetpacks'
