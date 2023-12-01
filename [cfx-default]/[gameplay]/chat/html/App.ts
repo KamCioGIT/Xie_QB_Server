@@ -224,6 +224,20 @@ export default Vue.extend({
                 }
             }, 100);
         },
+        ON_CHANGE_CHAT_SIZE({ size }: { size: number }) {
+            const chatMessages = document.getElementsByClassName('chat-messages');
+            console.log(size);
+            document.documentElement.style.setProperty('--size', size+'rem');
+            /* if (chatMessages.length > 0) {
+                console.log('152132');
+                if (size > 1 && size < 3) {
+                    const chatMessage = chatMessages[0] as HTMLElement;
+                    chatMessage.style.fontSize = size + 'rem';
+                    console.log(size);
+                    document.documentElement.style.setProperty('--size', size+'rem');
+                }
+            } */
+        },
         ON_MORELINE({ status }: { status: boolean }) {
             this.showMoreLine = status;
             const chatWindows = document.getElementsByClassName('chat-window');

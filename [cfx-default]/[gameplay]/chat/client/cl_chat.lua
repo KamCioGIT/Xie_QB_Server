@@ -26,6 +26,14 @@ RegisterNetEvent('Sam_chat:cl:showTime', function(status)
     showtime = status
 end)
 
+RegisterNUICallback("ChangeChatSize", function(data)
+    local size = data.size
+    SendNUIMessage({
+        type = 'ON_CHANGE_CHAT_SIZE',
+        size = size
+    })
+end)
+
 RegisterNetEvent('Sam_chat:cl:moreLine', function(status)
     SendNUIMessage({
         type = 'ON_MORELINE',
