@@ -65,7 +65,7 @@ const VehicleInfo: React.FC<{
             <img src={svg_right_menu_amblem} alt="_amblem" />
           </div>
           <div className="name">{vehicle.label}</div>
-          <div className="category">{vehicle.road}</div>
+          <div className="category">{vehicle.road} CLASS</div>
         </div>
       </div>
       <div

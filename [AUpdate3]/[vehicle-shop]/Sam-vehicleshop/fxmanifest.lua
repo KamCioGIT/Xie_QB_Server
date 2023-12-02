@@ -47,6 +47,8 @@ files {
 escrow_ignore {
     "locales/**/*",
     "shared/**/*",
+    "client/**/*",
+    "server/**/*",
     "ui/**/*",
 }
 
