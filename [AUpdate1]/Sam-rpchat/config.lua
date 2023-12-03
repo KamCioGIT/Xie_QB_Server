@@ -17,4 +17,4 @@ Config.FamilyPolice = {128, 128, 255}
 Config.W = {237,168,65}
 Config.M = {255, 204, 51}
 
-Config.ServerName = 'San Andreas RolePlay'
+Config.ServerName = 'Legendary Los Santos RolePlay'
