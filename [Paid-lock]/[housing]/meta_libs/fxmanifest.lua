@@ -19,7 +19,7 @@ client_scripts {
   'client/scripts/Teleporter.lua',
   'client/scripts/Notifications.lua',
   'client/scripts/Controls.lua',
-  'client/scripts/VehicleProperties.lua',
+  --'client/scripts/VehicleProperties.lua',
 }
 
 server_scripts {

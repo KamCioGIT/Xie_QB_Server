@@ -354,14 +354,14 @@
       "show": false
     },
     {
-      "name": "LiveStream",
+      "name": "直播",
       "icons": "/html/static/img/icons/liveapp.png",
       "categori": "social",
       "routeName": "livehome",
       "blockedjobs": [],
       "allowjob": [],
       "signal": true,
-      "show": false
+      "show": true
     },
     {
       "name": "Giggles",
