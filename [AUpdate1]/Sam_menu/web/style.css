@@ -1,0 +1,271 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 65%;
+    height: 70%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 25px;
+}
+
+.information-box {
+    width: 100%;
+    height: 20%;
+    background-color: rgba(46, 46, 46, 0.7);
+    border-radius: 25px 25px 0 0;
+    position: relative;
+}
+
+.info-header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px; /* Adjust the top position as needed */
+    right: 10px; /* Adjust the right position as needed */
+    border: none;
+    cursor: pointer;
+    background-color: rgba(46, 46, 46, 0.0);
+    font-size: 20px;
+    color: white;
+    z-index: 1;
+}
+.logo {
+    width: 230px; /* Adjust the width as needed */
+    height: 160px; /* Adjust the height as needed */
+    margin: 10px;
+    z-index: -1;
+}
+
+.server-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 20px;
+    margin-left: 240px;
+    width: 100%;
+    /* Adjust the width of the server-bar as needed */
+    color: #ffffff;
+    /* Change the text color as desired */
+    text-align: left;
+    padding: 10px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold !important;
+    text-shadow: 1px 0 0 rgb(0, 0, 0), -1px 0 0 rgb(0, 0, 0), 0 0px 0 rgb(0, 0, 0), 0 -1px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0) !important;
+}
+
+.info-bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 20px;
+    margin-right: 40px;
+    width: 30%;
+    /* Adjust the width of the info-bar as needed */
+    color: #dd9501;
+    /* Change the text color as desired */
+    text-align: right;
+    padding: 10px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold !important;
+    text-shadow: 1px 0 0 rgb(0, 0, 0), -1px 0 0 rgb(0, 0, 0), 0 0px 0 rgb(0, 0, 0), 0 -1px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0) !important;
+}
+
+.main-content {
+    width: 100%;
+    height: 80%;
+    display: flex;
+}
+
+.sidebar {
+    width: 15%;
+    height: 100%;
+    background-color: rgba(46, 46, 46, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0 0 0 25px;
+}
+
+.selection-buttons {
+    width: 80%;
+    margin: 10px 0;
+}
+
+.button {
+    background-color: rgba(46, 46, 46, 0.0);
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
+    height: 55px;
+    border-radius: 25px;
+}
+
+.button:hover {
+    background-color: rgba(24, 24, 24, 0.9);
+}
+
+.selected-button {
+    background-color: rgba(24, 24, 24, 0.9);
+}
+
+.content-box {
+    display: flex;
+    width: 85%;
+    height: 100%;
+    background-color: rgba(29, 29, 29, 0.89);
+    border-radius: 0 0 25px 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Center items vertically */
+    overflow-y: auto;
+}
+
+.content-box::-webkit-scrollbar {
+    width: 10px; /* 设置滚动条宽度 */
+}
+
+.content-box::-webkit-scrollbar-thumb {
+    background: #dd9501;
+    border-radius: 5px;
+}
+
+.content-box::-webkit-scrollbar-thumb:hover {
+    background: #ffaa00;
+}
+
+.table-row {
+    display: flex;
+    position: relative;
+    width: 95%;
+    background-color: black;
+    border-radius: 25px;
+    padding: 0.5vw;
+    border-top: 1px solid rgba(45, 45, 45, 0.8);
+    margin-top: 15px;
+}
+
+.table-row:hover {
+    background-color: rgba(218, 1, 1, 0.4);
+}
+
+.table-data-name {
+    flex: 1;
+    text-align: left;
+    padding: 0 5px;
+    font-size: 20px;
+    color: rgb(240,240,240);
+    padding-left: 20px;
+}
+.message,
+.table-car,
+.table-car-model,
+.table-data-amount {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold !important;
+    color: rgb(240,240,240);
+    padding: 0 5px;
+    font-size: 20px;
+}
+.table-data-amount {
+    flex: 0 0 24% !important;
+    left: 10%;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.table-car-model {
+    flex: 1;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.table-car {
+    width: 95%;
+    height: 180px;
+    display: flex;
+    align-items: left;
+    background-color: rgba(46, 46, 46, 0.9);
+    border-radius: 25px;
+    margin-top: 15px;
+    padding: 0.5vw;
+    position: relative;
+}
+
+.car-img {
+    width: 15%;
+    height: 80%;
+    border-radius: 25px;
+}
+
+.car-info {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-left: 15px;
+    font-size: 15px;
+}
+
+.message {
+    width: 90%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+    color: #dd9501;
+    text-align: center;
+}
+
+.middle-right-button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    margin-right: 30px;
+    border-radius: 10px;
+    background-color: rgba(202, 202, 202, 0.9);
+    width: 100px;
+    height: 50px;
+}
+
+.middle-right-button:hover {
+    background-color: rgba(224, 224, 224, 0.9);
+    cursor: pointer;
+}
+
+.model {
+    font-size: 25px;
+}
+
+.table-house {
+    width: 95%;
+    height: 180px;
+    display: flex;
+    align-items: left;
+    background-color: rgba(46, 46, 46, 0.9);
+    border-radius: 25px;
+    margin-top: 15px;
+    padding: 0.5vw;
+    position: relative;
+}

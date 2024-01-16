@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="information-box">
+            <img src="./assets/logo.png" alt="Logo" class="logo"></img>
+            <div class="server-bar">
+                <p id="server-name"><i class="fa-solid fa-server" style="color:#dd9501;"></i> 加利福尼亚角色扮演</p>
+                <p id="server-online"><i class="fa-solid fa-people-group" style="color:#dd9501;"></i> 1</p>
+                <p id="server-time"><i class="fa-solid fa-clock" style="color:#dd9501;"></i> 00:00</p>
+            </div>
+            <div class="info-header">
+                <button class="close-button" onclick="closeButton()">X</button>
+            </div>
+            <!-- Information content goes here -->
+            <div class="info-bar">
+                <p id="uid">UID:</p>
+                <p id="name">名称:</p>
+                <p id="score">时间分:</p>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="sidebar">
+                <!-- Sidebar content goes here, including selection buttons -->
+                <div class="selection-buttons">
+                    <button class="button" onclick="handleButtonClick(this)"><i class="fa-solid fa-user" style="float: left;"></i>个人信息</button>
+                    <button class="button" onclick="handleButtonClick(this)"><i class="fa-solid fa-car" style="float: left;"></i>载具</button>
+                    <button class="button" onclick="handleButtonClick(this)"><i class="fa-solid fa-house" style="float: left;"></i>房产</button>
+                    <button class="button" onclick="handleButtonClick(this)"><i class="fa-solid fa-building-circle-check" style="float: left;"></i>产业</button>
+                    <button class="button" onclick="handleButtonClick(this)"><i class="fa-solid fa-ranking-star" style="float: left;"></i>排行榜</button>
+                    <button class="button" onclick="handleButtonClick(this)"><i class="fa-solid fa-money-check-dollar" style="float: left;"></i>账单</button>
+                </div>
+            </div>
+            <div class="content-box">
+                <!-- Main content goes here -->
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>

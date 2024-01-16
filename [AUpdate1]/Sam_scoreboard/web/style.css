@@ -1,0 +1,115 @@
+:root {
+    --themeColor: #ffffff;
+    --gradientfirstColor: transparent;
+    --gradientSecondColor: rgba(0, 0, 0, 0.582);
+}
+
+@font-face {
+    font-family: MontserratBold;
+    src: url(assets//Montserrat-Bold.ttf);
+}
+
+.mainMenu {
+    font-family: MontserratBold;
+    background: #000000a6;/* linear-gradient(225.41deg, var(--gradientfirstColor) 25.18%, var(--gradientSecondColor) 74.83%); */
+    /* border: 1px solid var(--themeColor); */
+    border-radius: 5px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 60%; /* Set the height to 200px */
+    width: 50%;  /* Set the width to 350px */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.innerBox {
+    width: 99.5%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.626); 
+    border: 2px solid var(--themeColor); 
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-height: 90%;
+    transform: translate(-50%, -45%);
+    overflow-x: hidden;
+}
+
+.menuTitle {
+    font-size: 10px; /* Adjust the font size as needed */
+    margin: 0; /* Remove default margin */
+    /* padding: 10px 10px; */
+    position: absolute;
+    top: 3px; /* Adjust the top distance as needed */
+    left: 10px; /* Adjust the left distance as needed */
+    color: white;
+}
+
+.playersAmount {
+    font-size: 10px; /* Adjust the font size as needed */
+    margin: 0; /* Remove default margin */
+    position: absolute;
+    top: 3px; /* Adjust the top distance as needed */
+    right: 20px; /* Adjust the left distance as needed */
+    color: white;
+}
+
+.table {
+    width: 100%;/* calc(100% - 0.8vw - 10px); */
+    color: #fff;
+    font-family: 'Noto Sans Mono', monospace;
+    margin-left: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    overflow-x: hidden;
+}
+
+.table-header {
+    display: flex;
+    width: 100%;
+    color: #828282;
+    padding: 2px;
+    border-radius: 5px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.table-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+
+.table-row {
+    display: flex;
+    position: relative;
+    width: 100%;
+    /* padding: 0.6vw; */
+    border-top: 1px solid rgba(45, 45, 45, 0.8);
+}
+
+.table-row:hover {
+    background-color: rgba(218, 1, 1, 0.4);
+}
+
+.table-data,
+.header__item {
+    flex: 1;
+    text-align: left;
+    /* padding: 0 5px; */
+}
+
+.table-data.idc,
+.header__item.idc {
+    flex: 0 0 24% !important;
+    left: 10%;
+}
+
