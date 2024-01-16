@@ -136,11 +136,11 @@ Core = {
         elseif Config.Inventory == 'mf-inventory' then
             exports['mf-inventory']:openOtherInventory(id)
         elseif Config.Inventory == 'qs-inventory' then
-            TriggerServerEvent('inventory:server:OpenInventory', 'stash', id, {
-                maxweight = weight,
-                slots = slots
-            })
-            TriggerEvent('inventory:client:SetCurrentStash', id)
+            local other = {}
+            other.maxweight = weight 
+            other.slots = slots 
+            TriggerServerEvent('inventory:server:OpenInventory', 'stash', 'Stash_'..id, other)
+            TriggerEvent('inventory:client:SetCurrentStash', 'Stash_'..id)
         end
     end,
 
@@ -199,6 +199,36 @@ Core = {
 
     GetPolicePlayers = function()
         return Core.Police.Players
+    end,
+
+    GetVehiclePrice = function(model, cb)
+        local vehiclePrice = 0
+
+        if Config.VehiclePrice == 'handling' then 
+            vehiclePrice = GetVehicleModelValue(model)
+        else
+            if Core.Vehicles[tostring(model)] == nil or next(Core.Vehicles[tostring(model)]) == nil then
+                local fetched = false
+
+                Core.TriggerCallback('t1ger_lib:getCoreVehicles', function(result)
+                    Core.Vehicles = result
+                    if Core.Vehicles[tostring(model)] ~= nil and next(Core.Vehicles[tostring(model)]) then
+                        local price = Core.Vehicles[tostring(model)].price
+                        vehiclePrice = price ~= nil and price or 0
+                    end
+                    fetched = true
+                end)
+
+                while fetched == false do
+                    Wait(1)
+                end
+            else
+                local price = Core.Vehicles[tostring(model)].price
+                vehiclePrice = price ~= nil and price or 0
+            end
+        end
+
+        cb(vehiclePrice)
     end,
 
     GetVehicles = function(model, cb)

@@ -17,6 +17,9 @@ userColumns = 'players'
 accountsType = 'money'
 skinTable = 'playerskins'
 
+-- Five Ward anticheat name
+fiveguardresourcename = 'fiveguard'
+
 --[[
     If you have an old version of qs-housing, you have all your houses from the SQL "player_houses"
 with the column identifier the citizenID of your users, with this configuration you can automatically migrate everything to citizenID
@@ -30,6 +33,7 @@ RegisterNetEvent('QBCore:Client:OnJobUptade')
 AddEventHandler('QBCore:Client:OnJobUptade', function(id, xPlayer)
     Wait(500)
     TriggerClientEvent('housing:client:setIplData', id, iplHouses)
+    TriggerClientEvent('housing:client:OnJobUpdateBlips')
 end)
 
 function RegisterServerCallback(name, cb)

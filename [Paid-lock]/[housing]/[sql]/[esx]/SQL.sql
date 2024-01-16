@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS `houselocations`;
 CREATE TABLE `houselocations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -14,8 +15,9 @@ CREATE TABLE `houselocations` (
   `garageShell` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+DROP TABLE IF EXISTS `player_houses`;
 CREATE TABLE `player_houses` (
   `house` varchar(50) NOT NULL,
   `identifier` varchar(50) DEFAULT NULL,
@@ -34,6 +36,7 @@ CREATE TABLE `player_houses` (
   PRIMARY KEY (`house`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+DROP TABLE IF EXISTS `house_plants`;
 CREATE TABLE `house_plants` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `building` varchar(50) DEFAULT NULL,
@@ -54,6 +57,7 @@ ALTER TABLE `users` ADD IF NOT EXISTS `inside` VARCHAR(100);
 ALTER TABLE `houselocations` ADD IF NOT EXISTS `houseID` varchar(50) DEFAULT NULL;
 ALTER TABLE `player_houses` ADD IF NOT EXISTS `houseID` varchar(50) DEFAULT NULL;
 ALTER TABLE `player_houses` ADD IF NOT EXISTS `timer` int NULL DEFAULT '0';
+ALTER TABLE `player_houses` CONVERT TO CHARACTER SET `utf8mb4` COLLATE `utf8mb4_general_ci`;
 
 INSERT IGNORE INTO  `addon_inventory` (name, label, shared) VALUES
   ('property', 'Property', 0)
@@ -82,19 +86,10 @@ INSERT IGNORE INTO  `job_grades` (job_name, grade, name, label, salary, skin_mal
   ('realestate',3,'boss','Boss',0,'{}','{}')
 ;
 
-INSERT INTO `items` (`name`, `label`, `weight`) VALUES
-	('weed_white-widow', 'White Widow', 1),
-	('weed_skunk', 'Skunk', 1),
-	('weed_purple-haze', 'Purple Haze', 1),
-	('weed_og-kush', 'OG Kush', 1),
-	('weed_amnesia', 'Amnesia', 1),
-	('weed_ak47', 'Ak74', 1),
-	('weed_white-widow_seed', 'White Widow Seed', 1),
-	('weed_skunk_seed', 'Skunk Seed', 1),
-	('weed_purple-haze_seed', 'Purple Haze Seed', 1),
-	('weed_og-kush_seed', 'OG Kush Seed', 1),
-	('weed_amnesia_seed', 'Amnesia Seed', 1),
-	('weed_ak47_seed', 'ak47 Seed', 1),
-	('empty_weed_bag', 'Empty Bag', 1),
-	('weed_nutrition', 'Weed Nutrition', 1)
-;
+ALTER TABLE
+    `player_houses` DROP PRIMARY KEY;
+
+ALTER TABLE
+    `player_houses`
+ADD
+    IF NOT EXISTS `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST;

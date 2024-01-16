@@ -44,6 +44,7 @@ end)
 RegisterNetEvent('esx:setJob')
 AddEventHandler('esx:setJob', function(job)
     PlayerData.job = job
+    TriggerEvent('housing:client:OnJobUpdateBlips')
 end)
 
 function TriggerServerCallback(name, cb, ...)
@@ -52,6 +53,10 @@ end
 
 function GetPlayerIdentifier()
     return ESX.GetPlayerData().identifier
+end
+
+function GetPlayerJob()
+    return PlayerData.job.name
 end
 
 function GetPlayers()

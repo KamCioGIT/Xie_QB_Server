@@ -35,10 +35,9 @@ AddEventHandler('housing:server:buyHouse', function(house, isCredit)
         if result and result[1] and result[1].creator then
             seller = GetPlayerIdentifier(result[1].creator)
         end
-
         if (Balance >= HousePrice) or (isCredit and Balance >= eq) then -- here
             local prices = isCredit and HousePrice - eq or 0
-            MySQL.Async.execute('INSERT INTO `player_houses` (`house`, `' .. identifierTypes .. "`, `houseID`, `keyholders`, `credit`, `creditPrice`, `timer`) VALUES ('" .. house .. "', '" .. pData.identifier .. "', '" .. house_ID .. "', '" .. json.encode(keyyeet) .. "', '" .. prices .. "', '" .. eq .. "',"..Config.CreditTime..")", {})
+            MySQL.Async.execute("INSERT INTO `player_houses` (`house`, `"..identifierTypes.."`, `insideId`, `keyholders`, `decorations`, `stash`, `houseID`, `outfit`, `logout`, `decorateStash`, `charge`, `credit`, `creditPrice`, `timer`) VALUES ('" .. house .. "','" .. pData.identifier .. "', NULL, NULL, '{}', NULL, '" .. house_ID .. "', NULL, NULL, NULL, NULL, '" ..prices.. "', '" .. eq .. "', '" .. Config.CreditTime .. "')",{})
             local hous = MySQL.Sync.fetchAll('SELECT * FROM houselocations WHERE name = @name', { ['@name'] = house })
             if hous and hous[1] then
                 local moneyToRealState = (HousePrice / 100) * Config.PercentageForSell
@@ -61,7 +60,6 @@ AddEventHandler('housing:server:buyHouse', function(house, isCredit)
                         local societyName = GetJobName(seller.source)
                         local societyPaid = math.floor(tonumber((HousePrice / 100) * Config.SocietyPorcentage))
                         buyHouseSocietyMoney(src, societyName, societyPaid)
-
                         DebugPrint('Added ' .. societyPaid .. ' to the ' .. societyName .. ' society with ' .. Config.Society)
                     else
                         DebugPrint('The seller and creator of this house no longer has a character on your server, therefore he did not receive any salary in society...')

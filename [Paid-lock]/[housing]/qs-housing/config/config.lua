@@ -86,6 +86,7 @@ Keys = {
     ['RIGHT'] = 175,
     ['TOP'] = 27,
     ['DOWN'] = 173,
+    ['ENTER'] = 201,
     ['N4'] = 108,
     ['N5'] = 60,
     ['N6'] = 107,
@@ -174,14 +175,18 @@ Config.Language = 'en'
     In case of using 'ox_lib', you must enable it in the first lines of fxmanifest.lua, it is marked there!
 ]]
 
-Config.Framework = 'qb'
+local esxHas = GetResourceState('es_extended') == 'started'
+local qbHas = GetResourceState('qb-core') == 'started'
 
-Config.MenuType = 'qb-menu'
-Config.Inventory = 'qb-inventory'
+Config.Framework = esxHas and 'esx' or qbHas and 'qb' or 'none' -- You can change to 'qb' or 'esx'
+
+
+Config.MenuType = 'ox_lib'
+Config.Inventory = 'qb_inventory'
 Config.Wardrobe = 'qb-clothing'
-Config.Garage = 'qb-garages' -- or some option above
-Config.Logout = 'qb-multicharacter'
-Config.Weather = 'qb-weathersync'
+Config.Garage = nil -- or some option above
+Config.Logout = 'drop'
+Config.Weather = 'vSync'
 Config.HelpNotification = 'DrawText3D'
 
 --[[
@@ -196,30 +201,41 @@ Config.HelpNotification = 'DrawText3D'
 
 Config.Smartphone = false -- This enables dispatch email to real estate agents
 
-Config.RemoveRain = true
+Config.RemoveRain = false
 Config.HideMapDecorateMode = true
 Config.SetEntityVisible = true -- Be invisible inside decorate mode?
 Config.DecorateDistance = 100  -- Distance you can fly decorating.
 Config.VisitTime = 60000       -- In ms
 
 Config.LimitOfKeys = 10        -- Limit of keys that can be owned by house.
-Config.LimitOfHouses = 1       -- Limit of houses for each player.
+Config.LimitOfHouses = 5       -- Limit of houses for each player.
+
+
+--[[
+    Blip System works in blocks, which means if you set ShowAllHouses to true the others will be ignored
+    if you set ShowOnlyForJob to the houses available will only be displayed for the jobs set on Config.Realestatejob
+]]
 
 Config.BlipsOptions = {
-    OwnedHouses = true,    -- Shows the houses that the player bought
-    AvalibleHouses = true, -- Shows the houses that are not bought
-    BoughtHouses = true,   -- Shows houses bought by other players
-    ShowAllHouses = false, -- Shows all houses equally with owner and without owner alike
+    ShowAllHouses = true,       -- Shows all houses equally with owner and without owner alike
+    ShowAvailableForJob = true, -- Shows houses available to sell only for Job -> Config.Realestatejob
+    OwnedHouses = false,        -- Shows the houses that the player bought
+    AvalibleHouses = false,     -- Shows the houses that are not bought
+    BoughtHouses = false,       -- Shows houses bought by other players
 }
 
+
 Config.Blips = {
-    ['SetBlipSprite'] = 40,
+    ['SetBlipOwnedSprite'] = 40,
+    ['SetBlipBoughtSprite'] = 40,
+    ['SetBlipAvailableSprite'] = 374,
+    ['SetBlipColourNotOwner'] = 55,
+    ['SetBlipColourOwner'] = 3,
+    ['SetBlipColourAvailable'] = 2,
     ['SetBlipDisplay'] = 4,
     ['SetBlipScale'] = 0.45,
     ['SetBlipAsShortRange'] = true,
-    ['SetBlipColour'] = 0,
-    ['SetBlipColourNotOwner'] = 55,
-    ['SetBlipColourOwner'] = 3,
+
 }
 
 --[[
@@ -256,14 +272,14 @@ Config.FreeModeKeys = {
 }
 
 --[[
-    现在,让我们建立房地产工作系统！ 
-     如您所知,QS-HOUSING是一个房地产经纪人的系统 
-     将在您的服务器内创建待售房屋. 
-     在这里,您将拥有完整的工作配置,您可以在这里 
-     配置是否访问工作菜单,甚至是打开的密钥 
-     此菜单,如果要从菜单或更多内容中删除选项. 
+    Now let's set up our real estate job system!
+    As you well know, qs-housing is a system of real estate agents that
+    will create houses for sale within your server.
+    Here you will have the complete working configuration, where you can
+    configure whether to access the work menu, or even keys to open
+    this menu, if you want to remove options from the menu or more.
 
-     请仔细阅读每个设置.
+    Please read each setting carefully.
 ]]
 
 Config.RealEstateMenu = true -- Enable keybind of Config.KeyHouseMenuRealEstate, if need changes go to client/modules/commands.lua
@@ -273,6 +289,7 @@ Config.KeyHouseMenuRealEstate = 'F6'
 Config.HousingTypes = { mlo = true, shell = true, ipl = true }
 Config.Realestatejob = {
     ['realestate'] = true,
+    ['realestatejob'] = true,
 }
 
 --[[
@@ -285,7 +302,7 @@ Config.Realestatejob = {
         'none' -- Don't give money to anyone
 ]]
 
-Config.Society = 'qb-management' -- or "Society" options.
+Config.Society = 'none' -- or "Society" options.
 Config.SocietyPorcentage = 50
 Config.PercentageForSell = 50
 Config.Taxes = { AgencyFee = 7, BankFee = 10, TaxesFee = 20 }
@@ -308,15 +325,15 @@ Config.Taxes = { AgencyFee = 7, BankFee = 10, TaxesFee = 20 }
 ]]
 
 Config.Decimals = false
-Config.EnableCredit = false   -- Enable or disable mortgages
-Config.OnlyInGame = true      -- Counts the time the player is on the server = "true" always count time = "false"
+Config.EnableCredit = true    -- Enable or disable mortgages
+Config.OnlyInGame = false     -- Counts the time the player is on the server = "true" always count time = "false"
 Config.NumberOfPayments = 240 -- Percentage to pay
-Config.CreditTime = 30        -- Time between payments, number of minutes, 24h exemple (60*24) Can't be Lower than 5 mins
+Config.CreditTime = 5         -- Time between payments, number of minutes, 24h exemple (60*24) Can't be Lower than 5 mins
 
 Config.SellFurniture = 25     -- % This is the % to sell Furniture
 Config.SellHouse = true       -- House sell option?
 Config.PercentageSell = 50
-Config.WordToSell = 'sell'
+Config.WordToSell = 'Sell'
 
 Config.KeyHouseMenuMlo = 'F5' -- Key to open the housing menu in MLO
 Config.MenuOptions = {        -- Options to menus/radial!
@@ -329,7 +346,7 @@ Config.MenuOptions = {        -- Options to menus/radial!
     setwardrobe = true,
     setstash = true,
     setcharger = false, -- only for Smartphone
-    setlogout = false,
+    setlogout = true,
     sellhouse = true,
     changetype = true
 }
@@ -378,7 +395,7 @@ Config.PoliceJob = {
     weed_ak47_seed
 ]]
 
-Config.Plants = false                          -- Enable weed plants?
+Config.Plants = true                           -- Enable weed plants?
 Config.PlantsLimit = 5                         -- Limit plants
 Config.HarvestTime = 5                         -- Setting it by hours (1 = 60 minutes)
 Config.PoliceFirePlants = true                 -- Police can fire plants?
@@ -454,7 +471,7 @@ Config.PlantsList = {
         ['highestStage'] = 'stage-g'
     },
     ['purple-haze'] = {
-        ['label'] = '紫色雾团',
+        ['label'] = 'Purple Haze',
         ['item'] = 'purplehaze',
         ['stages'] = {
             ['stage-a'] = 'bkr_prop_weed_01_small_01c',
@@ -468,7 +485,7 @@ Config.PlantsList = {
         ['highestStage'] = 'stage-g'
     },
     ['white-widow'] = {
-        ['label'] = '白寡妇',
+        ['label'] = 'White Widow',
         ['item'] = 'whitewidow',
         ['stages'] = {
             ['stage-a'] = 'bkr_prop_weed_01_small_01c',
@@ -519,75 +536,79 @@ Config.Commands = {
 Config.HomeDecorationTips = {
     title = '一般装饰技巧.',
     content = {
-        [1] = { text = '欢迎来到装饰模式,这里您可以购买并放置家具在您的房子周围！' },
-        [2] = { text = '请记住,您所有的家具将被存储在箱子里' },
-        [3] = { text = '您可以在房间形状的图像下方选择家具的类型' },
-        [4] = { text = '请记住,您可以将家具存放、移除或者出售到箱子里,就在下面' },
-        [5] = { text = '始终记得查看家具的价格,您今天可能无法承受如此奢华！' },
-        [6] = { text = '如果您需要控制指南,请向右下拉 INFORMATION 菜单' },
-        [7] = { text = '现在有了自由模式,一切都更快,您可以快速移动房子里的任何家具' },
+        [1] = { text = '欢迎来到装饰模式！在这里，您可以购买并在您的房子里摆放家具！' },
+        [2] = { text = '请记住，您的所有家具都将存放在箱子里。' },
+        [3] = { text = '您可以从下方的房间形状图标中选择家具的类型。' },
+        [4] = { text = '请记住，您可以在下方的箱子中存放、移除或出售您的家具。' },
+        [5] = { text = '始终记得查看家具的价格；也许今天您买不起这样的奢侈品！' },
+        [6] = { text = '如果您需要控制的指南，请打开右侧的信息菜单。' },
+        [7] = { text = '现在，有了自由模式，一切都更快速。您可以迅速移动您房子里的任何家具。' },
 
     }
 }
 
 Config.SpawnObjectDecorationTips = {
-    title = '家具定位的提示.',
+    title = '家具放置提示',
     content = {
-        [1] = { text = '要移动家具,您必须点击并拖动它到您想要的位置' },
-        [2] = { text = '用红线选择家具,在保持点击的同时,您可以将家具移动到整个房子中！' },
-        [3] = { text = '点击家具并拖动它在您的房子周围,您还可以使用键盘上的箭头键来控制高度' },
-        [4] = { text = '现在移动家具变得更容易了,您只需继续点击家具并拖动它,不要忘记使用键盘箭头键来管理高度！' },
+        [1] = { text = '要移动家具，请单击并拖动它到所需位置。' },
+        [2] = { text = '选择带有红色轮廓的家具，然后通过点击并保持点击状态，可以在整个房子内移动它！' },
+        [3] = { text = '点击家具并拖动它在整个房子内移动。您还可以使用键盘上的箭头键来控制高度。' },
+        [4] = { text = '现在移动家具更容易了。只需点击并拖动家具，不要忘记使用键盘上的箭头键来控制高度！' },
+
     }
 }
+
 
 Config.StashObjectDecorationTips = {
-    title = '家具藏匿的提示.',
+    title = '家具提示.',
     content = {
-        [1] = { text = '自由模式允许您快速轻松地移动家中的任何家具,只需单击家具并拖动它！' },
-        [2] = { text = '这种模式允许您快速移动家具,只需按住鼠标左键并拖动家具在房子里移动' },
-        [3] = { text = '不要忘记,要移动家具,您必须单击它并拖动它,还可以使用鼠标滚轮旋转其轴' },
-        [4] = { text = '欢迎来到快速装饰模式,也被称为自由模式,您可以在这里轻松快速地完全定制您的房子！' },
+        [1] = { text = '自由模式允许您快速而轻松地移动房子内的任何家具。点击家具并拖动它！' },
+        [2] = { text = '这种模式使您能够迅速移动家具；只需按住家具并拖动它在整个房子内移动。' },
+        [3] = { text = '请记住，要移动家具，只需点击并拖动。您还可以使用鼠标滚轮来围绕其轴旋转它。' },
+        [4] = { text = '欢迎来到快速装饰模式，也称为自由模式。在这里，您可以轻松快速地自定义整个房子！' },
+
     }
 }
 
+
 Config.FreeModeDecorationTips = {
-    title = '自由装饰模式的一般技巧.',
+    title = 'General Tips for Free Decoration Mode.',
     content = {
-        [1] = { text =
-        '自由模式可让您快速,轻松地移动房屋中的任何家具,单击家具并拖动!' },
-        [2] = { text =
-        '这种模式使您可以快速移动家具,您只需要将点击贴在家具上并将其拖动到房子周围.' },
-        [3] = { text =
-        "不要忘记要移动家具,您必须单击并拖动它,也可以用鼠标轮旋转轴." },
-        [4] = { text =
-        '欢迎使用快速装饰模式（更称为自由模式）,您可以在这里完全快速自定义房屋!' },
+        [1] = { text = '自由模式允许您快速而轻松地移动房子内的任何家具。点击家具并拖动它！' },
+        [2] = { text = '这个模式使您能够快速移动家具；只需按住鼠标左键并拖动家具在整个房子中移动。' },
+        [3] = { text = '请记住，要移动家具，只需点击并拖动。您还可以使用鼠标滚轮来围绕其轴旋转它。' },
+        [4] = { text = '欢迎来到快速装饰模式，也称为自由模式。在这里，您可以轻松快速地自定义整个房子！' },
+
     }
 }
 
 Config.CreateHousePolyZone = {
-    title = '外部创造',
-    content =
-    '在本节中,我们必须创建可装饰和外部区域,如果整个绿色区域将是房屋.',
-    error = '您缺少添加访问区,以便在MLO的情况下参观房子.'
+    title = '创建户外区域。',
+    content = '在这个部分，我们需要创建可装饰的户外区域，如果整个绿地都是房子的话。',
+    error = '忘记添加一个访客区域，以便玩家在MLO情况下可以访问房子。'
+
 }
 
 Config.CreateHouseDoors = {
-    title = '门选择',
+    title = '选择门。',
     content =
-    '选择房屋的大门,如果是双重的,则必须选择两者. 您目前不能创建超过一扇门,使用您的工作菜单创建它们.',
+    '选择房子的主要门。如果有两扇门，您需要同时选择它们。一次只能创建一扇门；请使用您的工作区菜单来创建它们。'
+
 }
 
 Config.CreateHouseShell = {
-    title = '内饰选择',
+    title = '内部选择。',
     content =
-    '选择您想要的住房及其高度的地图,我们建议它始终在地图下以获得更好的游戏玩法.',
+    '选择您想要的住宅地图和其高度。我们建议它始终位于地图下方，以获得更好的游戏体验。'
+
 }
 
 Config.CreateHouseIPL = {
-    title = '内饰选择',
-    content = '请记住,一些IPL允许更改墙壁和土壤的颜色,但并非所有IPL都允许.',
+    title = '内部选择。',
+    content = '请记住，一些IPL允许您更改墙壁和地板的颜色，但并非所有IPL都可以。'
 
 }
+
 
 --[[
     Debug mode, you can see all kinds of prints/logs using debug,
@@ -596,6 +617,7 @@ Config.CreateHouseIPL = {
 
 Config.Debug = false
 Config.ZoneDebug = false
+Config.CreditDebugTime = 1000 -- This value needs to be bigger than 0 and in ms (ADVANCED USERS ONLY AND DO NOT USE THIS ON A LIVE SERVER)
 
 Config.Houses = {}
 Config.WeedArea = {}

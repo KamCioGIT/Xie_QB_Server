@@ -17,6 +17,10 @@ server_scripts {
     "modules/server/events.lua"
 }
 
+escrow_ignore {
+    "config.lua"
+}
+
 ui_page "web/index.html"
 
 files {
@@ -29,10 +33,6 @@ files {
 shared_scripts {
     "config.lua",
     "shared/common.lua",
-}
-
-escrow_ignore {
-    "config.lua"
 }
 
 lua54 "yes"

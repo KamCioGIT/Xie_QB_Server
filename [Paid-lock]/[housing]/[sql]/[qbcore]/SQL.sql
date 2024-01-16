@@ -1,3 +1,6 @@
+ALTER TABLE `players` ADD IF NOT EXISTS `inside` VARCHAR(100);
+
+DROP TABLE IF EXISTS `houselocations`;
 CREATE TABLE `houselocations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -16,6 +19,7 @@ CREATE TABLE `houselocations` (
   KEY `name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+DROP TABLE IF EXISTS `player_houses`;
 CREATE TABLE `player_houses` (
   `house` varchar(50) NOT NULL,
   `identifier` varchar(50) DEFAULT NULL,
@@ -34,6 +38,7 @@ CREATE TABLE `player_houses` (
   PRIMARY KEY (`house`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+DROP TABLE IF EXISTS `house_plants`;
 CREATE TABLE `house_plants` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `building` varchar(50) DEFAULT NULL,
@@ -50,7 +55,15 @@ CREATE TABLE `house_plants` (
   KEY `plantid` (`plantid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7123 DEFAULT CHARSET=utf8mb4;
 
-ALTER TABLE `players` ADD IF NOT EXISTS `inside` VARCHAR(100);
 ALTER TABLE `houselocations` ADD IF NOT EXISTS `houseID` varchar(50) DEFAULT NULL;
 ALTER TABLE `player_houses` ADD IF NOT EXISTS `houseID` varchar(50) DEFAULT NULL;
 ALTER TABLE `player_houses` ADD IF NOT EXISTS `timer` int NULL DEFAULT '0';
+ALTER TABLE `player_houses` CONVERT TO CHARACTER SET `utf8mb4` COLLATE `utf8mb4_general_ci`;
+
+ALTER TABLE
+    `player_houses` DROP PRIMARY KEY;
+
+ALTER TABLE
+    `player_houses`
+ADD
+    IF NOT EXISTS `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST;

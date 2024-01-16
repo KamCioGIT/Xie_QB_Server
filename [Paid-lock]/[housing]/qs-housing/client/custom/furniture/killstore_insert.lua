@@ -7,14 +7,9 @@
     By the way, you can add a special color to make your furniture stand out!
 ]]
 
-if not GetResourceState('KillstorexQuasar_props') == 'started' then
+if not GetResourceState('KillstorexQuasar_props') ~= 'started' then
     return
 end
-
-CreateThread(function()
-    table.insert(Config.roomsData, { id = 'killstore', name = 'Killstore' })
-    Wait(500)
-end)
 
 CreateThread(function()
     local killstore_anime = {

@@ -22,6 +22,9 @@ userColumns = 'users'
 accountsType = 'accounts'
 skinTable = 'users'
 
+-- Five Ward anticheat name
+fiveguardresourcename = 'fiveguard'
+
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(id, xPlayer)
     Wait(500)

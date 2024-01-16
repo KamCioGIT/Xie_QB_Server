@@ -2,14 +2,14 @@ fx_version 'bodacious'
 
 game 'gta5'
 
-version '2.7.7'
+version '2.9.2'
 
 lua54 'yes'
 
 ui_page 'html/index.html'
 
 shared_scripts {
-	-- '@ox_lib/init.lua', -- If you use ox_lib in Config.MenuType
+	'@ox_lib/init.lua', -- If you use ox_lib in Config.MenuType
 	'config/*.lua',
 	'utils/*.lua',
 	'client/custom/furniture/*.lua',

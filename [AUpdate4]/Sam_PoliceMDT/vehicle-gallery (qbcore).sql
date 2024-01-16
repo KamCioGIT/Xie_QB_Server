@@ -1,1 +1,0 @@
-ALTER TABLE `player_vehicles` ADD COLUMN `photos` JSON DEFAULT '[]';

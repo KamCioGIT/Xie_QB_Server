@@ -16,7 +16,6 @@ CreateThread(function()
     while QBCore.Functions.GetPlayerData().job == nil do
         Wait(10)
     end
-
     PlayerData = QBCore.Functions.GetPlayerData()
     PlayerHousesLoaded()
 end)
@@ -45,9 +44,18 @@ RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
     end    
 end)
 
+RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
+    TriggerEvent('housing:client:OnJobUpdateBlips')
+end)
+
+
 
 function TriggerServerCallback(name, cb, ...)
     QBCore.Functions.TriggerCallback(name, cb, ...)
+end
+
+function GetPlayerJob()
+    return PlayerData.job.name
 end
 
 function GetPlayerIdentifier()
@@ -102,3 +110,9 @@ function DrawText3D(x, y, z, text)
     DrawRect(0.0, 0.0 + 0.0125, 0.017 + factor, 0.03, 0, 0, 0, 55)
     ClearDrawOrigin()
 end
+
+function SpawnInHouse(house)
+    enterOwnedHouse(house)
+end
+
+exports('SpawnInHouse',SpawnInHouse)

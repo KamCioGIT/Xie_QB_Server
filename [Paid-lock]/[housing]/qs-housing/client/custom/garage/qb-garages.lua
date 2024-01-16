@@ -11,3 +11,4 @@ end
 function setHouseGarage(closesthouse, hasKey)
     TriggerEvent('qb-garages:client:setHouseGarage', closesthouse, hasKey)
 end
+

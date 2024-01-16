@@ -1,2 +1,0 @@
-["id_card"] 							= {["name"] = "id_card",  	     		["label"] = "ID Card",	 		["weight"] = 1, 		["type"] = "item", 		["image"] = "id_card.png", 				["unique"] = true, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = ""},
-["document"] 							= {["name"] = "document",  	     		["label"] = "Document",	 		["weight"] = 1, 		["type"] = "item", 		["image"] = "document.png", 				["unique"] = true, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = ""},

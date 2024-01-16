@@ -43,6 +43,21 @@ Core = {
             exports['ox_inventory']:RegisterStash(id, label, slots, weight, owner)
         end
     end,
+
+    StashAddItem = function(storageId, item, amount, slots, maxWeight)
+        local success, response = false, nil
+        if Config.Inventory == 'default' then
+        elseif Config.Inventory == 'ox-inventory' then
+            success, response = exports.ox_inventory:AddItem(storageId, item, amount)
+        elseif Config.Inventory == 'mf-inventory' then
+            exports["mf-inventory"]:addInventoryItem(storageId, item, amount)
+            success = true
+        elseif Config.Inventory == 'qs-inventory' then
+            exports['qs-inventory']:AddItemIntoStash('Stash_'..storageId, item, amount)
+            success = true
+        end
+        return success, response
+    end,
     
     Notification = function(src, data)
         if Config.UseFrameworkNotification then 
@@ -173,6 +188,20 @@ Core = {
     CallbackVehicleByPlate = function(plate, cb)
         MySQL.query('SELECT * from '..Player_Vehicles_DB.table..' WHERE plate = ? OR plate = ?', {plate, Lib.Trim(plate)}, function(result)
             cb(result[1])
+        end)
+    end,
+
+    SaveVehicleProperties = function(plate, props)
+        local db_ = Player_Vehicles_DB
+        local SQL = 'UPDATE '..db_.table..' SET '..db_.props..' = @props WHERE plate = @plate or plate = @plate2'
+
+        MySQL.Async.execute(SQL, {['@plate'] = plate, ['@plate2'] = Lib.Trim(plate), ['@props'] = json.encode(props)},
+        function(rowsChanged)
+            if rowsChanged == 0 then
+				print("nothing updated")
+            else
+                print("vehicle props saved: ", plate, props.plate)
+            end
         end)
     end,
 
@@ -453,17 +482,17 @@ Core.Player = {
         local src = Core.Player.GetSource(src)
         local xPlayer = Core.Player.GetFromId(src)
         local vehicles, fetched = {}, false
-
+    
         if not xPlayer then
             fetched = true
         end
-
+    
         local SQL = 'SELECT * FROM '..Player_Vehicles_DB.table..' WHERE '..Player_Vehicles_DB.owner..' = @identifier'
-
+    
         MySQL.Async.fetchAll(SQL, {['@identifier'] = Core.Player.GetIdentifier(src)}, function(results)
             if results and next(results) then
                 for i = 1, #results do
-
+    
                     vehicles[i] = {
                         plate = results[i].plate,
                         type = results[i].type or nil,
@@ -477,18 +506,18 @@ Core.Player = {
                         health = results[i].health or nil,
                         model = results[i].model or results[i].hash or nil,
                     }
-
+    
                     if ESX ~= nil then
                         vehicles[i].props = results[i].vehicle
                     elseif QBCore ~= nil then
                         vehicles[i].props = results[i].mods
                     end
-
+    
                     if Config.Garage == 't1ger-garage' then
                         vehicles[i].fuel = results[i].fuel
                         vehicles[i].seized = results[i].seized
                     end
-
+    
                     if Config.Garage == 'cd-garage' then
                         vehicles[i].stored = results[i].in_garage
                         vehicles[i].garage = results[i].garage_id
@@ -498,20 +527,36 @@ Core.Player = {
                         vehicles[i].impound_data = results[i].impound_data
                         vehicles[i].stats = results[i].adv_stats
                     end
-
+    
+                    if Config.Garage == 'rcore-garage' then
+                        vehicles[i].stored = results[i].stored
+                        vehicles[i].garage = results[i].stored_in_garage 
+                    end
+                    
+                    if Config.Garage == 'renzu-garage' then
+                        vehicles[i].garage = results[i].garage_id
+                    end
+    
+                    if Config.Garage == 'jg-advancedgarages' then
+                        vehicles[i].garage = results[i].garage_id
+                        vehicles[i].stored = results[i].in_garage
+                        vehicles[i].impound = results[i].impound
+                        vehicles[i].impound_data = results[i].impound_data
+                    end
+    
                 end
                 fetched = true
             else
                 fetched = true
             end
         end)
-
+    
         while not fetched do 
             Wait(100)
         end
-
+    
         return vehicles
-
+    
     end,
 
     UpdateOwnedVehicle = function(src, stored, garage, props)
@@ -519,7 +564,7 @@ Core.Player = {
         local xPlayer = Core.Player.GetFromId(src)
 
         local db_ = Player_Vehicles_DB
-        local SQL = 'UPDATE '..db_.table..' SET '..db_.stored..' = @stored, '..db_.props..' = @props, '..db_.garage..' = @garage WHERE plate = @plate AND '..db_.owner..' = @identifier'
+        local SQL = 'UPDATE '..db_.table..' SET `'..db_.stored..'` = @stored, `'..db_.props..'` = @props, `'..db_.garage..'` = @garage WHERE `plate` = @plate AND `'..db_.owner..'` = @identifier'
 
         if stored == false then
             garage = nil
@@ -553,7 +598,7 @@ Core.Player = {
         TriggerClientEvent('t1ger_lib:client:updatePolice', -1, Core.Police.Count, Core.Police.Players)
 
         if Config.Debug == true then 
-            print("PlusPoliceCount | Police Count: ", Core.Police.Count)
+            --print("PlusPoliceCount | Police Count: ", Core.Police.Count)
         end
     end,
     
@@ -568,7 +613,7 @@ Core.Player = {
         TriggerClientEvent('t1ger_lib:client:updatePolice', -1, Core.Police.Count, Core.Police.Players)
 
         if Config.Debug == true then 
-            print("MinusPoliceCount | Police Count: ", Core.Police.Count)
+            --print("MinusPoliceCount | Police Count: ", Core.Police.Count)
         end
     end,
 
@@ -587,6 +632,17 @@ end)
 Core.RegisterCallback('t1ger_lib:getMoney', function(src, cb, account)
     local src = Core.Player.GetSource(src)
     cb(Core.Player.GetMoney(src, account))
+end)
+
+Core.RegisterCallback('t1ger_lib:server:payMoney', function(src, cb, amount, account)
+    local src = Core.Player.GetSource(src)
+    local balance = Core.Player.GetMoney(src, account)
+    if balance >= amount then
+        Core.Player.RemoveMoney(src, amount, account)
+        cb(true)
+    else
+        cb(false)
+    end
 end)
 
 Core.RegisterCallback('t1ger_lib:getOnlinePlayers', function(src, cb)
@@ -653,6 +709,11 @@ RegisterServerEvent('t1ger_lib:server:updateOwnedVehicle')
 AddEventHandler('t1ger_lib:server:updateOwnedVehicle', function(stored, garage, props)
     local src = Core.Player.GetSource(source)
     Core.Player.UpdateOwnedVehicle(src, stored, garage, props)
+end)
+
+RegisterServerEvent('t1ger_lib:server:saveVehicleProperties')
+AddEventHandler('t1ger_lib:server:saveVehicleProperties', function(plate, props)
+    Core.SaveVehicleProperties(plate, props)
 end)
 
 RegisterServerEvent('t1ger_lib:server:impoundVehicle')
@@ -929,20 +990,28 @@ if Framework == 'QB' then
 end
 
 CreateCoreVehicles = function()
-    local results = {}
-    if Framework == 'ESX' then
-        results = MySQL.query.await('SELECT model, price FROM vehicles')
-    elseif Framework == 'QB' then
-        results = QBCore.Shared.Vehicles
-    end
+    local results, vehicles = {}, {}
 
-    local vehicles = {}
-    if next(results) then 
-        for k,v in pairs(results) do 
-            local hash = joaat(v.model)
+    if Config.VehiclePrice == 'database' then
+        results = MySQL.query.await('SELECT model, price FROM vehicles')
+    elseif Config.VehiclePrice == 'lua' then
+        results = QBCore.Shared.Vehicles -- or use an export to return all vehicles from your lua file that stores all your vehicles and prices
+    end 
+
+    if results ~= nil and next(results) then
+        for k,v in pairs(results) do
+            -- v.model should model names, like 'sultan', 'blista', 'asbo'
+            -- v.hash is usually used in lua files with ` backticks to store the hash
+            -- if you have hash stored in your lua file or in the database table, then replace v.hash with whatever name you have for that column/variable, otherwise joaat will be used.
+            
+            if type(v.model) ~= 'string' and Config.Debug then 
+                print(v.model, GetHashKey(v.model))
+            end
+            
+            local hash = v.hash ~= nil and v.hash or type(v.model) == 'string' and joaat(v.model) or v.model    
             vehicles[tostring(hash)] = {
-                model = v.model,
-                price = v.price,
+                model = v.model, -- model name 
+                price = v.price, -- vehicle price
                 hash = hash
             }
         end

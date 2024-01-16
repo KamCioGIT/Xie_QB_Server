@@ -181,6 +181,7 @@ Locales['es'] = {
     ['HOUSING_NOTIFICATION_WEED_HARVESTED_SEED'] = 'Vaya, parece que la planta también tenía semillas x',
     ['HOUSING_NOTIFICATION_WEED_LIMIT'] = 'No puedes plantar mas, llegaste al limite.',
     ['HOUSING_NOTIFICATION_ALREADY_HOUSE'] = 'No puedes crear una casa sobre una zona verde o en un interior...',
+    ['HOUSING_NOTIFICATION_POLYZONE_INCOMPLETE'] = 'Debes usar al menos 4 esquinas en la zona verde',
 
     ['HOUSING_DRAWTEXT_PRESS'] = '[E] -',
     ['HOUSING_DRAWTEXT_VISIT'] = '[H] - Visitar vivienda',
@@ -305,4 +306,8 @@ Locales['es'] = {
 
     ['HOUSING_CREATOR_SHELL_INTERIORS'] = 'Interiores: ',
     ['HOUSING_CREATOR_SHELL_ROTATE'] = 'Rotar',
+
+    ['HOUSING_OWNED'] = 'Owned',
+    ['HOUSING_BOUGHT'] = 'Bought',
+    ['HOUSING_AVAILABLE'] = 'Available',
 }

@@ -1,0 +1,18 @@
+{
+    "unlocked_door": "已解锁的门",
+    "locked_door": "已锁定的门",
+    "lock_door": "[E] 锁定门",
+    "unlock_door": "[E] 解锁门",
+    "door_lock": "门锁",
+    "passcode": "密码",
+    "lockpick_broke": "你的撬锁工具损坏了",
+    "pick_lock": "撬锁",
+    "add_lock": "添加门锁",
+    "edit_lock": "编辑门锁",
+    "remove_lock": "移除门锁",
+    "cannot_unlock": "无法解锁门",
+    "cannot_lock": "无法锁定门",
+    "create_modify_lock": "创建一个门锁，或修改现有的门锁",
+    "add_door_textui": "**创建新门**  \n使用 [鼠標左鍵]  进行交互  \n使用 [鼠標右鍵] 取消",
+    "command_closest": "直接打开到最近的门锁的UI"
+}

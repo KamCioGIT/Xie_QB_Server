@@ -5,7 +5,7 @@ lua54 "yes"
 author 'T1GER#9080'
 discord 'https://discord.gg/FdHkq5q'
 description 'T1GER Library'
-version '2.2.4'
+version '2.2.7'
 documentation 'https://docs.t1ger.net/resources/t1ger-library/'
 
 dependency 'ox_lib'

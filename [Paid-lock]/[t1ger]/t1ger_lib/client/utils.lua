@@ -110,8 +110,32 @@ Lib = {
 	
 	-- Comma Function:
 	CommaValue = function(n) -- credit http://richard.warburton.it
-		local left,num,right = string.match(n,'^([^%d]*%d)(%d*)(.-)$')
-		return left..(num:reverse():gsub('(%d%d%d)','%1,'):reverse())..right
+		local roundNumber = Lib.RoundNumber(n, 2)
+		local left,num,right = string.match(roundNumber,'^([^%d]*%d)(%d*)(.-)$')
+		return left..(num:reverse():gsub('(%d%d%d)','%1,'):reverse())..right..'0'
+	end,
+
+	FormatNumber = function(amount, decimal, prefix)
+		local str_amount, formatted, famount, remain
+		
+		decimal = decimal or 2  -- default 2 decimal places
+		
+		famount = math.abs(Lib.RoundNumber(amount,decimal))
+		famount = math.floor(famount)
+		remain = Lib.RoundNumber(math.abs(amount) - famount, decimal)
+		
+		formatted = Lib.CommaValue(famount)
+		
+		-- attach the decimal portion
+		if (decimal > 0) then
+			remain = string.sub(tostring(remain),3)
+			formatted = formatted .. "." .. remain .. string.rep("0", decimal - string.len(remain))
+		end
+		
+		-- attach prefix string e.g '$' 
+		formatted = (prefix or "") .. formatted
+		
+		return formatted
 	end,
 
 	FirstCharUpper = function(str)
@@ -144,7 +168,7 @@ Lib = {
 	-- Draw 3D Text
 	Draw3DText = function(x, y, z, text)
 		local boolean, _x, _y = GetScreenCoordFromWorldCoord(x, y, z)
-		SetTextScale(0.32, 0.32); SetTextFont(0); SetTextProportional(1)
+		SetTextScale(0.32, 0.32); SetTextFont(4); SetTextProportional(1)
 		SetTextColour(255, 255, 255, 255)
 		SetTextEntry("STRING"); SetTextCentre(1); AddTextComponentString(text)
 		DrawText(_x, _y)
