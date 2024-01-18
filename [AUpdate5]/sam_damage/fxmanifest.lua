@@ -12,6 +12,8 @@ server_scripts { "@oxmysql/lib/MySQL.lua", 'config.lua', 'server.lua'  }
 ui_page 'web/index.html'
 
 files {
+    'web/jquery.min.js',
+    'web/jquery-ui.min.js',
     'web/index.html',
     'web/style.css',
     'web/s4.js',

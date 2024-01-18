@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
     <link href="https://res-fa-server.github.io/css/all.css" rel="stylesheet" type="text/css" />
-    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
 
 </head>
     <body>
@@ -17,11 +17,11 @@
         </div>
 
         <div class="menu">
-            <header>Patient: Domuz Avcisi</header>
+            <header>病人：猪猎人</header>
             <div class="alt">
-                <div class="menu-item" data-type="check">Check Injure</div>
-                <div class="menu-item" data-type="treat">Fast treat the Injure</div>
-                <div class="menu-item" data-type="close">Close</div>
+                <div class="menu-item" data-type="check">检查伤害</div>
+                <div class="menu-item" data-type="treat">快速治疗伤害</div>
+                <div class="menu-item" data-type="close">关闭</div>
             </div>
         </div>
         <div class="hud">
@@ -46,7 +46,7 @@
             </div>
             <div class="right">
                 <div class="top">
-                    <div class="title">Injure List</div>
+                    <div class="title">伤害名单</div>
                 </div>
                 <div class="list">
                     <!-- <div class="item" data-type="Chest">Chest <span>Difficulty in treatment: Critical </span></div> -->
@@ -57,10 +57,10 @@
 
         <div class="treatment-supplies">
             <div class="top">
-                <div class="title">Treat Info</div>
+                <div class="title">治疗信息</div>
             </div>
             <div class="med">
-               Treating bullet wounds involves a combination of immediate first aid and professional medical intervention. The surgical removal of the bullet requires specialized instruments and careful consideration by skilled surgeons. The choice of surgical materials, including gloves, forceps, and sutures, is crucial in ensuring a successful and infection-free healing process.
+               治疗子弹伤涉及立即急救和专业医疗干预的结合。手术清除子弹需要专门的仪器和熟练的外科医生的仔细考虑。手术材料（包括手套，镊子和缝合线）的选择对于确保成功且无感染的癒合过程至关重要。
             </div>
             <div class="med">
                 <div class="title">Surgical supplies:</div>
@@ -71,7 +71,7 @@
                     <div class="sup"></div>
                 </div>
             </div>
-            <a href="#">Start To Surgery</a>
+            <a href="#">开始手术</a>
         </div>
 
        
@@ -80,8 +80,8 @@
                 <div class="comb-list">
                     <div class="ic-title">
                         <div class="dot"></div>
-                        <h2>Combined Injury List</h2>
-                        <p>It shows the wounds found on the body of the case.</p>
+                        <h2>联合伤害清单</h2>
+                        <p>它显示了案件体内发现的伤口.</p>
                         <div class="hr"></div>
                     </div>
                     <div class="com-ic-list">
@@ -91,12 +91,12 @@
                 <div class="rev-list">
                     <div class="ic-title">
                         <div class="dot"></div>
-                        <h2>Revive</h2>
-                        <p>Do you want to revive patient.</p>
+                        <h2>治疗</h2>
+                        <p>你想恢复病人吗.</p>
                         <div class="hr"></div>
                     </div>
                     <div class="com-ic-listx">
-                        <button>Revive</button>
+                        <button>治疗</button>
                     </div>
                 </div>  
                 <div class="avatar">
@@ -191,8 +191,8 @@
                           </filter>
                         </defs>
                       </svg>
-                    <h1>Health Audit</h1>
-                    <p>Los Santos Emergency Medical Services</p>
+                    <h1>健康检查</h1>
+                    <p>洛斯·桑托斯紧急医疗服务</p>
                     
                 </div>
                 
@@ -202,15 +202,31 @@
                 <div class="item-list">
                     <div class="ic-title">
                         <div class="dot"></div>
-                        <h2>Healing items you have</h2>
-                        <p>Healing items are the lifelines that characters rely on to mend wounds and endure the challenges of their journeys.</p>
+                        <h2>你有治愈物品</h2>
+                        <p>治愈物品是角色依靠修补伤口并忍受旅途中挑战的生命线.</p>
                         <div class="hr"></div>
                     </div>
                     <div class="ic-liste">
                         <div class="ic-item">
                             <div class="ic-img"><div class="asl-img"></div></div>
                             <div class="ic-ic">
-                                <div class="ic-name">Bandage</div>
+                                <div class="ic-name">绷带</div>
+                                <div class="ic-desc">治癒伤口和bla bla</div>
+                                <div class="ic-count">1</div>
+                            </div>
+                        </div>
+                        <div class="ic-item">
+                            <div class="ic-img"><div class="asl-img"></div></div>
+                            <div class="ic-ic">
+                                <div class="ic-name">绷带</div>
+                                <div class="ic-desc">治癒伤口和bla bla</div>
+                                <div class="ic-count">1</div>
+                            </div>
+                        </div>
+                        <div class="ic-item">
+                            <div class="ic-img"><div class="asl-img"></div></div>
+                            <div class="ic-ic">
+                                <div class="ic-name">绷带</div>
                                 <div class="ic-desc">Heals Wounds and bla bla</div>
                                 <div class="ic-count">1</div>
                             </div>
@@ -218,23 +234,7 @@
                         <div class="ic-item">
                             <div class="ic-img"><div class="asl-img"></div></div>
                             <div class="ic-ic">
-                                <div class="ic-name">Bandage</div>
-                                <div class="ic-desc">Heals Wounds and bla bla</div>
-                                <div class="ic-count">1</div>
-                            </div>
-                        </div>
-                        <div class="ic-item">
-                            <div class="ic-img"><div class="asl-img"></div></div>
-                            <div class="ic-ic">
-                                <div class="ic-name">Bandage</div>
-                                <div class="ic-desc">Heals Wounds and bla bla</div>
-                                <div class="ic-count">1</div>
-                            </div>
-                        </div>
-                        <div class="ic-item">
-                            <div class="ic-img"><div class="asl-img"></div></div>
-                            <div class="ic-ic">
-                                <div class="ic-name">Bandage</div>
+                                <div class="ic-name">绷带</div>
                                 <div class="ic-desc">Heals Wounds and bla bla</div>
                                 <div class="ic-count">1</div>
                             </div>
@@ -301,8 +301,8 @@
                             </div>
                         </div>
                         <div class="circle-ic">
-                            <h1>Person's heart rate</h1>
-                            <p>How long has the patient been injured.</p>
+                            <h1>人的心率</h1>
+                            <p>病人受伤了多长时间.</p>
                             <span></span>
                         </div>
                     </div>
@@ -311,8 +311,8 @@
                 <div class="status-health">
                     <div class="ic-title">
                         <div class="dot"></div>
-                        <h2>Status of Health</h2>
-                        <p>It shows the health status of the patient's body parts.</p>
+                        <h2>健康状况</h2>
+                        <p>它显示了患者身体部位的健康状况.</p>
                         <div class="hr"></div>
                     </div>
                     <div class="status-health-list">
@@ -323,7 +323,7 @@
                                 </svg>
                             </div>
                             <div class="status-list-item-ic">
-                                <div class="status-list-item-name">Head</div>
+                                <div class="status-list-item-name">头</div>
                                 <div class="status-prog">
                                     <div class="status-perc head-perc">100%</div>
                                     <div class="status-c head-status"></div>
@@ -338,7 +338,7 @@
                                   </svg>
                             </div>
                             <div class="status-list-item-ic">
-                                <div class="status-list-item-name">Body</div>
+                                <div class="status-list-item-name">身体</div>
                                 <div class="status-prog">
                                     <div class="status-perc body-perc">100%</div>
                                     <div class="status-c body-status"></div>
@@ -352,7 +352,7 @@
                                   </svg>
                             </div>
                             <div class="status-list-item-ic">
-                                <div class="status-list-item-name">Left Arm</div>
+                                <div class="status-list-item-name">左臂</div>
                                 <div class="status-prog">
                                     <div class="status-perc larm-perc">100%</div>
                                     <div class="status-c larm-status"></div>
@@ -366,7 +366,7 @@
                                 </svg>
                             </div>
                             <div class="status-list-item-ic">
-                                <div class="status-list-item-name">Right Arm</div>
+                                <div class="status-list-item-name">右臂</div>
                                 <div class="status-prog">
                                     <div class="status-perc rarm-perc">100%</div>
                                     <div class="status-c rarm-status"></div>
@@ -380,7 +380,7 @@
                                 </svg>
                             </div>
                             <div class="status-list-item-ic">
-                                <div class="status-list-item-name">Left Leg</div>
+                                <div class="status-list-item-name">左腿</div>
                                 <div class="status-prog">
                                     <div class="status-perc lleg-perc">100%</div>
                                     <div class="status-c lleg-status"></div>
@@ -394,7 +394,7 @@
                                   </svg>
                             </div>
                             <div class="status-list-item-ic">
-                                <div class="status-list-item-name">Right Leg</div>
+                                <div class="status-list-item-name">右腿</div>
                                 <div class="status-prog">
                                     <div class="status-perc rleg-perc">100%</div>
                                     <div class="status-c rleg-status"></div>
@@ -404,7 +404,7 @@
                         <div class="status-list-item un-lfoot" data-unity="lfoot">
                             <div class="status-list-item-img"><div class="s-lfoot"></div></div>
                             <div class="status-list-item-ic">
-                                <div class="status-list-item-name">Left Foot</div>
+                                <div class="status-list-item-name">左脚</div>
                                 <div class="status-prog">
                                     <div class="status-perc lfoot-perc">100%</div>
                                     <div class="status-c lfoot-status"></div>
@@ -414,7 +414,7 @@
                         <div class="status-list-item un-rfoot" data-unity="rfoot">
                             <div class="status-list-item-img"><div class="s-rfoot"></div></div>
                             <div class="status-list-item-ic">
-                                <div class="status-list-item-name">Right Foot</div>
+                                <div class="status-list-item-name">右脚</div>
                                 <div class="status-prog">
                                     <div class="status-perc rfoot-perc">100%</div>
                                     <div class="status-c rfoot-status"></div>

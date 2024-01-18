@@ -221,6 +221,18 @@ $(document).on("click", "#inv-playerList", function (e) {
     $.post("https://qb-inventory/playerList", JSON.stringify({}));
 });
 
+$(document).on("click", "#inv-playerMenu", function (e) {
+    e.preventDefault();
+    Inventory.Close();
+    $.post("https://qb-inventory/playerMenu", JSON.stringify({}));
+});
+
+$(document).on("click", "#inv-playerGang", function (e) {
+    e.preventDefault();
+    Inventory.Close();
+    $.post("https://qb-inventory/playerGang", JSON.stringify({}));
+});
+
 $(document).on("click", "#inv-playerSkill", function (e) {
     e.preventDefault();
     Inventory.Close();

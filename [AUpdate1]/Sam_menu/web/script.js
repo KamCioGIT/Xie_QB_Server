@@ -12,6 +12,7 @@ const Names = {
         "sex": "性别",
         "group": "组织",
         "gang": "帮派",
+        "logged_days": "登录天数",
     },
     [1]: {
         "model": "车型",
@@ -43,6 +44,39 @@ window.addEventListener('message', function (event) {
             var houseInfo = datas[i];
             addHouseTable(houseInfo.id, houseInfo.name);
         }
+    } else if (action == "setAchievement") {
+        let datas = event.data.data;
+        addMessage('成就:' + event.data.total + '/' + datas.length+ '(拥有玩家数每小时更新一次)');
+        /* const sortButtonHTML = '<button class="sortButton" id="sortAchievementsButton">时间升序</button>';
+        $(".sort-buttons-container").append(sortButtonHTML);
+        const sortIDButtonHTML = '<button class="sortButton" id="sortAchievementsIDButton">ID升序</button>';
+        $(".sort-buttons-container").append(sortIDButtonHTML); */
+        const buttonContainer = document.createElement("div");
+        buttonContainer.classList.add("sort-buttons-container");
+
+        const sortButtonHTML = '<button class="sortButton" id="sortAchievementsButton">时间升序</button>';
+        buttonContainer.innerHTML += sortButtonHTML;
+
+        const sortIDButtonHTML = '<button class="sortButton" id="sortAchievementsIDButton">ID升序</button>';
+        buttonContainer.innerHTML += sortIDButtonHTML;
+
+        const sortCountButtonHTML = '<button class="sortButton" id="sortAchievementsCountButton">稀有度升序</button>';
+        buttonContainer.innerHTML += sortCountButtonHTML;
+
+        $(".content-box").append(buttonContainer);
+        for (var i = 0; i < datas.length; i++) {
+            var houseInfo = datas[i];
+            addAchievementTable(houseInfo.id, houseInfo.name, houseInfo.desc, houseInfo.time, event.data.AchievementsCount[i]);
+        }
+        $("#sortAchievementsButton").on("click", function () {
+            sortAchievementsByTime();
+        });
+        $("#sortAchievementsIDButton").on("click", function () {
+            sortAchievementsById();
+        });
+        $("#sortAchievementsCountButton").on("click", function () {
+            sortAchievementsByCount();
+        });
     }
 })
 
@@ -99,6 +133,118 @@ function addHouseTable(id, name) {
     `);
 }
 
+function addAchievementTable(id, name, desc, time, count) {
+    if (time == 'none') {
+        time = '(未获得)'
+    } else {
+        time = '(获得时间:' + time + ')'
+    }
+    $(".content-box").append(`
+        <div class="table-achievement" id="${id}">
+            <img src="./assets/achievement/${id}.png" class="achievement-img"></img>
+            <div class="car-info">
+                <div class="model-container">
+                    <p class="model" style="color:white;">${name}<div class="achi_time" style="color:green;">${time}</div><div class="achi_count" style="color:white; display: inline-block;">拥有的玩家<div class="achi_count2" style="color:green; display: inline-block;">${count}</div>%</div></p>
+                </div>
+                <p class="distance" style="color:white;"><i class="fa-solid fa-star" style="color:#dd9501;"></i>${desc}</p>
+            </div>
+        </div>
+    `);
+}
+
+let sortTime = false;
+function sortAchievementsByTime() {
+    let sortButtonHTML = '<button class="sortButton" id="sortAchievementsButton">时间升序</button>';
+    if (sortTime) {
+        sortButtonHTML = '<button class="sortButton" id="sortAchievementsButton">时间降序</button>';
+    }
+    const $achievementTables = $(".table-achievement");
+
+    sortTime = !sortTime;
+    // Convert tables to an array and sort them based on time
+    const sortedAchievements = [...$achievementTables].sort((a, b) => {
+        const timeA = $(a).find(".achi_time").text(); // Get the time text from the progress bar
+        const timeB = $(b).find(".achi_time").text();
+
+        // Parse the time text into a Date object for comparison
+        const dateA = timeA === '未获得' ? new Date(0) : new Date(timeA.substring(6, timeA.length - 1));
+        const dateB = timeB === '未获得' ? new Date(0) : new Date(timeB.substring(6, timeB.length - 1));
+
+        if (sortTime) {
+            return dateA - dateB; // Ascending order
+        } else {
+            return dateB - dateA; // Descending order
+        }
+    });
+    // Empty the content-box and append the sorted tables
+    $(".content-box").find(".table-achievement").remove();
+    $("#sortAchievementsButton").replaceWith(sortButtonHTML);
+    $(".content-box").append(sortedAchievements);
+
+    // Add a click event handler to the new button for further sorting
+    $("#sortAchievementsButton").on("click", function () {
+        sortAchievementsByTime();
+    });
+}
+
+let sortId = false;
+function sortAchievementsById() {
+    let sortButtonHTML = '<button class="sortButton" id="sortAchievementsIDButton">ID升序</button>';
+    if (!sortId) {
+        sortButtonHTML = '<button class="sortButton" id="sortAchievementsIDButton">ID降序</button>';
+    }
+    $("#sortAchievementsIDButton").replaceWith(sortButtonHTML);
+    sortId = !sortId;
+    const $achievementTables = $(".table-achievement");
+
+    // Sort the array based on the "id" attribute
+    const sortedAchievements = [...$achievementTables].sort((a, b) => {
+        var idA = parseInt($(a).attr("id"));
+        var idB = parseInt($(b).attr("id"));
+        if (sortId) {
+            return idB - idA;
+        } else {
+            return idA - idB;
+        }
+    });
+
+    $(".content-box").find(".table-achievement").remove();
+
+    $(".content-box").append(sortedAchievements);
+    $("#sortAchievementsIDButton").on("click", function () {
+        sortAchievementsById();
+    });
+}
+
+let sortCount = false;
+function sortAchievementsByCount() {
+    let sortButtonHTML = '<button class="sortButton" id="sortAchievementsCountButton">稀有度升序</button>';
+    if (!sortCount) {
+        sortButtonHTML = '<button class="sortButton" id="sortAchievementsCountButton">稀有度降序</button>';
+    }
+    $("#sortAchievementsCountButton").replaceWith(sortButtonHTML);
+    sortCount = !sortCount;
+    const $achievementTables = $(".table-achievement");
+
+    // Sort the array based on the "id" attribute
+    const sortedAchievements = [...$achievementTables].sort((a, b) => {
+        const countA = $(a).find(".achi_count2").text(); // Get the time text from the progress bar
+        const countB = $(b).find(".achi_count2").text();
+        if (sortCount) {
+            return countB - countA;
+        } else {
+            return countA - countB;
+        }
+    });
+
+    $(".content-box").find(".table-achievement").remove();
+
+    $(".content-box").append(sortedAchievements);
+    $("#sortAchievementsCountButton").on("click", function () {
+        sortAchievementsByCount();
+    });
+}
+
 function getCar(id) {
     $.post(`https://${GetParentResourceName()}/findCar`, JSON.stringify({ plate: id }))
 }
@@ -136,6 +282,12 @@ function changeButton(id) {
         $.post(`https://${GetParentResourceName()}/getHouses`)
     } else if (id == 3) {
         addMessage('你没有产业');
+    } else if (id == 4) {
+        addMessage('维护中...');
+    } /* else if (id == 5) {
+        addMessage('维护中...');
+    } */ else if (id == 5) {
+        $.post(`https://${GetParentResourceName()}/getAchievement`)
     }
 }
 

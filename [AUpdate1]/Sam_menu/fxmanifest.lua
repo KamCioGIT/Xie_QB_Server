@@ -27,6 +27,7 @@ ui_page "web/index.html"
 files {
     "web/assets/*.*",
     "web/assets/vehicles/*.*",
+    "web/assets/achievement/*.*",
     "web/*.**",
 }
 dependency '/assetpacks'

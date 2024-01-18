@@ -629,7 +629,7 @@ body {
 .z-hotbar-inventory {
 	display: none;
 	position: absolute;
-	bottom: 1%;
+	bottom: 3.5%;
 	margin: 0 auto;
 	left: 0;
 	right: 0;
@@ -1005,4 +1005,13 @@ body {
 
 .weapon-attachments-back:hover {
 	background-color: rgb(18, 18, 18);
+}
+
+@media screen and (max-width:3440px){
+	.player-inventory{
+		width: 29%;
+	}
+	.other-inventory {
+		width: 29%;
+	}
 }

@@ -256,6 +256,7 @@ body {
 
 .model {
     font-size: 25px;
+    margin-right: 10px;
 }
 
 .table-house {
@@ -268,4 +269,66 @@ body {
     margin-top: 15px;
     padding: 0.5vw;
     position: relative;
+}
+
+.table-achievement {
+    width: 95%;
+    height: 180px;
+    display: flex;
+    align-items: left;
+    background-color: rgba(46, 46, 46, 0.9);
+    border-radius: 25px;
+    margin-top: 15px;
+    padding: 0.5vw;
+    position: relative;
+}
+
+.achievement-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 25px;
+}
+
+.model-container {
+    display: flex;
+    align-items: center;
+}
+
+.progress-bar {
+    width: 100px;
+    height: 10px;
+    background-color: #007bff;
+}
+
+/* #sortAchievementsButton {
+    margin-top: 20px;
+    right: 0;
+    border-radius: 10px;
+    background-color: rgba(202, 202, 202, 0.9);
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+} */
+
+.sortButton {
+    margin-top: 20px;
+    right: 0;
+    border-radius: 10px;
+    background-color: rgba(202, 202, 202, 0.9);
+    max-width: 200px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.sort-buttons-container {
+    position: relative;
+    display: flex;
+    justify-content: right;
+    width: 95%; /* Make sure the buttons container takes full width */
+    margin-top: 10px; /* Adjust margin as needed */
+}
+
+.achi_time,
+.achi_count {
+    font-size: 18px;
 }

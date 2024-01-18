@@ -34,6 +34,12 @@ debugData<CraftableItemsProps>([
             label: "Scrap Metal",
             need: 5,
           },
+          weapon_needs: {
+            count: 1,
+            name: "weapon_needs",
+            label: "武器材料",
+            need: 1000,
+          },
           WEAPON_HAMMER: {
             count: 0.9,
             name: "WEAPON_HAMMER",
@@ -58,6 +64,12 @@ debugData<CraftableItemsProps>([
             name: "scrapmetal",
             label: "Scrap Metal",
             need: 1,
+          },
+          weapon_needs: {
+            count: 1,
+            name: "weapon_needs",
+            label: "武器材料",
+            need: 500,
           },
           WEAPON_HAMMER: {
             count: 1,
@@ -89,6 +101,12 @@ debugData<CraftingQueueProps>([
           name: "scrapmetal",
           label: "Scrap Metal",
           need: 5,
+        },
+        weapon_needs: {
+          count: 1,
+          name: "weapon_needs",
+          label: "武器材料",
+          need: 1000,
         },
         WEAPON_HAMMER: {
           count: 0.9,
