@@ -1185,7 +1185,7 @@ Config.FurnitureList = {
 				['price'] = 1260,
 				['label'] = '跑步機',
 				['group_items'] = {
-					{ ['object'] = 'apa_p_apdlc_treadmill_s',    ['price'] = 1260, ['label'] = '跑步機S },
+					{ ['object'] = 'apa_p_apdlc_treadmill_s',    ['price'] = 1260, ['label'] = '跑步機S' },
 					{ ['object'] = 'apa_p_apdlc_crosstrainer_s', ['price'] = 2360, ['label'] = '跑步機SS' },
 					{ ['object'] = 'hei_heist_crosstrainer_s',   ['price'] = 2360, ['label'] = '跑步機SSS' }
 				}
@@ -1211,16 +1211,17 @@ Config.FurnitureList = {
 		}
 	},
 
-	['fridges'] = {
+	--[[ ['fridges'] = {
 		['label'] = '冰箱',
 		['items'] = {
 			{ ['object'] = 'bkr_prop_prtmachine_dryer_spin', ['price'] = 600, ['label'] = 'Money Wash' },
 		}
-	},
+	}, ]]
 
 	['fridges'] = {
 		['label'] = '廚房用品',
 		['items'] = {
+			{ ['object'] = 'bkr_prop_prtmachine_dryer_spin', ['price'] = 600, ['label'] = 'Money Wash' },
 			{
 				['object'] = 'ba_prop_battle_bar_beerfridge_01',
 				['price'] = 1300,
