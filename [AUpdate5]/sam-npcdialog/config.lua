@@ -7,20 +7,20 @@ Config.Peds = {
         ["cam"] = vector4(437.25, -979.13, 31.30, 0.0), -- If the camera angle doesn't look right, give the heading a full negative value, e.g. -93.0 instead of 93.0. If this doesn't work, enter the heading value of the direction your pad is facing the npc!
         ["markerCoord"] = vector3(437.25, -979.00, 30.85),
         ["interactive"] = {
-            ["type"] = "target", -- or fivem keys https://docs.fivem.net/docs/game-references/controls/
-            --["type"] = 38 https://docs.fivem.net/docs/game-references/controls/
+            --["type"] = "target", -- or fivem keys https://docs.fivem.net/docs/game-references/controls/
+            ["type"] = 38,-- https://docs.fivem.net/docs/game-references/controls/
 
             ["key_label"] = "e", -- If type fivem is converted to index key, the name of the key must be entered "E"
             ["text"] = "Talk to npc", -- Text that will appear when you approach the npc
             ["icon"] = "fa-solid fa-people-arrows",
             ["distance"] = 2, -- Interactive distance
             
-            ["uiMarker"] = true, -- If you make it True, you will have a nice image on the screen, but I do not recommend it for resmon.
+            ["uiMarker"] = false, -- If you make it True, you will have a nice image on the screen, but I do not recommend it for resmon.
             ["uiDrawText"] = true, -- If you make it True, you will have a nice text on the screen, but I do not recommend it for resmon.
 
             ["drawmarker_distance"] = 4,
             ["interactiveState"] = false, -- -- Don't touch this
-            ["drawmarker_math"] = 46 -- It is part of a division process that magnifies the marker according to proximity and distance.
+            ["drawmarker_math"] = 46 -- 它是根據近距離和距離放大標記的分裂過程的一部分。
         },
         ["modal_style"] = "error", -- warning, error, success, question or np
         ["animDict"] = "amb@code_human_police_investigate@idle_a",

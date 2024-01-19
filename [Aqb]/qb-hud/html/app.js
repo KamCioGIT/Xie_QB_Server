@@ -1,4 +1,4 @@
-const { ref, onBeforeUnmount } = Vue
+const { ref, onBeforeUnmount } = Vue;
 
 const app = Vue.createApp({
     data: function () {
@@ -30,6 +30,7 @@ const app = Vue.createApp({
             isPointerShowChecked: this.initIsPointerShowChecked(),
             isDegreesShowChecked: this.initIsDegreesShowChecked(),
             isCinematicModeChecked: this.initisCinematicModeChecked(),
+
             //聊天
             isChatTimeChecked: this.initIsChatTimeChecked(),
             isChatLineChecked: this.initIsChatLineChecked(),
@@ -40,42 +41,39 @@ const app = Vue.createApp({
         const progress = ref([
             { loading: false, percentage: 0 },
             { loading: false, percentage: 0 },
-            { loading: false, percentage: 0 }
-        ])
+            { loading: false, percentage: 0 },
+        ]);
 
-        const intervals = [null, null, null]
+        const intervals = [null, null, null];
 
         function startComputing(id) {
-            progress.value[id].loading = true
-            progress.value[id].percentage = 0
+            progress.value[id].loading = true;
+            progress.value[id].percentage = 0;
 
             intervals[id] = setInterval(() => {
-                progress.value[id].percentage += Math.floor(Math.random() * 8 + 10)
+                progress.value[id].percentage += Math.floor(Math.random() * 8 + 10);
                 if (progress.value[id].percentage >= 100) {
-                    clearInterval(intervals[id])
-                    progress.value[id].loading = false
+                    clearInterval(intervals[id]);
+                    progress.value[id].loading = false;
                 }
-            }, 700)
+            }, 700);
         }
 
         onBeforeUnmount(() => {
-            intervals.forEach(val => {
-                clearInterval(val)
-            })
-        })
+            intervals.forEach((val) => {
+                clearInterval(val);
+            });
+        });
         return {
             framework: {
-                plugins: [
-                    'LocalStorage',
-                    'SessionStorage'
-                ]
+                plugins: ["LocalStorage", "SessionStorage"],
             },
-            tab: ref('hud'),
+            tab: ref("hud"),
             splitterModel: ref(20),
             selection: ref([]),
             progress,
             startComputing,
-        }
+        };
     },
     watch: {
         isOutMapChecked: function () {
@@ -179,7 +177,7 @@ const app = Vue.createApp({
             if (stored === null) {
                 return true;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
         initIsChatTimeChecked: function () {
@@ -203,7 +201,7 @@ const app = Vue.createApp({
             if (stored === null) {
                 return true;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
         initIsCompassFollowChecked: function () {
@@ -211,7 +209,7 @@ const app = Vue.createApp({
             if (stored === null) {
                 return true;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
         initIsOpenMenuSoundsChecked: function () {
@@ -219,7 +217,7 @@ const app = Vue.createApp({
             if (stored === null) {
                 return true;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
         initIsResetSoundsChecked: function () {
@@ -227,7 +225,7 @@ const app = Vue.createApp({
             if (stored === null) {
                 return true;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
         initIsListSoundsChecked: function () {
@@ -235,7 +233,7 @@ const app = Vue.createApp({
             if (stored === null) {
                 return true;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
         initIsMapNotifChecked: function () {
@@ -243,7 +241,7 @@ const app = Vue.createApp({
             if (stored === null) {
                 return true;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
         initIsLowFuelChecked: function () {
@@ -251,7 +249,7 @@ const app = Vue.createApp({
             if (stored === null) {
                 return true;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
         initIsCinematicNotifChecked: function () {
@@ -259,7 +257,7 @@ const app = Vue.createApp({
             if (stored === null) {
                 return true;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
         initIsDynamicHealthChecked: function () {
@@ -267,7 +265,7 @@ const app = Vue.createApp({
             if (stored === null) {
                 return false;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
         initIsDynamicArmorChecked: function () {
@@ -275,7 +273,7 @@ const app = Vue.createApp({
             if (stored === null) {
                 return false;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
         initIsDynamicHungerChecked: function () {
@@ -283,7 +281,7 @@ const app = Vue.createApp({
             if (stored === null) {
                 return false;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
         initIsDynamicThirstChecked: function () {
@@ -291,7 +289,7 @@ const app = Vue.createApp({
             if (stored === null) {
                 return false;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
         initIsDynamicStressChecked: function () {
@@ -299,7 +297,7 @@ const app = Vue.createApp({
             if (stored === null) {
                 return false;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
         initIsDynamicOxygenChecked: function () {
@@ -307,13 +305,13 @@ const app = Vue.createApp({
             if (stored === null) {
                 return false;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
         initIsChangeFPSChecked: function () {
             const stored = localStorage.getItem("isChangeFPSChecked");
             if (stored === null) {
-                return 'Optimized';
+                return "Optimized";
             } else {
                 return stored;
             }
@@ -321,7 +319,7 @@ const app = Vue.createApp({
         initIsToggleMapShapeChecked: function () {
             const stored = localStorage.getItem("isToggleMapShapeChecked");
             if (stored === null) {
-                return 'Circle';
+                return "Circle";
             } else {
                 return stored;
             }
@@ -331,7 +329,7 @@ const app = Vue.createApp({
             if (stored === null) {
                 return true;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
         initIsToggleMapBordersChecked: function () {
@@ -339,7 +337,7 @@ const app = Vue.createApp({
             if (stored === null) {
                 return true;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
         initIsDynamicEngineChecked: function () {
@@ -347,7 +345,7 @@ const app = Vue.createApp({
             if (stored === null) {
                 return false;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
         initIsDynamicNitroChecked: function () {
@@ -355,13 +353,13 @@ const app = Vue.createApp({
             if (stored === null) {
                 return false;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
         initIsChangeCompassFPSChecked: function () {
             const stored = localStorage.getItem("isChangeCompassFPSChecked");
             if (stored === null) {
-                return 'Optimized';
+                return "Optimized";
             } else {
                 return stored;
             }
@@ -371,7 +369,7 @@ const app = Vue.createApp({
             if (stored === null) {
                 return true;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
         initIsShowStreetsChecked: function () {
@@ -379,7 +377,7 @@ const app = Vue.createApp({
             if (stored === null) {
                 return true;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
         initIsPointerShowChecked: function () {
@@ -387,7 +385,7 @@ const app = Vue.createApp({
             if (stored === null) {
                 return true;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
         initIsDegreesShowChecked: function () {
@@ -395,7 +393,7 @@ const app = Vue.createApp({
             if (stored === null) {
                 return true;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
         initisCinematicModeChecked: function () {
@@ -403,10 +401,9 @@ const app = Vue.createApp({
             if (stored === null) {
                 return false;
             } else {
-                return stored == 'true';
+                return stored == "true";
             }
         },
-
         initIsChatSizeChecked: function () {
             const stored = localStorage.getItem("isChatSizeChecked");
             if (stored === null) {
@@ -418,15 +415,15 @@ const app = Vue.createApp({
         resetStorage: function (event) {
             targetId = event.currentTarget.id;
             localStorage.clear();
-            resetStorage()
+            resetStorage();
         },
         restartHud: function (event) {
             targetId = event.currentTarget.id;
-            restartHud()
+            restartHud();
         },
         showOutMap: function (event) {
             targetId = event.currentTarget.id;
-            showOutMap()
+            showOutMap();
         },
         showChatTime: function (event) {
             targetId = event.currentTarget.id;
@@ -438,141 +435,141 @@ const app = Vue.createApp({
         },
         showOutCompass: function (event) {
             targetId = event.currentTarget.id;
-            showOutCompass()
+            showOutCompass();
         },
         showFollowCompass: function (event) {
             targetId = event.currentTarget.id;
-            showFollowCompass()
+            showFollowCompass();
         },
         openMenuSounds: function (event) {
             targetId = event.currentTarget.id;
-            openMenuSounds()
+            openMenuSounds();
         },
         resetHudSounds: function (event) {
             targetId = event.currentTarget.id;
-            resetHudSounds()
+            resetHudSounds();
         },
         checklistSounds: function (event) {
             targetId = event.currentTarget.id;
-            checklistSounds()
+            checklistSounds();
         },
         showMapNotif: function (event) {
             targetId = event.currentTarget.id;
-            showMapNotif()
+            showMapNotif();
         },
         showFuelAlert: function (event) {
             targetId = event.currentTarget.id;
-            showFuelAlert()
+            showFuelAlert();
         },
         showCinematicNotif: function (event) {
             targetId = event.currentTarget.id;
-            showCinematicNotif()
+            showCinematicNotif();
         },
         dynamicHealth: function (event) {
             targetId = event.currentTarget.id;
-            dynamicHealth()
+            dynamicHealth();
         },
         dynamicArmor: function (event) {
             targetId = event.currentTarget.id;
-            dynamicArmor()
+            dynamicArmor();
         },
         dynamicHunger: function (event) {
             targetId = event.currentTarget.id;
-            dynamicHunger()
+            dynamicHunger();
         },
         dynamicThirst: function (event) {
             targetId = event.currentTarget.id;
-            dynamicThirst()
+            dynamicThirst();
         },
         dynamicStress: function (event) {
             targetId = event.currentTarget.id;
-            dynamicStress()
+            dynamicStress();
         },
         dynamicOxygen: function (event) {
             targetId = event.currentTarget.id;
-            dynamicOxygen()
+            dynamicOxygen();
         },
         changeFPS: function (event) {
             targetId = event.currentTarget.id;
-            changeFPS()
+            changeFPS();
         },
         ToggleMapShape: function (event) {
             targetId = event.currentTarget.id;
-            ToggleMapShape()
+            ToggleMapShape();
         },
         HideMap: function (event) {
             targetId = event.currentTarget.id;
-            HideMap()
+            HideMap();
         },
         ToggleMapBorders: function (event) {
             targetId = event.currentTarget.id;
-            ToggleMapBorders()
+            ToggleMapBorders();
         },
         dynamicEngine: function (event) {
             targetId = event.currentTarget.id;
-            dynamicEngine()
+            dynamicEngine();
         },
         dynamicNitro: function (event) {
             targetId = event.currentTarget.id;
-            dynamicNitro()
+            dynamicNitro();
         },
         changeCompassFPS: function (event) {
             targetId = event.currentTarget.id;
-            changeCompassFPS()
+            changeCompassFPS();
         },
         showCompassBase: function (event) {
             targetId = event.currentTarget.id;
-            showCompassBase()
+            showCompassBase();
         },
         showStreetsNames: function (event) {
             targetId = event.currentTarget.id;
-            showStreetsNames()
+            showStreetsNames();
         },
         showPointerIndex: function (event) {
             targetId = event.currentTarget.id;
-            showPointerIndex()
+            showPointerIndex();
         },
         showDegreesNum: function (event) {
             targetId = event.currentTarget.id;
-            showDegreesNum()
+            showDegreesNum();
         },
         cinematicMode: function (event) {
             targetId = event.currentTarget.id;
-            cinematicMode()
+            cinematicMode();
         },
     },
     mounted() {
         this.listener = window.addEventListener("message", (event) => {
-            if (event.data.event === 'isToggleMapShapeChecked' || event.data.event === 'isChangeFPSChecked') {
-                eval(`this.${event.data.event} = "${event.data.toggle}"`)
+            if (event.data.event === "isToggleMapShapeChecked" || event.data.event === "isChangeFPSChecked") {
+                eval(`this.${event.data.event} = "${event.data.toggle}"`);
             }
         });
     },
-})
+});
 
-app.use(Quasar, { config: {} })
-app.mount('#menu')
+app.use(Quasar, { config: {} });
+app.mount("#menu");
 
 document.onkeyup = function (data) {
-    if (data.key == 'Escape') {
-        closeMenu()
+    if (data.key == "Escape") {
+        closeMenu();
     }
 };
 
 function closeMenu() {
     $("#openmenu").fadeOut(550);
-    $.post('https://qb-hud/closeMenu');
+    $.post("https://qb-hud/closeMenu");
 }
 function restartHud() {
-    closeMenu()
-    $.post('https://qb-hud/restartHud');
+    closeMenu();
+    $.post("https://qb-hud/restartHud");
 }
 function resetStorage() {
-    closeMenu()
-    $.post('https://qb-hud/resetStorage');
+    closeMenu();
+    $.post("https://qb-hud/resetStorage");
 }
 function showOutMap() {
-    $.post('https://qb-hud/showOutMap');
+    $.post("https://qb-hud/showOutMap");
 }
 function showChatTime() {
     $.post('https://qb-hud/showChatTime');
@@ -581,82 +578,82 @@ function showChatLine() {
     $.post('https://qb-hud/showChatLine');
 }
 function showOutCompass() {
-    $.post('https://qb-hud/showOutCompass');
+    $.post("https://qb-hud/showOutCompass");
 }
 function showFollowCompass() {
-    $.post('https://qb-hud/showFollowCompass');
+    $.post("https://qb-hud/showFollowCompass");
 }
 function openMenuSounds() {
-    $.post('https://qb-hud/openMenuSounds');
+    $.post("https://qb-hud/openMenuSounds");
 }
 function resetHudSounds() {
-    $.post('https://qb-hud/resetHudSounds');
+    $.post("https://qb-hud/resetHudSounds");
 }
 function checklistSounds() {
-    $.post('https://qb-hud/checklistSounds');
+    $.post("https://qb-hud/checklistSounds");
 }
 function showMapNotif() {
-    $.post('https://qb-hud/showMapNotif');
+    $.post("https://qb-hud/showMapNotif");
 }
 function showFuelAlert() {
-    $.post('https://qb-hud/showFuelAlert');
+    $.post("https://qb-hud/showFuelAlert");
 }
 function showCinematicNotif() {
-    $.post('https://qb-hud/showCinematicNotif');
+    $.post("https://qb-hud/showCinematicNotif");
 }
 function dynamicHealth() {
-    $.post('https://qb-hud/dynamicHealth');
+    $.post("https://qb-hud/dynamicHealth");
 }
 function dynamicArmor() {
-    $.post('https://qb-hud/dynamicArmor');
+    $.post("https://qb-hud/dynamicArmor");
 }
 function dynamicHunger() {
-    $.post('https://qb-hud/dynamicHunger');
+    $.post("https://qb-hud/dynamicHunger");
 }
 function dynamicThirst() {
-    $.post('https://qb-hud/dynamicThirst');
+    $.post("https://qb-hud/dynamicThirst");
 }
 function dynamicStress() {
-    $.post('https://qb-hud/dynamicStress');
+    $.post("https://qb-hud/dynamicStress");
 }
 function dynamicOxygen() {
-    $.post('https://qb-hud/dynamicOxygen');
+    $.post("https://qb-hud/dynamicOxygen");
 }
 function dynamicEngine() {
-    $.post('https://qb-hud/dynamicEngine');
+    $.post("https://qb-hud/dynamicEngine");
 }
 function dynamicNitro() {
-    $.post('https://qb-hud/dynamicNitro');
+    $.post("https://qb-hud/dynamicNitro");
 }
 function ToggleMapShape() {
-    $.post('https://qb-hud/ToggleMapShape');
+    $.post("https://qb-hud/ToggleMapShape");
 }
 function changeFPS() {
-    $.post('https://qb-hud/changeFPS');
+    $.post("https://qb-hud/changeFPS");
 }
 function ToggleMapBorders() {
-    $.post('https://qb-hud/ToggleMapBorders');
+    $.post("https://qb-hud/ToggleMapBorders");
 }
 function HideMap() {
-    $.post('https://qb-hud/HideMap');
+    $.post("https://qb-hud/HideMap");
 }
 function changeCompassFPS() {
-    $.post('https://qb-hud/changeCompassFPS');
+    $.post("https://qb-hud/changeCompassFPS");
 }
 function showCompassBase() {
-    $.post('https://qb-hud/showCompassBase');
+    $.post("https://qb-hud/showCompassBase");
 }
 function showStreetsNames() {
-    $.post('https://qb-hud/showStreetsNames');
+    $.post("https://qb-hud/showStreetsNames");
 }
 function showPointerIndex() {
-    $.post('https://qb-hud/showPointerIndex');
+    $.post("https://qb-hud/showPointerIndex");
 }
 function showDegreesNum() {
-    $.post('https://qb-hud/showDegreesNum');
+    $.post("https://qb-hud/showDegreesNum");
 }
 function cinematicMode() {
-    $.post('https://qb-hud/cinematicMode');
+    $.post("https://qb-hud/cinematicMode");
 }
 
 $(document).ready(function () {
@@ -667,23 +664,21 @@ $(document).ready(function () {
                 break;
         }
     });
-
-    $(document).on('input', '#numberInput', function() {
+    $(document).on('input', '#numberInput', function () {
         var inputValue = $(this).val();
         ChangeChatSize(inputValue);
         localStorage.setItem('isChatSizeChecked', inputValue);
     });
 });
-
 ChangeChatSize = function (size) {
-    $.post('https://chat/ChangeChatSize', JSON.stringify({size: size}));
+    $.post('https://chat/ChangeChatSize', JSON.stringify({ size: size }));
 }
 
 Open = function (data) {
     $("#openmenu").fadeIn(150);
-}
-$('.closeMenu').click(() => {
-    closeMenu()
+};
+$(".closeMenu").click(() => {
+    closeMenu();
 });
 
 // MONEY HUD
@@ -820,13 +815,14 @@ const playerHud = {
             dev: 0,
             show: false,
             talking: false,
-            showVoice: false,
-            showHealth: false,
+            showVoice: true,
+            showRadio: true,
+            showHealth: true,
             showArmor: true,
             showHunger: true,
             showThirst: true,
             showNos: true,
-            showStress: false,
+            showStress: true,
             showOxygen: false,
             showArmed: true,
             showEngine: false,
@@ -835,7 +831,8 @@ const playerHud = {
             showParachute: false,
             showDev: false,
             voiceIcon: "fas fa-microphone",
-            talkingColor: "#FFFFFF",
+            talkingColor: "#84898f",
+            radioColor: "#84898f",
             nosColor: "",
             engineColor: "",
             armorColor: "",
@@ -863,25 +860,37 @@ const playerHud = {
     methods: {
         hudTick(data) {
             this.show = data.show;
-            this.health = data.health;
-            this.armor = data.armor;
-            this.hunger = data.hunger;
-            this.thirst = data.thirst;
-            this.stress = data.stress;
-            this.voice = data.voice;
-            this.talking = data.talking;
-            this.radio = data.radio;
+            //this.health = data.health;
+            healthBar.set(data.health);
+            //this.armor = data.armor;
+            armorBar.set(data.armor);
+            //this.hunger = data.hunger;
+            hungerBar.set(data.hunger)
+            //this.thirst = data.thirst;
+            thirstBar.set(data.thirst);
+            //this.stress = data.stress;
+            stressBar.set(data.stress);
+            //this.voice = data.voiceBar;
+            voicesBar.set(data.voice * 20);
+            //this.talking = data.talking;
+            //talkingBar.set(data.talking);
+            this.radioBar = data.radioBar;
+            radioBar.set(100);
             this.radioActive = data.radioActive;
             this.nos = data.nos;
+            nosBar.set(data.nos);
             this.oxygen = data.oxygen;
+            oxygenBar.set(data.oxygen);
             this.cruise = data.cruise;
             this.nitroActive = data.nitroActive;
             this.harness = data.harness;
             this.speed = data.speed;
             this.armed = data.armed;
             this.parachute = data.parachute;
-            this.hp = data.hp * 5;
-            this.engine = data.engine;
+            //this.hp = data.hp * 5;
+            harnessBar.set(data.hp * 5);
+            //this.engine = data.engine;
+            engineBar.set(data.engine);
             this.cinematic = data.cinematic;
             this.dev = data.dev;
             this.playerDead = data.playerDead;
@@ -894,32 +903,31 @@ const playerHud = {
             this.dynamicEngine = data.dynamicEngine;
             this.dynamicNitro = data.dynamicNitro;
 
-            if (data.dynamicHealth == true) {
-                if (data.health >= 100) {
-                    this.showHealth = false;
-                }
-                else {
-                    this.showHealth = true;
-                }
-            } else if (data.dynamicHealth == false) {
-                this.showHealth = true;
-            }
-            if (data.playerDead === false) {
-                this.healthColor = "#3FA554";
-            } else {
-                this.healthColor = "#ff0000";
-                this.health = 100;
-            }
+            //if (data.dynamicHealth == true) {
+            //if (data.health >= 100) {
+            //this.showHealth = false;
+            //} else {
+            //this.showHealth = true;
+            //}
+            //} else if (data.dynamicHealth == false) {
+            //this.showHealth = true;
+            //}
+            //if (data.playerDead === false) {
+            //this.healthColor = "#3FA554";
+            //} else {
+            //this.healthColor = "#ff0000";
+            //this.health = 100;
+            //}
 
-            if (data.dynamicArmor == true) {
-                if (data.armor == 0) {
-                    this.showArmor = false;
-                } else {
-                    this.showArmor = true;
-                }
-            } else if (data.dynamicArmor == false) {
-                this.showArmor = true;
-            }
+            //if (data.dynamicArmor == true) {
+            //if (data.armor == 0) {
+            //this.showArmor = false;
+            //} else {
+            //this.showArmor = true;
+            //}
+            //} else if (data.dynamicArmor == false) {
+            //this.showArmor = true;
+            //}
 
             if (data.armor <= 0) {
                 this.armorColor = "#FF0000";
@@ -930,8 +938,7 @@ const playerHud = {
             if (data.dynamicHunger == true) {
                 if (data.hunger >= 100) {
                     this.showHunger = false;
-                }
-                else {
+                } else {
                     this.showHunger = true;
                 }
             } else if (data.dynamicHunger == false) {
@@ -948,8 +955,7 @@ const playerHud = {
             if (data.dynamicThirst == true) {
                 if (data.thirst >= 100) {
                     this.showThirst = false;
-                }
-                else {
+                } else {
                     this.showThirst = true;
                 }
             } else if (data.dynamicThirst == false) {
@@ -976,8 +982,7 @@ const playerHud = {
             if (data.dynamicOxygen == true) {
                 if (data.oxygen >= 100) {
                     this.showOxygen = false;
-                }
-                else {
+                } else {
                     this.showOxygen = true;
                 }
             } else if (data.dynamicOxygen == false) {
@@ -989,11 +994,15 @@ const playerHud = {
                     this.showEngine = false;
                 } else if (data.engine < 0) {
                     this.showEngine = false;
-                } else { this.showEngine = true; }
+                } else {
+                    this.showEngine = true;
+                }
             } else if (data.dynamicEngine == false) {
                 if (data.engine < 0) {
                     this.showEngine = false;
-                } else { this.showEngine = true; }
+                } else {
+                    this.showEngine = true;
+                }
             }
             if (data.engine <= 45) {
                 this.engineColor = "#ff0000";
@@ -1008,11 +1017,15 @@ const playerHud = {
                     this.showNos = false;
                 } else if (data.nos < 0) {
                     this.showNos = false;
-                } else { this.showNos = true; }
+                } else {
+                    this.showNos = true;
+                }
             } else if (data.dynamicNitro == false) {
                 if (data.nos < 0) {
                     this.showNos = false;
-                } else { this.showNos = true; }
+                } else {
+                    this.showNos = true;
+                }
             }
             if (data.nitroActive) {
                 this.nosColor = "#D64763";
@@ -1021,17 +1034,32 @@ const playerHud = {
             }
 
             if (data.radioActive) {
-                this.talkingColor = "#D64763";
-            } else if (data.talking) {
-                this.talkingColor = '#FFFF3E';
+                //this.talkingColor = "#D64763"; 
+                document.documentElement.style.setProperty('--radio-bar-color', '#FFFF3E');
             } else {
-                this.talkingColor = "#FFFFFF";
+                //this.talkingColor = "#a5a8aa";
+                document.documentElement.style.setProperty('--radio-bar-color', '#c3c3c3');
             }
+
             if (data.radio != 0 && data.radio != undefined) {
-                this.voiceIcon = 'fas fa-headset';
+                this.showRadio = true;
             } else if (data.radio == 0 || data.radio == undefined) {
-                this.voiceIcon = 'fas fa-microphone';
+                this.showRadio = false;
             }
+
+            if (data.talking) {
+                //this.talkingColor = "#FFFF3E";
+                document.documentElement.style.setProperty('--talk-bar-color', '#FFFF3E');
+            } else {
+                //this.talkingColor = "#FFFFFF";
+                document.documentElement.style.setProperty('--talk-bar-color', '#c3c3c3');
+            }
+
+            //if (data.radio != 0 && data.radio != undefined) {
+            //this.voiceIcon = "fas fa-headset";
+            //} else if (data.radio == 0 || data.radio == undefined) {
+            //this.voiceIcon = "fas fa-microphone";
+            //}
             if (data.cruise === true) {
                 this.cruise = 1;
                 this.showCruise = true;
@@ -1108,19 +1136,50 @@ const vehHud = {
         vehicleHud(data) {
             this.show = data.show;
             this.speed = data.speed;
+
             this.altitude = data.altitude;
-            this.fuel = (data.fuel * 0.71);
+            const progressBar = document.querySelector('#progressBar .progress');
+            // Check if progressBar exists before trying to update its style
+            if (progressBar) {
+                // Update the height of the fuel progress bar
+                progressBar.style.height = data.fuel + '%';
+
+                // Change color to orange if under 30%
+                if (data.fuel < 30) {
+                    progressBar.style.backgroundColor = 'orange';
+                }
+                // Change color to red if under 20%
+                if (data.fuel < 20) {
+                    progressBar.style.backgroundColor = 'red';
+                }
+                // Default color (if above 30%)
+                if (data.fuel >= 30) {
+                    progressBar.style.backgroundColor = '#ffffff';
+                }
+            } else {
+                //console.log("oh you're in a car?");
+            }
+
             this.showSeatbelt = data.showSeatbelt;
             this.showAltitude = data.showAltitude;
-            this.showSquareB = data.showSquareB;
-            this.showCircleB = data.showCircleB;
+
+
+            // later when you want to fade in
+
             if (data.seatbelt === true) {
                 this.seatbelt = 1;
-                this.seatbeltColor = "transparent";
+                let seatbeltIcon = document.getElementById('SeatbeltIcon');
+                if (seatbeltIcon) {
+                    seatbeltIcon.style.opacity = 0;
+                }
             } else {
                 this.seatbelt = 0;
-                this.seatbeltColor = "#FF5100";
+                let seatbeltIcon = document.getElementById('SeatbeltIcon');
+                if (seatbeltIcon) {
+                    seatbeltIcon.style.opacity = 1;
+                }
             }
+
             if (data.showSeatbelt === true) {
                 this.showSeatbelt = true;
             } else {
@@ -1130,13 +1189,6 @@ const vehHud = {
                 this.showAltitude = true;
             } else {
                 this.showAltitude = false;
-            }
-            if (data.fuel <= 20) {
-                this.fuelColor = "#ff0000";
-            } else if (data.fuel <= 30) {
-                this.fuelColor = "#dd6e14";
-            } else {
-                this.fuelColor = "#FFFFFF";
             }
             if (data.showSquareB === true) {
                 this.showSquare = true;
@@ -1153,6 +1205,27 @@ const vehHud = {
             }
         },
     },
+    computed: {
+        speedDisplay() {
+            if (!this.show) {
+                return '';
+            }
+            var speedStr = this.speed.toString().padStart(3, '0');
+            var html = '';
+            var nonZeroEncountered = false;
+            for (var i = 0; i < speedStr.length; i++) {
+                if (speedStr[i] !== '0') {
+                    nonZeroEncountered = true;
+                }
+                if (nonZeroEncountered) {
+                    html += '<span style="color: white;">' + speedStr[i] + '</span>';
+                } else {
+                    html += '<span style="color: #5a5a5a;">' + speedStr[i] + '</span>';
+                }
+            }
+            return html;
+        }
+    }
 };
 const app3 = Vue.createApp(vehHud);
 app3.use(Quasar);
@@ -1178,14 +1251,14 @@ const baseplateHud = {
     mounted() {
         this.listener = window.addEventListener("message", (event) => {
             if (event.data.action == "update") {
-                type = event.data.type
-                value = event.data.value
+                type = event.data.type;
+                value = event.data.value / 2;
                 if (value !== undefined) {
-                    $('.degrees').html(value);
+                    $(".degrees").html(value);
                     bar = document.getElementsByTagName("svg")[0];
-                    bar.setAttribute("viewBox", '' + (value - 90) + ' 0 180 5');
+                    bar.setAttribute("viewBox", "" + (value - 90) + " 0 180 5");
                     heading = document.getElementsByTagName("svg")[1];
-                    heading.setAttribute("viewBox", '' + (value - 90) + ' 0 180 1.5');
+                    heading.setAttribute("viewBox", "" + (value - 90) + " 0 180 1.5");
                 }
             }
             if (event.data.action === "baseplate") {
@@ -1228,3 +1301,66 @@ const baseplateHud = {
 const app4 = Vue.createApp(baseplateHud);
 app4.use(Quasar);
 app4.mount("#baseplate-container");
+
+
+
+// Construct an ldBar object
+var radioBar = new ldBar("#Radio");
+var voicesBar = new ldBar("#Voices");
+var healthBar = new ldBar("#Health");
+var armorBar = new ldBar("#Armor");
+var hungerBar = new ldBar("#Hunger");
+var thirstBar = new ldBar("#Thirst");
+var stressBar = new ldBar("#Stress");
+var oxygenBar = new ldBar("#Oxygen");
+var engineBar = new ldBar("#Engine");
+var nosBar = new ldBar("#Nos");
+var harnessBar = new ldBar("#Harness");
+
+
+
+
+
+function updateRPM(rpm) {
+    var rpmBar = document.getElementById('rpmBar');
+    if (rpmBar) {
+        rpmBar.innerHTML = '';
+        for (var i = 0; i < 18; i++) {
+            var item = document.createElement('div');
+            item.className = 'item';
+            if (i < rpm) {
+                if (i >= 16) {
+                    item.classList.add('critical');
+                } else {
+                    item.classList.add('filled');
+                }
+            }
+            rpmBar.appendChild(item);
+        }
+    } else {
+        //console.log("Element with ID 'rpmBar' not found");
+    }
+}
+
+
+// RPM Counter Updater //
+window.addEventListener('message', function (event) {
+    var rpm = event.data.rpm;
+    if (rpm !== undefined) {
+        //console.log("Received RPM: " + rpm);
+        updateRPM((rpm / 1) * 18);
+    } else {
+        //console.log("RPM data not received");
+    }
+});
+
+// Gear Counter Updater //
+document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener("message", function (event) {
+        var gearElement = document.getElementById("gear");
+        if (gearElement && event.data.gear) {
+            // Update the gear display with the data from Lua
+            gearElement.innerHTML = event.data.gear;
+        }
+    });
+});

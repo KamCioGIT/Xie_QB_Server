@@ -5,13 +5,15 @@
         content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <link rel="stylesheet" type="text/css" href="responsive.css" />
+    <link rel="stylesheet" href="loading-bar.css">
+    <script src="loading-bar.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/quasar@2.1.0/dist/quasar.prod.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet"
         type="text/css" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css" />
-    <script src="jquery.min.js"></script>
-    <script src="vue.global.prod.js" defer></script>
-    <script src="quasar.umd.prod.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/quasar@2.1.0/dist/quasar.umd.prod.js" defer></script>
     <script src="app.js" defer></script>
 </head>
 
@@ -22,60 +24,42 @@
             <div class="street1">{{street1}}</div>
         </div>
         <div class="baseplate" v-show="show">
-            <div v-if="showPointer" class="pointer">˅</div>
+            <div v-if="showPointer" class="pointer">⬥</div>
             <div v-if="showDegrees" class="degrees"></div>
             <svg class="bezel">
-                <rect width="3" stroke="black" fill="white" stroke-width="0.5" stroke-opacity="0.6" v-if="showCompass"
-                    height="20" x="-90" />
-                <rect width="3" stroke="black" fill="white" stroke-width="0.5" stroke-opacity="0.6" v-if="showCompass"
-                    height="9" x="-45" />
-                <rect width="4.5" stroke="black" fill="white" stroke-width="0.5" stroke-opacity="0.6" v-if="showCompass"
-                    height="20" x="0" />
-                <rect width="3" stroke="black" fill="white" stroke-width="0.5" stroke-opacity="0.6" v-if="showCompass"
-                    height="9" x="45" />
-                <rect width="4.5" stroke="black" fill="white" stroke-width="0.5" stroke-opacity="0.6" v-if="showCompass"
-                    height="20" x="90" />
-                <rect width="3" stroke="black" fill="white" stroke-width="0.5" stroke-opacity="0.6" v-if="showCompass"
-                    height="9" x="135" />
-                <rect width="4.5" stroke="black" fill="white" stroke-width="0.5" stroke-opacity="0.6" v-if="showCompass"
-                    height="20" x="180" />
-                <rect width="3" stroke="black" fill="white" stroke-width="0.5" stroke-opacity="0.6" v-if="showCompass"
-                    height="9" x="225" />
-                <rect width="4.5" stroke="black" fill="white" stroke-width="0.5" stroke-opacity="0.6" v-if="showCompass"
-                    height="20" x="270" />
-                <rect width="3" stroke="black" fill="white" stroke-width="0.5" stroke-opacity="0.6" v-if="showCompass"
-                    height="9" x="315" />
-                <rect width="4.5" stroke="black" fill="white" stroke-width="0.5" stroke-opacity="0.6" v-if="showCompass"
-                    height="20" x="360" />
-                <rect width="3" stroke="black" fill="white" stroke-width="0.5" stroke-opacity="0.6" v-if="showCompass"
-                    height="9" x="405" />
-                <rect width="3" stroke="black" fill="white" stroke-width="0.5" stroke-opacity="0.6" v-if="showCompass"
-                    height="20" x="450" />
+                <rect width="1" fill="#C8C8C8" height="3" x="-67.5"></rect>
+                <rect width="1" fill="white" height="3" x="-45"></rect>
+                <rect width="1" fill="#C8C8C8" height="3" x="-22.5"></rect>
+                <rect width="1" fill="white" height="3" x="0"></rect>
+                <rect width="1" fill="#C8C8C8" height="3" x="22.5"></rect>
+                <rect width="1" fill="white" height="3" x="45"></rect>
+                <rect width="1" fill="#C8C8C8" height="3" x="67.5"></rect>
+                <rect width="1" fill="white" height="3" x="90"></rect>
+                <rect width="1" fill="#C8C8C8" height="3" x="112.5"></rect>
+                <rect width="1" fill="white" height="3" x="135"></rect>
+                <rect width="1" fill="#C8C8C8" height="3" x="157.5"></rect>
+                <rect width="1" fill="white" height="3" x="180"></rect>
+                <rect width="1" fill="#C8C8C8" height="3" x="202.5"></rect>
+                <rect width="1" fill="white" height="3" x="225"></rect>
+                <rect width="1" fill="#C8C8C8" height="3" x="247.5"></rect>
             </svg>
 
             <svg class="bearing">
-                <text v-if="showCompass" x="0" y="1.5" dominant-baseline="middle" text-anchor="middle"
-                    fill="yellow">北</text>
-                <text v-if="showCompass" x="360" y="1.5" dominant-baseline="middle" text-anchor="middle"
-                    fill="yellow">北</text>
-                <text style="font-size: 1.4vh!important; font-weight: 800!important;" v-if="showCompass" x="315" y="-11"
-                    dominant-baseline="middle" text-anchor="middle" fill="white">西北</text>
-                <text style="font-size: 1.4vh!important; font-weight: 800!important;" v-if="showCompass" x="-45" y="-11"
-                    dominant-baseline="middle" text-anchor="middle" fill="white">西北</text>
-                <text style="font-size: 1.4vh!important; font-weight: 800!important;" v-if="showCompass" x="45" y="-11"
-                    dominant-baseline="middle" text-anchor="middle" fill="white">东北</text>
-                <text style="font-size: 1.4vh!important; font-weight: 800!important;" v-if="showCompass" x="405" y="-11"
-                    dominant-baseline="middle" text-anchor="middle" fill="white">东北</text>
-                <text v-if="showCompass" x="90" y="1.5" dominant-baseline="middle" text-anchor="middle"
-                    fill="white">东</text>
-                <text style="font-size: 1.4vh!important; font-weight: 800!important;" v-if="showCompass" x="135" y="-11"
-                    dominant-baseline="middle" text-anchor="middle" fill="white">东南</text>
-                <text v-if="showCompass" x="180" y="1.5" dominant-baseline="middle" text-anchor="middle"
-                    fill="white">南</text>
-                <text style="font-size: 1.4vh!important; font-weight: 800!important;" v-if="showCompass" x="225" y="-11"
-                    dominant-baseline="middle" text-anchor="middle" fill="white">西南</text>
-                <text v-if="showCompass" x="270" y="1.5" dominant-baseline="middle" text-anchor="middle"
-                    fill="white">西</text>
+                <text x="0" y="0" dominant-baseline="middle" text-anchor="middle" fill="white">北</text>
+                <text x="180" y="0" dominant-baseline="middle" text-anchor="middle" fill="white">北</text>
+                <text x="157.5" y="0" dominant-baseline="middle" text-anchor="middle" fill="#C8C8C8">西北</text>
+                <text x="-22.5" y="0" dominant-baseline="middle" text-anchor="middle" fill="#C8C8C8">西北</text>
+                <text x="22.5" y="0" dominant-baseline="middle" text-anchor="middle" fill="#C8C8C8">东北</text>
+                <text x="202.5" y="0" dominant-baseline="middle" text-anchor="middle" fill="#C8C8C8">东北</text>
+                <text x="45" y="0" dominant-baseline="middle" text-anchor="middle" fill="white">东</text>
+                <text x="225" y="0" dominant-baseline="middle" text-anchor="middle" fill="white">东</text>
+                <text x="67.5" y="0" dominant-baseline="middle" text-anchor="middle" fill="#C8C8C8">东南</text>
+                <text x="247.5" y="0" dominant-baseline="middle" text-anchor="middle" fill="#C8C8C8">东南</text>
+                <text x="90" y="0" dominant-baseline="middle" text-anchor="middle" fill="white">南</text>
+                <text x="112.5" y="0" dominant-baseline="middle" text-anchor="middle" fill="#C8C8C8">西南</text>
+                <text x="-67.5" y="0" dominant-baseline="middle" text-anchor="middle" fill="#C8C8C8">西南</text>
+                <text x="135" y="0" dominant-baseline="middle" text-anchor="middle" fill="white">西</text>
+                <text x="-45" y="0" dominant-baseline="middle" text-anchor="middle" fill="white">西</text>
             </svg>
         </div>
     </div>
@@ -140,20 +124,20 @@
                         <q-tab-panel name="hud">
                             <div class="q-mb-md">
                                 <div class="text-h6 q-mb-md">重置HUD <img class="brand-logo" align="right"
-                                        src="./brand-logo.svg"></img></div>
+                                        src="./logo.png"></img></div>
                                 <div class="q-pa-md q-gutter-sm">
                                     <q-btn v-on:click="resetStorage($event)" :loading="progress[0].loading"
                                         :percentage="progress[0].percentage" text-color="textbutton" color="bgbutton"
-                                        @click="startComputing(0)" style="width: 150px"> 重置设置
+                                        @click="startComputing(0)" style="width: 150px"> 重置設置
                                         <template v-slot:loading> <q-spinner-gears class="on-left"></q-spinner-gears>
                                             重置中... </template></q-btn>
-                                    <div class="text-h7 q-mb-md">如果要将设置重置为默认设置； 点击此闪亮按钮! <br> (您将必须重新填充菜单才能成功重置更改)</div>
+                                    <div class="text-h7 q-mb-md">如果要将设置重置为默认设置；点击此闪亮按钮! <br> (您将必须重新填充菜单才能成功重置更改)</div>
                                     <q-btn v-on:click="restartHud($event)" :loading="progress[1].loading"
                                         :percentage="progress[1].percentage" text-color="textbutton" color="bgbutton"
                                         @click="startComputing(1)" style="width: 150px"> 重置HUD
                                         <template v-slot:loading> <q-spinner-gears class="on-left"></q-spinner-gears>
                                             重置中... </template></q-btn>
-                                    <div class="text-h7 q-mb-md">如果您的HUD出现错误你可以 /resethud</div>
+                                    <div class="text-h7 q-mb-md">如果您的HUD表现起来，请重置一个很好的重置！或者你可以 /resethud</div>
                                 </div>
                                 <hr>
                                 <div class="text-h6 q-mb-md">选项</div>
@@ -165,7 +149,7 @@
                                         </q-item-section>
                                         <q-item-section>
                                             <q-item-label>仅在车辆中显示小地图</q-item-label>
-                                            <q-item-label class="text-h7" caption>禁用此功能将始终将您的小地图放在屏幕上</q-item-label>
+                                            <q-item-label class="text-h7" caption>禁用此功能将始终将您的最小值放在屏幕上</q-item-label>
                                         </q-item-section>
                                     </q-item>
                                     <q-item borderless tag="label" v-ripple>
@@ -186,8 +170,8 @@
                                                 val="3"></q-checkbox>
                                         </q-item-section>
                                         <q-item-section>
-                                            <q-item-label>显示指南针跟随鼠标</q-item-label>
-                                            <q-item-label class="text-h7" caption>禁用此功能将使您不再跟随鼠标旋转指南针</q-item-label>
+                                            <q-item-label>显示指南针关注凸轮</q-item-label>
+                                            <q-item-label class="text-h7" caption>禁用此功能将使您不再使用鼠标旋转指南针</q-item-label>
                                         </q-item-section>
                                     </q-item>
                                 </div>
@@ -203,7 +187,7 @@
                                     <q-checkbox v-on:click="checklistSounds($event)" label='GUI音效启用'
                                         v-model="isListSoundsChecked" color="checkbox" val="6"
                                         style="display: flex;"></q-checkbox>
-                                    <q-checkbox v-on:click="showMapNotif($event)" label='启用了MAP通知'
+                                    <q-checkbox v-on:click="showMapNotif($event)" label='启用了地图通知'
                                         v-model="isMapNotifChecked" color="checkbox" val="7"
                                         style="display: flex;"></q-checkbox>
                                     <q-checkbox v-on:click="showFuelAlert($event)" label='启用低燃料警报'
@@ -217,13 +201,7 @@
                             <hr>
                             <div class="text-h6 q-mb-md">状态</div>
                             <div class="text-h7">
-                                <q-checkbox v-on:click="dynamicHealth($event)" label='总是显示健康'
-                                    v-model="isDynamicHealthChecked" color="checkbox" val="10"
-                                    style="display: flex;"></q-checkbox>
-                                <q-checkbox v-on:click="dynamicArmor($event)" label='总是显示护甲'
-                                    v-model="isDynamicArmorChecked" color="checkbox" val="11"
-                                    style="display: flex;"></q-checkbox>
-                                <q-checkbox v-on:click="dynamicHunger($event)" label='总是显示饥饿'
+                                <q-checkbox v-on:click="dynamicHunger($event)" label='总是显示飢饿'
                                     v-model="isDynamicHungerChecked" color="checkbox" val="12"
                                     style="display: flex;"></q-checkbox>
                                 <q-checkbox v-on:click="dynamicThirst($event)" label='总是显示口渴'
@@ -240,24 +218,21 @@
                             <div class="text-h6 q-mb-md">车辆</div>
                             <div class="text-h7">
                                 <q-toggle v-on:click="changeFPS($event)" size="lg" keep-color icon-color="toggleicons"
-                                    color="checkbox" :label="`速度表FPS ${isChangeFPSChecked}`" unchecked-icon="60fps"
+                                    color="checkbox" :label="`速度表 FPS ${isChangeFPSChecked}`" unchecked-icon="60fps"
                                     false-value="Synced" true-value="Optimized" checked-icon="30fps"
                                     v-model="isChangeFPSChecked"></q-toggle>
-                                <div class="text-h7 q-mb-md-d">同步的FPS选项将减少优化，实时保持速度表，但是对电脑的要求也更高.</div>
+                                <div class="text-h7 q-mb-md-d">同步的FPS选项将减少优化，但要实时保持速度表，但是，对机器的要求也更高.</div>
                                 <q-toggle v-on:click="ToggleMapShape($event)" size="lg" keep-color
                                     icon-color="toggleicons" color="checkbox" :label="`小地图 ${isToggleMapShapeChecked}`"
                                     unchecked-icon="radio_button_unchecked" false-value="circle" true-value="square"
                                     checked-icon="check_box_outline_blank" v-model="isToggleMapShapeChecked"></q-toggle>
                                 <div class="text-h7 q-mb-md-d">无论是正方形还是您想要的圆形，您都有选择!</div>
-                                <q-checkbox v-on:click="HideMap($event)" label='启用了小地图' v-model="isHideMapChecked"
+                                <q-checkbox v-on:click="HideMap($event)" label='小地图' v-model="isHideMapChecked"
                                     color="checkbox" val="15" style="display: flex;"></q-checkbox>
-                                <q-checkbox v-on:click="ToggleMapBorders($event)" label='启用了小图标边框'
-                                    v-model="isToggleMapBordersChecked" color="checkbox" val="16"
-                                    style="display: flex;"></q-checkbox>
-                                <q-checkbox v-on:click="dynamicEngine($event)" label='总是显示引擎'
+                                <q-checkbox v-on:click="dynamicEngine($event)" label='永远显示引擎'
                                     v-model="isDynamicEngineChecked" color="checkbox" val="17"
                                     style="display: flex;"></q-checkbox>
-                                <q-checkbox v-on:click="dynamicNitro($event)" label='总是显示硝基'
+                                <q-checkbox v-on:click="dynamicNitro($event)" label='永远显示氮气'
                                     v-model="isDynamicNitroChecked" color="checkbox" val="18"
                                     style="display: flex;"></q-checkbox>
                             </div>
@@ -266,10 +241,10 @@
                             <div class="text-h7">
                                 <q-toggle v-on:click="changeCompassFPS($event)" size="lg" keep-color
                                     icon-color="toggleicons" color="checkbox"
-                                    :label="`指南针 FPS ${isChangeCompassFPSChecked}`" unchecked-icon="60fps"
+                                    :label="`罗盘 FPS ${isChangeCompassFPSChecked}`" unchecked-icon="60fps"
                                     false-value="Synced" true-value="Optimized" checked-icon="30fps"
                                     v-model="isChangeCompassFPSChecked"></q-toggle>
-                                <div class="text-h7 q-mb-md-d">同步的FPS选项将减少优化实时刷新指南针，但对电脑的要求也更高.</div>
+                                <div class="text-h7 q-mb-md-d">同步的FPS选项将减少优化，但要实时保持指南针，但对机器的要求也更高.</div>
                                 <q-item borderless tag="label" v-ripple>
                                     <q-item-section avatar>
                                         <q-checkbox v-on:click="showCompassBase($event)" v-model="isShowCompassChecked"
@@ -306,15 +281,14 @@
                                             color="checkbox" val="22"></q-checkbox>
                                     </q-item-section>
                                     <q-item-section>
-                                        <q-item-label>显示启用方位罗盘</q-item-label>
-                                        <q-item-label class="text-h7" caption>此功能将使您看到确切的方位</q-item-label>
+                                        <q-item-label>显示启用罗盘方位</q-item-label>
+                                        <q-item-label class="text-h7" caption>禁用此功能将使您看到确切的方位</q-item-label>
                                     </q-item-section>
                                 </q-item>
                             </div>
                             <hr>
                             <div class="text-h6 q-mb-md">电影模式</div>
                             <div class="text-h7">
-                                <q-item-label class="text-h7" caption>将隐藏所有HUD和聊天框</q-item-label>
                                 <q-checkbox v-on:click="cinematicMode($event)" label='开启'
                                     v-model="isCinematicModeChecked" color="checkbox" val="23"
                                     style="display: flex;"></q-checkbox>
@@ -346,130 +320,240 @@
         <div id="ui-container">
             <div id="playerHud" v-show="show">
                 <transition name="fade">
-                    <div v-if="showVoice">
-                        <q-circular-progress class="q-ml-xl" style="opacity: 40%;" :value="static" :thickness="0.24"
-                            :style="{color: talkingColor}" :min="0" :max="100"></q-circular-progress>
-                        <q-circular-progress class="q-ml-xl" style="left: -50%;" show-value :value="voice"
-                            :thickness="0.24" :style="{color: talkingColor}" :min="0" :max="5" center-color="grey-10">
-                            <q-icon id="Icons" style="top: -0.5px; left: 0px;" :name="voiceIcon" color="white" />
+                    <div v-show="showRadio" style="position: relative; margin-left: 5px;">
+                        <!-- Radio Bar -->
+                        <div class="ldBar" data-value="0" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill-dir="btt"
+                            data-fill-background="var(--radio-bar-color)" data-fill-background-extrude="1"
+                            style="width:59px;height:59px;top: 10px;left: -25px; position:absolute; opacity:58%;"></div>
+                        <div id="Radio" class="ldBar" data-value :value="radio" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill="var(--radio-bar-color)"
+                            data-fill-dir="btt" data-fill-background="#84898f" data-fill-background-extrude="0"
+                            style="width:48px;height:48px;top: 15px; left: -20px;"></div>
+                        <q-icon id="Icons" style="top: -18px; left: 0px; font-size: 18px;" name="fas fa-headphones"
+                            color="white" />
                     </div>
                 </transition>
                 <transition name="fade">
-                    <div v-if="showHealth">
-                        <q-circular-progress class="q-ml-xl" style="opacity: 40%;" :value="static" :thickness="0.24"
-                            :style="{color: healthColor}" :min="0" :max="100"></q-circular-progress>
-                        <q-circular-progress class="q-ml-xl" style="left: -50%;" show-value :value="health"
-                            :thickness="0.24" :style="{color: healthColor}" :min="0" :max="100" center-color="grey-10">
-                            <q-icon id="Icons" style="top: -0.5px; left: -0.4px;" name="fas fa-heart" color="white" />
+                    <div v-if="showVoice" style="position: relative; margin-left: 4px;">
+                        <div class="ldBar" data-value="0" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill-dir="btt"
+                            data-fill-background="var(--talk-bar-color)" data-fill-background-extrude="1"
+                            style="width:59px;height:59px;top: 10px;left: -30px; position:absolute; opacity:58%;"></div>
+                        <div id="Voices" class="ldBar" data-value :value="voice" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill="var(--talk-bar-color)"
+                            data-fill-dir="btt" data-fill-background="#84898f5f" data-fill-background-extrude="0"
+                            style="width:48px;height:48px;top: 15px; left: -25px;"></div>
+                        <q-icon id="Icons" style="top: -18px; left: -4px; font-size: 17px;" :name="voiceIcon"
+                            color="white" />
                     </div>
                 </transition>
                 <transition name="fade">
-                    <div v-if="showArmor">
-                        <q-circular-progress class="q-ml-xl" style="opacity: 40%;" :value="static" :thickness="0.24"
-                            :style="{color: armorColor}" :min="0" :max="100"></q-circular-progress>
-                        <q-circular-progress class="q-ml-xl" style="left: -50%;" show-value :value="armor"
-                            :thickness="0.24" :style="{color: armorColor}" :min="0" :max="100" center-color="grey-10">
-                            <q-icon id="Icons" name="fas fa-shield-alt" color="white" />
+                    <div v-show="showHealth" id="healthGroup" style="position: relative; margin-left: 4px;">
+                        <!-- Health Bar -->
+                        <div class="ldBar" data-value="0" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill-dir="btt"
+                            data-fill-background="#147a47" data-fill-background-extrude="1"
+                            style="width:59px;height:59px;top: 10px;left: -35px; position:absolute; opacity:55%;"></div>
+                        <div id="Health" class="ldBar" data-value :value="health" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill="#20ae67"
+                            data-fill-dir="btt" data-fill-background="#20ae6754" data-fill-background-extrude="0"
+                            style="width:48px;height:48px;top: 15px; left: -30px;"></div>
+                        <q-icon id="Icons" style="top: -16px; left: -9px; font-size: 17px;" name="fas fa-heart"
+                            color="white" />
                     </div>
                 </transition>
                 <transition name="fade">
-                    <div v-if="showHunger">
-                        <q-circular-progress class="q-ml-xl" style="opacity: 40%;" :value="static" :thickness="0.24"
-                            :style="{color: hungerColor}" :min="0" :max="100"></q-circular-progress>
-                        <q-circular-progress class="q-ml-xl" style="left: -50%;" show-value :value="hunger"
-                            :thickness="0.24" :style="{color: hungerColor}" :min="0" :max="100" center-color="grey-10">
-                            <q-icon id="Icons" style="top: -1px; left: -0.5px;" name="fas fa-hamburger" color="white" />
+                    <div v-show="showArmor" id="armorGroup" style="position: relative;margin-left: 4px;;">
+                        <div class="ldBar" data-value="0" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill-dir="btt"
+                            data-fill-background="#1e4264" data-fill-background-extrude="1"
+                            style="width:59px;height:59px;top: 10px;left: -40px; position:absolute; opacity:55%;"></div>
+                        <div id="Armor" class="ldBar" data-value :value="armor" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill="#216098"
+                            data-fill-dir="btt" data-fill-background="#1a436a94" data-fill-background-extrude="0"
+                            style="width:48px;height:48px;top: 15px; left: -35px;"></div>
+                        <q-icon id="Icons" style="top: -17px; left: -14px; font-size: 17px;" name="fas fa-shield"
+                            color="white" />
                     </div>
                 </transition>
                 <transition name="fade">
-                    <div v-if="showThirst">
-                        <q-circular-progress class="q-ml-xl" style="opacity: 40%;" :value="static" :thickness="0.24"
-                            :style="{color: thirstColor}" :min="0" :max="100"></q-circular-progress>
-                        <q-circular-progress class="q-ml-xl" style="left: -50%;" show-value :value="thirst"
-                            :thickness="0.24" :style="{color: thirstColor}" :min="0" :max="100" center-color="grey-10">
-                            <q-icon id="Icons" style="top: -0.5px; left: -0.5px;" name="fas fa-tint" color="white" />
+                    <div v-show="showHunger" id="hungerGroup" style="position: relative;margin-left: 5px;">
+                        <div class="ldBar" data-value="0" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill-dir="btt"
+                            data-fill-background="#985f31" data-fill-background-extrude="1"
+                            style="width:59px;height:59px;top: 10px;left: -45px; position:absolute; opacity:55%;"></div>
+                        <div id="Hunger" class="ldBar" data-value :value="hunger" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill="#cd7e3e"
+                            data-fill-dir="btt" data-fill-background="#985f3182" data-fill-background-extrude="0"
+                            style="width:48px;height:48px;top: 15px; left: -40px;"></div>
+                        <q-icon id="Icons" style="top: -18px; left: -19.5px; font-size: 17px;" name="fas fa-hamburger"
+                            color="white" />
                     </div>
                 </transition>
                 <transition name="fade">
-                    <div v-if="showStress">
-                        <q-circular-progress class="q-ml-xl" style="opacity: 40%;" :value="static" :thickness="0.24"
-                            color="stress" :min="0" :max="100"></q-circular-progress>
-                        <q-circular-progress class="q-ml-xl" style="left: -50%;" show-value :value="stress"
-                            :thickness="0.24" color="stress" :min="0" :max="100" center-color="grey-10">
-                            <q-icon id="Icons" style="top: -0.5px; left: -0.5px;" name="fas fa-brain" color="white" />
+                    <div v-show="showThirst" id="thirstGroup"
+                        :style="{ 'margin-left': (showArmor || showHunger) ? '5px' : '4px' }"
+                        style="position: relative;">
+                        <div class="ldBar" data-value="0" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill-dir="btt"
+                            data-fill-background="#0f8585" data-fill-background-extrude="1"
+                            style="width:59px;height:59px;top: 10px;left: -50px; position:absolute; opacity:55%;"></div>
+                        <div id="Thirst" class="ldBar" data-value :value="thirst" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill="#12b9b9"
+                            data-fill-dir="btt" data-fill-background="#0f85858f" data-fill-background-extrude="0"
+                            style="width:48px;height:48px;top: 15px; left: -45px;"></div>
+                        <q-icon id="Icons" style="top: -18px; left: -24.9px; font-size: 18px;" name="fas fa-tint"
+                            color="white" />
                     </div>
                 </transition>
                 <transition name="fade">
-                    <div v-if="showOxygen">
-                        <q-circular-progress class="q-ml-xl" style="opacity: 40%;" :value="static" :thickness="0.24"
-                            color="oxygen" :min="0" :max="100"></q-circular-progress>
-                        <q-circular-progress class="q-ml-xl" style="left: -50%;" show-value :value="oxygen"
-                            :thickness="0.24" color="oxygen" :min="0" :max="100" center-color="grey-10">
-                            <q-icon id="Icons" style="top: -2px; left: -0.1px;" name="fas fa-lungs" color="white" />
+                    <div v-show="showStress" id="stressGroup"
+                        :style="{ 'margin-left': showArmor ? (showHunger ? '5px' : (showThirst ? '8px' : '15px')) : '4px' }"
+                        style="position: relative;">
+                        <div class="ldBar" data-value="0" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill-dir="btt"
+                            data-fill-background="#4f2a32" data-fill-background-extrude="1"
+                            style="width:59px;height:59px;top: 10px;left: -55px; position:absolute; opacity:50%;"></div>
+                        <div id="Stress" class="ldBar" data-value :value="stress" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill="#a0383a"
+                            data-fill-dir="btt" data-fill-background="#4f2a3282" data-fill-background-extrude="0"
+                            style="width:48px;height:48px;top: 15px; left: -50px;"></div>
+                        <q-icon id="Icons" style="top: -18px; left: -29.5px; font-size: 17px;" name="fas fa-brain"
+                            color="white" />
                     </div>
                 </transition>
                 <transition name="fade">
-                    <div v-if="showArmed">
-                        <q-circular-progress class="q-ml-xl" style="opacity: 40%;" :value="static" :thickness="0.24"
-                            color="armed" :min="0" :max="100"></q-circular-progress>
-                        <q-circular-progress class="q-ml-xl" style="left: -50%;" show-value :value="static"
-                            :thickness="0.24" color="armed" :min="0" :max="100" center-color="grey-10">
-                            <q-icon id="Icons" name="fas fa-stream" color="white" />
+                    <div v-show="showOxygen" id="oxygenGroup"
+                        :style="{ 'margin-left': showArmor ? (showThirst ? '9px' : (showStress ? '2px' : (showHunger ? '13px' : '18px'))) : '4px' }"
+                        style="position: relative;">
+                        <div class="ldBar" data-value="0" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill-dir="btt"
+                            data-fill-background="rgb(138, 168, 189)" data-fill-background-extrude="1"
+                            style="width:58px;height:58px;top: 10px;left: -60px; position:absolute; opacity:50%;"></div>
+                        <div id="Oxygen" class="ldBar" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill="rgb(96, 159, 203)"
+                            data-fill-dir="btt" data-fill-background="rgba(138, 168, 189, 0.537)"
+                            data-fill-background-extrude="0" style="width:48px;height:48px;top: 15px; left: -55.1px;">
+                        </div>
+                        <q-icon id="Icons" style="top: -20px; left: -35px; font-size: 18px;" name="fas fa-lungs"
+                            color="white" />
                     </div>
                 </transition>
                 <transition name="fade">
-                    <div v-if="showParachute">
-                        <q-circular-progress class="q-ml-xl" style="opacity: 40%;" :value="static" :thickness="0.24"
-                            color="parachute" :min="0" :max="100"></q-circular-progress>
-                        <q-circular-progress class="q-ml-xl" style="left: -50%;" show-value :value="parachute"
-                            :thickness="0.24" color="parachute" :min="0" :max="2" center-color="grey-10">
-                            <q-icon id="Icons" name="fas fa-parachute-box" size="23px" color="white" />
+                    <div v-show="showArmed" id="armedGroup"
+                        :style="{ 'margin-left': showEngine ? '2px' : (showArmor ? (showThirst ? '8px' : (showStress ? '2px' : (showHunger ? '13px' : '18px'))) : '4px') }"
+                        style="position: relative;">
+                        <div class="ldBar" data-value="0" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill-dir="btt"
+                            data-fill-background="rgb(208, 49, 102)" data-fill-background-extrude="1"
+                            style="width:58px;height:58px;top: 10px;left: -60px; position:absolute; opacity:30%;"></div>
+                        <div id="Armed" class="ldBar" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill="rgb(255, 72, 133)"
+                            data-fill-dir="btt" data-fill-background="rgb(255, 72, 133)"
+                            data-fill-background-extrude="0" style="width:48px;height:48px;top: 15px; left: -55.1px;">
+                        </div>
+                        <q-icon id="Icons" style="top: -20px; left: -35px; font-size: 18px;" name="fas fa-stream"
+                            color="white" />
                     </div>
                 </transition>
                 <transition name="fade">
-                    <div v-if="showEngine">
-                        <q-circular-progress class="q-ml-xl" style="opacity: 40%;" :value="static" :thickness="0.24"
-                            :style="{color: engineColor}" :min="0" :max="100"></q-circular-progress>
-                        <q-circular-progress class="q-ml-xl" style="left: -50%;" show-value :value="engine"
-                            :thickness="0.24" :style="{color: engineColor}" :min="0" :max="100" center-color="grey-10">
-                            <q-icon id="Icons" style="top: -1px;" name="fas fa-oil-can" size="19.5px"
-                                :style="{color: engineColor}" />
+                    <div v-show="showParachute" id="parachuteGroup"
+                        :style="{ 'margin-left': showEngine ? '2px' : (showArmor ? (showThirst ? '8px' : (showStress ? '2px' : (showHunger ? '13px' : '18px'))) : '4px') }"
+                        style="position: relative;">
+                        <div class="ldBar" data-value="0" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill-dir="btt"
+                            data-fill-background="rgb(0, 0, 0)" data-fill-background-extrude="1"
+                            style="width:58px;height:58px;top: 10px;left: -60px; position:absolute; opacity:30%;"></div>
+                        <div id="Parachute" class="ldBar" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill="rgb(0, 0, 0)"
+                            data-fill-dir="btt" data-fill-background="rgb(0, 0, 0)" data-fill-background-extrude="0"
+                            style="width:48px;height:48px;top: 15px; left: -55.1px;"></div>
+                        <q-icon id="Icons" style="top: -20px; left: -35px; font-size: 18px;" name="fas fa-parachute-box"
+                            color="white" />
                     </div>
                 </transition>
                 <transition name="fade">
-                    <div v-if="showHarness">
-                        <q-circular-progress class="q-ml-xl" style="opacity: 40%;" :value="static" :thickness="0.24"
-                            color="harness" :min="0" :max="100"></q-circular-progress>
-                        <q-circular-progress class="q-ml-xl" style="left: -50%;" show-value :value="hp"
-                            :thickness="0.24" color="harness" :min="0" :max="100" center-color="grey-10">
-                            <q-icon id="Icons" name="fas fa-user-slash" color="white" />
+                    <div v-show="showEngine" id="engineGroup"
+                        :style="{ 'margin-left': showArmor ? (showThirst ? '9px' : (showStress ? '2px' : (showHunger ? '13px' : '18px'))) : '4px' }"
+                        style="position: relative;">
+                        <div class="ldBar" data-value="0" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill-dir="btt"
+                            data-fill-background="#29be7e" data-fill-background-extrude="1"
+                            style="width:58px;height:58px;top: 10px;left: -60px; position:absolute; opacity:30%;"></div>
+                        <div id="Engine" class="ldBar" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill="#29be7e"
+                            data-fill-dir="btt" data-fill-background="#29be7d3f" data-fill-background-extrude="0"
+                            style="width:48px;height:48px;top: 15px; left: -55.1px;"></div>
+                        <q-icon id="Icons" style="top: -20px; left: -35px; font-size: 18px;" name="fas fa-oil-can"
+                            color="white" />
                     </div>
                 </transition>
                 <transition name="fade">
-                    <div v-if="showCruise">
-                        <q-circular-progress class="q-ml-xl" style="opacity: 40%;" :value="static" :thickness="0.24"
-                            color="cruise" :min="0" :max="100"></q-circular-progress>
-                        <q-circular-progress class="q-ml-xl" style="left: -50%;" show-value :value="speed"
-                            :thickness="0.24" color="cruise" :min="0" :max="100" center-color="grey-10">
-                            <q-icon id="Icons" style="top: -1.5px;" name="fas fa-tachometer-alt-fast" color="white" />
+                    <div v-show="showHarness" id="harnessGroup"
+                        :style="{ 'margin-left': showEngine ? '2px' : (showArmor ? (showThirst ? '8px' : (showStress ? '2px' : (showHunger ? '13px' : '18px'))) : '4px') }"
+                        style="position: relative;">
+                        <div class="ldBar" data-value="0" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill-dir="btt"
+                            data-fill-background="rgba(182, 72, 255, 0.540)" data-fill-background-extrude="1"
+                            style="width:58px;height:58px;top: 10px;left: -60px; position:absolute; opacity:50%;"></div>
+                        <div id="Harness" class="ldBar" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill="rgb(182, 72, 255)"
+                            data-fill-dir="btt" data-fill-background="rgba(182, 72, 255, 0.540)"
+                            data-fill-background-extrude="0" style="width:48px;height:48px;top: 15px; left: -55.1px;">
+                        </div>
+                        <q-icon id="Icons" style="top: -20px; left: -35px; font-size: 18px;" name="fas fa-user-slash"
+                            color="white" />
                     </div>
                 </transition>
                 <transition name="fade">
-                    <div v-if="showNos">
-                        <q-circular-progress class="q-ml-xl" style="opacity: 40%;" :value="static" :thickness="0.24"
-                            color="nos" :min="0" :max="100"></q-circular-progress>
-                        <q-circular-progress class="q-ml-xl" style="left: -50%;" show-value :value="nos"
-                            :thickness="0.24" color="nos" :min="0" :max="100" center-color="grey-10">
-                            <q-icon id="Icons" name="fas fa-meteor" :style="{color: nosColor}" />
+                    <div v-show="showCruise" id="cruiseGroup"
+                        :style="{ 'margin-left': showEngine ? '2px' : (showArmor ? (showThirst ? '8px' : (showStress ? '2px' : (showHunger ? '13px' : '18px'))) : '4px') }"
+                        style="position: relative;">
+                        <div class="ldBar" data-value="0" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill-dir="btt"
+                            data-fill-background="rgba(132, 195, 54, 0.529)" data-fill-background-extrude="1"
+                            style="width:58px;height:58px;top: 10px;left: -60px; position:absolute; opacity:50%;"></div>
+                        <div id="Cruise" class="ldBar" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill="rgb(131, 195, 54)"
+                            data-fill-dir="btt" data-fill-background="rgba(132, 195, 54, 0.529)"
+                            data-fill-background-extrude="0" style="width:48px;height:48px;top: 15px; left: -55.1px;">
+                        </div>
+                        <q-icon id="Icons" style="top: -20px; left: -35px; font-size: 18px;"
+                            name="fas fa-tachometer-alt-fast" color="white" />
                     </div>
                 </transition>
                 <transition name="fade">
-                    <div v-if="showDev">
-                        <q-circular-progress class="q-ml-xl" style="opacity: 40%;" :value="static" :thickness="0.24"
-                            color="dev" :min="0" :max="100"></q-circular-progress>
-                        <q-circular-progress class="q-ml-xl" style="left: -50%;" show-value :value="static"
-                            :thickness="0.24" color="dev" :min="0" :max="100" center-color="grey-10">
-                            <q-icon id="Icons" name="fas fa-terminal" color="white" />
+                    <div v-show="showNos" id="nosGroup"
+                        :style="{ 'margin-left': showEngine ? '2px' : (showArmor ? (showThirst ? '8px' : (showStress ? '2px' : (showHunger ? '13px' : '18px'))) : '4px') }"
+                        style="position: relative;">
+                        <div class="ldBar" data-value="0" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill-dir="btt"
+                            data-fill-background="rgba(29, 136, 186, 0.565)" data-fill-background-extrude="1"
+                            style="width:58px;height:58px;top: 10px;left: -60px; position:absolute; opacity:50%;"></div>
+                        <div id="Nos" data-value :value="nos" class="ldBar" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill="rgb(29, 136, 186)"
+                            data-fill-dir="btt" data-fill-background="rgba(29, 136, 186, 0.352)"
+                            data-fill-background-extrude="0" style="width:48px;height:48px;top: 15px; left: -55.1px;">
+                        </div>
+                        <q-icon id="Icons" style="top: -20px; left: -35px; font-size: 18px;" name="fas fa-meteor"
+                            :style="{color: nosColor}" />
+                    </div>
+                </transition>
+                <transition name="fade">
+                    <div v-show="showDev" id="devGroup"
+                        :style="{ 'margin-left': showEngine ? '2px' : (showArmor ? (showThirst ? '8px' : (showStress ? '2px' : (showHunger ? '13px' : '18px'))) : '4px') }"
+                        style="position: relative;">
+                        <div class="ldBar" data-value="0" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill-dir="btt"
+                            data-fill-background="rgb(0, 0, 0)" data-fill-background-extrude="1"
+                            style="width:58px;height:58px;top: 10px;left: -60px; position:absolute; opacity:50%;"></div>
+                        <div id="Dev" data-value :value="nos" class="ldBar" data-type="fill"
+                            data-path="M10 30 L45 10 L80 30 L80.5 70 L45 90 L10 70 Z" data-fill="rgb(0, 0, 0)"
+                            data-fill-dir="btt" data-fill-background="rgb(0, 0, 0)" data-fill-background-extrude="0"
+                            style="width:48px;height:48px;top: 15px; left: -55.1px;"></div>
+                        <q-icon id="Icons" style="top: -20px; left: -35px; font-size: 18px;" name="fas fa-terminal"
+                            color="white" />
                     </div>
                 </transition>
             </div>
@@ -477,52 +561,42 @@
         <div id="veh-container">
             <div v-show="show">
                 <div class="responsive" id="speedometer">
-                    <q-circular-progress id="Speedo" class="q-ml-xl" style="transform: rotate(-150deg); opacity: 60%;"
-                        :value="speedometer" :thickness="0.21" color="gauge" :min="0" :max="100"></q-circular-progress>
-                    <q-circular-progress id="Speedo" class="q-ml-xl" style="transform: rotate(-150deg); left: -50%;"
-                        show-value :value="speed" :thickness="0.21" color="gauge" :min="0" :max="600">
-                        <speed id="Speed">{{(speed)}}</speed>
+                    <div id="rpmBar" class="container" style="width: 100%; left: -20%;top: 20%;"></div>
+                    <div id="Speed" style="transform: scale(2.7) rotate(0deg); left: 40%; top: -150%;"
+                        v-html="speedDisplay"></div>
+                    <div id="gearBox" style="top: -182%;left: -16%;">
+                        <div id="gear"
+                            style="text-align: center; position: absolute; left: -85%; bottom: -92%; width: 100px; height: 100px;">
+                            0</div>
+                        <q-icon id="Icons" style="top: 2.6vh; left: 0.9vh; font-size: 17px;" name="fas fa-cogs"
+                            color="black" />
+                        <!-- This is the html file for the number hud -->
+                    </div>
                 </div>
                 <div class="responsive" id="fuelgauge">
-                    <q-circular-progress id="FuelGaugeBackground" class="q-ml-xl"
-                        style="transform: rotate(-125deg); opacity: 60%;" :value="fuelgauge" :thickness="0.21"
-                        color="gauge" :min="0" :max="100"></q-circular-progress>
-                    <q-circular-progress id="FuelGaugeValue" class="q-ml-xl"
-                        style="transform: rotate(-125deg); left: -50%;" show-value :value="fuel" :thickness="0.21"
-                        :style="{color: fuelColor}">
-                        <q-icon id="FuelGaugeIcon" name="fas fa-gas-pump" style="transform: rotate(125deg);"
-                            color="white" />
-                </div>
-                <div class="responsive" id="altitudegauge" v-if="showAltitude">
-                    <q-circular-progress id="Altimeter" class="q-ml-xl"
-                        style="transform: rotate(-135deg); opacity: 60%;" :value="altitudegauge" size="70px"
-                        :thickness="0.21" color="gauge" :min="0" :max="100"></q-circular-progress>
-                    <q-circular-progress id="AltimeterValue" class="q-ml-xl"
-                        style="transform: rotate(-135deg); left: -50%;" show-value :value="altitude" size="70px"
-                        :thickness="0.21" color="gauge" :min="0" :max="750">
-                        <altitude id="Alt">{{(altitude)}}</altitude>
-                </div>
-                <transition name="fade">
-                    <div class="responsive" id="seatbelt" v-if="showSeatbelt">
-                        <q-circular-progress id="SeatbeltLocation" class="q-ml-xl"
-                            style="transform: rotate(-125deg); opacity: 60%;" size="70px" :thickness="0.21"
-                            color="gauge" :min="0" :max="100"></q-circular-progress>
-                        <q-circular-progress id="SeatbeltLocation" class="q-ml-xl"
-                            style="transform: rotate(-125deg); left: -40%;" show-value size="70px" :thickness="0.21"
-                            color="gauge" :min="0" :max="750">
-                            <q-icon id="SeatbeltIcon" name="fas fa-user-slash" style="transform: rotate(125deg);"
-                                :value="seatbelt" size="21px" :style="{color: seatbeltColor}" />
+                    <div id="progressBar" style="left: 800%; top: 100%;">
+                        <div class="progress" style="height: 0;">
+                        </div>
+                        <q-icon id="FuelGaugeIcon" name="fas fa-gas-pump"
+                            style="font-size: 15px;left: -0.10vw; top: -2.5vh;" color="white" />
                     </div>
-                </transition>
-                <div class="border">
-                    <div class="square" v-if="showSquare"></div>
-                </div>
-                <div class="border">
-                    <div class="circle" v-if="showCircle"></div>
+                    <div class="responsive" id="altitudegauge" v-if="showAltitude">
+                        <q-circular-progress id="Altimeter" class="q-ml-xl"
+                            style="transform: rotate(-135deg); position: absolute; opacity: 60%; left: -49vh; top: -3vh;"
+                            :value="altitudegauge" size="70px" :thickness="0.21" color="gauge" :min="0"
+                            :max="100"></q-circular-progress>
+                        <q-circular-progress id="AltimeterValue" class="q-ml-xl"
+                            style="transform: rotate(-135deg); left: -49vh; top: -3vh;" show-value :value="altitude"
+                            size="70px" :thickness="0.21" color="gauge" :min="0" :max="750">
+                            <altitude id="Alt">{{(altitude)}}</altitude>
+                    </div>
+                    <transition name="fade">
+                        <div id="seatbelt" v-if="showSeatbelt">
+                            <img id="SeatbeltIcon" src="seatbelt.png" :value="seatbelt" />
+                        </div>
                 </div>
             </div>
         </div>
-    </div>
 </body>
 
 </html>

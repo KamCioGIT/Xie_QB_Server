@@ -1,0 +1,423 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* background: url(https://img.gta5-mods.com/q95/images/beta-vegetation-props-add-on/61a0e6-GTA5_2018_03_11_11_44_49_488.jpg); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+:root {
+    --color: red;
+    --ck-custom-background: hsl(270, 1%, 29%);
+}
+
+.menu-container {
+    background: rgba(16, 29, 40, 73%);
+    border-radius: 20px;
+    width: 70%;
+    height: 70%;
+    position: fixed;
+    display: none;
+    overflow: hidden;
+    animation: running-water 4s linear infinite, rainbow-border 4s linear infinite;
+}
+
+@keyframes close-menu {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes open-menu {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.pages {
+    padding-top: 50px;
+}
+
+.loading-animation {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ccc;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.edit-button {
+    position: relative;
+    top: 10%;
+    left: 90%;
+    padding: 10px 20px;
+    margin-right: 10px;
+    margin-top: 20px;
+    background: linear-gradient(45deg, #303654, #4a71e4, #4adde4);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.edit-button:hover,
+.add-button:hover {
+    box-shadow: -9px 9px 18px black, 9px -9px 18px #26303f;
+}
+
+#btn_edit,
+#btn_save,
+#btn_save_page,
+#btn_add,
+#btn_delete {
+    display: none;
+}
+
+.add-button {
+    position: relative;
+    top: 2%;
+    left: 10%;
+    max-width: 80%;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background: linear-gradient(45deg, #303654, #4a71e4, #4adde4);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1;
+
+}
+
+#editor-container {
+    display: none;
+    max-width: 100%;
+    padding-top: 100px;
+}
+
+table {
+    padding: auto;
+    border-collapse: collapse;
+    width: 80%;
+    border: 1px solid #000;
+    /* You can adjust the border style and color as needed */
+}
+
+th,
+td {
+    border: 1px solid #000;
+    /* You can adjust the border style and color as needed */
+    padding: 8px;
+    text-align: left;
+}
+
+#toolbar-container {
+    max-width: 100%;
+}
+
+.ck-editor__editable[role="textbox"] {
+    /* editing area */
+    min-height: 200px;
+}
+
+.ck-content .image {
+    /* block images */
+    max-width: 80%;
+    margin: 20px auto;
+}
+
+#addpage-container {
+    display: none;
+    max-width: 90%;
+    padding: 20px;
+}
+
+.input {
+    border: 1px solid black;
+    border-radius: 6px;
+    background: #26303f;
+    color: #E1E2E2;
+    padding: 10px;
+    width: 20%;
+}
+
+#menu-sidebar,
+#menu-content {
+    color: white;
+    padding: 22px 5px 15px 0px;
+    overflow: hidden;
+}
+
+#menu-sidebar {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: rgba(39, 50, 61, 0.73);
+}
+
+#menu-sidebar>p:first-child {
+    font-weight: bolder;
+    font-size: 24px;
+    margin: 0;
+    padding-left: 28px;
+    text-shadow: -1px 1px 2px black;
+}
+
+#menu-sidebar>ul {
+    overflow: auto;
+    flex-grow: 1;
+    position: relative;
+    padding-left: 0;
+    font-size: 17px;
+    color: #d8d2d7;
+}
+
+/* Scrollbar styles */
+#menu-sidebar>ul::-webkit-scrollbar,
+#menu-content::-webkit-scrollbar {
+    width: 8px;
+    height: 0;
+}
+
+#menu-sidebar>ul::-webkit-scrollbar-thumb,
+#menu-content::-webkit-scrollbar {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #F5F5F5;
+}
+
+#menu-sidebar>ul li,
+#menu-sidebar>ul>ul {
+    padding-left: 28px;
+    display: block;
+    position: relative;
+    border-radius: 6px;
+    padding: 3px 0 3px 28px;
+    width: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(16, 26, 35, 73%);
+    margin-bottom: 2px;
+}
+
+#menu-sidebar>ul>ul>li {
+    background: #323d47;
+    width: 85%;
+    left: 0;
+    transform: none;
+}
+
+#menu-sidebar>ul li:hover,
+#menu-sidebar>ul>ul:hover {
+    text-shadow: -1px 1px 2px #2d4a73;
+    color: aliceblue;
+}
+
+#menu-sidebar>ul li:has(input:checked) {
+    background: linear-gradient(45deg, #303654, #4a71e4, #4adde4);
+}
+
+#menu-sidebar>ul>ul>li {
+    display: none;
+    color: #e7e5d9;
+    text-shadow: none;
+}
+
+#menu-sidebar>ul>ul:has(input:checked)>li {
+    display: block !important;
+}
+
+#menu-sidebar input {
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    transform: translateY(50%);
+    top: -50%;
+    left: 0;
+    max-height: 62px;
+    opacity: 0;
+}
+
+#menu-content {
+    background: rgba(16, 26, 35, 73%);
+    flex-grow: 9;
+    position: relative;
+    max-width: 70%;
+    padding-left: 28px;
+    overflow-y: auto;
+}
+
+.tooltip {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.tooltip__wrap {
+    display: inline-flex;
+    -moz-column-gap: 10px;
+    column-gap: 10px;
+}
+
+.tooltip__icon {
+    height: 16px;
+    width: 16px;
+}
+
+.tooltip__info {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    padding: 5px 10px;
+    margin-left: 20px;
+    transition-property: visibility, opacity;
+    transition-duration: 0.2s;
+    border: 1px solid black;
+    background: #303d4e;
+    color: #E1E2E2;
+    border-radius: 10px;
+    font-size: 15px;
+    max-width: 25vw;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    text-transform: none;
+    z-index: 9999;
+}
+
+.tooltip__info--left {
+    right: calc(50% + 16px);
+}
+
+.tooltip:hover .tooltip__info {
+    visibility: visible;
+    opacity: 1;
+}
+
+@keyframes running-water {
+    0% {
+        border-color: #00f;
+        /* Start with blue */
+        box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+        /* Add a shadow for the water effect */
+    }
+
+    25% {
+        border-color: #0f0;
+        /* Transition to green */
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    }
+
+    50% {
+        border-color: #f00;
+        /* Transition to red */
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+
+    75% {
+        border-color: #ff0;
+        /* Transition to yellow */
+        box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+    }
+
+    100% {
+        border-color: #00f;
+        /* End with blue again */
+        box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+    }
+}
+
+.confirm-box {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(23, 23, 23, 0.9);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+    z-index: 99999;
+    animation: running-water 4s linear infinite, rainbow-border 4s linear infinite;
+}
+
+@keyframes rainbow-border {
+    0% {
+        border-image: linear-gradient(90deg, #f06, #0f6, #60f, #f06);
+        border-image-slice: 1;
+        border-radius: 10px;
+    }
+
+    100% {
+        border-image: linear-gradient(90deg, #f06, #0f6, #60f, #f06);
+        border-image-slice: 1;
+        border-radius: 10px;
+    }
+}
+
+.confirm-box-content {
+    margin-bottom: 20px;
+}
+
+.confirm-button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.confirm-button:hover {
+    background-color: #0056b3;
+}
+
+.confirm-box-content {
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    /* Adjust the gap as needed */
+}
+
+#btn_cancel {
+    background-color: #ccc;
+}
+
+#btn_cancel:hover {
+    background-color: #999;
+}

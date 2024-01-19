@@ -326,7 +326,7 @@ function addExtraDialog(table)
             interactive = {
                 type = table.interactive.type,
                 label = table.interactive.label,
-                key_label = table.interactive.label,
+                key_label = table.interactive.key_label,
                 icon = table.interactive.icon,
             },
             name = table.name,
@@ -459,12 +459,27 @@ CreateThread(function()
                 local distance = math.floor(#(pedCoords - vector3(v.coords.x, v.coords.y, v.coords.z)))
                 if distance <= v.marker_distance and not IsPauseMenuActive() then
                     sleep = 7
-                    if not v.interactiveState then
-                        local _, x, y, e, d = GetScreenPosition(nil, distance, v.coords)
-                        uiMarker(x, y, k, distance, v.modal_style)
-                        v.markerState = true
+
+                    if v.interactive.uiMarker then
+                        if not v.interactiveState then
+                            local _, x, y, e, d = GetScreenPosition(nil, distance, v.coords)
+                            uiMarker(x, y, k, distance, v.modal_style)
+                            v.markerState = true
+                        else
+                            closeMarker(k)
+                        end
                     else
-                        closeMarker(k)
+                        if not HasStreamedTextureDictLoaded("marker") then
+                            RequestStreamedTextureDict("marker", true)
+                            while not HasStreamedTextureDictLoaded("marker") do
+                                Wait(1)
+                            end
+                        end
+
+                        if not v.interactiveState then
+                            local markerWidth = (distance / 46) * 1.5
+                            DrawMarker(9, v.coords.x, v.coords.y, v.coords.z, 0.0, 0.0, 0.0, 90.0, 0.0, 0.0, markerWidth, markerWidth, markerWidth, 255, 255, 255, 255, false, true, 0, false, "marker", "interactive", false)
+                        end
                     end
 
                     if v.interactive.type ~= "target" then

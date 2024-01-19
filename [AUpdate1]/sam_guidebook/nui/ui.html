@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/super-build/ckeditor.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./locales/en.js"></script>
+    <script charset="utf-8" src="//cdn.iframe.ly/embed.js?api_key={6c1f8c435fa4833c310424}"></script>
+</head>
+
+<body>
+    <div class="confirm-box">
+        <div class="confirm-box-content">
+            <p id="confirm-text" style="color: aliceblue">确定要删除?</p>
+            <div class="button-container">
+                <button class="confirm-button" onclick="handleButtonClick(this)" id="btn_confirm">确定</button>
+                <button class="confirm-button" onclick="handleButtonClick(this)" id="btn_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+    <div class="menu-container">
+        <div id="menu-sidebar">
+            <p>菜单</p>
+            <button class="add-button" onclick="handleButtonClick(this)" id="btn_add">添加页面</button>
+            <ul id="pages">
+                <li>
+                    <p><input type="radio" checked id="1" name="choice">测试</p>
+                </li>
+            </ul>
+        </div>
+        <div id="menu-content">
+            <div id="menu-text"></div>
+            <button class="edit-button" onclick="handleButtonClick(this)" id="btn_edit">编辑</button>
+            <button class="edit-button" onclick="handleButtonClick(this)" id="btn_delete">删除</button>
+            <div id="editor-container">
+                <div id="toolbar-container"></div>
+                <div id="editor">
+                </div>
+                <button class="edit-button" onclick="handleButtonClick(this)" id="btn_save">保存</button>
+                <!-- <button class="edit-button" onclick="handleButtonClick(this)" id="btn_save">keep</button> -->
+            </div>
+            <div id="addpage-container">
+                <oembed url="https://www.youtube.com/watch?v=bvj2pTHZTuQ"></oembed>
+                <p style="font-size: 20px;">页面名称:
+                    <input class="input" type="text" id="page_name" name="page_name" required minlength="1"
+                        maxlength="50" size="10" />
+                </p>
+                <p style="font-size: 20px;">页面ID:
+                    <input class="input" type="text" id="page_sort" name="page_sort" required minlength="1"
+                        maxlength="50" size="10" />
+                    <label class="tooltip__wrap">
+                        <span class="tooltip">
+                            <svg class="tooltip__icon">
+                                <use xlink:href="img/tooltip.svg#tooltip" />
+                            </svg>
+                            <span class="tooltip__info tooltip__info--top">ID为小数则为子页面,如:1.1即为1的子页面</span>
+                        </span>
+                    </label>
+                </p>
+                <button class="edit-button" onclick="handleButtonClick(this)" id="btn_save_page">保存</button>
+                
+                <p>注意:与下方ID重复即为改名</p>
+                <table id="pages-table">
+                    <tr>
+                        <th>页面名称</th>
+                        <th>页面ID</th>
+                        <th>子项目?</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="loading-animation" class="loading-animation"></div>
+
+    </div>
+    <script src="ckeditor.js"></script>
+    <style>
+        :root {
+            --ck-color-base-background: #222c35;
+            --ck-color-text: #fff;
+            --ck-color-base-text: #ebdcdc;
+            --ck-color-button-default-hover-background: #031a1b;
+            --ck-color-split-button-hover-background: #181c31;
+        }
+    </style>
+</body>
+<script src="script.js"></script>
+
+</html>

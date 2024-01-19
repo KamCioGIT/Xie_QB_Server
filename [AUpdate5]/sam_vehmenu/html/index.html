@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/4555cd517c.js" crossorigin="anonymous"></script>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="container">
+            
+            <div class="bodybackground">
+                <div id="hood" class="hood veh-option door" value="4"><img src="img/hood.png"></div>
+                <div id="door0" class="driver-door veh-option door" value="0"><img src="img/leftdoor.png"></div>
+                <div id="door1" class="f-passenger veh-option door" value="1"><img src="img/rightdoor.png"></div>
+                <div id="door2" class="l-passenger veh-option door" value="2"><img src="img/leftdoor.png"></div>
+                <div id="door3" class="r-passenger veh-option door" value="3"><img src="img/rightdoor.png"></div>
+                <div id="trunk" class="trunk veh-option door" value="5"><img src="img/trunk.png"></div>
+                <div id="TextBody" style="color: #3bd2a8; font-weight: bold; text-shadow: 0 0 10px rgba(59, 211, 168, 0.7); background: #252A3C; margin-top: 115px; font-size: 12.5px; text-align: center; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; font-family: 'Montserrat', sans-serif; padding:2px;">车门</div>
+            </div>
+            <div class="windowsbackground">
+                <div id="windowl1" class="window1 veh-option window" value="0"><img src="img/leftwindow.png"></div>
+                <div id="windowr1" class="window2 veh-option window" value="1"><img src="img/rightwindow.png"></div>
+                <div id="windowl2" class="window3 veh-option window" value="2"><img src="img/leftwindow.png"></div>
+                <div id="windowr2" class="window4 veh-option window" value="3"><img src="img/rightwindow.png"></div>
+                <div id="TextBody3" style="color: #3bd2a8; font-weight: bold; text-shadow: 0 0 10px rgba(59, 211, 168, 0.7); background: #252A3C; margin-top: 115px; font-size: 12.5px; text-align: center; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; font-family: 'Montserrat', sans-serif; padding:2px;">窗户</div>
+            </div>
+            <div class="seatsbackground">
+                <div id="seatL1" class="seat veh-option seat1" value="-1"><img src="img/steeringwheel.png"></div>
+                <div id="seatR1" class="seat veh-option seat2" value="0"><img src="img/seat.png"></div>
+                <div id="seatL2" class="seat veh-option seat3" value="1"><img src="img/seat.png"></div>
+                <div id="seatR2" class="seat veh-option seat4" value="2"><img src="img/seat.png"></div>
+                <div id="TextBody2" style="color: #3bd2a8; font-weight: bold; text-shadow: 0 0 10px rgba(59, 211, 168, 0.7); background: #252A3C; margin-top: 115px; font-size: 12.5px; text-align: center; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; font-family: 'Montserrat', sans-serif; padding:2px;">座位</div>
+            </div>
+            <div class="allbodybackground">
+                <div class="power-doors veh-option alldoor"><img src="img/alldoors.png"></div>
+                <div class="power-roof veh-option roof"><img src="img/cabrio.png"></div>
+                <div class="power-lock veh-option lockdoors"><img src="img/start-stop.png"></div>
+                <!-- <div id="engine" class="veh-option engine" value="-1"><img src="img/start-stop.png"></div> -->
+                <div id="neon" class="veh-option neon"><img src="img/neon.png"></div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js" type="text/javascript"></script>
+</body>
+
+</html>

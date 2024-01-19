@@ -78,6 +78,47 @@ Config.PolyZones = {
 }
 
 Config.TargetBones = {
+	["main"] = {
+		bones = {
+			"seat_dside_f",
+			"seat_pside_f",
+			"seat_dside_r",
+			"seat_pside_r",
+			"door_dside_f",
+			"door_dside_r",
+			"door_pside_f",
+			"door_pside_r",
+		
+		},
+		options = {
+			{
+				type = "client",
+				event = 'police:client:PutPlayerInVehicle',
+				icon = "fas fa-user-plus",
+				label = "Seat in Vehicle",
+			},
+			{
+				type = "client",
+				event = "police:client:SetPlayerOutVehicle",
+				icon = "fas fa-user-minus",
+				label = "Take out Vehicle",
+			},
+			{
+				type = "client",
+				event = "police:client:ImpoundVehicle",
+				icon = "fas fa-car",
+				label = "Impound Vehicle",
+				job = {["police"] = 0, ["sasp"] = 0, ["saspr"] = 0, ["bcso"] = 0},
+			},
+			{
+				type = "client",
+				event = "qb-trunk:client:GetIn",
+				icon = "fas fa-user-secret",
+				label = "Get in Trunk",
+			},
+		},
+		distance = 2.0
+	},
 
 }
 
@@ -98,7 +139,47 @@ Config.GlobalObjectOptions = {
 }
 
 Config.GlobalPlayerOptions = {
-
+    options = {
+        {
+            type = "client",
+            event = "qb-phone:client:GiveContactDetails",
+            icon = "fas fa-address-book",
+            label = "Give Contact Details",
+        },
+        {
+            event = "police:client:RobPlayer",
+            icon = "fas fa-user-secret",
+            label = "Rob Player",
+        },
+        {
+            type = "client",
+            event = "police:client:CuffPlayer",
+            icon = "fas fa-hands",
+            label = "Cuff / Uncuff",
+            job = {["police"] = 0, ["sasp"] = 0, ["saspr"] = 0, ["bcso"] = 0},
+        },
+        {
+          type = "client",
+          event = "police:client:EscortPlayer",
+          icon = "fas fa-key",
+          label = "Escort",
+        },
+        {
+            type = "client",
+            event = "police:client:PutPlayerInVehicle",
+            icon = "fas fa-chevron-circle-left",
+            job = {["police"] = 0, ["sasp"] = 0, ["saspr"] = 0, ["bcso"] = 0},
+            label = "Place in Vehicle",
+        },
+        {
+            type = "client",
+            event = "police:client:SetPlayerOutVehicle",
+            icon = "fas fa-chevron-circle-right",
+            job = {["police"] = 0, ["sasp"] = 0, ["saspr"] = 0, ["bcso"] = 0},
+            label = "Take out of Vehicle",
+        },
+		distance = 2.0
+    }
 }
 
 Config.Peds = {
