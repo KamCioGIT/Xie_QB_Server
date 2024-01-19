@@ -1,7 +1,7 @@
 Config = {}
 
 Config.OpenKeyMapping = true
-Config.OpenKeyMappingKey = "N"
+Config.OpenKeyMappingKey = "F3"
 Config.OpenKeyMappingText = "车辆菜单"
 
 Config.Opencommand = true

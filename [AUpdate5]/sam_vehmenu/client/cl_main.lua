@@ -123,7 +123,7 @@ RegisterNUICallback('switchSeat', function(data, cb)
     cb('ok')
 end)
 
-RegisterCommand('neon', function(src, args)
+--[[ RegisterCommand('neon', function(src, args)
     local id = tonumber(args[1])
     player = PlayerPedId()
     veh = GetVehiclePedIsIn(player, false)
@@ -144,7 +144,7 @@ RegisterCommand('neon', function(src, args)
             end
         end
     end
-end)
+end) ]]
 
 RegisterCommand(Config.DoorCommand, function(src, args)
     local id = tonumber(args[1])
