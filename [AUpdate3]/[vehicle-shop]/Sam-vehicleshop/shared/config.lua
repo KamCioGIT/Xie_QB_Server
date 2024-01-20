@@ -95,11 +95,11 @@ Config.Shops            = {
             active = true,
             price = 2000
         },
-        coords            = vector3(-235.41, 6216.53, 31.94),
+        coords            = vector3(-56.88, -1096.99, 26.42),
         camCoords         = vector3(-38.0, -1059.0, -42.5),
         camRotation       = vector3(190.0, 180.0, 5.00),
         distance          = 2.0,
-        carSpawnCoords    = vector4(-224.7, 6254.92, 31.45, 132.05),
+        carSpawnCoords    = vector4(-48.2, -1078.55, 26.35, 69.91),
         deliveryCoords    = vector4(-48.906772613525, -1077.6535644531, 26.81402015686, 66.28524017334),
         deliveryGarage    = "pillboxgarage", -- if u need, the QB Framework player_vehicles table needs it.
         compareCoords     = {

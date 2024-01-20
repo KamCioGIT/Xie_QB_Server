@@ -330,28 +330,28 @@ Config.StandaloneCheckIns = {
 Config.Locations = {
     Pillbox = {
         RespawnPoint = { -- When player dies and bleeds out; they will revive at nearest hospital; Define the coords of this hospital here.
-            coords = vec3(-245.82, 6317.07, 32.45),
+            coords = vec3(343.96, -581.84, 43.32),
             heading = 27.45
         },
 
         Blip = {
             Enabled = true,
-            Coords = vec3(-235.83, 6319.28, 31.62),
+            Coords = vec3(295.05, -579.67, 43.18),
             Sprite = 61,
             Color = 2,
             Scale = 1.0,
-            String = '帕莱托医院'
+            String = '洛圣都医院'
         },
 
         clockInAndOut = {
             enabled = true, -- Enable clocking in and out at a set location? (If using ESX you must have a off duty job for Config.ambulanceJob with same grades - example in main _install_first directory)
-            coords = vec3(-251.33, 6324.04, 32.45), -- Location of where to go on and off duty(If not using target)
+            coords = vec3(304.08, -596.95, 43.29), -- Location of where to go on and off duty(If not using target)
             label = '[E] - 值班/下班', -- Text to display(If not using target)
             distance = 3.0, -- Distance to display text UI(If not using target)
             target = {
                 enabled = false, -- If enabled, the location and distance above will be obsolete
                 label = '值班/下班',
-                coords = vec3(-251.33, 6324.04, 32.45),
+                coords = vec3(304.08, -596.95, 43.29),
                 heading = 337.07,
                 width = 2.0,
                 length = 1.0,
@@ -362,13 +362,13 @@ Config.Locations = {
 
         PersonalLocker = {
             enabled = true, -- Enable personal locker(stash) - THIS IS CURRENTLY ONLY AVALIABLE IN QB-INVENTORY
-            coords = vec3(-253.61, 6321.59, 32.45), -- Location of where to access personal locker (If target is disabled)vector3(-1854.82, -331.31, 49.45)
+            coords = vec3(309.94, -599.41, 43.29), -- Location of where to access personal locker (If target is disabled)vector3(-1854.82, -331.31, 49.45)
             label = '[E] - 访问个人储物柜', -- Text to display(If not using target)
             distance = 1.5, -- Distance to display text UI(If not using target)
             target = {
                 enabled = false, -- If enabled, the location and distance above will be obsolete
                 label = '个人储物柜',
-                coords = vec3(-253.61, 6321.59, 32.45),
+                coords = vec3(309.94, -599.41, 43.29),
                 heading = 70.18,
                 width = 2.0,
                 length = 1.0,
@@ -398,7 +398,7 @@ Config.Locations = {
         CheckIn = { -- Hospital check-in
             Enabled = true, -- Enabled?
             Ped = 's_m_m_scientist_01', -- Check in ped
-            Coords = vec3(-248.91, 6324.25, 31.45), -- Coords of ped vector3(-1850.94, -339.55, 49.44)
+            Coords = vec3(309.72, -594.4, 43.29), -- Coords of ped vector3(-1850.94, -339.55, 49.44)
             Distance = 4.85, -- Distance to show textUI (If target is not enabled below)
             Heading = 307.95, -- Heading of ped
             Cost = 300, -- Cost of using hospital check-in. Set to false for free
@@ -410,7 +410,7 @@ Config.Locations = {
             Target = {
                 enabled = false, -- Enable Target? (Can be customized in wasabi_bridge/customize/cl_customize.lua the target system)
                 label = '住院',
-                coords = vec3(-248.91, 6324.25, 31.45),
+                coords = vec3(309.72, -594.4, 43.29),
                 heading = 307.95,
                 distance = 5.0,
                 width = 2.0,
@@ -421,17 +421,17 @@ Config.Locations = {
             DisableHospitalBeds = false, -- Disable hospital beds for check-in at this location?(Player will spend Duration checking in before respawning in place when set to false)
             HospitalBeds = {
                 --              { coords = vec3(332.62, -587.17, 42.84), heading = 160.0, model = 1631638868 },
-                { coords = vec3(-247.76, 6314.3, 32.45),  heading = 43.95, model = 1004440924 }, --vector4(-1862.7, -334.29, 50.19, 322.94)
+                --[[ { coords = vec3(-247.76, 6314.3, 32.45),  heading = 43.95, model = 1004440924 }, --vector4(-1862.7, -334.29, 50.19, 322.94)
                 { coords = vec3(-251.71, 6310.57, 32.45), heading = 43.95, model = 1004440924 }, --vector4(-1865.92, -332.13, 50.19, 327.82)
-                { coords = vec3(-255.2, 6306.93, 32.45), heading = 43.95, model = 1004440924 }, --vector4(-1868.66, -329.69, 50.19, 317.65)
-                --[[ { coords = vec3(313.93, -579.04, 42.84), heading = 340.0, model = 1570477186 },
+                { coords = vec3(-255.2, 6306.93, 32.45), heading = 43.95, model = 1004440924 }, ]] --vector4(-1868.66, -329.69, 50.19, 317.65)
+                { coords = vec3(313.93, -579.04, 42.84), heading = 340.0, model = 1570477186 },
                 { coords = vec3(311.06, -582.96, 42.84), heading = 160.0, model = 1570477186 },
                 { coords = vec3(307.72, -581.75, 42.84), heading = 160.0, model = 1570477186 },
                 { coords = vec3(309.35, -577.38, 42.84), heading = 340.0, model = 1631638868 },
                 { coords = vec3(361.36, -581.3, 42.83), heading = 250.0, model = 1631638868 },
                 { coords = vec3(359.54, -586.23, 42.84), heading = 250.0, model = 1631638868 },
                 { coords = vec3(354.44, -600.19, 42.85), heading = 250.0, model = 1631638868 },
-                { coords = vec3(324.26, -582.8, 42.84), heading = 340.0, model = 1631638868 }, ]]
+                { coords = vec3(324.26, -582.8, 42.84), heading = 340.0, model = 1631638868 },
                 -- Stock qb-ambulance hospital bed coords:
                 --                { coords = vec3(353.1, -584.6, 43.11), heading = 152.08, model = 1631638868 },
                 --                { coords = vec3(356.79, -585.86, 43.11), heading = 152.08, model = 1631638868 },
@@ -447,7 +447,7 @@ Config.Locations = {
 
         Cloakroom = {
             Enabled = true,
-            Coords = vec3(-261.95, 6323.52, 32.45), -- Coords of cloakroom
+            Coords = vec3(332.59, -591.15, 43.28), -- Coords of cloakroom
             Label = '[E] - 更衣', -- String of text ui of cloakroom
             HotKey = 38, -- Default: 38 (E)
             Range = 1.5, -- Range away from coords you can use.
@@ -514,7 +514,7 @@ Config.Locations = {
         MedicalSupplies = { -- EMS Shop for supplies
             Enabled = true, -- If set to false, rest of this table do not matter
             Ped = 's_m_m_doctor_01', -- Ped to target
-            Coords = vec3(-259.29, 6322.78, 32.45), -- Coords of ped/target
+            Coords = vec3(309.93, -602.92, 43.29), -- Coords of ped/target
             Heading = 337.64, -- Heading of ped
             Supplies = { -- Supplies
                 { item = 'medbag', label = '医疗包', price = 1000 }, -- Pretty self explanatory, price may be set to 'false' to make free
@@ -532,18 +532,18 @@ Config.Locations = {
         Vehicles = {                                   -- Vehicle Garage
             Enabled = true,                            -- Enable? False if you have you're own way for medics to obtain vehicles.
             Zone = {
-                coords = vec3(-272.9, 6319.05, 32.43), -- Area to prompt vehicle garage
+                coords = vec3(295.39, -576.75, 43.18), -- Area to prompt vehicle garage
                 range = 5.5,                           -- Range it will prompt from coords above
                 label = '[E] - 车库',
                 return_label = '[E] - 还车'
             },
             Spawn = {
                 land = {
-                    coords = vec3(-275.62, 6329.8, 32.2),
-                    heading = 180.56
+                    coords = vec3(291.78, -574.12, 43.19),
+                    heading = 45.95
                 },
                 air = {
-                    coords = vec3(-244.63, 6323.13, 37.37),
+                    coords = vec3(351.34, -587.18, 74.17),
                     heading = 289.29
                 }
             },
