@@ -745,7 +745,7 @@ CreateThread(function()
 								IsDisabledControlJustReleased(0, 85)) then
 									if locked_press_count % reminder_rate == 0 then
 										AUDIO:Play('Locked_Press', AUDIO.lock_reminder_volume, true) -- lock reminder
-										HUD:ShowNotification('~y~~h~Reminder:~h~ ~s~Your siren control box is ~r~locked~s~.', true)
+										HUD:ShowNotification('~y~~h~提醒:~h~ ~s~您的警笛控制盒 ~r~已锁定~s~.', true)
 									end
 									locked_press_count = locked_press_count + 1
 							end
