@@ -330,8 +330,8 @@ Config.StandaloneCheckIns = {
 Config.Locations = {
     Pillbox = {
         RespawnPoint = { -- When player dies and bleeds out; they will revive at nearest hospital; Define the coords of this hospital here.
-            coords = vec3(343.96, -581.84, 43.32),
-            heading = 27.45
+            coords = vector3(329.68, -595.77, 43.25),
+            heading = 43.6
         },
 
         Blip = {
@@ -345,13 +345,13 @@ Config.Locations = {
 
         clockInAndOut = {
             enabled = true, -- Enable clocking in and out at a set location? (If using ESX you must have a off duty job for Config.ambulanceJob with same grades - example in main _install_first directory)
-            coords = vec3(304.08, -596.95, 43.29), -- Location of where to go on and off duty(If not using target)
+            coords = vector3(303.96, -595.29, 43.25), -- Location of where to go on and off duty(If not using target)
             label = '[E] - 值班/下班', -- Text to display(If not using target)
             distance = 3.0, -- Distance to display text UI(If not using target)
             target = {
                 enabled = false, -- If enabled, the location and distance above will be obsolete
                 label = '值班/下班',
-                coords = vec3(304.08, -596.95, 43.29),
+                coords = vector3(303.96, -595.29, 43.25),
                 heading = 337.07,
                 width = 2.0,
                 length = 1.0,
@@ -362,13 +362,13 @@ Config.Locations = {
 
         PersonalLocker = {
             enabled = true, -- Enable personal locker(stash) - THIS IS CURRENTLY ONLY AVALIABLE IN QB-INVENTORY
-            coords = vec3(309.94, -599.41, 43.29), -- Location of where to access personal locker (If target is disabled)vector3(-1854.82, -331.31, 49.45)
+            coords = vector3(307.66, -599.43, 43.22), -- Location of where to access personal locker (If target is disabled)vector3(-1854.82, -331.31, 49.45)
             label = '[E] - 访问个人储物柜', -- Text to display(If not using target)
             distance = 1.5, -- Distance to display text UI(If not using target)
             target = {
                 enabled = false, -- If enabled, the location and distance above will be obsolete
                 label = '个人储物柜',
-                coords = vec3(309.94, -599.41, 43.29),
+                coords = vector3(307.66, -599.43, 43.22),
                 heading = 70.18,
                 width = 2.0,
                 length = 1.0,
@@ -380,13 +380,13 @@ Config.Locations = {
 
         BossMenu = {
             Enabled = true, -- Enabled boss menu?
-            Coords = vec3(-1888.27, -321.24, 84.01), -- Location of boss menu (If not using target)vector3(-1888.27, -321.24, 84.01)
+            Coords = vector3(299.68, -594.91, 43.25), -- Location of boss menu (If not using target)vector3(-1888.27, -321.24, 84.01)
             Label = '[E] - 领导菜单', -- Text UI label string (If not using target)
             Distance = 2.5, -- Distance to allow access/prompt with text UI (If not using target)
             Target = {
                 enabled = false, -- Enable Target? (Can be customized in wasabi_bridge/customize/cl_customize.lua the target system)
                 label = '领导菜单',
-                coords = vec3(-1888.27, -321.24, 84.01),
+                coords = vector3(299.68, -594.91, 43.25),
                 heading = 269.85,
                 width = 2.0,
                 length = 1.0,
@@ -398,9 +398,9 @@ Config.Locations = {
         CheckIn = { -- Hospital check-in
             Enabled = true, -- Enabled?
             Ped = 's_m_m_scientist_01', -- Check in ped
-            Coords = vec3(309.72, -594.4, 43.29), -- Coords of ped vector3(-1850.94, -339.55, 49.44)
+            Coords = vector3(309.9, -580.91, 42.25), -- Coords of ped vector3(-1850.94, -339.55, 49.44)
             Distance = 4.85, -- Distance to show textUI (If target is not enabled below)
-            Heading = 307.95, -- Heading of ped
+            Heading = 67.76, -- Heading of ped
             Cost = 300, -- Cost of using hospital check-in. Set to false for free
             Duration = 15 * seconds, -- Time it takes to spend in hospital bed
             MaxOnDuty = 3, -- If this amount or less you can use, otherwise it will tell you that EMS is avaliable(Set to false to always enable check-in)
@@ -410,7 +410,7 @@ Config.Locations = {
             Target = {
                 enabled = false, -- Enable Target? (Can be customized in wasabi_bridge/customize/cl_customize.lua the target system)
                 label = '住院',
-                coords = vec3(309.72, -594.4, 43.29),
+                coords = vector3(309.9, -580.91, 43.25),
                 heading = 307.95,
                 distance = 5.0,
                 width = 2.0,
@@ -424,14 +424,17 @@ Config.Locations = {
                 --[[ { coords = vec3(-247.76, 6314.3, 32.45),  heading = 43.95, model = 1004440924 }, --vector4(-1862.7, -334.29, 50.19, 322.94)
                 { coords = vec3(-251.71, 6310.57, 32.45), heading = 43.95, model = 1004440924 }, --vector4(-1865.92, -332.13, 50.19, 327.82)
                 { coords = vec3(-255.2, 6306.93, 32.45), heading = 43.95, model = 1004440924 }, ]] --vector4(-1868.66, -329.69, 50.19, 317.65)
-                { coords = vec3(313.93, -579.04, 42.84), heading = 340.0, model = 1570477186 },
+                --[[ { coords = vec3(313.93, -579.04, 42.84), heading = 340.0, model = 1570477186 },
                 { coords = vec3(311.06, -582.96, 42.84), heading = 160.0, model = 1570477186 },
                 { coords = vec3(307.72, -581.75, 42.84), heading = 160.0, model = 1570477186 },
                 { coords = vec3(309.35, -577.38, 42.84), heading = 340.0, model = 1631638868 },
                 { coords = vec3(361.36, -581.3, 42.83), heading = 250.0, model = 1631638868 },
                 { coords = vec3(359.54, -586.23, 42.84), heading = 250.0, model = 1631638868 },
                 { coords = vec3(354.44, -600.19, 42.85), heading = 250.0, model = 1631638868 },
-                { coords = vec3(324.26, -582.8, 42.84), heading = 340.0, model = 1631638868 },
+                { coords = vec3(324.26, -582.8, 42.84), heading = 340.0, model = 1631638868 }, ]]
+                { coords = vector3(309.55, -572.35, 42.8), heading = 337.17, model = -919002147 },
+                { coords = vector3(310.82, -569.12, 42.79), heading = 337.17, model = 1352121867 },
+                { coords = vector3(312.03, -565.96, 42.79), heading = 337.17, model = 1352121867 },
                 -- Stock qb-ambulance hospital bed coords:
                 --                { coords = vec3(353.1, -584.6, 43.11), heading = 152.08, model = 1631638868 },
                 --                { coords = vec3(356.79, -585.86, 43.11), heading = 152.08, model = 1631638868 },
@@ -514,8 +517,8 @@ Config.Locations = {
         MedicalSupplies = { -- EMS Shop for supplies
             Enabled = true, -- If set to false, rest of this table do not matter
             Ped = 's_m_m_doctor_01', -- Ped to target
-            Coords = vec3(309.93, -602.92, 43.29), -- Coords of ped/target
-            Heading = 337.64, -- Heading of ped
+            Coords = vector3(311.4, -600.63, 43.25), -- Coords of ped/target
+            Heading = 40.98, -- Heading of ped
             Supplies = { -- Supplies
                 { item = 'medbag', label = '医疗包', price = 1000 }, -- Pretty self explanatory, price may be set to 'false' to make free
                 { item = 'medikit', label = '急救套件', price = 250 },
@@ -532,29 +535,25 @@ Config.Locations = {
         Vehicles = {                                   -- Vehicle Garage
             Enabled = true,                            -- Enable? False if you have you're own way for medics to obtain vehicles.
             Zone = {
-                coords = vec3(295.39, -576.75, 43.18), -- Area to prompt vehicle garage
+                coords = vector3(301.13, -571.19, 43.26), -- Area to prompt vehicle garage
                 range = 5.5,                           -- Range it will prompt from coords above
                 label = '[E] - 车库',
                 return_label = '[E] - 还车'
             },
             Spawn = {
                 land = {
-                    coords = vec3(291.78, -574.12, 43.19),
-                    heading = 45.95
+                    coords = vector3(284.26, -581.28, 42.72),
+                    heading = 70.77
                 },
                 air = {
-                    coords = vec3(351.34, -587.18, 74.17),
+                    coords = vector3(345.2, -583.46, 92.63),
                     heading = 289.29
                 }
             },
             Options = {
                 [0] = {                    -- Job grade as table name
-                    ['ambulance'] = {      -- Car/Helicopter/Vehicle Spawn Code/Model Name
+                    ['Aemsv450'] = {      -- Car/Helicopter/Vehicle Spawn Code/Model Name
                         label = '救护车',
-                        category = 'land', -- Options are 'land' and 'air'
-                    },
-                    ['dodgeems'] = {       -- Car/Helicopter/Vehicle Spawn Code/Model Name
-                        label = 'Dodge Charger',
                         category = 'land', -- Options are 'land' and 'air'
                     },
                     ['polmav'] = {         -- Car/Helicopter/Vehicle Spawn Code/Model Name
@@ -564,12 +563,8 @@ Config.Locations = {
                 },
 
                 [1] = {
-                    ['ambulance'] = {      -- Car/Helicopter/Vehicle Spawn Code/Model Name
+                    ['Aemsv450'] = {      -- Car/Helicopter/Vehicle Spawn Code/Model Name
                         label = '救护车',
-                        category = 'land', -- Options are 'land' and 'air'
-                    },
-                    ['dodgeems'] = {       -- Car/Helicopter/Vehicle Spawn Code/Model Name
-                        label = 'Dodge Charger',
                         category = 'land', -- Options are 'land' and 'air'
                     },
                     ['polmav'] = {         -- Car/Helicopter/Vehicle Spawn Code/Model Name
@@ -579,12 +574,30 @@ Config.Locations = {
                 },
 
                 [2] = {
-                    ['ambulance'] = {      -- Car/Helicopter/Vehicle Spawn Code/Model Name
+                    ['Aemsv450'] = {      -- Car/Helicopter/Vehicle Spawn Code/Model Name
                         label = '救护车',
                         category = 'land', -- Options are 'land' and 'air'
                     },
-                    ['dodgeems'] = {       -- Car/Helicopter/Vehicle Spawn Code/Model Name
-                        label = 'Dodge Charger',
+                    ['polmav'] = {         -- Car/Helicopter/Vehicle Spawn Code/Model Name
+                        label = 'Maverick',
+                        category = 'air',  -- Options are 'land' and 'air'
+                    },
+                },
+
+                [3] = {
+                    ['Aemsv450'] = {      -- Car/Helicopter/Vehicle Spawn Code/Model Name
+                        label = '救护车',
+                        category = 'land', -- Options are 'land' and 'air'
+                    },
+                    ['polmav'] = {         -- Car/Helicopter/Vehicle Spawn Code/Model Name
+                        label = 'Maverick',
+                        category = 'air',  -- Options are 'land' and 'air'
+                    },
+                },
+
+                [4] = {
+                    ['Aemsv450'] = {      -- Car/Helicopter/Vehicle Spawn Code/Model Name
+                        label = '救护车',
                         category = 'land', -- Options are 'land' and 'air'
                     },
                     ['polmav'] = {         -- Car/Helicopter/Vehicle Spawn Code/Model Name

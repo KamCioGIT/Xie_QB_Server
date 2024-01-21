@@ -49,8 +49,8 @@ SellLocation = {
     SetBlipScale = 0.85,
     SetBlipColour = 3,
     BlipLabel = "~b~[4]矿物卖家",
-    minZ = 3,
-    maxZ = 7,
+    minZ = 39,
+    maxZ = 42,
 }
 --Job Config
 MiningJob = {

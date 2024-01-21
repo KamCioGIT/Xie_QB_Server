@@ -45,10 +45,10 @@
 				<div class="panel_side panel_left"></div>
 
 				<div id="radar">
-					<div class="label label_top">FRONT ANTENNA</div>
+					<div class="label label_top">前雷达</div>
 
 					<div class="pwr_button_container">
-						<div id="pwrBtn" data-nuitype="togglePower" class="pwr_button">PWR</div>
+						<div id="pwrBtn" data-nuitype="togglePower" class="pwr_button">电源</div>
 					</div>
 
 					<div class="modes_container">
@@ -126,7 +126,7 @@
 					</div>
 
 					<div class="patrol_and_logo_container">
-						<div class="logo"><span class="name">Wraith</span> ARS 2X</div>
+						<div class="logo"><span class="name">SAM</span> RADAR</div>
 
 						<div class="speeds_container">
 							<div class="display fast">
@@ -135,10 +135,10 @@
 							</div>
 						</div>
 
-						<div class="speed_label">PATROL SPEED</div>
+						<div class="speed_label">当前速度</div>
 					</div>
 
-					<div class="label label_bottom">REAR ANTENNA</div>
+					<div class="label label_bottom">后雷达</div>
 				</div>
 
 				<div class="panel_side panel_right"></div>
@@ -148,7 +148,7 @@
 		<div id="rc">
 			<button id="toggleDisplay" data-nuitype="toggleRadarDisplay" class="rounded_btn toggle_display">TOGGLE DISPLAY</button>
 
-			<p class="label">FRONT ANTENNA</p>
+			<p class="label">前雷达</p>
 
 			<div class="antenna_btns_container">
 				<div class="btns btns_top">
@@ -180,18 +180,18 @@
 				</div>
 			</div>
 
-			<p class="label">REAR ANTENNA</p>
+			<p class="label">后雷达</p>
 
-			<button id="menuButton" data-nuitype="menu" class="circle_btn menu blue">MENU</button>
+			<button id="menuButton" data-nuitype="menu" class="circle_btn menu blue">菜单</button>
 
 			<div class="plate_reader_and_help_container">
-				<button id="plateReaderBtn" class="plate_reader blue">PLATE READER</button>
-				<button id="helpBtn" class="help blue">HELP</button>
+				<button id="plateReaderBtn" class="plate_reader blue">车牌雷达</button>
+				<button id="helpBtn" class="help blue">帮助</button>
 			</div>
 
-			<button id="uiSettings" class="rounded_btn light blue">UI SETTINGS</button>
+			<button id="uiSettings" class="rounded_btn light blue">UI 设置</button>
 
-			<p class="logo"><span class="large">Wraith</span> ARS 2X</p>
+			<p class="logo"><span class="large">SAM</span> RADAR</p>
 		</div>
 		
 		<div id="plateReaderFrame">
@@ -199,8 +199,8 @@
 
 			<div id="plateReader">
 				<div class="labels">
-					<p class="title">FRONT</p>
-					<p class="title">REAR</p>
+					<p class="title">前</p>
+					<p class="title">后</p>
 				</div>
 
 				<div class="plates">
@@ -228,19 +228,19 @@
 				</div>
 
 				<div class="labels">
-					<p id="frontPlateLock">LOCKED</p>
-					<p id="rearPlateLock">LOCKED</p>
+					<p id="frontPlateLock">锁定</p>
+					<p id="rearPlateLock">锁定</p>
 				</div>
 			</div>
 		</div>
 
 		<div id="plateReaderBox">
 			<div class="header">
-				<p class="title">Plate Reader</p>
+				<p class="title">车牌雷达</p>
 			</div>
 
 			<div class="container">
-				<button id="togglePlateReader" data-nuitype="togglePlateReaderDisplay" class="btn">Toggle Display</button>
+				<button id="togglePlateReader" data-nuitype="togglePlateReaderDisplay" class="btn">切换显示</button>
 
 				<input id="boloText" type="text" maxlength="8" placeholder="12ABC345" onkeypress="checkPlateInput(event)" class="plate_input"/>
 
@@ -249,12 +249,12 @@
 				<button id="clearBoloPlate" class="btn">Clear BOLO Plate</button>
 			</div>
 
-			<button id="closePlateReaderSettings" class="close">CLOSE</button>
+			<button id="closePlateReaderSettings" class="close">关闭</button>
 		</div>
 
 		<div id="uiSettingsBox">
 			<div class="header">
-				<p class="title">UI Settings</p>
+				<p class="title">UI 设置</p>
 			</div>
 
 			<div class="scaling_container">
@@ -262,7 +262,7 @@
 					<div id="radarDecreaseScale" class="symbol minus"></div>
 
 					<div class="info">
-						<p>Radar Scale</p>
+						<p>雷达量表</p>
 						<p id="radarScaleDisplay" class="multiplier">1.00x</p>
 					</div>
 
@@ -273,7 +273,7 @@
 					<div id="remoteDecreaseScale" class="symbol minus"></div>
 
 					<div class="info">
-						<p>Remote Scale</p>
+						<p>远程比例</p>
 						<p id="remoteScaleDisplay" class="multiplier">1.00x</p>
 					</div>
 
@@ -284,7 +284,7 @@
 					<div id="readerDecreaseScale" class="symbol minus"></div>
 
 					<div class="info">
-						<p>Reader Scale</p>
+						<p>读者量表</p>
 						<p id="readerScaleDisplay" class="multiplier">1.00x</p>
 					</div>
 
@@ -297,25 +297,25 @@
 				<input type="range" min="0" max="100" value="0" step="5" class="slider" id="safezone">
 			</div>
 
-			<button id="closeUiSettings" class="close">CLOSE</button>
+			<button id="closeUiSettings" class="close">关闭</button>
 		</div>
 		
-		<p id="keyLockLabel">Radar key binds <span id="keyLockStateLabel"></span></p>
+		<p id="keyLockLabel">雷達按键 <span id="keyLockStateLabel"></span></p>
 
 		<div id="helpWindow">
 			<iframe id="helpWeb" src="about:blank"></iframe>
-			<button id="closeHelp" class="close">CLOSE HELP</button>
+			<button id="closeHelp" class="close">关闭帮助</button>
 		</div>
 
 		<div id="newUser">
-			<p class="msg">Hey, it appears this is your first time using the Wraith ARS 2X. Would you like to view the quick start video?</p>
-			<button id="showQuickStartVideo" class="btn_yes">Yes</button>
-			<button id="closeNewUserMsg" class="btn_no">No</button>
+			<p class="msg">嘿，看來這是您第一次使用SAM RADAR。您想查看快速啟動視頻嗎？</p>
+			<button id="showQuickStartVideo" class="btn_yes">是</button>
+			<button id="closeNewUserMsg" class="btn_no">否</button>
 		</div>
 
 		<div id="quickStart">
 			<iframe id="quickStartVideo" src="about:blank" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
-			<button id="closeQuickStart" class="close">CLOSE VIDEO</button>
+			<button id="closeQuickStart" class="close">关闭视频</button>
 		</div>
 
 		<!-- Load JavaScript files -->
